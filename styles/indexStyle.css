@@ -1,7 +1,12 @@
 .header{
-    background-color: #6A7E58;
+    color:#000;
+    background-color: #EDB9E3;
 }
 
 .menu li{
+    display: inline;
+}
+
+.menu-logar li{
     display: inline;
 }
