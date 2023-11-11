@@ -1,7 +1,23 @@
 .header{
-    background-color: #6A7E58;
+    background-color: #EDB9E3;
 }
 
 .menu li{
     display: inline;
+}
+
+.menu li a{
+    color: #fff;
+}
+
+.menu-logar li{
+    display: inline;
+}
+
+.menu-logar li a{
+    color: white;
+}
+
+.btn-logar{
+    background-color: #48233C;
 }
