@@ -42,8 +42,10 @@
 
   </header>
 
-  <div class="flex flex-col items-center">
-    <div class="caixa-esq mt-10 ml-6 w-2/4 h-64 rounded-3xl">
+  <button onclick="addOng()">Teste</button>
+
+  <div id="container" class="flex flex-col items-center">
+    <div id="modelo-esq" class="caixa-esq mt-10 ml-6 w-2/4 h-64 rounded-3xl">
       <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-esq relative h-64 float-left">
       <h1 class="text-center">ONG BRASIL</h1>
       <p class="text-center">
@@ -62,7 +64,7 @@
       </p>
     </div>
     
-    <div class="caixa-dir mt-10 ml-6 w-2/4 h-64 rounded-3xl">
+    <div id="modelo-dir" class="caixa-dir mt-10 ml-6 w-2/4 h-64 rounded-3xl">
       <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-dir relative h-64 float-right">
       <h1 class="text-center">ONG BRASIL</h1>
       <p class="text-center" >
@@ -130,6 +132,9 @@
       <span>(47) 0000-0000</span>
     </div>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="ongs-listajs.js"></script>
 </body>
 
 </html>
