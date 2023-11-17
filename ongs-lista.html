@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/resetCss.css">
-  <link rel="stylesheet" href="styles/indexStyle.css">
+  <link rel="stylesheet" href="styles/ongs-listaStyle.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,17 +22,21 @@
 </head>
 
 <body>
-  <header class="header w-full h-20">
+  <header class="header w-full h-20 ">
+    
     <div class="container mx-auto flex justify-between">
-      <img src="assets/images/Logo pronta.png" alt="" class="w-56 mt-4">
+      <img src="assets/images/Logo.png" alt="" class="w-56 mt-4">
 
-      <ul class="menu mt-7">
+      <div class="font-bold md:hidden btn-menu-list mx-auto justify-between flex self-center">| | |</div>
+      <ul class="menu mt-7 hidden md:flex">
         <li class="mr-4"><a href="#" class="">Quem Somos</a></li>
         <li class="mr-4"><a href="#" class="">Conheça a plataforma</a></li>
         <li class="mr-4"><a href="#" class="">Contato</a></li>
+
       </ul>
 
-      <ul class="menu-logar mt-7">
+      <div class="font-bold md:hidden btn-login-list mx-auto justify-between self-center"><img src="assets/images/login.png" alt=""></div>
+      <ul class="menu-logar mt-7 hidden md:flex">
         <li><a href="#" class="mr-5">Criar Conta</a></li>
         <li><a href="#" class="px-3 py-2 bg-gray-300 rounded-3xl bg-slate-300">Logar</a></li>
       </ul>
@@ -42,85 +46,84 @@
 
   </header>
 
-  <button onclick="addOng()">Teste</button>
-
   <div id="container" class="flex flex-col items-center">
-    <div id="modelo-esq" class="caixa-esq mt-10 ml-6 w-2/4 h-64 rounded-3xl">
+
+    <div id="modelo-esq" class="caixa-esq md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl">
       <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-esq relative h-64 float-left">
       <h1 class="text-center">ONG BRASIL</h1>
-      <p class="text-center">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+      <p class="text-justify ml-3 mr-3 text-base">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
       </p>
     </div>
-    
-    <div id="modelo-dir" class="caixa-dir mt-10 ml-6 w-2/4 h-64 rounded-3xl">
+
+    <div id="modelo-dir" class="caixa-dir md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl">
       <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-dir relative h-64 float-right">
       <h1 class="text-center">ONG BRASIL</h1>
-      <p class="text-center" >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+      <p class="text-justify ml-3 mr-3 text-base">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
       </p>
     </div>
-    <div class="caixa-esq mt-10 ml-6 w-2/4 h-64 rounded-3xl">
+    <div class="caixa-esq md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl">
       <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-esq relative h-64 float-left">
       <h1 class="text-center">ONG BRASIL</h1>
-      <p class="text-center">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+      <p class="text-justify ml-3 mr-3 text-base">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
       </p>
     </div>
-    <div class="caixa-dir mt-10 ml-6 w-2/4 h-64 rounded-3xl">
+    <div class="caixa-dir md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl">
       <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-dir relative h-64 float-right">
       <h1 class="text-center">ONG BRASIL</h1>
-      <p class="text-center">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+      <p class="text-justify ml-3 mr-3 text-base">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        Natus doloribus molestias aperiam quasi beatae dolorum 
-        fugit, nisi est autem tempore consequuntur ullam numquam 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Natus doloribus molestias aperiam quasi beatae dolorum
+        fugit, nisi est autem tempore consequuntur ullam numquam
         id adipisci quia aut velit quisquam qui?
       </p>
     </div>
   </div>
 
-  <footer class="h-24 mt-10 flex flex-col items-center" >
+  <footer class="h-24 mt-10 flex flex-col items-center">
 
     <div class="flex mt-4">
       <img src="assets/images/email.png" alt="" class="mr-3">
@@ -134,7 +137,7 @@
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="ongs-listajs.js"></script>
+  <script src="ongs-listajs.js"></script>
 </body>
 
 </html>
