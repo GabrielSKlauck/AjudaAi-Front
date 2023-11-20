@@ -3,6 +3,37 @@
     background-color: #EEEEEE !important;
 }
 
+
+
+.icon-menu-list:hover > .menu-list-itens{
+    opacity: 1 !important;
+    display: block;
+}
+
+.menu-list-itens{
+    display: block;
+    opacity: 0;
+    top: 23px;
+}
+
+.menu-list-itens{
+    background-color: #A1D4F4;
+    color: white;
+    
+    
+}
+
+.menu-list-itens li{
+    transition: 0.8s;
+}
+
+.menu-list-itens li:hover{
+    background-color: #6F875A;
+    
+    color: #000;
+    
+}
+
 .menu li {
     display: inline;
 }

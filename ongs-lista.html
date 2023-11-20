@@ -27,7 +27,15 @@
     <div class="container mx-auto flex justify-between">
       <img src="assets/images/Logo.png" alt="" class="w-56 mt-4">
 
-      <div class="font-bold md:hidden btn-menu-list mx-auto justify-between flex self-center">| | |</div>
+      <div class="icon-menu-list font-bold md:hidden btn-menu-list mx-auto justify-between flex self-center relative">
+        | | |
+        <ul class="menu-list-itens hidden md:flex absolute w-28">
+          <li><a href="">Quem Somos</a></li>
+          <li><a href="">Plataforma</a></li>
+          <li><a href="">Contato</a></li>
+        </ul>
+      </div>
+
       <ul class="menu mt-7 hidden md:flex">
         <li class="mr-4"><a href="#" class="">Quem Somos</a></li>
         <li class="mr-4"><a href="#" class="">Conheça a plataforma</a></li>
@@ -35,7 +43,13 @@
 
       </ul>
 
-      <div class="font-bold md:hidden btn-login-list mx-auto justify-between self-center"><img src="assets/images/login.png" alt=""></div>
+      <div class="icon-menu-list md:hidden btn-login-list mx-auto justify-between self-center relative">
+        <img src="assets/images/login.png" alt="">
+        <ul class="menu-list-itens font-bold hidden md:flex absolute w-24">
+          <li><a href="">Criar conta</a></li>
+          <li><a href=""></a>Logar</li>
+        </ul>
+      </div>
       <ul class="menu-logar mt-7 hidden md:flex">
         <li><a href="#" class="mr-5">Criar Conta</a></li>
         <li><a href="#" class="px-3 py-2 bg-gray-300 rounded-3xl bg-slate-300">Logar</a></li>
