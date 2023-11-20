@@ -25,6 +25,9 @@ body {
     background-color: #65BFF8;
 }
 
+.caixa-dir, .caixa-esq{
+    margin-top: 10px;
+}
 
 .img-anuncio-esq {
     border-radius: 15px 0 0 15px;
@@ -72,6 +75,12 @@ CHEGAR EM 1558PX */
 @media(max-width: 535px){
     .caixa-dir, .caixa-esq{
         height: 300px !important;
+    }
+}
+
+@media(max-width: 585px){
+    .caixa-dir, .caixa-esq{
+        height: 320px !important;
     }
 }
 
