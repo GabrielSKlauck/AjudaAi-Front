@@ -1,11 +1,21 @@
 @font-face {
     font-family: "Hanuman";
-    src: url("./assets/fonts/Hanuman-Regular.ttf")
+    src: url("../assets/fonts/Hanuman-Regular.ttf")
 }
 
 @font-face {
     font-family: "Inter";
-    src: url("./assets/fonts/static/Inter-Regular.ttf")
+    src: url("../assets/fonts/static/Inter-Regular.ttf")
+}
+
+@font-face {
+    font-family: "KaiseiDecol";
+    src: url("../assets/fonts/KaiseiDecol-Medium.ttf")
+}
+
+@font-face {
+    font-family:"FugazOne";
+    src: url("../assets/fonts/FugazOne-Regular.ttf")
 }
 
 header {
@@ -68,4 +78,46 @@ header {
     border: 1px solid #687C57;
     border-radius: 10px;
     box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+}
+
+#banner-lettering {
+    position: relative;
+    top: 250px;
+    left: 200px;
+}
+
+#lettering1 {
+    font-family: "KaiseiDecol", serif;
+    color: #2F2E41;
+    font-size: 64px;
+    margin-bottom: -40px;
+}
+
+#lettering2 {
+    font-family: "KaiseiDecol", serif;
+    color: #2F2E41;
+    font-size: 38px;
+    position: relative;
+    top: -23px;
+}
+
+#lettering3 {
+    font-family: "FugazOne", sans-serif;
+    font-size: 105px;
+    background: linear-gradient(90deg, #63AFDF 21.45%, #729555 79.14%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#lettering4 {
+    font-family: "KaiseiDecol", serif;
+    color: #2F2E41;
+    font-size: 103px;
+    margin-top: -74px;
+}
+
+#banner-image {
+    position: relative;
+    top: 150px;
 }
