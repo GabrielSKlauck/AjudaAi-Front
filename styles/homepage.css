@@ -18,6 +18,11 @@
     src: url("../assets/fonts/FugazOne-Regular.ttf")
 }
 
+@font-face {
+    font-family:"Jomhuria";
+    src: url("../assets/fonts/Jomhuria-Regular.ttf")
+}
+
 header {
     background-color: #EEEEEE;
 }
@@ -120,4 +125,35 @@ header {
 #banner-image {
     position: relative;
     top: 150px;
+}
+
+#about-us {
+    background-image: url('../assets/images/wavybackground.png')
+}
+
+#about-us-image {
+    width: 855px;
+    height: 571px;
+    padding:50px;
+    background-color: #FFF;
+    border-radius: 25px;
+}
+
+#about-us-title1 {
+    font-family: "Jomhuria", serif;
+    font-size: 96px;
+    color: #FFF;
+}
+
+#about-us-title2 {
+    font-family: "Jomhuria", serif;
+    font-size: 150px;
+    color: #FFF;
+}
+
+#about-us-description {
+    font-family: "Inter", sans-serif;
+    font-size: 34px;
+    color: #FFF;
+    text-align: justify;
 }
