@@ -134,26 +134,37 @@ header {
 #about-us-image {
     width: 855px;
     height: 571px;
-    padding:50px;
+    padding: 50px;
     background-color: #FFF;
     border-radius: 25px;
 }
 
+#about-us-text {
+    position: relative;
+    bottom: 115px;
+    right: 40px;
+}
 #about-us-title1 {
     font-family: "Jomhuria", serif;
     font-size: 96px;
     color: #FFF;
+    margin-bottom: -110px;
+    text-align: end;
 }
 
 #about-us-title2 {
     font-family: "Jomhuria", serif;
     font-size: 150px;
     color: #FFF;
+    margin-bottom: -20px;
+    text-align: end;
 }
 
 #about-us-description {
     font-family: "Inter", sans-serif;
-    font-size: 34px;
+    font-size: 30px;
     color: #FFF;
     text-align: justify;
+    width: 709px;
+    height: 586px;
 }
