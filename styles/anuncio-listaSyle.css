@@ -26,6 +26,7 @@
 .header {
     color: #000 !important;
     background-color: #EEEEEE !important;
+    font-family: 'Inter';
 }
 
 .menu li {
@@ -40,51 +41,23 @@ body {
     background-color: #7AADEA;
 }
 
-.cards{
+.cards {
     border-radius: 20px;
+}
+
+.cards h1{
+    font-family: 'Jomhuria';
+    font-size: xx-large;
+}
+
+.cards p{
+    font-family: 'Inter';
 }
 
 
 footer {
     text-align: center;
     background-color: #6F875A;
-}
-
-    
-
-/* MEDIA QUERYS RELACIONADOS AO HEADER */
-/* FAZ COM QUE A LISTA DE ONGS NAO DIMINUA MAIS DO QUE 780PX SE O TAMANHO DE TELA MAXIMO 
-CHEGAR EM 1558PX */
-@media (max-width: 1558px) {
-
-    .caixa-dir, .caixa-esq {
-        width: 780px !important;
-    }
-
-    
-}
-
-@media(max-width: 805px){
-    .caixa-dir img, .caixa-esq img{
-        display: none;
-    }
-
-    .caixa-dir, .caixa-esq {
-        width: 92vw !important;
-    }
-
-}
-
-@media(max-width: 535px){
-    .caixa-dir, .caixa-esq{
-        height: 300px !important;
-    }
-}
-
-@media(max-width: 458px){
-    .caixa-dir, .caixa-esq{
-        height: 360px !important;
-    }
 }
 
 /* ALINHA ITENS DE MENU PARA O MEIO SE PASSAR DE 766PX, A TRANSFORMAÇAO ENTRE OS ITENS DE MENU EM
@@ -102,14 +75,41 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     }
 }
 
+
+
 @media(max-width: 1280px){
     .cards{
         height: 480px !important;
     }
 }
+@media (max-width: 1024px) {
 
-@media(max-width: 1020px){
-    .cards{
-        height: 520px !important;
+    .cards {
+        height: 568px !important;
     }
+    
+}
+
+@media (max-width: 768px) {
+
+    .cards {
+        height: 504px !important;
+    }
+    
+}
+
+@media (max-width: 640px) {
+
+    .cards {
+        height: 400px !important;
+    }
+    
+}
+
+@media (max-width: 452px) {
+
+    .cards {
+        height: 420px !important;
+    }
+    
 }
