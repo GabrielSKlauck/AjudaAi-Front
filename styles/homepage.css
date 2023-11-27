@@ -58,40 +58,45 @@ header {
     color: #081509;
 }
 
-.header-menu-items a:hover {
+.header-menu-items a:hover, .dropdown:hover .dropbtn {
     padding: 2px 7px;
     background-color: rgba(208, 218, 199, 0.80);
     border-radius: 10px;
 }
 
-.header-menu-items a:hover > .header-menu-dropdown-list {
-    opacity: 1;
-    pointer-events: all;
+.dropdown .dropbtn {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
 }
 
 .header-menu-dropdown-list {
+    display: none;
     position: absolute;
-    width: 296px;
-    opacity: 1;
-    pointer-events: none;
+    background-color: #FFF;
+    width: 220px;
     border-radius: 5px;
     box-shadow: 1px 1px 4px 2px #ADADAD;
 }
 
-.header-menu-dropdown-list li {
-    background-color: #FFF;
-    padding: 10px;
-    font-family: "Inter", sans-serif;
-    font-size: 24px;
+.header-menu-dropdown-list a {
     color: #081509;
-    margin: 0 !important;
-    border-bottom: 0 !important;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    text-align: left;
 }
 
-.header-menu-dropdown-list li:hover {
+.header-menu-dropdown-list a:hover {
     background-color: rgba(208, 218, 199, 0.80);
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 0px;
+    padding: 10px;
+}
 
+.dropdown:hover .header-menu-dropdown-list {
+    display:block;
 }
 
 #sign-up {

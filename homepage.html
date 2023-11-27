@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AjudaAí - Voluntariado</title>
-  <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico.png" <link rel="stylesheet"
-    href="./styles/resetCss.css" />
+  <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico.png" />
+  <link rel="stylesheet" href="./styles/resetCss.css" />
   <link rel="stylesheet" href="./styles/homepage.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -49,12 +49,14 @@
       <div class="container mx-auto mt-2">
         <div class="flex header-menu-items space-x-6">
           <a href="#about-us">Quem Somos</a>
-          <a href="" class="flex">Voluntariado
-            <svg class="mt-2 ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 23 14"
-              fill="none">
-              <path d="M2 2.12964L11.3094 12.1904L20.6187 2.12964" stroke="#687C57" stroke-opacity="0.8"
-                stroke-width="3.375" stroke-linecap="round" stroke-linejoin="round" />
-            </svg></a>
+          <div class="dropdown">
+            <a class="dropbtn flex">Voluntariado
+              <svg class="mt-2 ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 23 14"
+                fill="none">
+                <path d="M2 2.12964L11.3094 12.1904L20.6187 2.12964" stroke="#687C57" stroke-opacity="0.8"
+                  stroke-width="3.375" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
             <ul class="header-menu-dropdown-list">
               <li>
                 <a href="#about-platform">Conheça a Plataforma</a>
@@ -66,6 +68,7 @@
                 <a href="anuncios-lista.html">Oportunidades</a>
               </li>
             </ul>
+          </div>
           <a href="#footer-right">Contato</a>
         </div>
       </div>
