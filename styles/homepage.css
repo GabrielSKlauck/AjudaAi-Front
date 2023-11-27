@@ -14,13 +14,17 @@
 }
 
 @font-face {
-    font-family:"FugazOne";
+    font-family: "FugazOne";
     src: url("../assets/fonts/FugazOne-Regular.ttf")
 }
 
 @font-face {
-    font-family:"Jomhuria";
+    font-family: "Jomhuria";
     src: url("../assets/fonts/Jomhuria-Regular.ttf")
+}
+
+* {
+    scroll-behavior: smooth;
 }
 
 header {
@@ -55,7 +59,7 @@ header {
 }
 
 .header-menu-items a:hover {
-    padding:  2px 7px;
+    padding: 2px 7px;
     background-color: rgba(208, 218, 199, 0.80);
     border-radius: 10px;
 }
@@ -69,7 +73,7 @@ header {
 }
 
 #sign-up:hover {
-    padding:  2px 7px;
+    padding: 2px 7px;
     background-color: rgba(208, 218, 199, 0.80);
     border-radius: 10px;
 }
@@ -144,6 +148,7 @@ header {
     bottom: 115px;
     right: 40px;
 }
+
 #about-us-title1 {
     font-family: "Jomhuria", serif;
     font-size: 96px;
@@ -167,4 +172,85 @@ header {
     text-align: justify;
     width: 709px;
     height: 586px;
+}
+
+#for-volunteers {
+    position: relative;
+    right: 5px;
+    bottom: 1px;
+    z-index: 2;
+}
+
+#for-ngos {
+    position: relative;
+    bottom: 812px;
+    right: 1px;
+    z-index: 1;
+}
+
+#folder-title-blue {
+    font-family: "Jomhuria", serif;
+    font-size: 86.4px;
+    color: #FFF;
+    text-shadow: 1.7999999523162842px 1.7999999523162842px 1.7999999523162842px #4A7C9B;
+    z-index: 7;
+    position: relative;
+    bottom: 1625px;
+    left: 35px;
+}
+
+#folder-title-green {
+    font-family: "Jomhuria", serif;
+    font-size: 86.4px;
+    color: #FFF;
+    text-shadow: 1.7999999523162842px 1.7999999523162842px 1.7999999523162842px #415430;
+    z-index: 8;
+    position: relative;
+    bottom: 2480px;
+    left: 1060px;
+
+}
+
+#sign-up-icon {
+    position: relative;
+    bottom: 1550px;
+    left: 105px;
+    z-index: 3;
+    width: 90px;
+    height: 90px;
+}
+
+#handshake-icon {
+    position: relative;
+    bottom: 1575px;
+    left: 105px;
+    z-index: 4;
+    width: 90px;
+    height: 90px;
+}
+
+#medal-icon {
+    position: relative;
+    bottom: 1620px;
+    left: 90px;
+    z-index: 5;
+    width: 110px;
+    height: 110px;
+}
+
+#feedback-icon {
+    position: relative;
+    bottom: 1670px;
+    left: 105px;
+    z-index: 6;
+    width: 90px;
+    height: 90px;
+}
+
+.folder-topic {
+    font-family: "Jomhuria", serif;
+    font-size: 57.6px;
+    color: #FFF;
+    text-shadow: 1.7999999523162842px 1.7999999523162842px 1.7999999523162842px rgba(0, 0, 0, 0.25);
+    z-index: 7;
 }
