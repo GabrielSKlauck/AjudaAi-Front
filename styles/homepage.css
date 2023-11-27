@@ -64,6 +64,36 @@ header {
     border-radius: 10px;
 }
 
+.header-menu-items a:hover > .header-menu-dropdown-list {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.header-menu-dropdown-list {
+    position: absolute;
+    width: 296px;
+    opacity: 1;
+    pointer-events: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 2px #ADADAD;
+}
+
+.header-menu-dropdown-list li {
+    background-color: #FFF;
+    padding: 10px;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    color: #081509;
+    margin: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.header-menu-dropdown-list li:hover {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 5px 5px 0px 0px;
+
+}
+
 #sign-up {
     padding: 2px 7px;
     font-family: "Inter", sans-serif;
