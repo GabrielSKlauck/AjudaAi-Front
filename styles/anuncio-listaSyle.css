@@ -1,0 +1,90 @@
+.header {
+    color: #000 !important;
+    background-color: #EEEEEE !important;
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu-logar li {
+    display: inline;
+}
+
+body {
+    background-color: #7AADEA;
+}
+
+.cards{
+    border-radius: 20px;
+}
+
+
+footer {
+    text-align: center;
+    background-color: #6F875A;
+}
+
+    
+
+/* MEDIA QUERYS RELACIONADOS AO HEADER */
+/* FAZ COM QUE A LISTA DE ONGS NAO DIMINUA MAIS DO QUE 780PX SE O TAMANHO DE TELA MAXIMO 
+CHEGAR EM 1558PX */
+@media (max-width: 1558px) {
+
+    .caixa-dir, .caixa-esq {
+        width: 780px !important;
+    }
+
+    
+}
+
+@media(max-width: 805px){
+    .caixa-dir img, .caixa-esq img{
+        display: none;
+    }
+
+    .caixa-dir, .caixa-esq {
+        width: 92vw !important;
+    }
+
+}
+
+@media(max-width: 535px){
+    .caixa-dir, .caixa-esq{
+        height: 300px !important;
+    }
+}
+
+@media(max-width: 458px){
+    .caixa-dir, .caixa-esq{
+        height: 360px !important;
+    }
+}
+
+/* ALINHA ITENS DE MENU PARA O MEIO SE PASSAR DE 766PX, A TRANSFORMAÇAO ENTRE OS ITENS DE MENU EM
+ICONES É FEITA NO HTML PELO USANDO TAILWIND */
+@media (max-width: 766px){
+    .btn-menu-list{
+        justify-content: center;
+    }
+}
+
+/* MEDIA QUERYS RELACIONADOS COM OS ANUNCIOS */
+@media(max-width: 1533px){
+    .cards{
+        height: 430px !important;
+    }
+}
+
+@media(max-width: 1280px){
+    .cards{
+        height: 480px !important;
+    }
+}
+
+@media(max-width: 1020px){
+    .cards{
+        height: 520px !important;
+    }
+}
