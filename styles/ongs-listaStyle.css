@@ -1,9 +1,33 @@
+@font-face {
+    font-family: "Hanuman";
+    src: url("../assets/fonts/Hanuman-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/static/Inter-Regular.ttf")
+}
+
+@font-face {
+    font-family: "KaiseiDecol";
+    src: url("../assets/fonts/KaiseiDecol-Medium.ttf")
+}
+
+@font-face {
+    font-family: "FugazOne";
+    src: url("../assets/fonts/FugazOne-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Jomhuria";
+    src: url("../assets/fonts/Jomhuria-Regular.ttf")
+}
+
 .header {
     color: #000 !important;
     background-color: #EEEEEE !important;
+    font-family: 'Inter';
 }
-
-
 
 .icon-menu-list:hover > .menu-list-itens{
     opacity: 1 !important;
@@ -47,8 +71,8 @@ body {
 }
 
 .caixa-esq {
-
     background-color: #A1D4F4;
+    margin-right: 1px;
 }
 
 .caixa-dir {
@@ -58,6 +82,18 @@ body {
 
 .caixa-dir, .caixa-esq{
     margin-top: 10px;
+    
+}
+
+.caixa-dir h1, .caixa-esq h1{
+    font-family: 'Jomhuria';
+    font-size: xx-large;
+    height: 30px;
+}
+
+.caixa-dir p, .caixa-esq p{
+    font-family: 'Inter';
+    font-size: 15px;
 }
 
 .img-anuncio-esq {
@@ -72,8 +108,10 @@ body {
 
 
 footer {
+    height: 552px; 
     text-align: center;
     background-color: #6F875A;
+    font-family: 'Inter';
 }
 
 /*  805px
@@ -83,13 +121,12 @@ footer {
 
 /* FAZ COM QUE A LISTA DE ONGS NAO DIMINUA MAIS DO QUE 780PX SE O TAMANHO DE TELA MAXIMO 
 CHEGAR EM 1558PX */
-@media (max-width: 1558px) {
+@media (max-width: 1627px) {
 
     .caixa-dir, .caixa-esq {
-        width: 780px !important;
+        width: 780px !important;        
     }
-
-    
+        
 }
 
 @media(max-width: 805px){
