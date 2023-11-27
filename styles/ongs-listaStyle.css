@@ -3,6 +3,37 @@
     background-color: #EEEEEE !important;
 }
 
+
+
+.icon-menu-list:hover > .menu-list-itens{
+    opacity: 1 !important;
+    display: block;
+}
+
+.menu-list-itens{
+    display: block;
+    opacity: 0;
+    top: 23px;
+}
+
+.menu-list-itens{
+    background-color: #A1D4F4;
+    color: white;
+    
+    
+}
+
+.menu-list-itens li{
+    transition: 0.8s;
+}
+
+.menu-list-itens li:hover{
+    background-color: #6F875A;
+    
+    color: #000;
+    
+}
+
 .menu li {
     display: inline;
 }
@@ -25,6 +56,9 @@ body {
     background-color: #65BFF8;
 }
 
+.caixa-dir, .caixa-esq{
+    margin-top: 10px;
+}
 
 .img-anuncio-esq {
     border-radius: 15px 0 0 15px;
@@ -72,6 +106,12 @@ CHEGAR EM 1558PX */
 @media(max-width: 535px){
     .caixa-dir, .caixa-esq{
         height: 300px !important;
+    }
+}
+
+@media(max-width: 585px){
+    .caixa-dir, .caixa-esq{
+        height: 320px !important;
     }
 }
 
