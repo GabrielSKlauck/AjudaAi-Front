@@ -53,13 +53,11 @@ header {
 .header-menu-items a {
     padding: 2px 7px;
     font-family: "Inter", sans-serif;
-    font-weight: 400;
     font-size: 20px;
     color: #081509;
 }
 
 .header-menu-items a:hover, .dropdown:hover .dropbtn {
-    padding: 2px 7px;
     background-color: rgba(208, 218, 199, 0.80);
     border-radius: 10px;
 }
@@ -71,16 +69,17 @@ header {
     color: #081509;
 }
 
-.header-menu-dropdown-list {
+.header-menu-dropdown-list, .menu-mobile-dropdown-list {
     display: none;
     position: absolute;
     background-color: #FFF;
     width: 220px;
     border-radius: 5px;
     box-shadow: 1px 1px 4px 2px #ADADAD;
+    z-index: 1;
 }
 
-.header-menu-dropdown-list a {
+.header-menu-dropdown-list a, .menu-mobile-dropdown-list a {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 18px;
@@ -89,20 +88,19 @@ header {
     text-align: left;
 }
 
-.header-menu-dropdown-list a:hover {
+.header-menu-dropdown-list a:hover, .menu-mobile-dropdown-list a:hover {
     background-color: rgba(208, 218, 199, 0.80);
     border-radius: 0px;
     padding: 10px;
 }
 
-.dropdown:hover .header-menu-dropdown-list {
+.dropdown:hover .header-menu-dropdown-list, .header-menu-mobile:hover .menu-mobile-dropdown-list {
     display:block;
 }
 
 #sign-up {
     padding: 2px 7px;
     font-family: "Inter", sans-serif;
-    font-weight: 400;
     font-size: 20px;
     color: #081509;
 }
@@ -113,10 +111,9 @@ header {
     border-radius: 10px;
 }
 
-#login {
+.login {
     padding: 2px 25px;
     font-family: "Inter", sans-serif;
-    font-weight: 400;
     font-size: 20px;
     color: #081509;
     border: 1px solid #687C57;
@@ -124,30 +121,18 @@ header {
     box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
 }
 
-#banner-lettering {
-    position: relative;
-    top: 250px;
-    left: 200px;
-}
-
 #lettering1 {
     font-family: "KaiseiDecol", serif;
     color: #2F2E41;
-    font-size: 64px;
-    margin-bottom: -40px;
 }
 
 #lettering2 {
     font-family: "KaiseiDecol", serif;
     color: #2F2E41;
-    font-size: 38px;
-    position: relative;
-    top: -23px;
 }
 
 #lettering3 {
     font-family: "FugazOne", sans-serif;
-    font-size: 105px;
     background: linear-gradient(90deg, #63AFDF 21.45%, #729555 79.14%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -157,17 +142,17 @@ header {
 #lettering4 {
     font-family: "KaiseiDecol", serif;
     color: #2F2E41;
-    font-size: 103px;
-    margin-top: -74px;
-}
-
-#banner-image {
-    position: relative;
-    top: 150px;
 }
 
 #about-us {
-    background-image: url('../assets/images/wavybackground.png')
+    background-image: url('../assets/images/wavybackground.png');
+}
+
+@media(max-width:820px) {
+    #about-us {
+        background-image: url('../assets/images/wavybackgroundmobile.png');
+        background-size: cover;
+    }
 }
 
 #about-us-image {
@@ -178,35 +163,22 @@ header {
     border-radius: 25px;
 }
 
-#about-us-text {
-    position: relative;
-    bottom: 115px;
-    right: 40px;
-}
-
 #about-us-title1 {
     font-family: "Jomhuria", serif;
-    font-size: 96px;
     color: #FFF;
-    margin-bottom: -110px;
     text-align: end;
 }
 
 #about-us-title2 {
     font-family: "Jomhuria", serif;
-    font-size: 150px;
     color: #FFF;
-    margin-bottom: -20px;
     text-align: end;
 }
 
 #about-us-description {
     font-family: "Inter", sans-serif;
-    font-size: 30px;
     color: #FFF;
     text-align: justify;
-    width: 709px;
-    height: 586px;
 }
 
 #for-volunteers {

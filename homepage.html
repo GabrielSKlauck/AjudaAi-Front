@@ -25,8 +25,8 @@
 <body>
   <header id="header-hp">
     <a href="homepage.html">
-      <div class="flex w-full h-1/6 items-center justify-between">
-        <div class="header-logo flex p-6 md:p-8 ml-1 md:ml-10">
+      <div class="w-full h-1/6 flex items-center justify-between">
+        <div class="header-logo flex p-6 lg:p-8 ml-1 lg:ml-10">
           <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
             <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
             <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
@@ -42,12 +42,12 @@
             <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
               stroke-width="0.285" />
           </svg>
-          <h1 class="brand-name hidden md:flex text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
+          <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
         </div>
     </a>
     <nav class="flex items-center justify-between">
       <div class="container mx-auto mt-2">
-        <div class="flex header-menu-items space-x-6">
+        <div class="flex header-menu-items space-x-6 hidden lg:flex">
           <a href="#about-us">Quem Somos</a>
           <div class="dropdown">
             <a class="dropbtn flex">Voluntariado
@@ -75,22 +75,51 @@
     </nav>
     <nav class="flex items-center justify-between">
       <div class="container mx-auto mt-2 mr-5">
-        <div class="flex header-menu-login space-x-2">
+        <div class="header-menu-mobile lg:hidden">
+          <a class="dropbtn-mobile">
+            <img id="icone-menu" class="w-[30px] h-[30px] opacity-80 mb-[10px]" src="./assets/images/menu-mobile.png"
+              alt="Ícone do menu." />
+          </a>
+          <div class="dropdown-menu-mobile">
+            <ul class="menu-mobile-dropdown-list right-2 top-[60px]">
+              <li>
+                <a href="#about-us">Quem somos</a>
+              </li>
+              <li>
+                <a href="#about-platform">Conheça a plataforma</a>
+              </li>
+              <li>
+                <a href="ongs-lista.html">ONGs</a>
+              </li>
+              <li>
+                <a href="anuncios-lista.html">Oportunidades</a>
+              </li>
+              <li>
+                <a href="#footer-right">Contato</a>
+              </li>
+              <li>
+                <a href="">Entrar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex header-menu-login space-x-2 hidden lg:flex">
           <a href="" id="sign-up">Criar Conta</a>
-          <a href="" id="login">Entrar</a>
+          <a href="" class="login">Entrar</a>
         </div>
       </div>
     </nav>
     </div>
   </header>
   <section id="banner">
-    <div class="w-full h-[650px] flex">
-      <div id="banner-lettering" class="w-2/4 h-[650px]">
-        <h1 id="lettering1">Venha ajudar causas</h1>
-        <h1><span id="lettering2">e fazer parte da</span><span id="lettering3"> FORÇA</span></h1>
-        <h1 id="lettering4">da mudança!</h1>
+    <div class="w-full h-auto flex flex-col lg:flex-row lg:pt-36 justify-between lg:px-40">
+      <div id="banner-lettering" class="items-center mx-auto leading-[2.5rem] pt-16 lg:leading-[4.5rem]">
+        <span id="lettering1" class="text-[32px] lg:text-[64px]">Venha ajudar causas</span><br>
+        <span id="lettering2" class="text-[19px] lg:text-[38px]">e fazer parte da</span><span id="lettering3"
+          class="text-[52px] lg:text-[105px]"> FORÇA</span><br>
+        <span id="lettering4" class="text-[51px] lg:text-[103px]">da mudança!</span>
       </div>
-      <div id="banner-image" class="w-2/4 h-[850px] flex">
+      <div id="banner-image" class="flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="748.77502"
           height="487.43995" viewBox="0 0 748.77502 487.43995">
           <path
@@ -207,9 +236,15 @@
         </svg>
       </div>
   </section>
-  <section id="about-us">
-    <div class="w-full h-[1273px] pt-[300px] flex flex-row items-center justify-center space-x-36">
-      <div id="about-us-image-container">
+  <section id="about-us" class="pt-32">
+    <div class="w-full lg:h-[300px] flex flex-row-reverse">
+      <h1 class="leading-[2.5rem] lg:leading-[4.5rem] self-end text-right mr-8 lg:mr-28">
+        <div id="about-us-title1" class="text-[48px] lg:text-[96px]">Quem</div>
+        <div id="about-us-title2" class="text-[75px] lg:text-[150px]">SOMOS</div>
+      </h1>
+    </div>
+    <div class="w-full h-auto pb-20 pt-10 px-4 lg:px-28 flex flex-row items-center justify-center lg:space-x-28">
+      <div id="about-us-image-container" class="hidden lg:flex">
         <svg id="about-us-image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           width="660.67004" height="513.66796" viewBox="0 0 660.67004 513.66796">
           <polygon
@@ -322,10 +357,8 @@
           <circle cx="232.39196" cy="147.33817" r="15.00444" fill="#e6e6e6" />
         </svg>
       </div>
-      <div id="about-us-text">
-        <h1 id="about-us-title1">Quem</h1>
-        <h1 id="about-us-title2">SOMOS</h1>
-        <p id="about-us-description">
+      <div id="about-us-text" class="max-w-full mx-4">
+        <p id="about-us-description" class="text-[20px] lg:text-[30px] break-words">
           <strong>Seja bem-vindo(a) à AjudaAí! <br>
             A plataforma que conecta pessoas interessadas à ONGs qualificadas, com dinamismo e praticidade.
             <br>
