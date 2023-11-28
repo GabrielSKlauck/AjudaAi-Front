@@ -95,7 +95,7 @@ header {
     align-items: center;
     justify-content: flex-start;
     border-radius: 15px;
-
+    padding: 10px;
 }
 
 
@@ -222,7 +222,7 @@ header {
     width: 866px;
     height: 2px;
     background-color: #595959;
-    margin-left: 125px;
+    margin-left: 10%;
     margin-bottom: 15px;
 }
 
@@ -243,7 +243,7 @@ header {
     color: #333;
     font-weight: 300;
     font-family: 'Roboto', sans-serif !important;
-    
+
 }
 
 #foto-perfil-ong {
@@ -265,17 +265,17 @@ header {
 }
 
 .perfil-container p {
-    font-size: 24px ;
+    font-size: 24px;
 }
 
 #foto-ong {
     display: flex;
     width: 400px;
     height: 300px;
-    
+
     justify-content: center;
     align-content: center;
-    
+
 }
 
 .perfil-usuario h1 {
@@ -284,7 +284,7 @@ header {
 }
 
 .menu-header {
-   opacity: 0;
+    opacity: 0;
 }
 
 
@@ -302,46 +302,25 @@ header {
         flex-direction: column;
     }
 
-    header {
-        width: 100%;
-        height: 100px;
-        flex-shrink: 0;
-        background-color: #EEE;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-    }
+    
 
     .cor1 {
-        color: #60B4E9;
-        font-family: Hanuman;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        display: none;
     }
 
     .cor2 {
-        color: #6A8C4E;
+        display: none;
     }
 
-    .svg-container {
-        display: flex;
-        align-items: center;
-    }
+    
 
     .svg-container svg {
-        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .main {
-        width: 100vw;
-        height: 90vh;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
+    
 
     .container-feed {
         width: 100%;
@@ -367,19 +346,9 @@ header {
     }
 
 
-    .header-chat {
-        height: 50px !important;
-        width: 100% !important;
-        background-color: #c3e8ff !important;
-        border-radius: 15px 15px 0 0;
-    }
+  
 
-    .header-chat>h1 {
-        font-size: 18px;
-        text-align: center;
-        justify-content: center;
-    }
-
+    
     .rodape-feed {
         position: relative;
         top: 10px;
@@ -396,20 +365,20 @@ header {
         gap: 10%;
         justify-content: center;
         align-items: center;
-        margin-top: 15px;
+      margin-bottom: 20px;
         width: 19;
         height: 21;
     }
 
     .linha-feed {
         display: flex;
-        width: 400px;
+        width: 80%;
         height: 2px;
         background-color: #595959;
-        margin-left: 90px;
-        margin-bottom: 15px;
+        justify-content: center;
+        align-items: center;
     }
-    
+
 
     .texto-feed {
         padding: 20px;
@@ -450,5 +419,27 @@ header {
         opacity: 1;
         margin: 30px;
     }
-    
+
+    .container-feed {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+
+    }
+
+    .svg-container{
+        display: flex;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .menu-header:target {
+        display: none;
+    }
 }
