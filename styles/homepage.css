@@ -266,44 +266,26 @@ footer {
     background-color: #E0E8D9;
 }
 
-#footer-left {
-    margin-left: 250px;
-    padding: 40px 200px 20px 0px;
-    border-right: 1px solid #3F4C33;
-}
-
-#footer-logo {
-    margin-bottom: 25px;
-}
-
 #footer-menu-list li {
     color: #5f7051;
     font-family: "Inter", sans-serif;
     font-size: 20px;
-    margin-bottom: 10px;
 }
 
 #footer-menu-list li:hover {
     color: #3F4D33;
 }
 
-#footer-right {
-    margin-left: 100px;
-    margin-top: -90px;
-}
-
 #contact-title {
     color: #3F4C33;
     font-family: "Hanuman", serif;
     font-size: 32px;
-    padding-bottom: 15px;
-    margin-left: 5px;
 }
 
 #contact-info {
     color: #4F5F42;
     font-family: "Inter", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     padding-left: 10px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
