@@ -43,6 +43,7 @@ body {
 
 .cards {
     border-radius: 20px;
+    background-color: rgb(19, 168, 234);
 }
 
 .cards h1{
@@ -112,4 +113,10 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
         height: 420px !important;
     }
     
+}
+
+@media(max-width: 390px) {
+    .cards{
+        height: 478px !important;
+    }
 }
