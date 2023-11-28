@@ -283,6 +283,10 @@ header {
     float: right;
 }
 
+.menu-header {
+   opacity: 0;
+}
+
 
 @media screen and (max-width: 600px) {
     * {
@@ -393,6 +397,8 @@ header {
         justify-content: center;
         align-items: center;
         margin-top: 15px;
+        width: 19;
+        height: 21;
     }
 
     .linha-feed {
@@ -439,6 +445,10 @@ header {
         display: none;
     }
 
-    
+    .menu-header {
+        display: flex;
+        opacity: 1;
+        margin: 30px;
+    }
     
 }
