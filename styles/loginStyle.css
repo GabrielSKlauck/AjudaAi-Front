@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'lilita';
+    font-family: 'marko';
+    src: url(./assets/fonts/LilitaOne-Regular.ttf);
+    src: url(./assets/fonts/MarkoOne-Regular.ttf);
+}
+
+.Body {
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+}
+
+.card {
+
+    border-radius: 20px;
+}
+
+.menu li {
+    padding: 10px;
+}
+
+.menu-list {
+    transform: rotate(90deg);
+}
+
+.menu {
+    margin: 5px;
+    text-transform: uppercase;
+    border-bottom: 4px solid transparent;
+    margin-bottom: -4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.tela1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: lilita ;
+    width: 50%;
+    height: 100vh;
+    float: left;
+    background-color: #60B4E9;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.tela2 {
+    margin-top: 150px;
+    font-family: lilita ;
+    width: 50%;
+    height: 100vh;
+    float: left;
+    background-color: #ffffff;
+    color: #60B4E9;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.Texto2 {
+    color: #B4B4B4;
+}
+
+.Conta {
+    color: #60B4E9;
+    font-family: marko;
+    font-size: 50px;
+}
+
+.Nome {
+    margin: auto;
+    margin-bottom: 7%;
+    width: 370px;
+    height: 35px;
+    background: #F6F6F6;
+    color: #686868;
+    font-family: Marko;
+    font-size: 20px;
+}
+
+.Icone1 {
+    width: 30px;
+    height: 1px;
+}
+
+.CPF {
+    margin: auto;
+    margin-bottom: 8%;
+    width: 370px;
+    height: 35px;
+    color: #686868;
+    font-family: Marko;
+    font-size: 20px;
+}
+
+.Icone2 {
+    width: 30px;
+    height: 1px;
+}
+
+.Email {
+    margin: auto;
+    margin-bottom: 12%;
+    width: 370px;
+    height: 10px;
+    background: #F6F6F6;
+    color: #686868;
+    font-family: Marko;
+    font-size: 20px;
+
+}
+
+.Icone3 {
+    width: 28px;
+    height: 1px;
+}
+
+.Senha {
+    margin: auto;
+    width: 370px;
+    height: 10px;
+    background: #F6F6F6;
+
+}
+
+.Icone4 {
+
+    width: 30px;
+    height: 1px;
+}
+.botao{
+    transition:transform 0.10s ease;
+    color:#F3F3F3;
+    margin: 100px auto;
+    color: #F3F3F3;
+    font-family: Marko;
+    font-size: 17px;
+    border-radius: 21px;
+    background: #60B4E9;
+    width: 196px;
+    height: 35px;
+    border: 1px solid #000000;
+    font: 1em sans-serif;
+}
+.botao:hover{
+    background-color:#60B4E9;
+    color: white;
+    transform: scale(1.2)
+}
+.register{
+    width: 170px;
+    height: 30px;
+    background: #60B4E9;
+    border-radius: 21px;
+    border: 1px solid #fff;
+    font-size: 18px;
+    transition:transform 0.10s ease;
+    font: 1em sans-serif;
+}
+.register:hover{
+    background-color:#60B4E9;
+    color: white;
+    transform: scale(1.2)
+}
+.inicio:hover{
+    color:#60B4E9;
+}
+.causas:hover{
+    color:#60B4E9;
+}
