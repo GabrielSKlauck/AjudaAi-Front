@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: sans-serif !important;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    flex-shrink: 0;
+    background-color: #EEE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+
+}
+
+.cor1 {
+    color: #60B4E9;
+    font-family: Hanuman;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.cor2 {
+    color: #6A8C4E;
+}
+
+.svg-container {
+    display: flex;
+    align-items: center;
+}
+
+.svg-container svg {
+    margin-right: 10px;
+
+}
+
+.quadrados {
+    display: flex;
+
+    justify-content: center;
+
+}
+
+.quadrado-quem-somos,
+.quadrado-voluntariado,
+.quadrado-contato {
+    width: 300px;
+    height: 100px;
+    background-color: #EEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.3s;
+    margin-top: 0;
+
+
+}
+
+.quadrado-quem-somos:hover,
+.quadrado-voluntariado:hover,
+.quadrado-contato:hover {
+    background-color: rgba(208, 218, 199, 0.80);
+    transition: 0.3s;
+}
+
+.quadrado-quem-somos>h1,
+.quadrado-voluntariado>h2,
+.quadrado-contato>h3 {
+    font-family: Inter;
+    font-size: 25px !important;
+}
+
+
+.perfil-usuario {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background-color: #EEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+
+.perfil-usuario img {
+    width: 156px;
+    height: 136px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    object-fit: cover;
+}
+
+.main {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.container-perfil-usuario {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-feed {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+
+.feed {
+    width: 100%;
+    height: 80%;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    position: relative;
+
+}
+
+.postar-feed {
+    width: 100%;
+    height: 15%;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+
+}
+
+.container-chat {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 5%;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    transition: height 300ms ease-in-out;
+    background-color: #FAFAFA;
+
+}
+
+
+.chat:hover {
+    height: 75%;
+    width: 100%;
+
+}
+
+.header-chat {
+    height: 50px !important;
+    width: 100% !important;
+    background-color: #c3e8ff !important;
+    border-radius: 15px 15px 0 0;
+}
+
+.header-chat>h1 {
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+}
+
+
+
+.rodape-feed {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+
+
+
+
+}
+
+.botoes-feed {
+    display: flex;
+    gap: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.linha-feed {
+    display: flex;
+    width: 866px;
+    height: 2px;
+    background-color: #595959;
+    margin-left: 10%;
+    margin-bottom: 15px;
+}
+
+
+.texto-feed {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+}
+
+.texto-feed h1 {
+    font-size: 26px;
+    line-height: 1.4;
+    color: #333;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif !important;
+
+}
+
+#foto-perfil-ong {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+    display: inline-block;
+}
+
+.perfil-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+}
+
+.perfil-container p {
+    font-size: 24px;
+}
+
+#foto-ong {
+    display: flex;
+    width: 400px;
+    height: 300px;
+
+    justify-content: center;
+    align-content: center;
+
+}
+
+.perfil-usuario h1 {
+    text-align: center;
+    float: right;
+}
+
+.menu-header {
+    opacity: 0;
+}
+
+
+@media screen and (max-width: 600px) {
+    * {
+        font-family: sans-serif !important;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+
+    .cor1 {
+        display: none;
+    }
+
+    .cor2 {
+        display: none;
+    }
+
+    
+
+    .svg-container svg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+
+    .container-feed {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .feed {
+        width: 100%;
+        height: auto;
+        background-color: #FAFAFA;
+        border-radius: 15px;
+        position: relative;
+    }
+
+
+    .container-chat,
+    .container-perfil-usuario {
+        display: none;
+    }
+
+
+  
+
+    
+    .rodape-feed {
+        position: relative;
+        top: 10px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        justify-content: flex-end;
+    }
+
+
+    .botoes-feed {
+        display: flex;
+        gap: 10%;
+        justify-content: center;
+        align-items: center;
+      margin-bottom: 20px;
+        width: 19;
+        height: 21;
+    }
+
+    .linha-feed {
+        display: flex;
+        width: 80%;
+        height: 2px;
+        background-color: #595959;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .texto-feed {
+        padding: 20px;
+    }
+
+    .texto-feed h1 {
+        font-size: 18px;
+        line-height: 1.4;
+        color: #333;
+    }
+
+    #foto-perfil-ong {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 15px;
+        object-fit: cover;
+        display: inline-block;
+    }
+
+    #foto-ong {
+        display: flex;
+        width: 100%;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .quadrado-quem-somos,
+    .quadrado-contato,
+    .quadrado-voluntariado {
+        display: none;
+    }
+
+    .menu-header {
+        display: flex;
+        opacity: 1;
+        margin: 30px;
+    }
+
+    .container-feed {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+
+    }
+
+    .svg-container{
+        display: flex;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .menu-header:target {
+        display: none;
+    }
+}
