@@ -146,12 +146,12 @@ header {
 
 #about-us {
     background-image: url('../assets/images/wavybackground.png');
+    background-size: cover;
 }
 
 @media(max-width:1120px) {
     #about-us {
         background-image: url('../assets/images/wavybackgroundmobile.png');
-        background-size: cover;
     }
 }
 
