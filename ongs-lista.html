@@ -22,43 +22,93 @@
 </head>
 
 <body>
-  <header class="header w-full h-20 ">
-    
-    <div class="container mx-auto flex justify-between">
-      <img src="assets/images/Logo.png" alt="" class="w-56 mt-4">
-
-      <!-- Todo o header como inter-->
-      <div class="icon-menu-list font-bold md:hidden btn-menu-list mx-auto justify-between flex self-center relative">
-        | | |
-        <ul class="menu-list-itens hidden md:flex absolute w-28 left-0">
-          <li><a href="">Quem Somos</a></li>
-          <li><a href="">Voluntariado</a></li>
-          <li><a href="">Contato</a></li>
-        </ul>
+  <header id="header-hp">
+    <a href="homepage.html">
+      <div class="w-full h-1/6 flex items-center justify-between">
+        <div class="header-logo flex p-6 lg:p-8 ml-1 lg:ml-10">
+          <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
+            <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
+            <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
+            <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+            <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z" fill="#D9D9D9" />
+            <path
+              d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+              stroke="#324424" stroke-width="0.285" />
+            <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57" stroke="#324424"
+              stroke-width="0.285" />
+            <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+              stroke-width="0.285" />
+            <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+              stroke-width="0.285" />
+          </svg>
+          <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
+        </div>
+    </a>
+    <nav class="flex items-center justify-between">
+      <div class="container mx-auto mt-2">
+        <div class="flex header-menu-items space-x-6 hidden lg:flex">
+          <a href="#about-us">Quem Somos</a>
+          <div class="dropdown">
+            <a class="dropbtn flex">Voluntariado
+              <svg class="mt-2 ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 23 14"
+                fill="none">
+                <path d="M2 2.12964L11.3094 12.1904L20.6187 2.12964" stroke="#687C57" stroke-opacity="0.8"
+                  stroke-width="3.375" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <ul class="header-menu-dropdown-list">
+              <li>
+                <a href="#about-platform">Conheça a Plataforma</a>
+              </li>
+              <li>
+                <a href="ongs-lista.html">ONGs</a>
+              </li>
+              <li>
+                <a href="anuncios-lista.html">Oportunidades</a>
+              </li>
+            </ul>
+          </div>
+          <a href="#footer-right">Contato</a>
+        </div>
       </div>
-
-      <ul class="menu mt-7 hidden md:flex">
-        <li class="mr-4"><a href="#" class="">Quem Somos</a></li>
-        <li class="mr-4"><a href="#" class="">Volutariado</a></li>
-        <li class="mr-4"><a href="#" class="">Contato</a></li>
-
-      </ul>
-
-      <div class="icon-menu-list md:hidden btn-login-list mx-auto justify-between self-center relative">
-        <img src="assets/images/login.png" alt="">
-        <ul class="menu-list-itens menu-list-itens-login font-bold hidden md:flex absolute w-24">
-          <li><a href="">Criar conta</a></li>
-          <li><a href=""></a>Logar</li>
-        </ul>
+    </nav>
+    <nav class="flex items-center justify-between">
+      <div class="container mx-auto mt-2 mr-5">
+        <div class="header-menu-mobile lg:hidden">
+          <a class="dropbtn-mobile">
+            <img id="icone-menu" class="w-[30px] h-[30px] opacity-80 mb-[10px]" src="./assets/images/menu-mobile.png"
+              alt="Ícone do menu." />
+          </a>
+          <div class="dropdown-menu-mobile">
+            <ul class="menu-mobile-dropdown-list right-2 top-[60px]">
+              <li>
+                <a href="#about-us">Quem somos</a>
+              </li>
+              <li>
+                <a href="#about-platform">Conheça a plataforma</a>
+              </li>
+              <li>
+                <a href="ongs-lista.html">ONGs</a>
+              </li>
+              <li>
+                <a href="anuncios-lista.html">Oportunidades</a>
+              </li>
+              <li>
+                <a href="#footer-right">Contato</a>
+              </li>
+              <li>
+                <a href="">Entrar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex header-menu-login space-x-2 hidden lg:flex">
+          <a href="" id="sign-up">Criar Conta</a>
+          <a href="" class="login">Entrar</a>
+        </div>
       </div>
-      <ul class="menu-logar mt-7 hidden md:flex">
-        <li><a href="#" class="mr-5">Criar Conta</a></li>
-        <li><a href="#" class="px-3 py-2 bg-gray-300 rounded-3xl bg-slate-300">Logar</a></li>
-      </ul>
+    </nav>
     </div>
-
-
-
   </header>
 
   <div id="container" class="flex flex-col items-center">
@@ -139,16 +189,66 @@
   </div>
 
   <!--Tudo inter-->
-  <footer class="mt-10 flex flex-col items-center">
-
-    <div class="flex mt-4">
-      <img src="assets/images/email.png" alt="" class="mr-3">
-      <span>email@email.com</span>
-    </div>
-
-    <div class="flex">
-      <img src="assets/images/fone.png" alt="" class="mr-3">
-      <span>(47) 0000-0000</span>
+  <footer>
+    <div class="w-full h-[500px] flex flex-col ml-16 lg:flex-row lg:items-center lg:justify-stretch">
+      <div id="footer-left" class="pt-10 mb-8 lg:ml-[250px] lg:pt-10 lg:pr-[200px] lg:pb-5 lg:border-r lg:border-solid lg:border-r-[#3F4C33]">
+        <a href="#header-hp">
+          <div id="footer-logo" class="flex mb-6">
+            <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
+              <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
+              <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
+              <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+              <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z" fill="#D9D9D9" />
+              <path
+                d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+                stroke="#324424" stroke-width="0.285" />
+              <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57" stroke="#324424"
+                stroke-width="0.285" />
+              <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+                stroke-width="0.285" />
+              <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+                stroke-width="0.285" />
+            </svg>
+            <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
+          </div>
+        </a>
+        <div class="flex">
+          <ul id="footer-menu-list" class="leading-10">
+            <li>
+              <a href="#about-us">Quem Somos</a>
+            </li>
+            <li>
+              <a href="#about-platform">Conheça a plataforma</a>
+            </li>
+            <li>
+              <a href="ongs-lista.html">ONGs</a>
+            </li>
+            <li>
+              <a href="anuncios-lista.html">Oportunidades</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="footer-right" class="w-fit pt-10 lg:mb-40 lg:ml-20 border-t border-solid border-t-[#3F4C33] lg:border-none">
+        <div>
+          <h1 id="contact-title" class="pb-[15px] lg:ml-[5px]">Contato</h1>
+          <div class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
+              width="50px" height="50px">
+              <g fill="#4f5f42" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                style="mix-blend-mode: normal">
+                <g transform="scale(5.12,5.12)">
+                  <path
+                    d="M14,4c-5.51133,0 -10,4.48867 -10,10v22c0,5.51133 4.48867,10 10,10h22c5.51133,0 10,-4.48867 10,-10v-22c0,-5.51133 -4.48867,-10 -10,-10zM14,6h22c4.43067,0 8,3.56933 8,8v22c0,4.43067 -3.56933,8 -8,8h-22c-4.43067,0 -8,-3.56933 -8,-8v-22c0,-4.43067 3.56933,-8 8,-8zM13,15c-1.64497,0 -3,1.35503 -3,3v14c0,1.64497 1.35503,3 3,3h24c1.64497,0 3,-1.35503 3,-3v-14c0,-1.64497 -1.35503,-3 -3,-3zM13.41406,17h23.16992l-8.90625,8.89258c-1.49279,1.49041 -3.8809,1.49024 -5.37305,-0.00195zM38,18.41211v13.17578l-6.59766,-6.58789zM12,18.41406l6.58594,6.58594l-6.58594,6.58594zM29.98828,26.41211l6.59766,6.58789h-23.17188l6.58594,-6.58594l0.89063,0.89063c2.25585,2.25585 5.94201,2.25751 8.19922,0.00391z" />
+                </g>
+              </g>
+            </svg>
+            <h2 id="contact-info" class="pl-2.5 pt-2.5">contato@ajudaai.com.br</h2>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
