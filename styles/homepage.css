@@ -1,0 +1,347 @@
+@font-face {
+    font-family: "Hanuman";
+    src: url("../assets/fonts/Hanuman-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/static/Inter-Regular.ttf")
+}
+
+@font-face {
+    font-family: "KaiseiDecol";
+    src: url("../assets/fonts/KaiseiDecol-Medium.ttf")
+}
+
+@font-face {
+    font-family: "FugazOne";
+    src: url("../assets/fonts/FugazOne-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Jomhuria";
+    src: url("../assets/fonts/Jomhuria-Regular.ttf")
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #EEEEEE;
+}
+
+#logo {
+    width: 35px;
+    height: 35px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-family: "Hanuman", serif;
+}
+
+.brand-l {
+    color: #6A8C4E;
+}
+
+.brand-r {
+    color: #60B4E9;
+}
+
+.header-menu-items a {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+.header-menu-items a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
+}
+
+.dropdown .dropbtn {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+.header-menu-dropdown-list, .menu-mobile-dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    width: 220px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 2px #ADADAD;
+    z-index: 1;
+}
+
+.header-menu-dropdown-list a, .menu-mobile-dropdown-list a {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    text-align: left;
+}
+
+.header-menu-dropdown-list a:hover, .menu-mobile-dropdown-list a:hover {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 0px;
+    padding: 10px;
+}
+
+.dropdown:hover .header-menu-dropdown-list, .header-menu-mobile:hover .menu-mobile-dropdown-list {
+    display:block;
+}
+
+#sign-up {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+#sign-up:hover {
+    padding: 2px 7px;
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
+}
+
+.login {
+    padding: 2px 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    border: 1px solid #687C57;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+}
+
+#lettering1 {
+    font-family: "KaiseiDecol", serif;
+    color: #2F2E41;
+}
+
+#lettering2 {
+    font-family: "KaiseiDecol", serif;
+    color: #2F2E41;
+}
+
+#lettering3 {
+    font-family: "FugazOne", sans-serif;
+    background: linear-gradient(90deg, #63AFDF 21.45%, #729555 79.14%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#lettering4 {
+    font-family: "KaiseiDecol", serif;
+    color: #2F2E41;
+}
+
+#about-us {
+    background-image: url('../assets/images/wavybackground.png');
+}
+
+@media(max-width:1120px) {
+    #about-us {
+        background-image: url('../assets/images/wavybackgroundmobile.png');
+        background-size: cover;
+    }
+}
+
+#about-us-image {
+    width: 855px;
+    height: 571px;
+    padding: 50px;
+    background-color: #FFF;
+    border-radius: 25px;
+}
+
+#about-us-title1 {
+    font-family: "Jomhuria", serif;
+    color: #FFF;
+    text-align: end;
+}
+
+#about-us-title2 {
+    font-family: "Jomhuria", serif;
+    color: #FFF;
+    text-align: end;
+}
+
+#about-us-description {
+    font-family: "Inter", sans-serif;
+    color: #FFF;
+    text-align: justify;
+}
+
+#for-volunteers {
+    position: relative;
+    right: 5px;
+    bottom: 1px;
+    z-index: -1;
+}
+
+#for-ngos {
+    position: relative;
+    bottom: 812px;
+    right: 1px;
+    z-index: -2;
+}
+
+#folder-title-blue {
+    font-family: "Jomhuria", serif;
+    font-size: 86.4px;
+    color: #FFF;
+    text-shadow: 1.7999999523162842px 1.7999999523162842px 1.7999999523162842px #4A7C9B;
+    z-index: 1;
+    position: relative;
+    bottom: 1625px;
+    left: 35px;
+}
+
+.icon-mobile {
+    width: 50px;
+    height: 50px;
+    padding-bottom: 5px;
+}
+
+.topic-mobile {
+    font-family: "Jomhuria", serif;
+    font-size: 36px;
+    color: #FFF;
+    line-height: 1;
+    text-align: center;
+}
+
+#folder-title-green {
+    font-family: "Jomhuria", serif;
+    font-size: 86.4px;
+    color: #FFF;
+    text-shadow: 1.7999999523162842px 1.7999999523162842px 1.7999999523162842px #415430;
+    z-index: 1;
+    position: relative;
+    bottom: 2480px;
+    left: 1060px;
+    width: fit-content;
+}
+
+#sign-up-icon-volunteer {
+    position: relative;
+    bottom: 1550px;
+    left: 105px;
+    z-index: 1;
+    width: 90px;
+    height: 90px;
+}
+
+#handshake-icon-volunteer {
+    position: relative;
+    bottom: 1575px;
+    left: 105px;
+    z-index: 1;
+    width: 90px;
+    height: 90px;
+}
+
+#medal-icon-volunteer {
+    position: relative;
+    bottom: 1620px;
+    left: 90px;
+    z-index: 1;
+    width: 110px;
+    height: 110px;
+}
+
+#feedback-icon-volunteer {
+    position: relative;
+    bottom: 1670px;
+    left: 105px;
+    z-index: 1;
+    width: 90px;
+    height: 90px;
+}
+
+#sign-up-icon-ngo {
+    position: relative;
+    bottom: 2405px;
+    left: 105px;
+    z-index: -2;
+    width: 90px;
+    height: 90px;
+}
+
+#advertisement-icon-ngo {
+    position: relative;
+    bottom: 2430px;
+    left: 105px;
+    z-index: -2;
+    width: 90px;
+    height: 90px;
+}
+
+#training-icon-ngo {
+    position: relative;
+    bottom: 2460px;
+    left: 105px;
+    z-index: -2;
+    width: 90px;
+    height: 90px;
+}
+
+#feedback-icon-ngo {
+    position: relative;
+    bottom: 2505px;
+    left: 105px;
+    z-index: -2;
+    width: 90px;
+    height: 90px;
+}
+
+.folder-topic-volunteer {
+    font-family: "Jomhuria", serif;
+    font-size: 57.6px;
+    color: #FFF;
+    text-shadow: 1.7999999523162842px 1.7999999523162842px 1.7999999523162842px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.folder-topic-ngo {
+    font-family: "Jomhuria", serif;
+    font-size: 57.6px;
+    color: #FFF;
+    text-shadow: 1.7999999523162842px 1.7999999523162842px 1.7999999523162842px rgba(0, 0, 0, 0.25);
+    z-index: -2;
+}
+
+footer {
+    background-color: #E0E8D9;
+}
+
+#footer-menu-list li {
+    color: #5f7051;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
+
+#footer-menu-list li:hover {
+    color: #3F4D33;
+}
+
+#contact-title {
+    color: #3F4C33;
+    font-family: "Hanuman", serif;
+    font-size: 32px;
+}
+
+#contact-info {
+    color: #4F5F42;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
