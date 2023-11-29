@@ -1,6 +1,128 @@
-.header {
-    color: #000 !important;
-    background-color: #EEEEEE !important;
+@font-face {
+    font-family: "Hanuman";
+    src: url("../assets/fonts/Hanuman-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/static/Inter-Regular.ttf")
+}
+
+@font-face {
+    font-family: "KaiseiDecol";
+    src: url("../assets/fonts/KaiseiDecol-Medium.ttf")
+}
+
+@font-face {
+    font-family: "FugazOne";
+    src: url("../assets/fonts/FugazOne-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Jomhuria";
+    src: url("../assets/fonts/Jomhuria-Regular.ttf")
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #EEEEEE;
+}
+
+#logo {
+    width: 35px;
+    height: 35px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-family: "Hanuman", serif;
+}
+
+.brand-l {
+    color: #6A8C4E;
+}
+
+.brand-r {
+    color: #60B4E9;
+}
+
+.header-menu-items a {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+.header-menu-items a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
+}
+
+.dropdown .dropbtn {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+.header-menu-dropdown-list, .menu-mobile-dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    width: 220px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 2px #ADADAD;
+    z-index: 1;
+}
+
+.header-menu-dropdown-list a, .menu-mobile-dropdown-list a {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    text-align: left;
+}
+
+.header-menu-dropdown-list a:hover, .menu-mobile-dropdown-list a:hover {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 0px;
+    padding: 10px;
+}
+
+.dropdown:hover .header-menu-dropdown-list, .header-menu-mobile:hover .menu-mobile-dropdown-list {
+    display:block;
+}
+
+#sign-up {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+#sign-up:hover {
+    padding: 2px 7px;
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
+}
+
+.login {
+    padding: 2px 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    border: 1px solid #687C57;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
 }
 
 .menu li {
@@ -15,51 +137,46 @@ body {
     background-color: #7AADEA;
 }
 
-.cards{
+.cards {
     border-radius: 20px;
+    background-color: rgb(19, 168, 234);
+}
+
+.cards h1{
+    font-family: 'Jomhuria';
+    font-size: xx-large;
+}
+
+.cards p{
+    font-family: 'Inter';
 }
 
 
 footer {
-    text-align: center;
-    background-color: #6F875A;
+    margin-top: 20px;
+    background-color: #E0E8D9;
 }
 
-    
-
-/* MEDIA QUERYS RELACIONADOS AO HEADER */
-/* FAZ COM QUE A LISTA DE ONGS NAO DIMINUA MAIS DO QUE 780PX SE O TAMANHO DE TELA MAXIMO 
-CHEGAR EM 1558PX */
-@media (max-width: 1558px) {
-
-    .caixa-dir, .caixa-esq {
-        width: 780px !important;
-    }
-
-    
+#footer-menu-list li {
+    color: #5f7051;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
 }
 
-@media(max-width: 805px){
-    .caixa-dir img, .caixa-esq img{
-        display: none;
-    }
-
-    .caixa-dir, .caixa-esq {
-        width: 92vw !important;
-    }
-
+#footer-menu-list li:hover {
+    color: #3F4D33;
 }
 
-@media(max-width: 535px){
-    .caixa-dir, .caixa-esq{
-        height: 300px !important;
-    }
+#contact-title {
+    color: #3F4C33;
+    font-family: "Hanuman", serif;
+    font-size: 32px;
 }
 
-@media(max-width: 458px){
-    .caixa-dir, .caixa-esq{
-        height: 360px !important;
-    }
+#contact-info {
+    color: #4F5F42;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
 }
 
 /* ALINHA ITENS DE MENU PARA O MEIO SE PASSAR DE 766PX, A TRANSFORMAÇAO ENTRE OS ITENS DE MENU EM
@@ -77,14 +194,47 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     }
 }
 
+
+
 @media(max-width: 1280px){
     .cards{
         height: 480px !important;
     }
 }
+@media (max-width: 1024px) {
 
-@media(max-width: 1020px){
+    .cards {
+        height: 568px !important;
+    }
+    
+}
+
+@media (max-width: 768px) {
+
+    .cards {
+        height: 504px !important;
+    }
+    
+}
+
+@media (max-width: 640px) {
+
+    .cards {
+        height: 400px !important;
+    }
+    
+}
+
+@media (max-width: 452px) {
+
+    .cards {
+        height: 420px !important;
+    }
+    
+}
+
+@media(max-width: 390px) {
     .cards{
-        height: 520px !important;
+        height: 478px !important;
     }
 }

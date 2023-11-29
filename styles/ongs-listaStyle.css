@@ -1,45 +1,128 @@
-.header {
-    color: #000 !important;
-    background-color: #EEEEEE !important;
+@font-face {
+    font-family: "Hanuman";
+    src: url("../assets/fonts/Hanuman-Regular.ttf")
 }
 
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/static/Inter-Regular.ttf")
+}
 
+@font-face {
+    font-family: "KaiseiDecol";
+    src: url("../assets/fonts/KaiseiDecol-Medium.ttf")
+}
 
-.icon-menu-list:hover > .menu-list-itens{
-    opacity: 1 !important;
+@font-face {
+    font-family: "FugazOne";
+    src: url("../assets/fonts/FugazOne-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Jomhuria";
+    src: url("../assets/fonts/Jomhuria-Regular.ttf")
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #EEEEEE;
+}
+
+#logo {
+    width: 35px;
+    height: 35px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-family: "Hanuman", serif;
+}
+
+.brand-l {
+    color: #6A8C4E;
+}
+
+.brand-r {
+    color: #60B4E9;
+}
+
+.header-menu-items a {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+.header-menu-items a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
+}
+
+.dropdown .dropbtn {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+.header-menu-dropdown-list, .menu-mobile-dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    width: 220px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 2px #ADADAD;
+    z-index: 1;
+}
+
+.header-menu-dropdown-list a, .menu-mobile-dropdown-list a {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    padding: 10px;
     display: block;
+    text-align: left;
 }
 
-.menu-list-itens{
-    display: block;
-    opacity: 0;
-    top: 23px;
+.header-menu-dropdown-list a:hover, .menu-mobile-dropdown-list a:hover {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 0px;
+    padding: 10px;
 }
 
-.menu-list-itens{
-    background-color: #A1D4F4;
-    color: white;
-    
-    
+.dropdown:hover .header-menu-dropdown-list, .header-menu-mobile:hover .menu-mobile-dropdown-list {
+    display:block;
 }
 
-.menu-list-itens li{
-    transition: 0.8s;
+#sign-up {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
 }
 
-.menu-list-itens li:hover{
-    background-color: #6F875A;
-    
-    color: #000;
-    
+#sign-up:hover {
+    padding: 2px 7px;
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
 }
 
-.menu li {
-    display: inline;
-}
-
-.menu-logar li {
-    display: inline;
+.login {
+    padding: 2px 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    border: 1px solid #687C57;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
 }
 
 body {
@@ -47,17 +130,29 @@ body {
 }
 
 .caixa-esq {
-
     background-color: #A1D4F4;
+    margin-right: 1px;
 }
 
 .caixa-dir {
 
-    background-color: #65BFF8;
+    background-color: rgb(19, 168, 234);
 }
 
 .caixa-dir, .caixa-esq{
-    margin-top: 10px;
+    margin-top: 18px;
+    
+}
+
+.caixa-dir h1, .caixa-esq h1{
+    font-family: 'Jomhuria';
+    font-size: xx-large;
+    height: 30px;
+}
+
+.caixa-dir p, .caixa-esq p{
+    font-family: 'Inter';
+    font-size: 15px;
 }
 
 .img-anuncio-esq {
@@ -72,8 +167,30 @@ body {
 
 
 footer {
-    text-align: center;
-    background-color: #6F875A;
+    margin-top: 20px;
+    background-color: #E0E8D9;
+}
+
+#footer-menu-list li {
+    color: #5f7051;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
+
+#footer-menu-list li:hover {
+    color: #3F4D33;
+}
+
+#contact-title {
+    color: #3F4C33;
+    font-family: "Hanuman", serif;
+    font-size: 32px;
+}
+
+#contact-info {
+    color: #4F5F42;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
 }
 
 /*  805px
@@ -83,13 +200,12 @@ footer {
 
 /* FAZ COM QUE A LISTA DE ONGS NAO DIMINUA MAIS DO QUE 780PX SE O TAMANHO DE TELA MAXIMO 
 CHEGAR EM 1558PX */
-@media (max-width: 1558px) {
+@media (max-width: 1627px) {
 
     .caixa-dir, .caixa-esq {
-        width: 780px !important;
+        width: 780px !important;        
     }
-
-    
+        
 }
 
 @media(max-width: 805px){
@@ -115,9 +231,27 @@ CHEGAR EM 1558PX */
     }
 }
 
+@media(max-width: 570px){ /* media query para dropdown do login e cadastro*/
+    .menu-list-itens-login{
+        right: 1px !important;
+    }
+}
+
 @media(max-width: 458px){
     .caixa-dir, .caixa-esq{
-        height: 360px !important;
+        height: 373px !important;
+    }
+}
+
+@media(max-width: 413px){
+    .caixa-dir, .caixa-esq{
+        height: 370px !important;
+    }
+}
+
+@media(max-width: 400px){
+    .caixa-dir, .caixa-esq{
+        height: 418px !important;
     }
 }
 
