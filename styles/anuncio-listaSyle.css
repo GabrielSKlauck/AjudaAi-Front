@@ -137,6 +137,34 @@ body {
     background-color: #7AADEA;
 }
 
+#btn-open-add{
+    background-color: #0d6cfa;
+}
+
+#form-add{
+    border-radius: 25px;   
+
+}
+
+#btn-enviar{
+    margin: 4px;
+    width: 63px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(0, 0, 255);
+    color: white;
+}
+
+#btn-cancelar{
+    margin: 4px;
+    width: 70px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(0, 0, 255);
+    color: white; 
+}
+
+
 .cards {
     border-radius: 20px;
     background-color: rgb(19, 168, 234);
@@ -229,6 +257,15 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
     .cards {
         height: 420px !important;
+    }
+    
+}
+
+@media (max-width: 413px) {
+
+
+    #form-add, #btn-open-add{
+        left: 1rem !important;
     }
     
 }
