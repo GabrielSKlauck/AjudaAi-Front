@@ -137,6 +137,19 @@ body {
     background-color: #7AADEA;
 }
 
+#form-add{
+    border-radius: 25px;   
+}
+
+#btn-enviar{
+    width: 63px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: red;
+    color: white;
+}
+
+
 .cards {
     border-radius: 20px;
     background-color: rgb(19, 168, 234);

@@ -109,7 +109,18 @@
     </div>
   </header>
 
-
+<button onclick="showForm()" class="h-8 w-28 bg-red-800 rounded-3xl">ADD anuncio</button>
+<form id="form-add" class=" w-[300px] h-[500px] bg-gray-200 block ">
+  <div>
+    <label for="" class="ml-4">Nome da ong</label> <br>
+    <input type="text" class="ml-4" required>
+  </div>
+  <div>
+    <label for="" class="ml-4">Descrição da vaga</label>
+    <textarea id="" cols="30" rows="15" maxlength="347" required class="mx-4" style="resize: none;"></textarea>
+  </div>
+  <button id="btn-enviar" type="submit" class="ml-4">Enviar</button>
+</form>
       <div class="container mx-auto mt-4">
         <div class="grid grid-cols-1 mx-4 sm:mx-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 ">
             <div class="cards card border-2 p-2 flex flex-col items-center h-96">
@@ -232,6 +243,6 @@
       </footer>
     
       <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-      <script src="ongs-listajs.js"></script>
+      <script src="addAnuncio.js"></script>
 </body>
 </html>
