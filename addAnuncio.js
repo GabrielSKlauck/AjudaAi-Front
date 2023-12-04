@@ -19,4 +19,7 @@ function criarAnuncio(){
     novoAnuncio.append('<h1 class="text-xl mt-4 mb-4">' + nomeOng +'</h1>');
     novoAnuncio.append('<p class="text-center"> ' + descricaoOng + '</p>'); 
     $(".container-interno").append(novoAnuncio);
+
+    nomeOng.val("");
+    descricaoOng.val("");
 }
