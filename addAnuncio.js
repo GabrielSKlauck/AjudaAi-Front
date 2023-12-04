@@ -3,6 +3,10 @@ function showForm(){
 
     if (formulario.style.display === "none" || formulario.style.display === "") {
         formulario.style.display = "block";
+        formulario.style.position = "fixed"
+        formulario.style.left = "7rem";
+        formulario.style.marginTop = "5px";
+
     } else {
         formulario.style.display = "none";
     }
@@ -11,7 +15,8 @@ function showForm(){
 function criarAnuncio(){
     var nomeOng = $("#input-nome-ong").val();
     var descricaoOng = $("#ta-descricao").val();
-    console.log(nomeOng + " " + descricaoOng);
+    console.log("Nome ong: " + nomeOng + "\n" +
+                "Descricao: " + descricaoOng + "\n");
 
     var novoAnuncio =  $("<div>").addClass("cards card border-2 p-2 flex flex-col items-center h-96");
 

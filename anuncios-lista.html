@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/resetCss.css">
-    <link rel="stylesheet" href="styles/anuncio-listaSyle.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/resetCss.css">
+  <link rel="stylesheet" href="styles/anuncio-listaSyle.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -17,8 +18,9 @@
       }
     }
   </script>
-    <title>Oportunidades</title>
+  <title>Oportunidades</title>
 </head>
+
 <body>
   <header id="header-hp">
     <a href="homepage.html">
@@ -109,140 +111,145 @@
     </div>
   </header>
 
-<button onclick="showForm()" class="h-8 w-28 bg-red-800 rounded-3xl">ADD anuncio</button>
-<form id="form-add" class=" w-[300px] h-[500px] bg-gray-200 hidden ">
-  <div>
-    <label for="" class="ml-4">Nome da ong</label> <br>
-    <input id="input-nome-ong" type="text" class="ml-4" required>
-  </div>
-  <div>
-    <label for="" class="ml-4">Descrição da vaga</label>
-    <textarea id="ta-descricao" cols="30" rows="15" maxlength="347" required class="mx-4" style="resize: none;"></textarea>
-  </div>
-  <button id="btn-enviar" type="button" class="ml-4" onclick="criarAnuncio()">Enviar</button>
-</form>
-      <div class="container mx-auto mt-4">
-        <div class="container-interno grid grid-cols-1 mx-4 sm:mx-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 ">
-            <div class="cards card border-2 p-2 flex flex-col items-center h-96">
-                <img src="assets/images/logo anuncio.jpg" alt="" class="h-40 w-60">
-                <h1 class="text-xl mt-4 mb-4">Nome ong</h1>
-                <p class="text-center">
-                    Descricao da vaga: sit amet, consectetur adipisicing elit. 
-                    Ipsa, repellat. Excepturi praesentium, 
-                    esse quidem quam unde eveniet repellendus ipsum possimus incidunt 
-                    tenetur expedita culpa accusamus, non molestiae qui, laudantium repudiandae.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Modi laborum quam explicabo molestiae blanditiis. 
-                </p>
-            </div>
-
-            <div class="cards card border-2 p-2 flex flex-col items-center h-96">
-                <img src="assets/images/ong-exemplo.jpg" alt="" class="h-40 w-60">
-                <h1 class="text-xl mt-4 mb-4">Nome ong</h1>
-                <p class="text-center">
-                    Descricao da vaga: sit amet, consectetur adipisicing elit. 
-                    Ipsa, repellat. Excepturi praesentium, 
-                    esse quidem quam unde eveniet repellendus ipsum possimus incidunt 
-                    tenetur expedita culpa accusamus, non molestiae qui, laudantium repudiandae.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Modi laborum quam explicabo molestiae blanditiis. 
-                </p>
-            </div>
-
-            <div class="cards card border-2 p-2 flex flex-col items-center h-96">
-                <img src="assets/images/logo anuncio.jpg" alt="" class="h-40 w-60">
-                <h1 class="text-xl mt-4 mb-4">Nome ong</h1>
-                <p class="text-center">
-                    Descricao da vaga: sit amet, consectetur adipisicing elit. 
-                    Ipsa, repellat. Excepturi praesentium, 
-                    esse quidem quam unde eveniet repellendus ipsum possimus incidunt 
-                    tenetur expedita culpa accusamus, non molestiae qui, laudantium repudiandae.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Modi laborum quam explicabo molestiae blanditiis. 
-                </p>
-            </div>
-
-            <div class="cards card border-2 p-2 flex flex-col items-center h-96">
-                <img src="assets/images/ong-exemplo.jpg" alt="" class="h-40 w-60">
-                <h1 class="text-xl mt-4 mb-4">Nome ong</h1>
-                <p class="text-center">
-                    Descricao da vaga: sit amet, consectetur adipisicing elit. 
-                    Ipsa, repellat. Excepturi praesentium, 
-                    esse quidem quam unde eveniet repellendus ipsum possimus incidunt 
-                    tenetur expedita culpa accusamus, non molestiae qui, laudantium repudiandae.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Modi laborum quam explicabo molestiae blanditiis. 
-                </p>
-            </div>
-
-        </div>
+  <button id="btn-open-add" onclick="showForm()" class="h-8 w-28 bg-red-800 rounded-3xl left-[7rem] relative">ADD anuncio</button>
+  <form id="form-add" class=" w-[300px] h-[500px] bg-gray-200 hidden mx-auto">
+    <div>
+      <label for="" class="ml-4">Nome da ong</label> <br>
+      <input id="input-nome-ong" type="text" class="ml-4" required>
+    </div>
+    <div>
+      <label for="" class="ml-4">Descrição da vaga</label>
+      <textarea id="ta-descricao" cols="30" rows="15" maxlength="347" required class="mx-4"
+        style="resize: none;"></textarea>
+    </div>
+    <button id="btn-enviar" type="button" class="ml-4" onclick="criarAnuncio()">Enviar</button>
+    <button id="btn-cancelar" type="button" class="ml-4" onclick="showForm()">Cancelar</button>
+  </form>
+  <div class="container mx-auto mt-4">
+    <div class="container-interno grid grid-cols-1 mx-4 sm:mx-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 ">
+      <div class="cards card border-2 p-2 flex flex-col items-center h-96">
+        <img src="assets/images/logo anuncio.jpg" alt="" class="h-40 w-60">
+        <h1 class="text-xl mt-4 mb-4">Nome ong</h1>
+        <p class="text-center">
+          Descricao da vaga: sit amet, consectetur adipisicing elit.
+          Ipsa, repellat. Excepturi praesentium,
+          esse quidem quam unde eveniet repellendus ipsum possimus incidunt
+          tenetur expedita culpa accusamus, non molestiae qui, laudantium repudiandae.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Modi laborum quam explicabo molestiae blanditiis.
+        </p>
       </div>
 
+      <div class="cards card border-2 p-2 flex flex-col items-center h-96">
+        <img src="assets/images/ong-exemplo.jpg" alt="" class="h-40 w-60">
+        <h1 class="text-xl mt-4 mb-4">Nome ong</h1>
+        <p class="text-center">
+          Descricao da vaga: sit amet, consectetur adipisicing elit.
+          Ipsa, repellat. Excepturi praesentium,
+          esse quidem quam unde eveniet repellendus ipsum possimus incidunt
+          tenetur expedita culpa accusamus, non molestiae qui, laudantium repudiandae.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Modi laborum quam explicabo molestiae blanditiis.
+        </p>
+      </div>
 
-      <footer>
-        <div class="w-full h-[500px] flex flex-col ml-16 lg:flex-row lg:items-center lg:justify-stretch">
-          <div id="footer-left" class="pt-10 mb-8 lg:ml-[250px] lg:pt-10 lg:pr-[200px] lg:pb-5 lg:border-r lg:border-solid lg:border-r-[#3F4C33]">
-            <a href="#header-hp">
-              <div id="footer-logo" class="flex mb-6">
-                <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
-                  <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
-                  <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
-                  <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
-                  <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z" fill="#D9D9D9" />
-                  <path
-                    d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
-                    stroke="#324424" stroke-width="0.285" />
-                  <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57" stroke="#324424"
-                    stroke-width="0.285" />
-                  <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
-                    stroke-width="0.285" />
-                  <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
-                    stroke-width="0.285" />
-                </svg>
-                <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
-              </div>
-            </a>
-            <div class="flex">
-              <ul id="footer-menu-list" class="leading-10">
-                <li>
-                  <a href="homepage.html#about-us">Quem Somos</a>
-                </li>
-                <li>
-                  <a href="homepage.html#about-platform">Conheça a plataforma</a>
-                </li>
-                <li>
-                  <a href="ongs-lista.html">ONGs</a>
-                </li>
-                <li>
-                  <a href="anuncios-lista.html">Oportunidades</a>
-                </li>
-              </ul>
-            </div>
+      <div class="cards card border-2 p-2 flex flex-col items-center h-96">
+        <img src="assets/images/logo anuncio.jpg" alt="" class="h-40 w-60">
+        <h1 class="text-xl mt-4 mb-4">Nome ong</h1>
+        <p class="text-center">
+          Descricao da vaga: sit amet, consectetur adipisicing elit.
+          Ipsa, repellat. Excepturi praesentium,
+          esse quidem quam unde eveniet repellendus ipsum possimus incidunt
+          tenetur expedita culpa accusamus, non molestiae qui, laudantium repudiandae.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Modi laborum quam explicabo molestiae blanditiis.
+        </p>
+      </div>
+
+      <div class="cards card border-2 p-2 flex flex-col items-center h-96">
+        <img src="assets/images/ong-exemplo.jpg" alt="" class="h-40 w-60">
+        <h1 class="text-xl mt-4 mb-4">Nome ong</h1>
+        <p class="text-center">
+          Descricao da vaga: sit amet, consectetur adipisicing elit.
+          Ipsa, repellat. Excepturi praesentium,
+          esse quidem quam unde eveniet repellendus ipsum possimus incidunt
+          tenetur expedita culpa accusamus, non molestiae qui, laudantium repudiandae.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Modi laborum quam explicabo molestiae blanditiis.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="w-full h-[500px] flex flex-col ml-16 lg:flex-row lg:items-center lg:justify-stretch">
+      <div id="footer-left"
+        class="pt-10 mb-8 lg:ml-[250px] lg:pt-10 lg:pr-[200px] lg:pb-5 lg:border-r lg:border-solid lg:border-r-[#3F4C33]">
+        <a href="#header-hp">
+          <div id="footer-logo" class="flex mb-6">
+            <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
+              <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
+              <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
+              <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+              <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z" fill="#D9D9D9" />
+              <path
+                d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+                stroke="#324424" stroke-width="0.285" />
+              <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57" stroke="#324424"
+                stroke-width="0.285" />
+              <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+                stroke-width="0.285" />
+              <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+                stroke-width="0.285" />
+            </svg>
+            <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
           </div>
-          <div id="footer-right" class="w-fit pt-10 lg:mb-40 lg:ml-20 border-t border-solid border-t-[#3F4C33] lg:border-none">
-            <div>
-              <h1 id="contact-title" class="pb-[15px] lg:ml-[5px]">Contato</h1>
-              <div class="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
-                  width="50px" height="50px">
-                  <g fill="#4f5f42" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                    style="mix-blend-mode: normal">
-                    <g transform="scale(5.12,5.12)">
-                      <path
-                        d="M14,4c-5.51133,0 -10,4.48867 -10,10v22c0,5.51133 4.48867,10 10,10h22c5.51133,0 10,-4.48867 10,-10v-22c0,-5.51133 -4.48867,-10 -10,-10zM14,6h22c4.43067,0 8,3.56933 8,8v22c0,4.43067 -3.56933,8 -8,8h-22c-4.43067,0 -8,-3.56933 -8,-8v-22c0,-4.43067 3.56933,-8 8,-8zM13,15c-1.64497,0 -3,1.35503 -3,3v14c0,1.64497 1.35503,3 3,3h24c1.64497,0 3,-1.35503 3,-3v-14c0,-1.64497 -1.35503,-3 -3,-3zM13.41406,17h23.16992l-8.90625,8.89258c-1.49279,1.49041 -3.8809,1.49024 -5.37305,-0.00195zM38,18.41211v13.17578l-6.59766,-6.58789zM12,18.41406l6.58594,6.58594l-6.58594,6.58594zM29.98828,26.41211l6.59766,6.58789h-23.17188l6.58594,-6.58594l0.89063,0.89063c2.25585,2.25585 5.94201,2.25751 8.19922,0.00391z" />
-                    </g>
-                  </g>
-                </svg>
-                <h2 id="contact-info" class="pl-2.5 pt-2.5">contato@ajudaai.com.br</h2>
-              </div>
-            </div>
+        </a>
+        <div class="flex">
+          <ul id="footer-menu-list" class="leading-10">
+            <li>
+              <a href="homepage.html#about-us">Quem Somos</a>
+            </li>
+            <li>
+              <a href="homepage.html#about-platform">Conheça a plataforma</a>
+            </li>
+            <li>
+              <a href="ongs-lista.html">ONGs</a>
+            </li>
+            <li>
+              <a href="anuncios-lista.html">Oportunidades</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="footer-right"
+        class="w-fit pt-10 lg:mb-40 lg:ml-20 border-t border-solid border-t-[#3F4C33] lg:border-none">
+        <div>
+          <h1 id="contact-title" class="pb-[15px] lg:ml-[5px]">Contato</h1>
+          <div class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
+              width="50px" height="50px">
+              <g fill="#4f5f42" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                style="mix-blend-mode: normal">
+                <g transform="scale(5.12,5.12)">
+                  <path
+                    d="M14,4c-5.51133,0 -10,4.48867 -10,10v22c0,5.51133 4.48867,10 10,10h22c5.51133,0 10,-4.48867 10,-10v-22c0,-5.51133 -4.48867,-10 -10,-10zM14,6h22c4.43067,0 8,3.56933 8,8v22c0,4.43067 -3.56933,8 -8,8h-22c-4.43067,0 -8,-3.56933 -8,-8v-22c0,-4.43067 3.56933,-8 8,-8zM13,15c-1.64497,0 -3,1.35503 -3,3v14c0,1.64497 1.35503,3 3,3h24c1.64497,0 3,-1.35503 3,-3v-14c0,-1.64497 -1.35503,-3 -3,-3zM13.41406,17h23.16992l-8.90625,8.89258c-1.49279,1.49041 -3.8809,1.49024 -5.37305,-0.00195zM38,18.41211v13.17578l-6.59766,-6.58789zM12,18.41406l6.58594,6.58594l-6.58594,6.58594zM29.98828,26.41211l6.59766,6.58789h-23.17188l6.58594,-6.58594l0.89063,0.89063c2.25585,2.25585 5.94201,2.25751 8.19922,0.00391z" />
+                </g>
+              </g>
+            </svg>
+            <h2 id="contact-info" class="pl-2.5 pt-2.5">contato@ajudaai.com.br</h2>
           </div>
         </div>
-      </footer>
-    
-      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-      <script src="addAnuncio.js"></script>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="addAnuncio.js"></script>
 </body>
+
 </html>
