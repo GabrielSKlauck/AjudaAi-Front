@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AjudaAí - Cadastro</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico.png" />
+    <link rel="stylesheet" href="./styles/resetCss.css" />
+    <link rel="stylesheet" href="./styles/cadastroong.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: "#da373d",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <section id="sign-up-form-ngo">
+        <div class="w-full h-auto flex">
+            <div class="box-form w-[680px] h-[700px] mx-auto rounded-xl my-6">
+                <div id="box-form-header">
+                    <a href="homepage.html">
+                        <div class="header-logo flex px-[250px] pt-14">
+                            <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53"
+                                fill="none">
+                                <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424"
+                                    stroke-width="0.285" />
+                                <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z"
+                                    fill="#D9D9D9" />
+                                <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+                                <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z"
+                                    fill="#D9D9D9" />
+                                <path
+                                    d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+                                    stroke="#324424" stroke-width="0.285" />
+                                <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57"
+                                    stroke="#324424" stroke-width="0.285" />
+                                <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7"
+                                    stroke="#324424" stroke-width="0.285" />
+                                <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7"
+                                    stroke="#324424" stroke-width="0.285" />
+                            </svg>
+                            <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span
+                                    class="brand-r">Aí</span></h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="px-[195px] pt-6">
+                    <span id="box-form-subtitle">Cadastre sua ONG na AjudaAí</span>
+                </div>
+                <div class="form-list">
+                    <form class="flex flex-col justify-center h-auto px-32">
+                        <div class="form-input-box mt-8">
+                            <input type="text" id="ngo-name" placeholder="Nome da ONG" class="pl-2 py-1" />
+                        </div>
+                        <div class="form-input-box mt-2">
+                            <input type="text" id="ngo-state" placeholder="Estado" class="pl-2 py-1" />
+                        </div>
+                        <div class="form-input-box mt-2">
+                            <input type="text" id="ngo-city" placeholder="Cidade" class="pl-2 py-1" />
+                        </div>
+                        <div class="form-input-box mt-2">
+                            <input type="text" id="ngo-social" placeholder="Site / Rede Social da ONG" class="pl-2 py-1" />
+                        </div>
+                        <div class="form-input-box mt-2">
+                            <input type="text" id="ngo-head-name" placeholder="Nome do responsável" class="pl-2 py-1" />
+                        </div>
+                        <div class="form-input-box mt-2">
+                            <input type="tel" id="ngo-phone" placeholder="Telefone" pattern="[0-9]{(2)}-[0-9]{5}-[0-9]{4}" class="pl-2 py-1" />
+                        </div>
+                        <div class="form-input-box mt-2">
+                            <input type="email" id="ngo-email" placeholder="E-mail" class="pl-2 py-1" />
+                        </div>
+                        <div class="form-input-box mt-2">
+                            <input type="text" id="ngo-field" placeholder="Área de atuação" class="pl-2 py-1" />
+                        </div>
+                        <div class="mt-10">
+                            <button type="button" class="btn" id="btn-sign-up">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="w-full h-[218px] flex flex-col pl-16 lg:flex-row lg:items-center lg:justify-center">
+          <div id="footer-left" class="pt-10 mb-8 lg:mt-6 lg:pt-2 lg:pr-[100px] lg:pb-2 lg:border-r lg:border-solid lg:border-r-[#3F4C33]">
+            <div class="flex">
+              <ul id="footer-menu-list" class="leading-10">
+                <li>
+                  <a href="homepage.html#about-us">Quem Somos</a>
+                </li>
+                <li>
+                  <a href="homepage.html#about-platform">Conheça a plataforma</a>
+                </li>
+                <li>
+                  <a href="ongs-lista.html">ONGs</a>
+                </li>
+                <li>
+                  <a href="anuncios-lista.html">Oportunidades</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="footer-right" class="w-fit pt-10 lg:mb-32 lg:mt-5 lg:ml-20 border-t border-solid border-t-[#3F4C33] lg:border-none">
+            <div>
+              <h1 id="contact-title" class="pb-[15px] lg:ml-[5px]">Contato</h1>
+              <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
+                  width="40px" height="40px">
+                  <g fill="#4f5f42" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.12,5.12)">
+                      <path
+                        d="M14,4c-5.51133,0 -10,4.48867 -10,10v22c0,5.51133 4.48867,10 10,10h22c5.51133,0 10,-4.48867 10,-10v-22c0,-5.51133 -4.48867,-10 -10,-10zM14,6h22c4.43067,0 8,3.56933 8,8v22c0,4.43067 -3.56933,8 -8,8h-22c-4.43067,0 -8,-3.56933 -8,-8v-22c0,-4.43067 3.56933,-8 8,-8zM13,15c-1.64497,0 -3,1.35503 -3,3v14c0,1.64497 1.35503,3 3,3h24c1.64497,0 3,-1.35503 3,-3v-14c0,-1.64497 -1.35503,-3 -3,-3zM13.41406,17h23.16992l-8.90625,8.89258c-1.49279,1.49041 -3.8809,1.49024 -5.37305,-0.00195zM38,18.41211v13.17578l-6.59766,-6.58789zM12,18.41406l6.58594,6.58594l-6.58594,6.58594zM29.98828,26.41211l6.59766,6.58789h-23.17188l6.58594,-6.58594l0.89063,0.89063c2.25585,2.25585 5.94201,2.25751 8.19922,0.00391z" />
+                    </g>
+                  </g>
+                </svg>
+                <h2 id="contact-info" class="pl-2.5 pt-1">contato@ajudaai.com.br</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+</body>
+
+</html>
