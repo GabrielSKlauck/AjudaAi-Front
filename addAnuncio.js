@@ -13,6 +13,10 @@ function showForm(){
 }
 
 function cancelar(){
+    const inputNome = document.querySelector("#input-nome-ong");
+    const inputDesc = document.querySelector("#ta-descricao");
+    inputNome.classList.remove(`invalid`);
+    inputDesc.classList.remove(`invalid`);
     limpaCampo();
     showForm();
 }
