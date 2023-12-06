@@ -137,6 +137,54 @@ body {
     background-color: #7AADEA;
 }
 
+.invalid{
+    border-left: 3px solid red !important;
+
+}
+
+#btn-open-add{
+    background-color: #0d6cfa;
+}
+
+#form-add{
+    border-radius: 25px;   
+
+}
+
+#input-nome-ong, #ta-descricao{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    border-radius: 5px;
+}
+
+#btn-enviar{
+    margin: 4px;
+    width: 63px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(0, 0, 255);
+    color: white;
+}
+
+#btn-cancelar{
+    margin: 4px;
+    width: 70px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(0, 0, 255);
+    color: white; 
+}
+
+#btn-limpar{
+    margin: 4px;
+    width: 70px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(0, 0, 255);
+    color: white;  
+}
+
 .cards {
     border-radius: 20px;
     background-color: rgb(19, 168, 234);
@@ -229,6 +277,15 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
     .cards {
         height: 420px !important;
+    }
+    
+}
+
+@media (max-width: 413px) {
+
+
+    #form-add, #btn-open-add{
+        left: 1rem !important;
     }
     
 }
