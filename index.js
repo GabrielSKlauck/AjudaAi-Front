@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   function isPostTextValid() {
-    var mensagemInput = document.getElementById('novo-post-texto');
-    var mensagem = mensagemInput.value.trim();
+    var inputMessage = document.getElementById('novo-post-texto');
+    var formatedMessage = inputMessage.value.trim();
 
-    if (mensagem === '') {
+    if (formatedMessage === '') {
       alert('Digite algo.');
       return false;
     }
@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function createPost() {
-    console.log("passei por aqui");
-
     if (!isPostTextValid())
       return;
 
