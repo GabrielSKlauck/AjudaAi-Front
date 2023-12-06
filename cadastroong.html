@@ -62,10 +62,16 @@
                             <input type="text" id="ngo-name" placeholder="Nome da ONG" class="pl-2 py-1" />
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
-                            <input type="text" id="ngo-state" placeholder="Estado" class="pl-2 py-1" />
+                            <select id="ngo-state" name="ngo-state" class="pl-2 py-1">
+                                <option value="">Estado</option>
+                                <option value="estado">SelecionarEstado</option>
+                            </select>
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
-                            <input type="text" id="ngo-city" placeholder="Cidade" class="pl-2 py-1" />
+                            <select id="ngo-city" name="ngo-city" class="pl-2 py-1">
+                                <option value="">Cidade</option>
+                                <option value="cidade">SelecionarCidade</option>
+                            </select>
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
                             <input type="text" id="ngo-social" placeholder="Site / Rede Social da ONG" class="pl-2 py-1" />
@@ -77,7 +83,10 @@
                             <input type="tel" id="ngo-phone" placeholder="Telefone" pattern="[0-9]{(2)}-[0-9]{5}-[0-9]{4}" class="pl-2 py-1" />
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
-                            <input type="text" id="ngo-field" placeholder="Área de atuação" class="pl-2 py-1" />
+                            <select id="ngo-field" name="ngo-field" class="pl-2 py-1">
+                                <option value="">Área de atuação</option>
+                                <option value="atuacao">SelecionarAtuação</option>
+                            </select>
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
                             <input type="email" id="ngo-email" placeholder="E-mail" class="pl-2 py-1" />

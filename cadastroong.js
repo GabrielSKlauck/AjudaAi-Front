@@ -77,5 +77,6 @@ $(() => {
         $("#ngo-password").removeClass("invalid");
 
         console.log(values);
+        alert("Cadastro efetuado!")
     })
 })
