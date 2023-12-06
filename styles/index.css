@@ -79,9 +79,9 @@ header {
     border-radius: 20px;
 }
 
-.quadrado-quem-somos>h1,
-.quadrado-voluntariado>h2,
-.quadrado-contato>h3 {
+.quadrado-quem-somos>a,
+.quadrado-voluntariado>a,
+.quadrado-contato>a {
     font-family: Inter;
     font-size: 25px !important;
 }
