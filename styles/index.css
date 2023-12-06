@@ -11,6 +11,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 header {
@@ -22,7 +23,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0;
-
 }
 
 .cor1 {
@@ -58,6 +58,7 @@ header {
 .quadrado-quem-somos,
 .quadrado-voluntariado,
 .quadrado-contato {
+    cursor: pointer;
     width: 300px;
     height: 100px;
     background-color: #EEE;
@@ -75,6 +76,7 @@ header {
 .quadrado-contato:hover {
     background-color: rgba(208, 218, 199, 0.80);
     transition: 0.3s;
+    border-radius: 20px;
 }
 
 .quadrado-quem-somos>h1,
@@ -84,6 +86,15 @@ header {
     font-size: 25px !important;
 }
 
+.container-perfil-usuario {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+}
 
 .perfil-usuario {
     position: relative;
@@ -112,51 +123,68 @@ header {
 
 .main {
     width: 100vw;
-    height: 90vh;
+    height: max-content;
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
 
-.container-perfil-usuario {
-    width: 25%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .container-feed {
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-
-
+    justify-content: flex-start;
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .feed {
     width: 100%;
-    height: 80%;
+    height: max-content;
     background-color: #FAFAFA;
     border-radius: 15px;
-    position: relative;
-
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .postar-feed {
     width: 100%;
-    height: 15%;
-    background-color: #FAFAFA;
+    height: fit-content;
+    padding: 15px;
+    background-color: #EEE;
     border-radius: 15px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
 
+#novo-post-texto {
+    padding: 15px;
+    width: 75%;
+    height: 90px;
+    margin-left: 10px;
+    border-radius: 15px 0 0 15px;
+}
+
+#novo-post-texto:focus {
+    outline-color: #60B4E9;
+}
+
+#botao-criar-post {
+    height: 90px;
+    width: 15%;
+    cursor: pointer;
+    background-color: #60B4E9;
+    color: white;
+    text-shadow: 0 0 10px rgba(59, 59, 59, 0.5);
+    border-radius: 0 15px 15px 0;
 }
 
 .container-chat {
-    width: 30%;
+    width: 600px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -165,88 +193,112 @@ header {
 }
 
 .chat {
+    position: fixed;
+    bottom: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     height: 5%;
-    width: 100%;
+    width: 350px;
     border-radius: 15px 15px 0 0;
     transition: height 300ms ease-in-out;
-    background-color: #FAFAFA;
-
+    background-color: #EEE;
 }
-
 
 .chat:hover {
     height: 75%;
-    width: 100%;
-
 }
 
 .header-chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 50px !important;
     width: 100% !important;
-    background-color: #c3e8ff !important;
+    background-color: #60B4E9 !important;
     border-radius: 15px 15px 0 0;
 }
 
-.header-chat>h1 {
-    font-size: 25px;
-    text-align: center;
-    justify-content: center;
+.header-chat h1 {
+    font-size: 18px;
+    color: white;
+    text-shadow: 0 0 10px rgba(59, 59, 59, 0.5);
 }
-
-
 
 .rodape-feed {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    margin-top: 20px;
     width: 100%;
-    height: 10%;
-
-
-
-
-}
-
-.botoes-feed {
+    height: max-content;
     display: flex;
-    gap: 20%;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .linha-feed {
     display: flex;
-    width: 866px;
-    height: 2px;
+    width: 80%;
+    height: 1px;
+    margin: auto;
     background-color: #595959;
-    margin-left: 10%;
-    margin-bottom: 15px;
+    opacity: 30%;
 }
 
+.rodape-feed svg {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    fill: #595959;
+    transition: transform 111ms ease-in-out, filter 111ms ease-in-out;
+    cursor: pointer;
+}
 
-.texto-feed {
+.rodape-feed svg:hover {
+    transform: scale(110%);
+    filter: brightness(140%);
+}
+
+.botoes-feed {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.post {
     display: flex;
     padding: 20px;
     align-items: center;
     justify-content: center;
     align-content: center;
     flex-direction: column;
-
+    gap: 20px;
+    background-color: #EEE;
+    border-radius: 10px;
 }
 
-.texto-feed h1 {
-    font-size: 26px;
+.post h1 {
+    font-size: 20px;
     line-height: 1.4;
     color: #333;
     font-weight: 300;
     font-family: 'Roboto', sans-serif !important;
-
+    text-align: left;
+    width: 100%;
 }
 
 #foto-perfil-ong {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+    display: inline-block;
+}
+
+
+.foto-perfil-ong-publicar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -287,11 +339,11 @@ header {
     opacity: 0;
 }
 
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     * {
         font-family: sans-serif !important;
     }
+
 
     html,
     body {
@@ -300,9 +352,10 @@ header {
         margin: 0;
         display: flex;
         flex-direction: column;
+        gap: 15px;
     }
 
-    
+
 
     .cor1 {
         display: none;
@@ -312,7 +365,7 @@ header {
         display: none;
     }
 
-    
+
 
     .svg-container svg {
         display: flex;
@@ -320,7 +373,7 @@ header {
         justify-content: center;
     }
 
-    
+
 
     .container-feed {
         width: 100%;
@@ -329,11 +382,12 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 15px;
     }
 
     .feed {
         width: 100%;
-        height: auto;
+        height: max-content;
         background-color: #FAFAFA;
         border-radius: 15px;
         position: relative;
@@ -346,16 +400,12 @@ header {
     }
 
 
-  
 
-    
+
+
     .rodape-feed {
-        position: relative;
-        top: 10px;
-        bottom: 0;
-        left: 0;
         width: 100%;
-        height: 10%;
+        height: 1px;
         justify-content: flex-end;
     }
 
@@ -365,7 +415,7 @@ header {
         gap: 10%;
         justify-content: center;
         align-items: center;
-      margin-bottom: 20px;
+        margin-bottom: 20px;
         width: 19;
         height: 21;
     }
@@ -380,11 +430,11 @@ header {
     }
 
 
-    .texto-feed {
+    .post {
         padding: 20px;
     }
 
-    .texto-feed h1 {
+    .post h1 {
         font-size: 18px;
         line-height: 1.4;
         color: #333;
@@ -431,7 +481,7 @@ header {
 
     }
 
-    .svg-container{
+    .svg-container {
         display: flex;
         height: auto;
         align-items: center;
@@ -441,5 +491,9 @@ header {
 
     .menu-header:target {
         display: none;
+    }
+
+    .postar-feed {
+
     }
 }
