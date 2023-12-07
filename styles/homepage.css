@@ -347,3 +347,29 @@ footer {
     font-family: "Inter", sans-serif;
     font-size: 20px;
 }
+
+.tab-header {
+    padding: 10px;
+    background-color: #eaeaea;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 32px;
+}
+
+.tab-container {
+    display: none;
+    background-color: #eaeaea;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.bg-blue {
+    background-color: #8fc5e7 !important;
+}
+.bg-green {
+    background-color: #687c57  !important;
+}
+
+.bg-red {
+    background-color: red !important;
+}
