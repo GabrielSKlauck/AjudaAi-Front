@@ -1,0 +1,151 @@
+@font-face {
+    font-family: "Hanuman";
+    src: url("../assets/fonts/Hanuman-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/static/Inter-Regular.ttf")
+}
+
+body {
+    background-color: #B7DBF2;
+    overflow-y: hidden;
+}
+
+.invalid {
+    border-left: 5px solid rgb(233, 23, 23) !important;
+    outline: 2px solid rgb(233, 23, 23) !important;
+    box-shadow: 0 0 0 4px rgba(255, 8, 0, 0.4) !important;
+}
+
+.box-form {
+    background-color: #FFF;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#logo {
+    width: 35px;
+    height: 35px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-family: "Hanuman", serif;
+}
+
+.brand-l {
+    color: #6A8C4E;
+}
+
+.brand-r {
+    color: #60B4E9;
+}
+
+#box-form-subtitle {
+    color: #3F4D33;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
+
+.form-input-box input {
+    font-family: "Inter", sans-serif;
+    border-radius: 5px;
+    border-left: 5px solid #8FC5E7;
+    background: #F6F6F6;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-left: 5px solid #687C57;
+    outline: 2px solid #687C57;
+    box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
+}
+
+.form-input-box select {
+    font-family: "Inter", sans-serif;
+    color: #9ca3af;
+    border-radius: 5px;
+    border-left: 5px solid #8FC5E7;
+    background: #F6F6F6;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    transition: 0.2s;
+}
+
+select:focus {
+    border-left: 5px solid #687C57;
+    outline: 2px solid #687C57;
+    box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
+}
+
+@media(max-width:1025px) {
+    .btn {
+        color: #FFF;
+        font-size: 24px !important;
+        text-align: center;
+        background-color: #8FC5E7 !important;
+        padding: 3px !important;
+        border-radius: 10px !important;
+        box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .box-form {
+        background-color: #FFF;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    body {
+        background-color: #E0E8D9 !important;
+        overflow-y: hidden;
+    }
+}
+
+.btn {
+    color: #FFF;
+    font-size: 36px;
+    text-align: center;
+    background-color: #8FC5E7 !important;
+    padding: 5px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+footer {
+    background-color: #E0E8D9;
+}
+
+#footer-menu-list li {
+    color: #5f7051;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+#footer-menu-list li:hover {
+    color: #3F4D33;
+}
+
+#contact-title {
+    color: #3F4C33;
+    font-family: "Hanuman", serif;
+    font-size: 26px;
+}
+
+#contact-info {
+    color: #4F5F42;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
