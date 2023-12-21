@@ -2,7 +2,7 @@ window.onload = function() {
   
     $.ajax({
         type: "GET",
-        url: "https://localhost:7073/NGO",
+        url: "https://localhost:7070/NGO",
         success: mostraOng,
         header: {},
         contentType: "application/json",
