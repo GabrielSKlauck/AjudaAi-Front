@@ -15,7 +15,7 @@ window.onload = function() {
 
 function carregaPagina(){       
         const pagina = `
-        <div id="div-pag" class=" h-[620px] w-[43rem] mt-10 relative block rounded-xl">
+        <div id="div-pag" class="min-h-[333px] max-h-[620px] h-auto w-[43rem] mt-10 relative block rounded-xl">
             <div class=" h-[235px] w-full flex">
                 <img src="assets/images/ong-exemplo.jpg" alt="" class="h-[11rem] w-[11rem] ml-4 mt-8">
                 <h1 id="title-ngo" class="ml-5 mt-20 text-3xl">${title}</h1>
@@ -23,7 +23,7 @@ function carregaPagina(){
             <p class="ml-1">
                 ${desc}
             </p>
-            <button id="btn-subscribe" class="p-2 rounded-2xl float-right mt-1 mr-5">Inscrever-se</button>
+            <button id="btn-subscribe" class="p-2 rounded-2xl float-right mt-1 mr-5 mb-2">Inscrever-se</button>
         </div>
         
        `;
