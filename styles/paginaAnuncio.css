@@ -141,6 +141,7 @@ body {
 }
 
 
+
 footer {
     margin-top: 20px;
     background-color: #E0E8D9;
@@ -166,4 +167,26 @@ footer {
     color: #4F5F42;
     font-family: "Inter", sans-serif;
     font-size: 20px;
+}
+
+@media(max-width: 720px){
+    #div-pag{
+        width: 30rem !important;
+    }
+}
+
+@media(max-width: 500px){
+    #div-pag{
+        width: 22rem !important;
+    }
+
+    #img-ong{
+        display: none !important;
+    }
+}
+
+@media(max-width: 360px){
+    #div-pag{
+        width: 20rem !important;
+    }
 }
