@@ -1,57 +1,32 @@
-function showForm(){
-    var formulario = document.getElementById("form-add");
-
-    if (formulario.style.display === "none" || formulario.style.display === "") {
-        formulario.style.display = "block";
-        formulario.style.position = "fixed"
-        formulario.style.left = "7rem";
-        formulario.style.marginTop = "5px";
-
-    } else {
-        formulario.style.display = "none";
-    }
+window.onload = function(){
+    $.ajax({
+        type: "GET",
+        url: "https://localhost:7070/Ads",
+        success: mostraAds,
+        header: {},
+        contentType: "application/json",
+        datatype: "json",
+    });
 }
 
-function cancelar(){
-    const inputNome = document.querySelector("#input-nome-ong");
-    const inputDesc = document.querySelector("#ta-descricao");
-    inputNome.classList.remove(`invalid`);
-    inputDesc.classList.remove(`invalid`);
-    limpaCampo();
-    showForm();
+function mostraAds(item){
+  console.log(item);
+    item.forEach(linha => {
+        
+        const cardAds = `
+        <div id = "${linha.id}" class="cards card border-2 p-2 flex flex-col items-center h-96" onclick="abrirPagina(${linha.id})">
+        <img src="assets/images/logo anuncio.jpg" alt="" class="h-40 w-60">
+        <h1 class="text-xl mt-4 mb-4">${linha.title}</h1>
+        <p class="text-center">
+            ${linha.description}
+        </p>
+      </div>
+        
+       `;
+        $(`.container-interno`).append($(cardAds));
+    });
 }
 
-function criarAnuncio(){
-    var nomeOng = $("#input-nome-ong").val();
-    var descricaoOng = $("#ta-descricao").val();
-    
-    const inputNome = document.querySelector("#input-nome-ong");
-    const inputDesc = document.querySelector("#ta-descricao");
-
-    if(nomeOng === ""){
-        inputNome.classList.add(`invalid`);
-    }else if(descricaoOng === ""){
-        inputNome.classList.remove(`invalid`);
-        inputDesc.classList.add(`invalid`);
-    }else{
-        inputDesc.classList.remove(`invalid`);
-        const itemAnuncio = {
-            nome: nomeOng,
-            descricao: descricaoOng
-        }
-        console.log(itemAnuncio);
-    
-        var novoAnuncio =  $("<div>").addClass("cards card border-2 p-2 flex flex-col items-center h-96");
-    
-        novoAnuncio.append('<img src="assets/images/ong-exemplo.jpg" alt="" class="h-40 w-60">');
-        novoAnuncio.append('<h1 class="text-xl mt-4 mb-4">' + nomeOng +'</h1>');
-        novoAnuncio.append('<p class="text-center"> ' + descricaoOng + '</p>'); 
-        $(".container-interno").append(novoAnuncio);     
-    }
-  
-}
-
-function limpaCampo(){
-    document.getElementById("input-nome-ong").value = "";
-    document.getElementById("ta-descricao").value = ""; 
+function abrirPagina(id){
+  window.location.href = `paginaAnuncio.html?id=${id}`;
 }
