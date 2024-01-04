@@ -18,7 +18,7 @@ function mostraOng(item) {
     item.forEach(linha => {
         if (cont % 2 == 0) {
             const cardOng = `
-            <div id="modelo-esq" class="caixa-esq md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl">
+            <div id="${linha.id}" class="caixa-esq md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl" onclick="abrirPagina(${linha.id})">
                 <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-esq relative h-64 float-left">
                 <h1 class="text-center">${linha.ngoName}</h1> <!-- Jomhura-->
                 <p class="text-justify ml-3 mr-3 text-base">
@@ -30,7 +30,7 @@ function mostraOng(item) {
             cont++;
         }else{
             const cardOng = `
-            <div id="modelo-dir" class="caixa-dir md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl">
+            <div id="${linha.id}" class="caixa-dir md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl" onclick="abrirPagina(${linha.id})">
             <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-dir relative h-64 float-right">
             <h1 class="text-center">${linha.ngoName}</h1> <!-- Jomhura-->
             <p class="text-justify ml-3 mr-3 text-base">
@@ -44,3 +44,7 @@ function mostraOng(item) {
 
     });
 }
+
+function abrirPagina(id){
+    window.location.href = `paginaOng.html?id=${id}`;
+  }
