@@ -186,8 +186,10 @@ body {
 }
 
 .cards {
+    margin-top: 50px;
     border-radius: 20px;
     background-color: rgb(19, 168, 234);
+    cursor: pointer;
 }
 
 .cards h1{

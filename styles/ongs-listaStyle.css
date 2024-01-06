@@ -141,7 +141,7 @@ body {
 
 .caixa-dir, .caixa-esq{
     margin-top: 18px;
-    
+    cursor: pointer;
 }
 
 .caixa-dir h1, .caixa-esq h1{
