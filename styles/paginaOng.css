@@ -137,73 +137,22 @@ body {
     background-color: #7AADEA;
 }
 
-.invalid{
-    border-left: 3px solid red !important;
-
+.div-interna{
+   border-radius: 30px 30px 0px 0px;
+   background-color: #AAD8DB;
 }
 
-#btn-open-add{
-    background-color: #0d6cfa;
-}
-
-#form-add{
-    border-radius: 25px;   
-
-}
-
-#input-nome-ong, #ta-descricao{
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-    border-radius: 5px;
-}
-
-#btn-enviar{
-    margin: 4px;
-    width: 63px;
-    border-radius: 20px;
-    padding: 5px;
-    background-color: rgb(0, 0, 255);
-    color: white;
-}
-
-#btn-cancelar{
-    margin: 4px;
-    width: 70px;
-    border-radius: 20px;
-    padding: 5px;
-    background-color: rgb(0, 0, 255);
-    color: white; 
-}
-
-#btn-limpar{
-    margin: 4px;
-    width: 70px;
-    border-radius: 20px;
-    padding: 5px;
-    background-color: rgb(0, 0, 255);
-    color: white;  
-}
-
-.cards {
-    margin-top: 50px;
-    border-radius: 20px;
-    background-color: rgb(19, 168, 234);
+.cards{
     cursor: pointer;
 }
 
-.cards h1{
-    font-family: 'Jomhuria';
-    font-size: xx-large;
+#img-logo-ong{
+    width: 256px;
+    height: 256px;
 }
-
-.cards p{
-    font-family: 'Inter';
-}
-
 
 footer {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     background-color: #E0E8D9;
 }
 
@@ -227,73 +176,4 @@ footer {
     color: #4F5F42;
     font-family: "Inter", sans-serif;
     font-size: 20px;
-}
-
-/* ALINHA ITENS DE MENU PARA O MEIO SE PASSAR DE 766PX, A TRANSFORMAÇAO ENTRE OS ITENS DE MENU EM
-ICONES É FEITA NO HTML PELO USANDO TAILWIND */
-@media (max-width: 766px){
-    .btn-menu-list{
-        justify-content: center;
-    }
-}
-
-/* MEDIA QUERYS RELACIONADOS COM OS ANUNCIOS */
-@media(max-width: 1533px){
-    .cards{
-        height: 430px !important;
-    }
-}
-
-
-
-@media(max-width: 1280px){
-    .cards{
-        height: 480px !important;
-    }
-}
-@media (max-width: 1024px) {
-
-    .cards {
-        height: 568px !important;
-    }
-    
-}
-
-@media (max-width: 768px) {
-
-    .cards {
-        height: 504px !important;
-    }
-    
-}
-
-@media (max-width: 640px) {
-
-    .cards {
-        height: 400px !important;
-    }
-    
-}
-
-@media (max-width: 452px) {
-
-    .cards {
-        height: 420px !important;
-    }
-    
-}
-
-@media (max-width: 413px) {
-
-
-    #form-add, #btn-open-add{
-        left: 1rem !important;
-    }
-    
-}
-
-@media(max-width: 390px) {
-    .cards{
-        height: 478px !important;
-    }
 }
