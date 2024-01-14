@@ -1,0 +1,104 @@
+@font-face {
+    font-family: "Hanuman";
+    src: url("../assets/fonts/Hanuman-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/static/Inter-Regular.ttf")
+}
+
+header {
+    background-color: #EEEEEE;
+}
+
+#logo {
+    width: 35px;
+    height: 35px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-family: "Hanuman", serif;
+}
+
+.brand-l {
+    color: #6A8C4E;
+}
+
+.brand-r {
+    color: #60B4E9;
+}
+
+.header-menu-items a {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    transition: 0.3s;
+}
+
+.header-menu-items a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
+}
+
+.dropdown .dropbtn {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    transition: 0.3s;
+}
+
+.header-menu-dropdown-list, .menu-mobile-dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    width: 220px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 2px #ADADAD;
+    z-index: 1;
+}
+
+.header-menu-dropdown-list a, .menu-mobile-dropdown-list a, .profile-dropdown-list a {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    text-align: left;
+}
+
+.header-menu-dropdown-list a:hover, .menu-mobile-dropdown-list a:hover, .profile-dropdown-list a:hover {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 0px;
+    padding: 10px;
+}
+
+.dropdown:hover .header-menu-dropdown-list, .header-menu-mobile:hover .menu-mobile-dropdown-list {
+    display:block;
+}
+
+#header-profile-picture {
+    border-radius: 50%;
+    border: 2px solid #687C57;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 9%;
+    right: 4.5%;
+    background-color: #FFF;
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 0px #ADADAD;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.profile-dropdown.open-profile-menu {
+    max-height: 400px;
+}
