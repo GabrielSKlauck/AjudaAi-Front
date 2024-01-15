@@ -102,3 +102,58 @@ header {
 .profile-dropdown.open-profile-menu {
     max-height: 400px;
 }
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.30);
+    display: fsfnone;
+}
+
+#profile-pic-modal-body {
+    width: 1143px;
+    height: 700px;
+    border-radius: 25px;
+    background-color: #EEE;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#profile-img {
+    width: 450px;
+    height: 442px;
+    border-radius: 50%;
+    border: 10px solid #687C57;
+}
+
+label {
+    display: flex;
+    width: 331px;
+    height: 67px;
+    border-radius: 15px;
+    border: 1px solid #687C57;
+    background-color: #EEE;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+    color: #081509;
+    margin-top: 70px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+input {
+    display: none;
+}
+
+#add-img-text {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+}
+
+#camera-icon {
+    width: 50px;
+    height: 50px;
+}

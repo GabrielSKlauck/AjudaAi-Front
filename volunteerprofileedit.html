@@ -121,6 +121,23 @@
         </nav>
         </div>
       </header>
+      <div class="modal">
+        <img id="close-modal" onclick="closeModal()" src="assets/images/x-icon.png"/>
+        <div class="w-screen h-screen flex items-center justify-center">
+          <div id="profile-pic-modal-body">
+            <div>
+              <img id="profile-img" class="mx-auto mt-16" src="assets/images/personimg.png" alt="Foto de perfil."/>
+            </div>
+            <div>
+              <label for="input-file" class="items-center justify-center space-x-4">
+                <img id="camera-icon" src="assets/images/camera-icon.png"/> 
+                <span id="add-img-text">Adicionar foto</span>
+              </label>
+              <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file"/>
+            </div>
+          </div>
+        </div>
+      </div>
       <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
       <script src="volunteerprofileedit.js"></script>
 </body>
