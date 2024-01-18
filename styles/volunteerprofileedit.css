@@ -111,12 +111,23 @@ header {
     right: 0;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.30);
-    display: fsfnone;
+    display: none;
+}
+
+.modal-active {
+    display: block !important
+}
+#close-modal {
+    width: 30px;
+    height: 30px;
+    margin-top: 25px;
+    margin-right: 25px;
 }
 
 #profile-pic-modal-body {
     width: 1143px;
     height: 700px;
+    margin-bottom: 60px;
     border-radius: 25px;
     background-color: #EEE;
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
@@ -129,7 +140,7 @@ header {
     border: 10px solid #687C57;
 }
 
-label {
+label, .delete-img {
     display: flex;
     width: 331px;
     height: 67px;
@@ -137,7 +148,6 @@ label {
     border: 1px solid #687C57;
     background-color: #EEE;
     box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
-    color: #081509;
     margin-top: 70px;
     margin-left: 50px;
     cursor: pointer;
@@ -147,7 +157,7 @@ input {
     display: none;
 }
 
-#add-img-text {
+#add-img-text, #delete-img-text {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 32px;
@@ -156,4 +166,16 @@ input {
 #camera-icon {
     width: 50px;
     height: 50px;
+}
+
+#trashcan-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.test-img-modal {
+    width: 450px;
+    height: 442px;
+    border-radius: 50%;
+    border: 10px solid #687C57;
 }
