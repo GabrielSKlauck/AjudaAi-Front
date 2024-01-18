@@ -2,7 +2,7 @@ $(() => {
     $("#btn-sign-up").click(() => {
         const values = {
           Nome: $("#Voluntario-nome")[0].value,
-          Estado: $("#Voluntario-estado")[0].value,
+         // Estado: $("#Voluntario-estado")[0].value,
           Cidade: $("#Voluntario-city")[0].value,
           Email: $("#Voluntario-email")[0].value,
           Senha: $("#Voluntario-senha")[0].value,
@@ -14,11 +14,11 @@ $(() => {
         }
         $("#Voluntario-nome").removeClass("invalid");
 
-        if (!values.Estado) {
-            alert("Estado não informado!");
-            $("#Voluntario-estado").addClass("invalid");
-            return;  
-        }
+        // if (!values.Estado) {
+        //     alert("Estado não informado!");
+        //     $("#Voluntario-estado").addClass("invalid");
+        //     return;  
+        // }
         $("#Voluntario-estado").removeClass("invalid");
 
         if (!values.Cidade) {
@@ -43,6 +43,18 @@ $(() => {
         $("#Voluntario-senha").removeClass("invalid");
 
         console.log(values);
+        sendDataBase(values);
+        
     });
     
 })
+
+function sendDataBase(values){
+    $.ajax({
+        type: "POST",
+        url: "https://localhost:7070/user",
+        data: JSON.stringify(values),
+        contentType: "application/json",
+        dataType: "json",
+    });
+}
