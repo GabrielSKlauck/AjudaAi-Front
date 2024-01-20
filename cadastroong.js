@@ -7,6 +7,15 @@ window.onload = function(){
         contentType: "application/json",
         dataType: "json",
     });
+
+    $.ajax({
+        type: "GET",
+        url: "https://localhost:7070/Causes",
+        success: loadCauses,
+        header: {},
+        contentType: "application/json",
+        dataType: "json",
+    });
 }
 
 $(() => {
@@ -144,5 +153,13 @@ function loadCityHtml(item){
             <option value="${linha.id}">${linha.name}</option>
         `;
         $(`#ngo-city`).append($(cityOption));
+    });
+}
+
+function loadCauses(item){
+    item.forEach(linha => {       
+        const options = `
+        <option value="${linha.id}">${linha.name}</option>`;
+        $(`#ngo-causes`).append($(options));
     });
 }
