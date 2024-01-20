@@ -21,26 +21,27 @@ window.onload = function(){
 $(() => {
     
     $("#btn-sign-up").click(() => {
+        var tag = document.getElementById("ngo-causes");
+        var idCause = tag.options[tag.selectedIndex].value;
+        tag = document.getElementById("ngo-state");
+        var idState = tag.options[tag.selectedIndex].value;
+        tag = document.getElementById("ngo-city");
+        var idCity = tag.options[tag.selectedIndex].value;
         const values = {
             ngoName: $("#ngo-name")[0].value,
             description: "",
-            site: "",
+            site: $("#ngo-social")[0].value,
             headPerson: $("#ngo-head-name")[0].value,
             telephone: $("#ngo-phone")[0].value,
             email: $("#ngo-email")[0].value,
             password: $("#ngo-password")[0].value,
             role: "admin",
-            cityId: 1,
-            causesId: 1,
-            //state: $("#ngo-state")[0].value,
             
-            //social: $("#ngo-social")[0].value,
-            
-            
-            
-            
-            
+            causesId: idCause,
+            cityId: idCity,
+            cityStateId: idState,                
         }
+        console.log(values);
 
         if (!values.ngoName) {
             alert("Favor informar o nome da ONG!");
