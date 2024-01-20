@@ -1,5 +1,16 @@
-$(() => {
+window.onload = function(){
+    $.ajax({
+        type: "GET",
+        url: "https://localhost:7070/State",
+        success: loadStates,
+        header: {},
+        contentType: "application/json",
+        dataType: "json",
+    });
+}
 
+$(() => {
+    
     $("#btn-sign-up").click(() => {
         const values = {
             ngoName: $("#ngo-name")[0].value,
@@ -90,6 +101,17 @@ $(() => {
     })
 })
 
+function loadStates(item){
+    console.log(item);
+    item.forEach(linha => {
+        
+        const stateOption = `
+            <option value="${linha.id}">${linha.name}</option>
+        `;
+        $(`#ngo-state`).append($(stateOption));
+    });
+}
+
 function sendDataBase(values){
     $.ajax({
         type: "POST",
@@ -97,5 +119,30 @@ function sendDataBase(values){
         data: JSON.stringify(values),
         contentType: "application/json",
         dataType: "json",
+    });
+}
+
+function loadCity(){
+    event.preventDefault();
+    var id = document.getElementById('ngo-state').value;
+    $.ajax({
+        type: "GET",
+        url: `https://localhost:7070/City/${id}`,
+        success: loadCityHtml,
+        header: {},
+        contentType: "application/json",
+        datatype: "json",
+    });
+}
+
+function loadCityHtml(item){
+    var limpa = document.getElementById("ngo-city");
+    limpa.innerText = "";
+    item.forEach(linha => {
+        
+        const cityOption = `
+            <option value="${linha.id}">${linha.name}</option>
+        `;
+        $(`#ngo-city`).append($(cityOption));
     });
 }
