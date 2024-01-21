@@ -9,9 +9,9 @@ $(() => {
     });
 
     $("#btn-sign-up").click(() => {
-        var tag = document.getElementById("ngo-city");
+        var tag = document.getElementById("Voluntario-city");
         var idCity = tag.options[tag.selectedIndex].value;
-        tag = document.getElementById("ngo-state");
+        tag = document.getElementById("Voluntario-state");
         var idState = tag.options[tag.selectedIndex].value;
         const values = {
           name: $("#Voluntario-nome")[0].value,        
@@ -30,14 +30,14 @@ $(() => {
         }
         $("#Voluntario-nome").removeClass("invalid");
 
-        // if (!values.Estado) {
-        //     alert("Estado não informado!");
-        //     $("#Voluntario-estado").addClass("invalid");
-        //     return;  
-        // }
-        $("#Voluntario-estado").removeClass("invalid");
+        if (values.cityStateId == "Estado") {
+            alert("Estado não informado!");
+            $("#Voluntario-state").addClass("invalid");
+            return;  
+        }
+        $("#Voluntario-state").removeClass("invalid");
 
-        if (!values.cityId) {
+        if (values.cityId == "Cidade") {
             alert("Cidade não informado!");
             $("#Voluntario-city").addClass("invalid");
             return;  
@@ -82,13 +82,13 @@ function loadStates(item){
         const stateOption = `
             <option value="${linha.id}">${linha.name}</option>
         `;
-        $(`#ngo-state`).append($(stateOption));
+        $(`#Voluntario-state`).append($(stateOption));
     });
 }
 
 function loadCity(){
     event.preventDefault();
-    var id = document.getElementById('ngo-state').value;
+    var id = document.getElementById('Voluntario-state').value;
     $.ajax({
         type: "GET",
         url: `https://localhost:7070/City/${id}`,
@@ -100,13 +100,13 @@ function loadCity(){
 }
 
 function loadCityHtml(item){
-    var limpa = document.getElementById("ngo-city");
+    var limpa = document.getElementById("Voluntario-city");
     limpa.innerText = "";
     item.forEach(linha => {
         
         const cityOption = `
             <option value="${linha.id}">${linha.name}</option>
         `;
-        $(`#ngo-city`).append($(cityOption));
+        $(`#Voluntario-city`).append($(cityOption));
     });
 }

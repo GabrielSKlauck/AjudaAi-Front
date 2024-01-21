@@ -35,8 +35,7 @@ $(() => {
             telephone: $("#ngo-phone")[0].value,
             email: $("#ngo-email")[0].value,
             password: $("#ngo-password")[0].value,
-            role: "admin",
-            
+            role: "admin",   
             causesId: idCause,
             cityId: idCity,
             cityStateId: idState,                
@@ -50,25 +49,24 @@ $(() => {
         }
         $("#ngo-name").removeClass("invalid");
 
-        // if (!values.state) {
-        //     alert("Favor informar o estado!");
-        //     $("#ngo-state").addClass("invalid");
-        //     return;
-        // }
+        if (values.cityStateId == "Estado") {
+             alert("Favor informar o estado!");
+            $("#ngo-state").addClass("invalid");
+             return;
+        }
         $("#ngo-state").removeClass("invalid");
 
-        if (!values.cityId) {
+        if (values.cityId == "Cidade") {
             alert("Favor informar a cidade!");
             $("#ngo-city").addClass("invalid");
             return;
         }
         $("#ngo-city").removeClass("invalid");
-
-        // if (!values.social) {
-        //     alert("Favor informar o site ou rede social!");
-        //     $("#ngo-social").addClass("invalid");
-        //     return;
-        // }
+        if (!values.site) {
+            alert("Favor informar o site ou rede social!");
+            $("#ngo-social").addClass("invalid");
+            return;
+        }
         $("#ngo-social").removeClass("invalid");
 
         if (!values.headPerson) {
@@ -85,12 +83,12 @@ $(() => {
         }
         $("#ngo-phone").removeClass("invalid");
 
-        if (!values.causesId) {
+        if (values.causesId == "Causas") {
             alert("Favor informar a área de atuação!");
-            $("#ngo-field").addClass("invalid");
+            $("#ngo-causes").addClass("invalid");
             return;
         }
-        $("#ngo-field").removeClass("invalid");
+        $("#ngo-causes").removeClass("invalid");
 
         if (!values.email) {
             alert("Favor informar o E-mail!");
