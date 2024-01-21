@@ -9,13 +9,17 @@ $(() => {
     });
 
     $("#btn-sign-up").click(() => {
+        var tag = document.getElementById("ngo-city");
+        var idCity = tag.options[tag.selectedIndex].value;
+        tag = document.getElementById("ngo-state");
+        var idState = tag.options[tag.selectedIndex].value;
         const values = {
-          name: $("#Voluntario-nome")[0].value,
-         // Estado: $("#Voluntario-estado")[0].value,
+          name: $("#Voluntario-nome")[0].value,        
           email: $("#Voluntario-email")[0].value,
           password: $("#Voluntario-senha")[0].value,
           role: "voluntario",
-          cityId: $("#Voluntario-city")[0].value,
+          cityId: idCity,
+          cityStateId: idState
           
           
         }
