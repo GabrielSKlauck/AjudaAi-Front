@@ -8,7 +8,6 @@
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico.png" />
     <link rel="stylesheet" href="./styles/resetCss.css" />
     <link rel="stylesheet" href="./styles/login.css" />
-    <script src="./login.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
   
     <script>
@@ -61,15 +60,15 @@
                 <div class="form-list">
                     <form class="flex flex-col justify-center h-auto px-10 lg:px-32">
                         <div class="form-input-box mt-6 lg:mt-8">
-                            <input type="text" id="username" placeholder="Nome de Usuario" class="pl-2 py-1" />
+                            <input type="text" id="Voluntario-email" placeholder="Digite seu email..." class="pl-2 py-1" />
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
-                            <input type="text" id="password" placeholder="Sua Senha" class="pl-2 py-1" />
+                            <input type="text" id="Voluntario-password" placeholder="Ditie sua senha..." class="pl-2 py-1" />
                         </div>
                        
                         <div class="mt-6 mb-6 lg:mt-10">
                           
-                            <button type="button" class="btn" id="btn-sign-up">
+                            <button type="button" class="btn" id="btn-sign-in">
                                 Enviar
                             </button>
                            
@@ -121,5 +120,13 @@
           </div>
         </div>
       </footer>
+    
 </body>
+<script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="./utils/utils.js"></script>
+<script type="text/javascript" src="./login.js"></script>
+
+</html>
+
  

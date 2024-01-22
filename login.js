@@ -1,24 +1,60 @@
-document.addEventListener('DOMContentLoaded', function () {
+const login = async (email, password) => {
+  const loginUrl = apiUrl + "/user/login";
+  const payload = {
+    email: email,
+    password: password
+  };
 
-  function handleLogin() {
+  try {
+    const request = await axios.post(loginUrl, payload);
 
-      var usernameInput = document.getElementById('username');
-      var passwordInput = document.getElementById('password');
+    if (request.status != 200) return false;
 
-      var username = usernameInput.value;
-      var password = passwordInput.value;
+    localStorage.setItem("token", request.data.token);
+    localStorage.setItem("user", JSON.stringify(request.data.user));
 
-      if (username && password) {
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
 
-          window.location.href = 'index.html';
-      } else {
-          alert('Por favor, digite algo.');
+$(() => {
+  if (localStorage.getItem("user")) {
+    redirect("homepage.html");
+  }
+
+  $("#btn-sign-in").click(() => {
+    const inputs = {
+      email: $("#Voluntario-email"),
+      password: $("#Voluntario-password"),
+    };
+
+    if (!inputs.email[0].value) {
+      alert("email não informado!");
+      inputs.email.addClass("invalid");
+      return;
+    }
+    inputs.email.removeClass("invalid");
+
+    if (!inputs.password[0].value) {
+      alert("senha não informada!");
+      inputs.password.addClass("invalid");
+      return;
+    }
+    inputs.password.removeClass("invalid");
+
+    login(inputs.email[0].value, inputs.password[0].value).then((success) => {
+        $("#btn-sign-in").text("Enviar");
+
+      if (!success) {
+        alert("O usuario não esta cadastrado!");
+        return;
       }
-  }
 
-  var loginButton = document.getElementById('btn-sign-up');
-  if (loginButton) {
-      loginButton.addEventListener('click', handleLogin);
-  }
+      redirect("homepage.html");
+    });
 
+    $("#btn-sign-in").text("Carregando");
+  });
 });

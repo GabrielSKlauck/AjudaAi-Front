@@ -8,6 +8,12 @@ $(() => {
         dataType: "json",
     });
 
+    if (localStorage.getItem("user")) {
+        redirect("homepage.html");
+        return;
+    }
+
+
     $("#btn-sign-up").click(() => {
         var tag = document.getElementById("Voluntario-city");
         var idCity = tag.options[tag.selectedIndex].value;
@@ -36,7 +42,6 @@ $(() => {
             return;  
         }
         $("#Voluntario-state").removeClass("invalid");
-
         if (values.cityId == "Cidade") {
             alert("Cidade não informado!");
             $("#Voluntario-city").addClass("invalid");
@@ -68,7 +73,7 @@ $(() => {
 function sendDataBase(values){
     $.ajax({
         type: "POST",
-        url: "https://localhost:7070/User",
+        url: apiUrl + "/User",
         data: JSON.stringify(values),
         contentType: "application/json",
         dataType: "json",
