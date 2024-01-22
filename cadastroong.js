@@ -123,7 +123,7 @@ function loadStates(item){
 function sendDataBase(values){
     $.ajax({
         type: "POST",
-        url: "https://localhost:7070/NGO",
+        url: "https://localhost:7070/ngo",
         data: JSON.stringify(values),
         contentType: "application/json",
         dataType: "json",
