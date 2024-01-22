@@ -23,7 +23,7 @@ function carregaPagina(){
       <p class="ml-1">
                 ${desc}
                 </p>
-                <button id="btn-subscribe" class="p-2 rounded-2xl float-right mt-1 mr-5 mb-2">Inscrever-se</button>
+                <button id="btn-subscribe" class="p-2 rounded-2xl float-right mt-1 mr-5 mb-2" onclick="inscricao()">Inscrever-se</button>
             </div>
         
        `;
@@ -39,4 +39,28 @@ function request(method, url, headers, successCallback) {
         contentType: 'application/json',
         dataType: 'json',
     });
+}
+
+function inscricao(){
+    if (localStorage.getItem("user")) {
+        var item = JSON.parse(localStorage.getItem("user"));
+        var userId = parseInt(item.id);
+        console.log("logado");
+        const infoUserAds = {
+            userId: userId,
+            adsId: parseInt(id)
+        }
+        
+        $.ajax({
+            type: "POST",
+            url: "https://localhost:7070/UserAds",
+            data: JSON.stringify(infoUserAds),
+            contentType: "application/json",
+            error: alert("Voluntario ja logado no respectivo anuncio"),
+            dataType: "json",
+        });
+    }else{
+        alert("Por favor logue primeiro antes de se inscrever");
+        window.location.href = "login.html";
+    }
 }
