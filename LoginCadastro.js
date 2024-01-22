@@ -1,4 +1,9 @@
 $(() => {
+    if (localStorage.getItem("user")) {
+        redirect("homepage.html");
+        return;
+    }
+
     $("#btn-sign-up").click(() => {
         const values = {
           name: $("#Voluntario-nome")[0].value,
@@ -22,7 +27,7 @@ $(() => {
         //     $("#Voluntario-estado").addClass("invalid");
         //     return;  
         // }
-        $("#Voluntario-estado").removeClass("invalid");
+        //$("#Voluntario-estado").removeClass("invalid");
 
         if (!values.cityId) {
             alert("Cidade não informado!");
@@ -55,7 +60,7 @@ $(() => {
 function sendDataBase(values){
     $.ajax({
         type: "POST",
-        url: "https://localhost:7070/User",
+        url: apiUrl + "/User",
         data: JSON.stringify(values),
         contentType: "application/json",
         dataType: "json",
