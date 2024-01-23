@@ -11,6 +11,15 @@ window.onload = function() {
         desc = result.description;
         carregaPagina();
     });
+
+    $.ajax({
+        type: "GET",
+        url: "https://localhost:7070/UserAds",
+        headers: {},
+        success: alteraBtnInsc,
+        contentType: "application/json",
+        dataType: "json",
+    });
 };
 
 function carregaPagina(){       
@@ -23,11 +32,13 @@ function carregaPagina(){
       <p class="ml-1">
                 ${desc}
                 </p>
-                <button id="btn-subscribe" class="p-2 rounded-2xl float-right mt-1 mr-5 mb-2" onclick="inscricao()">Inscrever-se</button>
+                <button id="btn-subscribe" class="p-2 rounded-2xl float-right mt-1 mr-5 mb-2">Inscrever-se</button>
             </div>
         
        `;
         $(`.divMeio`).append($(pagina));
+
+        $('#btn-subscribe').on('click', inscricao);
 }
 
 function request(method, url, headers, successCallback) {
