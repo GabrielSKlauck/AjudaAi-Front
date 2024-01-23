@@ -7,21 +7,19 @@ function toggleProfileMenu() {
 let profileImg = document.getElementById("profile-img");
 let inputFile = document.getElementById("input-file");
 
-inputFile.onchange = function () {
+inputFile.onchange = function() {
     profileImg.src = URL.createObjectURL(inputFile.files[0]);
 }
 
-function showModal() {
-    let modal = document.querySelector(".modal");
-    modal.classList.add(`modal-active`);
-}
+const openModals = document.getElementsByClassName('open-modal');
+const modalArray = Array.from(openModals).entries();
+const modals = document.getElementsByClassName('modal');
+const closeButtons = document.getElementsByClassName('close-modal');
 
-function closeModal() {
-    let modal = document.querySelector(".modal");
-    modal.classList.remove(`modal-active`);
-}
-
-let openModal = document.querySelectorAll(".open-modal");
-for (let open of openModal) {
-    open.addEventListener(`click`, showModal);
+for (let [index, trigger] of modalArray) {
+  const toggleModal = () => {
+    modals[index].classList.toggle('modal-active');
+  }
+  trigger.addEventListener("click", toggleModal);
+  closeButtons[index].addEventListener("click", toggleModal);
 }

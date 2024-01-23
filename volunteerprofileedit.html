@@ -128,7 +128,7 @@
     <div class="w-screen h-screen flex items-center justify-center">
       <div id="profile-pic-modal-body">
         <div class="flex justify-end">
-          <img id="close-modal" onclick="closeModal()" src="assets/images/x-icon.png" />
+          <img class="close-modal" src="assets/images/x-icon.png" />
         </div>
         <div>
           <img id="profile-img" class="mx-auto mt-6" src="assets/images/personimg.png" alt="Foto de perfil." />
@@ -147,9 +147,28 @@
       </div>
     </div>
   </div>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="personal-info-modal-body">
+        <div class="flex justify-between">
+          <h1 id="personal-info-modal-title">Editar informações do perfil</h1>
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="flex">
     <div>
       <img class="test-img-modal open-modal w-[300px] h-[300px]" src="assets/images/personimg.png" />
+    </div>
+  </div>
+  <div class="flex">
+    <div class="flex justify-center mt-[2.5vw]">
+      <button type="button" id="btn-editar-perfil" class="open-modal">
+        <div class="font-['Inter'] text-xl">
+          Editar perfil
+        </div>
+      </button>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

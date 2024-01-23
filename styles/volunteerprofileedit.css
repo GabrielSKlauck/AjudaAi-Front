@@ -39,7 +39,8 @@ header {
     transition: 0.3s;
 }
 
-.header-menu-items a:hover, .dropdown:hover .dropbtn {
+.header-menu-items a:hover,
+.dropdown:hover .dropbtn {
     background-color: rgba(208, 218, 199, 0.80);
     border-radius: 10px;
 }
@@ -52,7 +53,8 @@ header {
     transition: 0.3s;
 }
 
-.header-menu-dropdown-list, .menu-mobile-dropdown-list {
+.header-menu-dropdown-list,
+.menu-mobile-dropdown-list {
     display: none;
     position: absolute;
     background-color: #FFF;
@@ -62,7 +64,9 @@ header {
     z-index: 1;
 }
 
-.header-menu-dropdown-list a, .menu-mobile-dropdown-list a, .profile-dropdown-list a {
+.header-menu-dropdown-list a,
+.menu-mobile-dropdown-list a,
+.profile-dropdown-list a {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 18px;
@@ -71,14 +75,17 @@ header {
     text-align: left;
 }
 
-.header-menu-dropdown-list a:hover, .menu-mobile-dropdown-list a:hover, .profile-dropdown-list a:hover {
+.header-menu-dropdown-list a:hover,
+.menu-mobile-dropdown-list a:hover,
+.profile-dropdown-list a:hover {
     background-color: rgba(208, 218, 199, 0.80);
     border-radius: 0px;
     padding: 10px;
 }
 
-.dropdown:hover .header-menu-dropdown-list, .header-menu-mobile:hover .menu-mobile-dropdown-list {
-    display:block;
+.dropdown:hover .header-menu-dropdown-list,
+.header-menu-mobile:hover .menu-mobile-dropdown-list {
+    display: block;
 }
 
 #header-profile-picture {
@@ -117,11 +124,13 @@ header {
 .modal-active {
     display: block !important
 }
-#close-modal {
-    width: 30px;
-    height: 30px;
+
+.close-modal {
+    width: 20px;
+    height: 20px;
     margin-top: 25px;
-    margin-right: 25px;
+    margin-right: 35px;
+    cursor: pointer;
 }
 
 #profile-pic-modal-body {
@@ -140,7 +149,8 @@ header {
     border: 10px solid #687C57;
 }
 
-label, .delete-img {
+label,
+.delete-img {
     display: flex;
     width: 331px;
     height: 67px;
@@ -157,7 +167,8 @@ input {
     display: none;
 }
 
-#add-img-text, #delete-img-text {
+#add-img-text,
+#delete-img-text {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 32px;
@@ -178,4 +189,29 @@ input {
     height: 442px;
     border-radius: 50%;
     border: 10px solid #687C57;
+}
+
+#personal-info-modal-body {
+    width: 650px;
+    height: 770px;
+    border-radius: 25px;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+}
+
+#personal-info-modal-title {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-left: 35px;
+}
+
+#btn-editar-perfil {
+    padding: 10px;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #687C57;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
 }
