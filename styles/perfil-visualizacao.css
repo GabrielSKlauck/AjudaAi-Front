@@ -32,7 +32,7 @@ body{
 }
 
 header {
-    background-color: #EEEEEE;
+    background-color: #E6EBEE ;
 }
 
 #logo {
@@ -62,8 +62,9 @@ header {
 }
 
 .header-menu-items a:hover, .dropdown:hover .dropbtn {
-    background-color: rgba(208, 218, 199, 0.80);
+    background-color: #8FC5E7;
     border-radius: 10px;
+    color: #FFF
 }
 
 .dropdown .dropbtn {
@@ -93,7 +94,7 @@ header {
 }
 
 .header-menu-dropdown-list a:hover, .menu-mobile-dropdown-list a:hover {
-    background-color: rgba(208, 218, 199, 0.80);
+    background-color: #8FC5E7;
     border-radius: 0px;
     padding: 10px;
 }
@@ -111,8 +112,9 @@ header {
 
 #sign-up:hover {
     padding: 2px 7px;
-    background-color: rgba(208, 218, 199, 0.80);
+    background-color: #8FC5E7;
     border-radius: 10px;
+    color: #FFF
 }
 
 .login {
@@ -120,19 +122,19 @@ header {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
-    border: 1px solid #687C57;
+    border: 1px solid #8FC5E7;
     border-radius: 10px;
-    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+    box-shadow: 0.5px 0.5px 2px 0.5px #8FC5E7;
 }
 
 body {
-    background-color: #E2E3E3;
+    background-color: #F9F9F9;
 }
 
 
 footer {
     margin-top: 20px;
-    background-color: #E0E8D9;
+    background-color: #E6EBEE;
 }
 
 #footer-menu-list li {
@@ -202,6 +204,28 @@ footer {
   position: absolute;
   pointer-events: none;
 
+
+}
+/* BOTAO DE VISUALIZAR CONQUISTAS */
+#btn-visualizar-conquistas{
+    padding: 10px;
+    width: 20vw;
+    border-radius: 15px;
+    border: 1px solid #687C57;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+
+}
+
+
+/* BOTAO DE EDITAR */
+
+#btn-editar-perfil{
+
+    padding: 10px;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #687C57;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
 
 }
 
@@ -277,34 +301,51 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 .perfil {
     display: grid;
+    margin-left: 1vw;
     margin-top: 3vw;
-    width: 402px;
+    width: 20vw;
     background-color: #fff;
-    height: 777px;
-    border-radius: 2vw;
+    height: 49vw;
+    border-radius: 1vw;
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
 
 }
+
+/* INTERESSES E APTIDOES */
 
 .interesses {
     margin-left: 2vw;
     margin-top: 3vw;
-    width: 1169px;
+    width: 70vw;
     background-color: #fff;
-    height: 358px;
-    border-radius: 2vw;
+    height: 23vw;
+    border-radius: 1vw;
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
 
 }
 
+.btn-interesses {
+    
+    height: 2.5vw;
+    width: 14vw;
+    border-radius: 20vw;
+    border: 1px solid #60B4E9;
+    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
+    font-family: Inter;
+    font-size: 24px;
+    align-items: center;
+}
+
+
 .conquistas {
+
     margin-left: 2vw;
     margin-top: 2.5vw;
     margin-bottom: 3vw;
-    width: 1169px;
+    width: 70vw;
     background-color: #fff;
-    height: 358px;
-    border-radius: 2vw;
+    height: 23vw;
+    border-radius: 1vw;
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
 
 }
