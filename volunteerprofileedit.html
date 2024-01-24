@@ -134,12 +134,12 @@
           <img id="profile-img" class="mx-auto mt-6" src="assets/images/personimg.png" alt="Foto de perfil." />
         </div>
         <div class="flex justify-between">
-          <label for="input-file" class="items-center justify-center space-x-4">
+          <label for="input-file" id="add-img-btn" class="items-center justify-center space-x-4">
             <img id="camera-icon" src="assets/images/camera-icon.png" />
             <span id="add-img-text">Adicionar foto</span>
           </label>
           <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
-          <div class="delete-img items-center justify-center space-x-4 mr-[50px]">
+          <div id="delete-img-btn" class="items-center justify-center space-x-4 mr-[50px]">
             <img id="trashcan-icon" src="assets/images/trashbin-icon.png" />
             <span id="delete-img-text">Excluir</span>
           </div>
@@ -153,6 +153,36 @@
         <div class="flex justify-between">
           <h1 id="personal-info-modal-title">Editar informações do perfil</h1>
           <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div class="mt-1">
+          <span id="personal-info-modal-subtitle">*Indica campo obrigatório</span>
+        </div>
+        <div>
+          <form class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
+            <div class="form-input-box mt-4">
+              <label for="volunteer-first-name">Primeiro nome*</label>
+              <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
+            </div>
+            <div class="form-input-box mt-4">
+              <label for="volunteer-last-name">Sobrenome*</label>
+              <input type="text" id="volunteer-last-name" class="pl-2 py-1.5 mt-2" />
+            </div>
+            <div class="form-input-box mt-4">
+              <label for="birthdate">Data de nascimento</label>
+              <input type="date" id="birthdate" class="px-2 py-1.5 mt-2" />
+            </div>
+            <div class="form-input-box mt-4">
+              <label for="volunteer-city">Cidade</label>
+              <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
+            </div>
+            <div class="form-input-box mt-4">
+              <label for="volunteer-city">Estado*</label>
+              <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
+            </div>
+            <div class="mt-28 mb-6 mx-28">
+              <button type="button" class="btn" id="btn-sign-up">Salvar</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
