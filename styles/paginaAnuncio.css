@@ -164,9 +164,15 @@ body {
     font-weight: 700;
 }
 
+.inscrito{
+    color: gray !important;
+    background-color: red;
+}
+
 #title-ngo{
     font-family: 'Inter';
 }
+
 
 
 

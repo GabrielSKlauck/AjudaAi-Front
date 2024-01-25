@@ -21,6 +21,10 @@ window.onload = function() {
         carregaPagina();
      });
     });
+
+    if(verificaAnuncio()){
+        disableBtnInsc();
+    }
 };
 
 function carregaPagina(){   
@@ -40,7 +44,7 @@ function carregaPagina(){
             ${desc}
           </p>
           <div id="div-baixo" class="w-full h-10">
-            <button id="btn-subscribe" class="px-3 py-1 rounded-2xl float-right mt-1 mr-5 mb-2">Inscrever-se</button>
+            <button id="btn-subscribe" class="px-3 py-1 rounded-2xl float-right mt-1 mr-5 mb-2" onclick="inscricao()">Inscrever-se</button>
           </div>
         </div>
     </div>
@@ -49,6 +53,25 @@ function carregaPagina(){
         $(`.divMeio`).append($(pagina));
 
         $('#btn-subscribe').on('click', inscricao);
+}
+
+function verificaAnuncio(){
+    inscrito = false;
+    var item = JSON.parse(localStorage.getItem("user"));
+    var userId = parseInt(item.id);
+    const infoUserAds = {
+        userId: userId,
+        adsId: parseInt(id)
+    }
+    $.ajax({
+        type: "GET",
+        url: "https://localhost:7070/UserAds",
+        data: JSON.stringify(infoUserAds),
+        success: inscrito = true,
+        contentType: "application/json",
+        dataType: "json",
+    });
+    return inscrito
 }
 
 function request(method, url, headers, successCallback) {
@@ -78,6 +101,7 @@ function inscricao(){
             url: "https://localhost:7070/UserAds",
             data: JSON.stringify(infoUserAds),
             contentType: "application/json",
+            success: disableBtnInsc(),
             error: alert("Voluntario ja logado no respectivo anuncio"),
             dataType: "json",
         });
@@ -85,4 +109,8 @@ function inscricao(){
         alert("Por favor logue primeiro antes de se inscrever");
         window.location.href = "login.html";
     }
+}
+
+function disableBtnInsc(){
+    $("#btn-subscribe").addClass("invalid");
 }
