@@ -123,8 +123,8 @@ header {
     font-size: 20px;
     color: #081509;
     border: 1px solid #8FC5E7;
-    border-radius: 10px;
-    box-shadow: 0.5px 0.5px 2px 0.5px #8FC5E7;
+    border-radius: 1vw;
+    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #8FC5E7;
 }
 
 body {
@@ -165,7 +165,8 @@ footer {
 .estrelas4,
 .estrelas5 {
   cursor: pointer;
-
+  width: 1.5vw;
+  height: 1.5vw;
 }
 
 .estrelas1:hover>.estrelaa,
@@ -207,12 +208,19 @@ footer {
 
 }
 /* BOTAO DE VISUALIZAR CONQUISTAS */
+
+
+.btn-conquistas {
+    height: 4.5vw;
+}
+
+
 #btn-visualizar-conquistas{
-    padding: 10px;
+    padding: 0.6vw;
     width: 20vw;
-    border-radius: 15px;
-    border: 1px solid #687C57;
-    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+    border-radius: 1vw;
+    border: 0.1vw solid #687C57;
+    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #687C57;
 
 }
 
@@ -221,11 +229,11 @@ footer {
 
 #btn-editar-perfil{
 
-    padding: 10px;
+    padding: 0.5vw;
     width: 100%;
-    border-radius: 15px;
-    border: 1px solid #687C57;
-    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+    border-radius: 1vw;
+    border: 0.1vw solid #687C57;
+    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #687C57;
 
 }
 
@@ -307,7 +315,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     background-color: #fff;
     height: 49vw;
     border-radius: 1vw;
-    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
 
 }
 
@@ -320,7 +328,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     background-color: #fff;
     height: 23vw;
     border-radius: 1vw;
-    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
 
 }
 
@@ -329,10 +337,10 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     height: 2.5vw;
     width: 14vw;
     border-radius: 20vw;
-    border: 1px solid #60B4E9;
-    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
+    border: 0.1vw solid #60B4E9;
+    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #60B4E9;
     font-family: Inter;
-    font-size: 24px;
+    font-size: 1.2vw;
     align-items: center;
 }
 
@@ -346,6 +354,6 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     background-color: #fff;
     height: 23vw;
     border-radius: 1vw;
-    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
 
 }
