@@ -138,8 +138,8 @@ header {
     height: 700px;
     margin-bottom: 60px;
     border-radius: 25px;
-    background-color: #EEE;
-    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
 }
 
 #profile-img {
@@ -199,7 +199,8 @@ header {
     border: 1px solid #F1F1F4;
 }
 
-#personal-info-modal-title {
+#personal-info-modal-title,
+#interests-modal-title {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 26px;
@@ -264,4 +265,36 @@ header {
     border-radius: 15px;
     border: 1px solid #687C57;
     box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+}
+
+#interests-modal-body {
+    width: 1143px;
+    height: 650px;
+    margin-bottom: 115px;
+    border-radius: 25px;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+}
+
+#interests-modal-box {
+    width: 1080px;
+    height: 409px;
+    border-radius: 25px;
+    margin-top: 15px;
+    padding-top: 25px;
+    background: #F9F9F9;
+    box-shadow: 0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.btn-interests {
+
+    height: 2.5vw;
+    width: 14vw;
+    font-family: Inter;
+    font-size: 24px;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #60B4E9;
+    background: #F9F9F9;
+    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
 }
