@@ -22,7 +22,8 @@ window.onload = function() {
      });
     });
 
-    if(verificaAnuncio()){
+    if(verificarInscricao() == true){
+        console.log("esta inscrito");
         disableBtnInsc();
     }
 };
@@ -55,25 +56,6 @@ function carregaPagina(){
         $('#btn-subscribe').on('click', inscricao);
 }
 
-function verificaAnuncio(){
-    inscrito = false;
-    var item = JSON.parse(localStorage.getItem("user"));
-    var userId = parseInt(item.id);
-    const infoUserAds = {
-        userId: userId,
-        adsId: parseInt(id)
-    }
-    $.ajax({
-        type: "GET",
-        url: "https://localhost:7070/UserAds",
-        data: JSON.stringify(infoUserAds),
-        success: inscrito = true,
-        contentType: "application/json",
-        dataType: "json",
-    });
-    return inscrito
-}
-
 function request(method, url, headers, successCallback) {
     $.ajax({
         
@@ -102,7 +84,6 @@ function inscricao(){
             data: JSON.stringify(infoUserAds),
             contentType: "application/json",
             success: disableBtnInsc(),
-            error: alert("Voluntario ja logado no respectivo anuncio"),
             dataType: "json",
         });
     }else{
@@ -111,6 +92,36 @@ function inscricao(){
     }
 }
 
+function verificarInscricao(){
+    var item = JSON.parse(localStorage.getItem("user"));
+    var userId = parseInt(item.id);
+
+    const infoUserAds = {
+    userId: userId,
+    adsId: parseInt(id)
+    }
+    
+    var estaInscrito = false;
+    $.ajax({
+        type: "POST",
+        url: "https://localhost:7070/UserAds/userIdAdsId",
+        data: JSON.stringify(infoUserAds),
+        contentType: "application/json",
+        success: estaInscrito = valida,
+        dataType: "json",
+    });
+    console.log(estaInscrito);
+    return estaInscrito;
+}
+
+function valida(item){
+    if(item.length == 0){
+        return false;
+    }else{
+        return true;
+    }
+}
+
 function disableBtnInsc(){
-    $("#btn-subscribe").addClass("invalid");
+    console.log("desa");
 }
