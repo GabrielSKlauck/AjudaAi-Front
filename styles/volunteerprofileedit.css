@@ -156,7 +156,7 @@ header {
     height: 67px;
     border-radius: 15px;
     border: 1px solid #687C57;
-    background-color: #EEE;
+    background-color: #FFF;
     box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
     margin-top: 70px;
     margin-left: 50px;
@@ -168,18 +168,17 @@ header {
 }
 
 #add-img-text,
-#delete-img-text {
+#delete-img-text,
+#share-achievement-text {
     color: #081509;
     font-family: "Inter", sans-serif;
+    font-weight: 400;
     font-size: 32px;
 }
 
-#camera-icon {
-    width: 50px;
-    height: 50px;
-}
-
-#trashcan-icon {
+#camera-icon,
+#trashcan-icon,
+#share-icon {
     width: 50px;
     height: 50px;
 }
@@ -282,12 +281,11 @@ header {
     border-radius: 25px;
     margin-top: 15px;
     padding-top: 25px;
-    background: #F9F9F9;
+    background-color: #F9F9F9;
     box-shadow: 0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
 .btn-interests {
-
     height: 2.5vw;
     width: 14vw;
     font-family: Inter;
@@ -295,6 +293,90 @@ header {
     align-items: center;
     border-radius: 25px;
     border: 1px solid #60B4E9;
-    background: #F9F9F9;
+    background-color: #F9F9F9;
     box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
+}
+
+#collected-achievements-modal-body {
+    width: 1000px;
+    height: 500px;
+    margin-bottom: 185px;
+    border-radius: 25px;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+}
+
+.achievement-icon-close-up {
+    width: 180px;
+    height: 180px;
+}
+
+.achievement-text-h1 {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 36px;
+}
+
+.achievement-text-h2 {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+}
+
+#uncollected-achievements-modal-body {
+    width: 1169px;
+    height: 892px;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+    overflow: auto;
+}
+
+#uncollected-achievements-modal-title {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-left: 35px;
+}
+
+.uncollected-achievement-icon-box {
+    width: 171px;
+    height: 139px;
+    padding: 10px;
+    border-radius: 5px 0px 0px 5px;
+    background-color: #D4D4D4;
+    box-shadow: 0.5px 0px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.achievement-icons {
+    width: 96px;
+    height: 96px;
+}
+
+.unachieved-icons {
+    mix-blend-mode: luminosity;
+}
+
+.uncollected-achievement-description-box {
+    width: 918px;
+    height: 139px;
+    border-radius: 0px 5px 5px 0px;
+    background: #E2E3E3;
+    box-shadow: 0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.uncollected-achievement-description-box h1 {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    padding-left: 25px;
+}
+
+#btn-view-achievements {
+    padding: 10px;
+    width: 20vw;
+    border-radius: 15px;
+    border: 1px solid #687C57;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
 }
