@@ -329,6 +329,7 @@ header {
     background-color: #FFF;
     border: 1px solid #F1F1F4;
     overflow: auto;
+    padding-bottom: 5px;
 }
 
 #uncollected-achievements-modal-title {
@@ -338,6 +339,7 @@ header {
     font-weight: 600;
     margin-top: 15px;
     margin-left: 35px;
+    background-color: #FFF;
 }
 
 .uncollected-achievement-icon-box {
