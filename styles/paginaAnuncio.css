@@ -138,12 +138,15 @@ body {
 #div-topo{
     background-color: #EFEFEF;
     border-radius: 20px 20px 0px 0px;
+    min-height: 7rem;
+    height: auto;
 }
 
-#div-header{
+.div-header{
     position: absolute;
     margin-top: 15px;
     margin-left: 20px;
+    display: flex;
 }   
 
 #barra{
