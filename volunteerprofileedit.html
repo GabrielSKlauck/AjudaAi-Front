@@ -109,7 +109,7 @@
         <div class="flex hidden lg:flex">
           <img id="header-profile-picture" class="w-[45px] h-[45px] mr-16" onclick="toggleProfileMenu()"
             src="assets/images/userprofile.png" alt="Perfil do usuário." />
-          <div id="profileMenu" class="profile-dropdown">
+          <div id="profile-menu" class="profile-dropdown">
             <ul class="profile-dropdown-list flex flex-col">
               <li>
                 <a href="#">Meu perfil</a>
@@ -141,7 +141,7 @@
             </label>
             <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
           </button>
-          <button id="delete-img-btn" class="btn items-center justify-center space-x-4 mr-[50px]">
+          <button id="delete-img-btn" onclick="setDefaultPic()" class="btn items-center justify-center space-x-4 mr-[50px]">
             <img id="trashcan-icon" src="assets/images/trashbin-icon.png" />
             <span id="delete-img-text">Excluir</span>
           </button>

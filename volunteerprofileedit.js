@@ -1,4 +1,4 @@
-let profileMenu = document.getElementById("profileMenu");
+let profileMenu = document.getElementById("profile-menu");
 
 function toggleProfileMenu() {
     profileMenu.classList.toggle("open-profile-menu");
@@ -9,6 +9,14 @@ let inputFile = document.getElementById("input-file");
 
 inputFile.onchange = function() {
     profileImg.src = URL.createObjectURL(inputFile.files[0]);
+}
+
+function setDefaultPic() {
+  let profileImg = document.getElementById("profile-img");
+
+  if(profileImg) {
+    profileImg.src = "assets/images/personimg.png";
+  }
 }
 
 const openModals = document.getElementsByClassName('open-modal');
