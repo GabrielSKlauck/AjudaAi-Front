@@ -45,7 +45,7 @@ function carregaPagina(){
             ${desc}
           </p>
           <div id="div-baixo" class="w-full h-10">
-            <button id="btn-subscribe" class="px-3 py-1 rounded-2xl float-right mt-1 mr-5 mb-2" onclick="inscricao()">Inscrever-se</button>
+            <button id="btn-subscribe" class="btn-subscribe px-3 py-1 rounded-2xl float-right mt-1 mr-5 mb-2" onclick="inscricao()">Inscrever-se</button>
           </div>
         </div>
     </div>
@@ -54,6 +54,8 @@ function carregaPagina(){
         $(`.divMeio`).append($(pagina));
 
         $('#btn-subscribe').on('click', inscricao);
+
+        
 }
 
 function request(method, url, headers, successCallback) {
@@ -107,21 +109,16 @@ function verificarInscricao(){
         url: "https://localhost:7070/UserAds/userIdAdsId",
         data: JSON.stringify(infoUserAds),
         contentType: "application/json",
-        success: estaInscrito = valida,
+        error: estaInscrito = true,
         dataType: "json",
     });
     console.log(estaInscrito);
     return estaInscrito;
 }
 
-function valida(item){
-    if(item.length == 0){
-        return false;
-    }else{
-        return true;
-    }
-}
-
 function disableBtnInsc(){
-    console.log("desa");
+    const btn = document.getElementById("btn-subscribe");
+    btn.classList.addClass('inscrito');
+    btn.classList.removeId('btn-subscribe');
+    btn.onclick();
 }
