@@ -285,16 +285,45 @@ header {
     box-shadow: 0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
-.btn-interests {
+.btn-interests,
+.add-btn-interests {
     height: 2.5vw;
     width: 14vw;
-    font-family: Inter;
-    font-size: 24px;
     align-items: center;
     border-radius: 25px;
     border: 1px solid #60B4E9;
     background-color: #F9F9F9;
     box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
+    cursor: pointer;
+}
+
+.btn-interests-text, .add-btn-interests span {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+}
+
+.btn-interests:hover .remove-interest {
+    display: block;
+}
+
+.btn-interests:hover .btn-interests-text {
+    display:none;
+    cursor: pointer;
+}
+
+.add-btn-interests:active, .btn-interests:active {
+    transform: scale(0.98);
+}
+
+.remove-interest {
+    display: none;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 36px;
 }
 
 #collected-achievements-modal-body {

@@ -141,7 +141,8 @@
             </label>
             <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
           </button>
-          <button id="delete-img-btn" onclick="setDefaultPic()" class="btn items-center justify-center space-x-4 mr-[50px]">
+          <button id="delete-img-btn" onclick="setDefaultPic()"
+            class="btn items-center justify-center space-x-4 mr-[50px]">
             <img id="trashcan-icon" src="assets/images/trashbin-icon.png" />
             <span id="delete-img-text">Excluir</span>
           </button>
@@ -200,12 +201,29 @@
           <div id="interests-modal-box">
             <div id="interests-boxes">
               <ul class="grid grid-cols-3 gap-[1.2vw] ml-[4vw] mr-[5vw]">
-                <li class="btn-interests flex justify-center">Educação</li>
-                <li class="btn-interests  flex justify-center">Meio Ambiente</li>
-                <li class="btn-interests  flex justify-center">Computação</li>
-                <li class="btn-interests  flex justify-center">Culinária</li>
-                <li class="btn-interests  flex justify-center">Organização</li>
-                <li class="btn-interests  flex justify-center">+</li>
+                <li class="btn-interests flex justify-center">
+                  <span class="btn-interests-text">Educação</span>
+                  <span class="remove-interest">&times;</span>
+                </li>
+                <li class="btn-interests flex justify-center">
+                  <span class="btn-interests-text">Meio Ambiente</span>
+                  <span class="remove-interest">&times;</span>
+                </li>
+                <li class="btn-interests flex justify-center">
+                  <span class="btn-interests-text">Computação</span>
+                  <span class="remove-interest">&times;</span>
+                </li>
+                <li class="btn-interests flex justify-center">
+                  <span class="btn-interests-text">Culinária</span>
+                  <span class="remove-interest">&times;</span>
+                </li>
+                <li class="btn-interests flex justify-center">
+                  <span class="btn-interests-text">Organização</span>
+                  <span class="remove-interest">&times;</span>
+                </li>
+                <li class="add-btn-interests flex justify-center">
+                  <span>+</span>
+                </li>
               </ul>
             </div>
           </div>
