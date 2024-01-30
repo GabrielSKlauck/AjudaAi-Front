@@ -160,24 +160,24 @@ body {
     background-color: #EFEFEF;
 }
 
-.btn-subscribe{
+#btn-subscribe{
     font-family: "Inter" sans-serif;
     background-color: #8FC5E7;
     color: white;
     font-weight: 700;
 }
 
-.inscrito{
-    color: gray !important;
-    background-color: red;
+#btn-non-subscribe{
+    font-family: "Inter" sans-serif;
+    background-color: #8FC5E7;
+    color: #595959;
+    font-weight: 500;
+    display: none;
 }
 
 #title-ngo{
     font-family: 'Inter';
 }
-
-
-
 
 footer {
     margin-top: 20px;

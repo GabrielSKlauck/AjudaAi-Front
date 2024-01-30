@@ -15,17 +15,13 @@ window.onload = function() {
         expira = result.expires;
         ngoId = result.ngo_Id;
     
-        console.log(ngoId);
         request('GET', `ngo/${ngoId}`, {}, function(result) {
         nameOng = result.ngoName;
         carregaPagina();
      });
     });
 
-    if(verificarInscricao() == true){
-        console.log("esta inscrito");
-        disableBtnInsc();
-    }
+    
 };
 
 function carregaPagina(){   
@@ -45,13 +41,16 @@ function carregaPagina(){
             ${desc}
           </p>
           <div id="div-baixo" class="w-full h-10">
-            <button id="btn-subscribe" class="btn-subscribe px-3 py-1 rounded-2xl float-right mt-1 mr-5 mb-2" onclick="inscricao()">Inscrever-se</button>
+            <button id="btn-subscribe" class="px-3 py-1 rounded-2xl float-right mt-1 mr-5 mb-2" onclick="inscricao()">Inscrever-se</button>
+            <button id="btn-non-subscribe" class="px-3 py-1 rounded-2xl float-right mt-1 mr-5 mb-2"><em>Inscrito</em></button>
           </div>
         </div>
     </div>
         
        `;
         $(`.divMeio`).append($(pagina));
+
+        verificarInscricao();
 
         $('#btn-subscribe').on('click', inscricao);
 
@@ -109,16 +108,19 @@ function verificarInscricao(){
         url: "https://localhost:7070/UserAds/userIdAdsId",
         data: JSON.stringify(infoUserAds),
         contentType: "application/json",
-        error: estaInscrito = true,
+        success: validaGet,
         dataType: "json",
     });
-    console.log(estaInscrito);
     return estaInscrito;
 }
 
+function validaGet(item){
+    if(item.length != 0){
+        disableBtnInsc();
+    }
+}
+
 function disableBtnInsc(){
-    const btn = document.getElementById("btn-subscribe");
-    btn.classList.addClass('inscrito');
-    btn.classList.removeId('btn-subscribe');
-    btn.onclick();
+    $('#btn-subscribe').css({display: 'none'});
+    $('#btn-non-subscribe').css({display: 'block'});
 }
