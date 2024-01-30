@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/resetCss.css">
-  <link rel="stylesheet" href="styles/perfil-edicao.css">
+  <link rel="stylesheet" href="styles/perfil.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -112,11 +112,13 @@
   </header>
   <div class="min-[550px]:flex min-[550px]:justify-center">
     <div class="perfil justify-center">
-      <div class="flex justify-center min-[550px]:mt-[2vw] min-[550px]:w-[15vw] min-[550px]:h-[15vw] max-[550px]:h-[60vw] max-[550px]:mt-[4vw] ml-[1.5vw]">
+      <div
+        class="flex justify-center min-[550px]:mt-[2vw] min-[550px]:w-[15vw] min-[550px]:h-[15vw] max-[550px]:h-[60vw] max-[550px]:mt-[4vw] ml-[1.5vw]">
         <img src="./assets/images/person1.png" alt="person1" class="cursor-pointer">
       </div>
       <div class="min-[550px]:mb-[10vw]">
-        <div class="min-[550px]:text-[1.5vw] max-[550px]:text-[5.8vw] font-semibold font-['Inter']">Tatiana Esmeralda</div>
+        <div class="min-[550px]:text-[1.5vw] max-[550px]:text-[5.8vw] font-semibold font-['Inter']">Tatiana Esmeralda
+        </div>
         <div class="flex items-center">
           <div class="flex estrelas1">
             <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
@@ -165,14 +167,17 @@
     </div>
     <div>
       <div class="interesses max-[550px]:justify-center">
-        <div class="flex min-[550px]:justify-between max-[550px]:justify-center text-[#687C57] min-[550px]:text-[1.8vw] font-semibold font-['Inter'] p-[2vw]">
+        <div
+          class="flex min-[550px]:justify-between max-[550px]:justify-center text-[#687C57] min-[550px]:text-[1.8vw] font-semibold font-['Inter'] p-[2vw]">
           Interesses e aptidões
           <div class="">
-            <img src="./assets/images/lápis icon.png" id="editar-interesses" alt="" class="cursor-pointer max-[550px]:pl-[8vw] min-[550px]:h-[2vw] max-[550px]:h-[7vw] ">
+            <img src="./assets/images/lápis icon.png" id="editar-interesses" alt=""
+              class="cursor-pointer max-[550px]:pl-[8vw] min-[550px]:h-[2vw] max-[550px]:h-[7vw] ">
           </div>
         </div>
         <div>
-          <ul class="grid min-[550px]:grid-cols-3 max-[550px]:grid-cols-2 min-[550px]:gap-[1.2vw] min-[550px]:ml-[4vw] min-[550px]:mr-[5vw]">
+          <ul
+            class="grid min-[550px]:grid-cols-3 max-[550px]:grid-cols-2 min-[550px]:gap-[1.2vw] min-[550px]:ml-[4vw] min-[550px]:mr-[5vw]">
             <li class="btn-interesses flex justify-center">Meio Ambiente</li>
             <li class="btn-interesses flex justify-center">Meio Ambiente</li>
             <li class="btn-interesses flex justify-center">Meio Ambiente</li>
@@ -182,7 +187,8 @@
         </div>
       </div>
       <div class="conquistas ">
-        <div class="flex max-[550px]:justify-center min-[550px]:justify-between text-[#687C57] min-[550px]:text-[1.8vw] font-semibold font-['Inter'] p-[2vw]">
+        <div
+          class="flex max-[550px]:justify-center min-[550px]:justify-between text-[#687C57] min-[550px]:text-[1.8vw] font-semibold font-['Inter'] p-[2vw]">
           Conquistas
 
         </div>
@@ -265,8 +271,45 @@
           </div>
         </div>
       </div>
+      <div class="modal-avaliar">
+        <div class="w-screen h-screen flex items-center justify-center">
+          <div id="avaliation" class="justify-center">
+            <div class="min-[766px]:text-[3vw] max-[766px]:text-[7vw] mt-[4vw] font-semibold justify-center flex">
+              Avalie a instituição
+            </div>
+            <div class="flex justify-center ">
+                  <div class="flex estrela-avaliacao1">
+                    <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+                    <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="1" alt="">
+                  </div>
+                  <div class="flex estrela-avaliacao2">
+                    <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+                    <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="2" alt="">
+                  </div>
+                  <div class="flex estrela-avaliacao3">
+                    <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+                    <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="3" alt="">
+                  </div>
+                  <div class="flex estrela-avaliacao4">
+                    <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+                    <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="4" alt="">
+                  </div>
+                  <div class="flex estrela-avaliacao5">
+                    <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+                    <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="5" alt="">
+                  </div>
+            </div>
+            <div class="flex justify-center mt-[3vw]">
+              <button type="button" class="btn">Enviar Avaliação</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="perfil-edicao.js"></script>
 </body>
 
 </html>
