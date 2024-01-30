@@ -80,5 +80,13 @@ header {
     font-size: 18px;
     transition:transform 0.10s ease;
     font: 1em sans-serif;
+    width: 50%;
 }
 
+@media(max-width: 414px){
+    .botao{
+        width: 100px !important;
+    }
+}
+
+  
