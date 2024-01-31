@@ -161,29 +161,32 @@
           <span id="personal-info-modal-subtitle">*Indica campo obrigatório</span>
         </div>
         <div>
-          <form class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
+          <form id="personal-info-form" class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
             <div class="form-input-box mt-4">
               <label for="volunteer-first-name">Primeiro nome*</label>
               <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
             </div>
-            <div class="form-input-box mt-4">
+            <div class="form-input-box mt-1">
               <label for="volunteer-last-name">Sobrenome*</label>
               <input type="text" id="volunteer-last-name" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
             </div>
-            <div class="form-input-box mt-4">
+            <div class="form-input-box mt-1">
               <label for="birthdate">Data de nascimento</label>
               <input type="date" id="birthdate" class="px-2 py-1.5 mt-2" />
             </div>
-            <div class="form-input-box mt-4">
+            <div class="form-input-box mt-6">
               <label for="volunteer-city">Cidade</label>
-              <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
+              <input type="text" id="volunteer-city" class="pl-2 py-1.5 mt-2" />
             </div>
-            <div class="form-input-box mt-4">
-              <label for="volunteer-city">Estado*</label>
-              <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
+            <div class="form-input-box mt-6">
+              <label for="volunteer-state">Estado*</label>
+              <input type="text" id="volunteer-state" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
             </div>
-            <div class="mt-20 mb-6 mx-28">
-              <button type="button" class="btn">Salvar</button>
+            <div class="mt-8 mb-6 mx-28">
+              <button type="submit" class="btn">Salvar</button>
             </div>
           </form>
         </div>

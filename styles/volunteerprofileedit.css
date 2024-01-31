@@ -191,8 +191,10 @@ header {
 }
 
 #personal-info-modal-body {
-    width: 650px;
-    height: 770px;
+    max-width: 650px;
+    width: 100%;
+    height: auto;
+    padding-bottom: 30px;
     border-radius: 25px;
     background-color: #FFF;
     border: 1px solid #F1F1F4;
@@ -236,6 +238,22 @@ header {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 18px;
+}
+
+.form-input-box a {
+    font-family: "Inter", sans-serif;
+    visibility: hidden;
+}
+
+.form-input-box.invalid input {
+    border-left: 5px solid rgb(233, 23, 23) !important;
+    outline: 2px solid rgb(233, 23, 23) !important;
+    box-shadow: 0 0 0 4px rgba(255, 8, 0, 0.4) !important;
+}
+
+.form-input-box.invalid a {
+    color: rgb(233, 23, 23) !important;
+    visibility: visible !important;
 }
 
 .btn {
@@ -297,7 +315,8 @@ header {
     cursor: pointer;
 }
 
-.btn-interests-text, .add-btn-interests span {
+.btn-interests-text,
+.add-btn-interests span {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 24px;
@@ -308,11 +327,12 @@ header {
 }
 
 .btn-interests:hover .btn-interests-text {
-    display:none;
+    display: none;
     cursor: pointer;
 }
 
-.add-btn-interests:active, .btn-interests:active {
+.add-btn-interests:active,
+.btn-interests:active {
     transform: scale(0.98);
 }
 

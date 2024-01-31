@@ -19,6 +19,88 @@ function setDefaultPic() {
   }
 }
 
+const form = document.getElementById("personal-info-form");
+const firstName = document.getElementById("volunteer-first-name");
+const lastName = document.getElementById("volunteer-last-name");
+const birthdate = document.getElementById("birthdate"); 
+const city = document.getElementById("volunteer-city"); 
+const state = document.getElementById("volunteer-state");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  checkForm();
+})
+
+firstName.addEventListener("blur", () => {
+  checkInputFirstName();
+})
+
+lastName.addEventListener("blur", () => {
+  checkInputLastName();
+})
+
+state.addEventListener("blur", () => {
+  checkInputState();
+})
+
+function checkInputFirstName() {
+  const volunteerFirstNameValue = firstName.value;
+
+  if(volunteerFirstNameValue === "") {
+    invalidInput(firstName, "Informe seu primeiro nome.");
+  } else {
+    const formItem = firstName.parentElement;
+    formItem.className = "form-input-box";
+  }
+}
+
+function checkInputLastName() {
+  const volunteerLastNameValue = lastName.value;
+
+  if(volunteerLastNameValue === "") {
+    invalidInput(lastName, "Informe seu sobrenome.");
+  } else {
+    const formItem = lastName.parentElement;
+    formItem.className = "form-input-box";
+  }
+}
+
+function checkInputState() {
+  const volunteerStateValue = state.value;
+
+  if(volunteerStateValue === "") {
+    invalidInput(state, "Informe seu estado de residência.");
+  } else {
+    const formItem = state.parentElement;
+    formItem.className = "form-input-box";
+  }
+}
+
+function checkForm() {
+  checkInputFirstName();
+  checkInputLastName();
+  checkInputState();
+
+  const formItems = form.querySelectorAll(".form-input-box");
+  const isValid = [...formItems].every( (item) => {
+    return item.className === "form-input-box";
+  });
+
+  if(isValid) {
+    alert("Informações atualizadas com sucesso!");
+  }
+}
+
+function invalidInput(input, message) {
+  const formItem = input.parentElement;
+  const textMessage = formItem.querySelector("a");
+
+  textMessage.innerText = message;
+
+  formItem.className = "form-input-box invalid"
+}
+
 const openModals = document.getElementsByClassName('open-modal');
 const modalArray = Array.from(openModals).entries();
 const modals = document.getElementsByClassName('modal');
