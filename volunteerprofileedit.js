@@ -19,6 +19,33 @@ function setDefaultPic() {
   }
 }
 
+$(() => {
+  $("#save-personal-info-btn").click(() => {
+    const values = {
+      firstName: $("#volunteer-first-name")[0].value,
+      lastName: $("#volunteer-last-name")[0].value,
+      birthdate: $("#birthdate")[0].value,
+      city: $("#volunteer-city")[0].value,
+      state: $("#volunteer-state")[0].value
+    }
+
+    if(!values.firstName) {
+      return;
+    }
+
+    if(!values.lastName) {
+      return;
+    }
+
+    if(!values.state) {
+      return;
+    }
+
+    console.log(values);
+    alert("Informações atualizadas com sucesso!");
+  })
+})
+
 const form = document.getElementById("personal-info-form");
 const firstName = document.getElementById("volunteer-first-name");
 const lastName = document.getElementById("volunteer-last-name");
@@ -51,7 +78,7 @@ function checkInputFirstName() {
     invalidInput(firstName, "Informe seu primeiro nome.");
   } else {
     const formItem = firstName.parentElement;
-    formItem.className = "form-input-box";
+    formItem.className = "form-input-box mt-4";
   }
 }
 
@@ -62,7 +89,7 @@ function checkInputLastName() {
     invalidInput(lastName, "Informe seu sobrenome.");
   } else {
     const formItem = lastName.parentElement;
-    formItem.className = "form-input-box";
+    formItem.className = "form-input-box mt-1";
   }
 }
 
@@ -73,7 +100,7 @@ function checkInputState() {
     invalidInput(state, "Informe seu estado de residência.");
   } else {
     const formItem = state.parentElement;
-    formItem.className = "form-input-box";
+    formItem.className = "form-input-box mt-6";
   }
 }
 
@@ -81,15 +108,6 @@ function checkForm() {
   checkInputFirstName();
   checkInputLastName();
   checkInputState();
-
-  const formItems = form.querySelectorAll(".form-input-box");
-  const isValid = [...formItems].every( (item) => {
-    return item.className === "form-input-box";
-  });
-
-  if(isValid) {
-    alert("Informações atualizadas com sucesso!");
-  }
 }
 
 function invalidInput(input, message) {

@@ -256,6 +256,10 @@ header {
     visibility: visible !important;
 }
 
+.form-input-box.invalid {
+    margin-top: 16px;
+}
+
 .btn {
     color: #081509;
     font-family: "Inter", sans-serif;

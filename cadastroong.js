@@ -8,7 +8,7 @@ $(() => {
             social: $("#ngo-social")[0].value,
             headperson: $("#ngo-head-name")[0].value,
             phone: $("#ngo-phone")[0].value,
-            field: $("#ngo-field")[0].value,
+            causes: $("#ngo-causes")[0].value,
             email: $("#ngo-email")[0].value,
             password: $("#ngo-password")[0].value
         }
@@ -55,9 +55,9 @@ $(() => {
         }
         $("#ngo-phone").removeClass("invalid");
 
-        if (!values.field) {
+        if (!values.causes) {
             alert("Favor informar a área de atuação!");
-            $("#ngo-field").addClass("invalid");
+            $("#ngo-causes").addClass("invalid");
             return;
         }
         $("#ngo-field").removeClass("invalid");
