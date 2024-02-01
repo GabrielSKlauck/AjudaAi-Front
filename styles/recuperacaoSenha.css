@@ -66,6 +66,23 @@ body{
     background-color: #60B4E9;
 }
 
+input{
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+#btn-verificar-token{
+    border-radius: 20px;
+    background-color: #60B4E9;
+    color: white;
+}
+
+#btn-mudar-senha{
+    background-color: #60B4E9;
+    border-radius: 20px;
+    color: white;
+}
+
 footer {
     /* margin-top: 20px; */
     background-color: #E0E8D9;
