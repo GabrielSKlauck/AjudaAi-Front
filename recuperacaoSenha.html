@@ -91,7 +91,7 @@
             </a>
             
             <div class="block">
-                <p class="text-xl ml-10">Um email contendo um token de verificação foi enviado para: <em class="font-semibold">emailUsusario@email.com</em></p>
+                <p class="text-xl ml-10">Um email contendo um token de verificação foi enviado para: <em class="font-semibold" id="add-email"></em></p>
                 <label class="ml-10 mt-2 mr-2" for="token-label">Insira o token</label> <input class="mt-2" type="text" id="validate-token" placeholder="Digite o token">
                 <button class="block ml-10 mt-5 p-3" id="btn-verificar-token" onclick="verificarToken()">Verificar</button>             
             </div>
@@ -125,8 +125,8 @@
             </a>
             
             <p class="text-center">Digite a nova senha para a sua conta</p>
-            <label class="ml-10 mt-3" for="senha">Digite a nova senha:</label> <input id="senha" type="password" class="mt-3 ml-1"> <br>
-            <label class="ml-10 mt-1 inline-block" for="senha-repetida">Repita a senha:</label><input id="senha-repetida" type="password" class="inline-block mt-1 ml-2">
+            <label class="ml-10 mt-3" for="senha">Digite a nova senha:</label> <input required id="senha" type="password" class="mt-3 ml-1"> <br>
+            <label class="ml-10 mt-1 inline-block" for="senha-repetida">Repita a senha:</label><input required id="senha-repetida" type="password" class="inline-block mt-1 ml-2">
             <button class="block ml-10 mt-5 p-3" id="btn-mudar-senha" onclick="mudarSenha()">Alterar senha</button>
         </div>
     </div>
