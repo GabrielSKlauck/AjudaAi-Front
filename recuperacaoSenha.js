@@ -3,14 +3,28 @@ var email;
 function enviarToken(){
     email = document.getElementById("Recuperacao-email").value;
     console.log(email);
-    $.ajax({
-        type: "POST",
-        url: `https://localhost:7070/user/SendTokenToEmail/${email}`,
-        data: String,
-        contentType: "application/json",
-        success: enableTokenPage(email),
-        dataType: "string",
-    });
+    const expressaoRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!(email == "") && expressaoRegular.test(email)){
+        $.ajax({
+            type: "POST",
+            url: `https://localhost:7070/user/SendTokenToEmail/${email}`,
+            data: String,
+            contentType: "application/json",          
+            error: emailIncorreto(),         
+            success: enableTokenPage(email),
+            dataType: "string",
+        });
+    }else{
+        emailIncorreto();
+    }
+    
+}
+
+function emailIncorreto(){
+    window.alert("Email invalido ou incorreto");
+    $('#Recuperacao-email').removeClass("valido");
+    $('#Recuperacao-email').addClass("invalid");
 }
 
 function enableTokenPage(email){
@@ -26,9 +40,14 @@ function verificarToken(){
         type: "POST",
         url: `https://localhost:7070/user/SendToken/${token}`,       
         contentType: "application/json",
+        error: tokenIncorreto(),
         success: enableChangePassword(),
         dataType: "string",
     });
+}
+
+function tokenIncorreto(erro){
+    console.log(erro);
 }
 
 function enableChangePassword(){
