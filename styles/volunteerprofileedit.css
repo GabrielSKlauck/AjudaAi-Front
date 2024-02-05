@@ -301,9 +301,47 @@ header {
     padding-top: 25px;
     background-color: #F9F9F9;
     box-shadow: 0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.25) inset;
+    overflow: auto;
 }
 
-.btn-interests,
+#interests-boxes ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2vw;
+    margin-left: 4vw;
+    margin-right: 5vw;
+}
+
+#interests-boxes li {
+    height: 2.5vw;
+    width: 14vw;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #60B4E9;
+    background-color: #F9F9F9;
+    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#interests-boxes li span {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+}
+
+#interests-boxes button {
+    display: none;
+    text-align: center;
+    justify-content: center;
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 36px;
+}
+
+/* .btn-interests,
 .add-btn-interests {
     height: 2.5vw;
     width: 14vw;
@@ -314,28 +352,51 @@ header {
     box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
     cursor: pointer;
 }
+*/
 
+/*
 .btn-interests-text,
 .add-btn-interests span {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 24px;
 }
+*/
 
-.btn-interests:hover .remove-interest {
+#interests-boxes li:hover button {
     display: block;
 }
 
-.btn-interests:hover .btn-interests-text {
+#interests-boxes li:hover span {
     display: none;
     cursor: pointer;
 }
 
-.add-btn-interests:active,
-.btn-interests:active {
-    transform: scale(0.98);
+#interests-boxes input {
+    height: 2.5vw;
+    width: 14vw;
+    border-radius: 25px;
+    border: 1px solid #60B4E9;
+    background-color: #F9F9F9;
+    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
+    cursor: pointer;
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-left: 4vw;
+    margin-top: 1vw;
 }
 
+#interests-boxes input:focus {
+    outline: 1px solid #60B4E9;
+}
+
+#interests-boxes input:active,
+#interests-boxes li:active {
+    transform: scale(0.98);
+}
+/*
 .remove-interest {
     display: none;
     text-align: center;
@@ -345,7 +406,7 @@ header {
     font-family: "Inter", sans-serif;
     font-size: 36px;
 }
-
+*/
 #collected-achievements-modal-body {
     width: 1000px;
     height: 500px;

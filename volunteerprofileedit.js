@@ -101,6 +101,40 @@ function invalidInput(input, message) {
   formItem.className = "form-input-box invalid"
 }
 
+const ul = document.querySelector("#interests-ul");
+const input = document.querySelector("#interests-input")
+
+const itemsList = [];
+
+input.addEventListener("keydown", (e) => {
+  if(e.key == "Enter" && e.target.value) {
+    itemsList.push(e.target.value);
+    input.value = "";
+
+    loadItems();
+  }
+});
+
+function loadItems() {
+  ul.innerHTML = "";
+  itemsList.forEach((item, i) => {
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+    <div>
+      <span>${item}</span>
+      <button onclick="removeItem(${i})" data-i=${i}>&times;</button>
+    </div>
+    `;
+    ul.appendChild(li);
+  });
+}
+
+function removeItem(i) {
+  itemsList.splice(i, 1);
+  loadItems();
+}
+
 const openModals = document.getElementsByClassName('open-modal');
 const modalArray = Array.from(openModals).entries();
 const modals = document.getElementsByClassName('modal');
