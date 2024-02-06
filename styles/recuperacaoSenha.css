@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "Hanuman";
+    src: url("../assets/fonts/Hanuman-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/static/Inter-Regular.ttf")
+}
+
+@font-face {
+    font-family: "KaiseiDecol";
+    src: url("../assets/fonts/KaiseiDecol-Medium.ttf")
+}
+
+@font-face {
+    font-family: "FugazOne";
+    src: url("../assets/fonts/FugazOne-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Jomhuria";
+    src: url("../assets/fonts/Jomhuria-Regular.ttf")
+}
+
+body{
+    background-color: #B7DBF2;
+}
+
+#logo {
+    width: 35px;
+    height: 35px;
+    margin-top: 3px;
+    margin-right: 10px;
+  }
+   
+.brand-name {
+    font-family: "Hanuman", serif;
+}
+   
+.brand-l {
+    color: #6A8C4E;
+}
+   
+.brand-r {
+    color: #60B4E9;
+}
+
+#Recuperacao-email{
+    font-family: "Inter", sans-serif;
+    border-radius: 5px;
+   
+    background: #F6F6F6;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    width: 50%;
+    transition: 0.2s;
+}
+
+.valido{
+    border-left: 5px solid #8FC5E7;
+}
+
+.invalid {
+    border-left: 5px solid rgb(233, 23, 23) !important;
+    outline: 2px solid rgb(233, 23, 23) !important;
+    box-shadow: 0 0 0 4px rgba(255, 8, 0, 0.4) !important;
+}
+
+#Recuperacao-email:focus {
+    border-left: 5px solid #687C57;
+    outline: 2px solid #687C57;
+    box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
+}
+
+#btn-enviar-token{
+    background-color: #60B4E9;
+}
+
+#validate-token{
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+#nova-senha-box > input{
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+#btn-verificar-token{
+    border-radius: 20px;
+    background-color: #60B4E9;
+    color: white;
+}
+
+#btn-mudar-senha{
+    background-color: #60B4E9;
+    border-radius: 20px;
+    color: white;
+}
+
+footer {
+    /* margin-top: 20px; */
+    background-color: #E0E8D9;
+}
+
+#footer-menu-list li {
+    color: #5f7051;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
+
+#footer-menu-list li:hover {
+    color: #3F4D33;
+}
+
+#contact-title {
+    color: #3F4C33;
+    font-family: "Hanuman", serif;
+    font-size: 32px;
+}
+
+#contact-info {
+    color: #4F5F42;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
+/*RESPONSIVIDADE CARD DE EMAIL*/
+@media(max-width: 730px){
+    #email-send-box{
+        width: 22rem !important;
+    }
+}
+
+@media(max-width: 382px){
+    #email-send-box{
+        width: 15rem !important;
+        height: 20rem !important;
+    }
+}
+/*RESPONSIVIDADE CARD DE TOKEN*/
+@media (max-width: 640px) {
+    #token-validate-box{
+        width: 28rem !important;
+    }
+}
+
+@media(max-width: 475px){
+    #token-validate-box{
+        width: 18rem !important;
+        height: 20rem !important;
+    }
+}
+
+/*RESPONSIVIDADE MUDAR SENHA*/
+@media(max-width:420px){
+    #nova-senha-box{
+        width: 18rem;
+        height: 21rem;
+    }
+}
+
+@media(max-width:310px){
+    #nova-senha-box{
+        width: 16rem;
+        height: 23rem;
+    }
+}
