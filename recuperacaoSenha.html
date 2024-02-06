@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="container mx-auto mt-4 h-[44rem]">
-        <div id="email-send-box" class="w-[42rem] h-[19rem] mx-auto rounded-xl bg-white ">
+        <div id="email-send-box" class="w-[42rem] h-[19rem] mx-auto rounded-xl bg-white">
             <a href="homepage.html">
                 <div class="header-logo flex justify-center pt-8 lg:pt-14">
                     <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53"
@@ -54,8 +54,11 @@
                 <p class="text-center font-semibold"><em>O email deve pertencer a uma conta cadastrada</em></p>
             </div>
 
-            <div class="items-center justify-center flex mt-4">
-                <input type="text" id="Recuperacao-email" placeholder="Digite seu email..." class="pl-2 py-1 valido" />             
+            <div class="items-center justify-center flex mt-4">               
+                    <input type="text" id="Recuperacao-email" placeholder="Digite seu email..." class="pl-2 py-1 valido" />                                         
+            </div>
+            <div class="justify-center hidden" id="invalid-email">
+                <p class="text-xs mt-1"><em>Email invalido ou incorreto</em></p>
             </div>
 
             <div class="items-center justify-center flex mt-3">
@@ -63,7 +66,7 @@
             </div>
         </div>
 
-        <div id="token-validate-box" class="w-[38rem] h-[17rem] mx-auto rounded-xl bg-white hidden">
+        <div id="token-validate-box" class="w-[40rem] h-[18rem] mx-auto rounded-xl bg-white hidden">
             <a href="homepage.html">
                 <div class="header-logo flex justify-center pt-8 lg:pt-14">
                     <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53"
@@ -93,6 +96,7 @@
             <div class="block">
                 <p class="text-xl ml-10">Um email contendo um token de verificação foi enviado para: <em class="font-semibold" id="add-email"></em></p>
                 <label class="ml-10 mt-2 mr-2" for="validate-token">Insira o token</label> <input class="mt-2" type="text" id="validate-token" placeholder="Digite o token">
+                <p class="ml-10 text-xs hidden" id="invalid-token"><em>Token invalido ou incorreto</em></p>
                 <button class="block ml-10 mt-5 p-3" id="btn-verificar-token" onclick="verificarToken()">Verificar</button>             
             </div>
         </div>
@@ -127,6 +131,7 @@
             <p class="text-center">Digite a nova senha para a sua conta</p>
             <label class="ml-10 mt-3" for="senha">Digite a nova senha:</label> <input required id="senha" type="password" class="mt-3 ml-1"> <br>
             <label class="ml-10 mt-1 inline-block" for="senha-repetida">Repita a senha:</label><input required id="senha-repetida" type="password" class="inline-block mt-1 ml-2">
+            <p class="ml-10 text-xs hidden" id="invalid-password"><em>Senhas não são iguais</em></p>
             <button class="block ml-10 mt-5 p-3" id="btn-mudar-senha" onclick="mudarSenha()">Alterar senha</button>
         </div>
     </div>

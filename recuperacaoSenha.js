@@ -1,8 +1,7 @@
 var email;
 
-function enviarToken(){
+function enviarToken(){ 
     email = document.getElementById("Recuperacao-email").value;
-    console.log(email);
     const expressaoRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if(!(email == "") && expressaoRegular.test(email)){
@@ -10,9 +9,17 @@ function enviarToken(){
             type: "POST",
             url: `https://localhost:7070/user/SendTokenToEmail/${email}`,
             data: String,
-            contentType: "application/json",          
-            error: emailIncorreto(),         
-            success: enableTokenPage(email),
+            contentType: "application/json",  
+            
+            statusCode: {
+                200: function() {
+                  enableTokenPage(email);
+                },
+                401: function(){
+                    emailIncorreto();
+                }
+              },               
+                              
             dataType: "string",
         });
     }else{
@@ -22,7 +29,7 @@ function enviarToken(){
 }
 
 function emailIncorreto(){
-    window.alert("Email invalido ou incorreto");
+    $('#invalid-email').css({display: 'flex'});
     $('#Recuperacao-email').removeClass("valido");
     $('#Recuperacao-email').addClass("invalid");
 }
@@ -40,14 +47,22 @@ function verificarToken(){
         type: "POST",
         url: `https://localhost:7070/user/SendToken/${token}`,       
         contentType: "application/json",
-        error: tokenIncorreto(),
-        success: enableChangePassword(),
+        statusCode:{
+            200: function(){
+                enableChangePassword();
+            },
+            400: function(){
+                tokenIncorreto();
+            }
+        },
+        
         dataType: "string",
+        
     });
 }
 
-function tokenIncorreto(erro){
-    console.log(erro);
+function tokenIncorreto(){  
+    $('#invalid-token').css({display: 'block'});  
 }
 
 function enableChangePassword(){
@@ -68,7 +83,13 @@ function mudarSenha(){
             success: voltaLogin(),
             dataType: "string",
         });
+    }else{
+        senhaIncorreta();
     }
+}
+
+function senhaIncorreta(){
+    $('#invalid-password').css({display: 'block'});
 }
 
 function voltaLogin(){
