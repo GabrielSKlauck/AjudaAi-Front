@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/resetCss.css">
+  <link rel="stylesheet" href="styles/paginaAnuncio.css">
+  <link rel="stylesheet" href="styles/Header.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: "#da373d",
+          },
+        },
+      },
+    };
+  </script>
+  <title>Anuncio</title>
+</head>
+
+<body>
+  <header id="header-hp">
+    <a href="homepage.html">
+      <div class="w-full h-1/6 flex items-center justify-between">
+        <div class="header-logo flex p-6 lg:p-8 ml-1 lg:ml-10">
+          <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
+            <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
+            <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
+            <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+            <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z" fill="#D9D9D9" />
+            <path
+              d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+              stroke="#324424" stroke-width="0.285" />
+            <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57" stroke="#324424"
+              stroke-width="0.285" />
+            <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+              stroke-width="0.285" />
+            <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+              stroke-width="0.285" />
+          </svg>
+          <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
+        </div>
+    </a>
+    <nav class="flex items-center justify-between">
+      <div class="container mx-auto mt-2">
+        <div class="flex header-menu-items space-x-6 hidden lg:flex">
+          <a href="homepage.html#about-us">Quem Somos</a>
+          <div class="dropdown">
+            <a class="dropbtn flex">Voluntariado
+              <svg class="mt-2 ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 23 14"
+                fill="none">
+                <path d="M2 2.12964L11.3094 12.1904L20.6187 2.12964" stroke="#687C57" stroke-opacity="0.8"
+                  stroke-width="3.375" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <ul class="header-menu-dropdown-list">
+              <li>
+                <a href="homepage.html#about-platform">Conheça a Plataforma</a>
+              </li>
+              <li>
+                <a href="ongs-lista.html">ONGs</a>
+              </li>
+              <li>
+                <a href="anuncios-lista.html">Oportunidades</a>
+              </li>
+            </ul>
+          </div>
+          <a href="#footer-right">Contato</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="flex items-center justify-between">
+      <div class="container mx-auto mt-2 mr-5">
+        <div class="header-menu-mobile lg:hidden">
+          <a class="dropbtn-mobile">
+            <img id="icone-menu" class="w-[30px] h-[30px] opacity-80 mb-[10px]" src="./assets/images/menu-mobile.png"
+              alt="Ícone do menu." />
+          </a>
+          <div class="dropdown-menu-mobile">
+            <ul class="menu-mobile-dropdown-list right-2 top-[60px]">
+              <li>
+                <a href="homepage.html#about-us">Quem somos</a>
+              </li>
+              <li>
+                <a href="homepage.html#about-platform">Conheça a plataforma</a>
+              </li>
+              <li>
+                <a href="ongs-lista.html">ONGs</a>
+              </li>
+              <li>
+                <a href="anuncios-lista.html">Oportunidades</a>
+              </li>
+              <li>
+                <a href="#footer-right">Contato</a>
+              </li>
+              <li>
+                <a href="login.html">Entrar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex header-menu-login space-x-2 hidden lg:flex">
+          <div class="criardown">
+            <button class="criarbtn" id="sign-up">Criar Conta</button></a>
+            <div class="criardown-content">
+              <a id="VoluntarioButton" href="loginCadastro.html">Voluntario</img></a>
+              <a id="OngButton" href="cadastroong.html">ONG</img></a>
+            </div>
+          </div>
+
+          <a href="login.html" class="login">Entrar</a>
+
+        </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
+</div>
+</nav>
+</div>
+</header>

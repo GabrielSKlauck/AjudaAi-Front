@@ -1,0 +1,216 @@
+@font-face {
+    font-family: "Hanuman";
+    src: url("../assets/fonts/Hanuman-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/static/Inter-Regular.ttf")
+}
+
+@font-face {
+    font-family: "KaiseiDecol";
+    src: url("../assets/fonts/KaiseiDecol-Medium.ttf")
+}
+
+@font-face {
+    font-family: "FugazOne";
+    src: url("../assets/fonts/FugazOne-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Jomhuria";
+    src: url("../assets/fonts/Jomhuria-Regular.ttf")
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #EEEEEE;
+}
+
+#logo {
+    width: 35px;
+    height: 35px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-family: "Hanuman", serif;
+}
+
+.brand-l {
+    color: #6A8C4E;
+}
+.brand-r {
+    color: #60B4E9;
+}
+
+
+.header-menu-items a {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+.header-menu-items a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
+}
+
+.dropdown .dropbtn {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+.header-menu-dropdown-list, .menu-mobile-dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    width: 220px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 2px #ADADAD;
+    z-index: 1;
+}
+
+.header-menu-dropdown-list a, .menu-mobile-dropdown-list a {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    text-align: left;
+}
+
+.header-menu-dropdown-list a:hover, .menu-mobile-dropdown-list a:hover {
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 0px;
+    padding: 10px;
+}
+
+.dropdown:hover .header-menu-dropdown-list, .header-menu-mobile:hover .menu-mobile-dropdown-list {
+    display:block;
+}
+
+#sign-up {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    
+}
+
+#sign-up:hover {
+    padding: 2px 7px;
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
+}
+
+.login {
+    padding: 2px 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    border: 1px solid #687C57;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+}
+body {
+    background-color: #bbd0ea;
+}
+
+#div-pag{
+    background-color: #F5D2A2;
+}
+
+#btn-subscribe{
+    background-color: #A1ADB5;
+}
+
+#title-ngo{
+    font-family: 'Inter';
+}
+
+@media(max-width: 720px){
+    #div-pag{
+        width: 30rem !important;
+    }
+}
+
+@media(max-width: 500px){
+    #div-pag{
+        width: 22rem !important;
+    }
+
+    #img-ong{
+        display: none !important;
+    }
+}
+
+@media(max-width: 360px){
+    #div-pag{
+        width: 20rem !important;
+    }
+}
+
+.criarbtn {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+
+.criardown {
+  position: relative;
+  display: inline-block;
+ 
+}
+
+
+.criardown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+ border-radius: 5px;
+}
+
+
+.criardown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+}
+
+
+#VoluntarioButton:hover {
+    background-color: #eaf8fa
+}
+
+#OngButton:hover {
+    background-color: #dfffe6
+}
+
+
+
+.criardown:hover .criardown-content {
+  display: block;
+}
+
+
+
