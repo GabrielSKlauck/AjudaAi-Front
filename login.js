@@ -78,8 +78,12 @@ $(() => {
         alert("O usuario não esta cadastrado!");
         return;
       }
-
-      redirect("homepage.html");
+      if(document.getElementById('ong-checkbox').checked){
+        redirect("perfil-edicao-ong.html");
+      }else{
+        redirect("perfil-edicao.html");
+      }
+      
     });
 
     $("#btn-sign-in").text("Carregando");
