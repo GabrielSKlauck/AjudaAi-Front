@@ -110,14 +110,287 @@
     </nav>
     </div>
   </header>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="profile-pic-modal-body">
+        <div class="flex justify-end">
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div>
+          <img id="profile-img" class="mx-auto mt-6" src="assets/images/personimg.png" alt="Foto de perfil." />
+        </div>
+        <div class="flex justify-between">
+          <button>
+            <label for="input-file" id="add-img-btn" class="btn items-center justify-center space-x-4">
+              <img id="camera-icon" src="assets/images/camera-icon.png" />
+              <span id="add-img-text">Adicionar foto</span>
+            </label>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
+          </button>
+          <button id="delete-img-btn" onclick="setDefaultPic()"
+            class="btn items-center justify-center space-x-4 mr-[50px]">
+            <img id="trashcan-icon" src="assets/images/trashbin-icon.png" />
+            <span id="delete-img-text">Excluir</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="personal-info-modal-body">
+        <div class="flex justify-between">
+          <h1 id="personal-info-modal-title">Editar informações do perfil</h1>
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div class="mt-10">
+          <span id="personal-info-modal-subtitle">*Indica campo obrigatório</span>
+        </div>
+        <div>
+          <form id="personal-info-form" class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
+            <div class="form-input-box mt-4">
+              <label for="volunteer-first-name">Primeiro nome*</label>
+              <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
+            </div>
+            <div class="form-input-box mt-1">
+              <label for="volunteer-last-name">Sobrenome*</label>
+              <input type="text" id="volunteer-last-name" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
+            </div>
+            <div class="form-input-box mt-1">
+              <label for="birthdate">Data de nascimento</label>
+              <input type="date" id="birthdate" class="px-2 py-1.5 mt-2" />
+            </div>
+            <div class="form-input-box mt-6">
+              <label for="volunteer-city">Cidade</label>
+              <input type="text" id="volunteer-city" class="pl-2 py-1.5 mt-2" />
+            </div>
+            <div class="form-input-box mt-6">
+              <label for="volunteer-state">Estado*</label>
+              <input type="text" id="volunteer-state" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
+            </div>
+            <div class="mt-8 mb-6 mx-28">
+              <button type="submit" id="save-personal-info-btn" class="btn">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="interests-modal-body">
+        <div class="flex justify-between">
+          <h1 id="interests-modal-title">Interesses e aptidões</h1>
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div class="flex items-center justify-center">
+          <div id="interests-modal-box">
+            <div id="interests-boxes">
+              <ul id="interests-ul">
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="interest-input-box" class="flex justify-center">
+          <input type="text" id="interests-input" placeholder="+" />
+        </div>
+        <div class="mt-10 mb-10 mx-96">
+          <button type="button" class="btn">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="collected-achievements-modal-body">
+        <div class="flex justify-end">
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div class="flex items-center justify-center">
+          <img class="achievement-icon-close-up" src="./assets/images/workingconquista.png" />
+        </div>
+        <div class="flex flex-col items-center justify-center mt-8">
+          <h1 class="achievement-text-h1">Cadastre-se como voluntário na AjudaAí.</h1>
+          <h2 class="achievement-text-h2 mt-2">Alcançada em 29 de fevereiro de 2024.</h2>
+        </div>
+        <div class="flex mt-10 mb-10 mx-80">
+          <button type="button" class="btn flex items-center justify-center space-x-4">
+            <img id="share-icon" src="assets/images/share-icon.png" />
+            <span id="share-achievement-text">Compartilhar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="uncollected-achievements-modal-body">
+        <div class="flex justify-between">
+          <h1 id="uncollected-achievements-modal-title">Conquistas não alcançadas</h1>
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div class="pl-[35px]">
+          <div class="flex flex-row mt-10">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/kindnessconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Voluntarie-se em 2 projetos.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/volunteeringconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Voluntarie-se em 3 projetos.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/teamconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Voluntarie-se em 5 projetos.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/self-esteemconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Voluntarie-se em 10 projetos.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/rewardconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Avalie uma ONG.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/directconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Compartilhe uma conquista.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/dogconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto da causa animal.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/salveconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto da causa ambiental.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/arteconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de arte e cultura.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/humanidadeconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de cidadania.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/cuidadoconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de assistência social.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/diversidadeconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto em defesa das minorias.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/mulherconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto em defesa das mulheres.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/cofrinhoconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de desenvolvimento econômico.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/direitoconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de direitos humanos.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/estudarconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de educação.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/techconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de infraestrutura e tecnologia.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/saudeconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de saúde.</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="min-[550px]:flex min-[550px]:justify-center">
     <div class="perfil justify-center">
       <div
         class="flex justify-center min-[550px]:mt-[2vw] min-[550px]:w-[15vw] min-[550px]:h-[15vw] max-[550px]:h-[60vw] max-[550px]:mt-[4vw]">
-        <img src="./assets/images/person1.png" alt="person1" class="cursor-pointer">
+        <img src="./assets/images/person1.png" alt="person1" class="open-modal cursor-pointer">
       </div>
       <div class="min-[550px]:mb-[10vw]">
-        <div class="min-[550px]:text-[1.5vw] min-[550px]:mt-[1vw] max-[550px]:text-[5.8vw] font-semibold font-['Inter']">Tatiana Esmeralda
+        <div
+          class="min-[550px]:text-[1.5vw] min-[550px]:mt-[1vw] max-[550px]:text-[5.8vw] font-semibold font-['Inter']">
+          Tatiana Esmeralda
         </div>
         <div class="flex items-center">
           <div class="flex estrelas1">
@@ -155,15 +428,13 @@
           </div>
         </div>
         <div class="flex justify-center mt-[2.5vw]">
-          <button type="button" id="btn-editar-perfil">
+          <button type="button" id="btn-editar-perfil" class="open-modal">
             <div class="font-['Inter'] min-[550px]:text-[1.1vw]">
               Editar perfil
             </div>
           </button>
         </div>
       </div>
-
-
     </div>
     <div>
       <div class="interesses max-[550px]:justify-center">
@@ -172,7 +443,7 @@
           Interesses e aptidões
           <div class="">
             <img src="./assets/images/lápis icon.png" id="editar-interesses" alt=""
-              class="cursor-pointer max-[550px]:pl-[8vw] min-[550px]:h-[2vw] max-[550px]:h-[7vw] ">
+              class="open-modal cursor-pointer max-[550px]:pl-[8vw] min-[550px]:h-[2vw] max-[550px]:h-[7vw] ">
           </div>
         </div>
         <div>
@@ -192,12 +463,12 @@
         </div>
         <div>
           <div class="grid min-[550px]:grid-cols-8 max-[550px]:grid-cols-3 gap-[1.2vw] ml-[3vw] mr-[2vw]">
-            <img class="btn-conquistas flex justify-center" src="./assets/images/conquista1.png" alt="Conquista">
+            <img class="btn-conquistas open-modal flex justify-center" src="./assets/images/conquista1.png" alt="Conquista">
             <img class="btn-conquistas flex justify-center" src="./assets/images/conquista2.png" alt="Conquista">
             <img class="btn-conquistas flex justify-center" src="./assets/images/conquista3.png" alt="Conquista">
           </div>
           <div class="flex justify-center mt-[4vw]">
-            <button type="button" id="btn-visualizar-conquistas">
+            <button type="button" id="btn-visualizar-conquistas" class="open-modal">
               <div class="font-['Inter'] min-[550px]:text-[1vw]">
                 Visualizar as próximas conquistas
               </div>
@@ -276,26 +547,31 @@
               Avalie a instituição
             </div>
             <div class="flex justify-center ">
-                  <div class="flex estrela-avaliacao1">
-                    <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-                    <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="1" alt="">
-                  </div>
-                  <div class="flex estrela-avaliacao2">
-                    <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-                    <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="2" alt="">
-                  </div>
-                  <div class="flex estrela-avaliacao3">
-                    <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-                    <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="3" alt="">
-                  </div>
-                  <div class="flex estrela-avaliacao4">
-                    <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-                    <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="4" alt="">
-                  </div>
-                  <div class="flex estrela-avaliacao5">
-                    <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-                    <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="5" alt="">
-                  </div>
+              <div class="flex estrela-avaliacao1">
+                <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+                <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="1"
+                  alt="">
+              </div>
+              <div class="flex estrela-avaliacao2">
+                <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+                <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="2"
+                  alt="">
+              </div>
+              <div class="flex estrela-avaliacao3">
+                <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+                <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="3"
+                  alt="">
+              </div>
+              <div class="flex estrela-avaliacao4">
+                <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+                <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="4"
+                  alt="">
+              </div>
+              <div class="flex estrela-avaliacao5">
+                <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+                <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="5"
+                  alt="">
+              </div>
             </div>
             <div class="flex justify-center mt-[3vw]">
               <button type="button" class="btn">Enviar Avaliação</button>

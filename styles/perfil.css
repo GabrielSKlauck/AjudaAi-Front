@@ -132,6 +132,364 @@ header {
     box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #8FC5E7;
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.30);
+    display: none;
+}
+
+.modal-active {
+    display: block !important
+}
+
+.close-modal {
+    width: 20px;
+    height: 20px;
+    margin-top: 25px;
+    margin-right: 35px;
+    cursor: pointer;
+}
+
+#profile-pic-modal-body {
+    width: 1143px;
+    height: 700px;
+    margin-bottom: 60px;
+    border-radius: 25px;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+}
+
+#profile-img {
+    width: 450px;
+    height: 442px;
+    border-radius: 50%;
+    border: 10px solid #687C57;
+}
+
+#add-img-btn,
+#delete-img-btn {
+    display: flex;
+    width: 331px;
+    height: 67px;
+    border-radius: 15px;
+    border: 1px solid #687C57;
+    background-color: #FFF;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+    margin-top: 70px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+#input-file {
+    display: none;
+}
+
+#add-img-text,
+#delete-img-text,
+#share-achievement-text {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+#camera-icon,
+#trashcan-icon,
+#share-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.test-img-modal {
+    width: 450px;
+    height: 442px;
+    border-radius: 50%;
+    border: 10px solid #687C57;
+}
+
+#personal-info-modal-body {
+    max-width: 650px;
+    width: 100%;
+    height: auto;
+    padding-bottom: 30px;
+    border-radius: 25px;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+}
+
+#personal-info-modal-title,
+#interests-modal-title {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-left: 35px;
+}
+
+#personal-info-modal-subtitle {
+    color: rgba(8, 21, 9, 0.75);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    margin-left: 50px;
+}
+
+.form-input-box input {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    border-left: 5px solid #8FC5E7;
+    background: #F6F6F6;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    transition: 0.2s;
+}
+
+.form-input-box input:focus {
+    border-left: 5px solid #687C57;
+    outline: 2px solid #687C57;
+    box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
+}
+
+.form-input-box label {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+}
+
+.form-input-box a {
+    font-family: "Inter", sans-serif;
+    visibility: hidden;
+}
+
+.form-input-box.invalid input {
+    border-left: 5px solid rgb(233, 23, 23) !important;
+    outline: 2px solid rgb(233, 23, 23) !important;
+    box-shadow: 0 0 0 4px rgba(255, 8, 0, 0.4) !important;
+}
+
+.form-input-box.invalid a {
+    color: rgb(233, 23, 23) !important;
+    visibility: visible !important;
+}
+
+.form-input-box.invalid {
+    margin-top: 16px;
+}
+
+.btn {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    transition: 0.3s;
+    border-radius: 15px;
+    border: 1px solid #687C57;
+    background-color: #EEE;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+#btn-editar-perfil {
+    padding: 10px;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #687C57;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+}
+
+#interests-modal-body {
+    width: 1143px;
+    height: 680px;
+    margin-bottom: 115px;
+    border-radius: 25px;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+}
+
+#interests-modal-box {
+    width: 1080px;
+    height: 409px;
+    border-radius: 25px;
+    margin-top: 15px;
+    padding-top: 25px;
+    background-color: #F9F9F9;
+    box-shadow: 0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.25) inset;
+    overflow: auto;
+}
+
+#interests-boxes ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2vw;
+    margin-left: 4vw;
+    margin-right: 5vw;
+}
+
+#interests-boxes li {
+    height: 2.5vw;
+    width: 14vw;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #60B4E9;
+    background-color: #F9F9F9;
+    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#interests-boxes li span {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+}
+
+#interests-boxes button {
+    display: none;
+    text-align: center;
+    justify-content: center;
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 36px;
+}
+
+#interests-boxes li:hover button {
+    display: block;
+}
+
+#interests-boxes li:hover span {
+    display: none;
+    cursor: pointer;
+}
+
+#interest-input-box {
+    width: 100%;
+}
+
+#interest-input-box input {
+    height: 2.5vw;
+    width: 14vw;
+    border-radius: 25px;
+    border: 1px solid #60B4E9;
+    background-color: #F9F9F9;
+    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
+    cursor: pointer;
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#interests-boxes input:focus {
+    outline: 1px solid #60B4E9;
+}
+
+#interests-boxes input:active,
+#interests-boxes li:active {
+    transform: scale(0.98);
+}
+
+#collected-achievements-modal-body {
+    width: 1000px;
+    height: 500px;
+    margin-bottom: 185px;
+    border-radius: 25px;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+}
+
+.achievement-icon-close-up {
+    width: 180px;
+    height: 180px;
+}
+
+.achievement-text-h1 {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 36px;
+}
+
+.achievement-text-h2 {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+}
+
+#uncollected-achievements-modal-body {
+    width: 1169px;
+    height: 892px;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+    overflow: auto;
+    padding-bottom: 5px;
+}
+
+#uncollected-achievements-modal-title {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-left: 35px;
+    background-color: #FFF;
+}
+
+.uncollected-achievement-icon-box {
+    width: 171px;
+    height: 139px;
+    padding: 10px;
+    border-radius: 5px 0px 0px 5px;
+    background-color: #D4D4D4;
+    box-shadow: 0.5px 0px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.achievement-icons {
+    width: 96px;
+    height: 96px;
+}
+
+.unachieved-icons {
+    mix-blend-mode: luminosity;
+}
+
+.uncollected-achievement-description-box {
+    width: 918px;
+    height: 139px;
+    border-radius: 0px 5px 5px 0px;
+    background: #E2E3E3;
+    box-shadow: 0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.uncollected-achievement-description-box h1 {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    padding-left: 25px;
+}
+
+#btn-view-achievements {
+    padding: 10px;
+    width: 20vw;
+    border-radius: 15px;
+    border: 1px solid #687C57;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+}
+
 body {
     background-color: #F9F9F9;
 }
@@ -481,26 +839,6 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
   opacity: 1;
   pointer-events: all;
 
-}
-
-.btn {
-    color: #081509;
-    font-family: "Inter", sans-serif;
-    font-size: 1.8vw;
-    font-weight: 600;
-    text-align: center;
-    padding: 0.2vw;
-    width: 16vw;
-    transition: 0.3s;
-    border-radius: 1vw;
-    border: 1px solid #687C57;
-    background-color: #EEE;
-    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
-    cursor: pointer;
-}
-
-.btn:active {
-    transform: scale(0.98);
 }
 
 .modal-avaliar {
