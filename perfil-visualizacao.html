@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/resetCss.css">
-  <link rel="stylesheet" href="styles/paginaAnuncio.css">
+  <link rel="stylesheet" href="styles/perfil.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            clifford: "#da373d",
-          },
-        },
-      },
-    };
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
   </script>
-  <title>Anuncio</title>
+  <title>PERFIL</title>
 </head>
 
 <body>
@@ -97,10 +97,7 @@
                 <a href="#footer-right">Contato</a>
               </li>
               <li>
-                <a href="Sou.html">Criar Conta</a>
-              </li>
-              <li>
-                <a href="loginCadastro.html">Entrar</a>
+                <a href="login.html">Entrar</a>
               </li>
             </ul>
           </div>
@@ -113,40 +110,89 @@
     </nav>
     </div>
   </header>
-  
-  <div class="divMeio flex flex-col items-center w-full justify-between">
-
-    <!-- <div id="div-pag" class="h-auto w-[43rem] mt-10 relative block">
-        <div id="div-topo" class="w-full">
-          <div id="div-header" class="ml-5">
-            <p class="text-2xl mb-2">Title anucio</p>
-            <p class="font-semibold">Ong responsavel: ONG</p>
-            <p><em>Expira em: 20/05/2024</em></p>
+  <div class="min-[550px]:flex min-[550px]:justify-center">
+    <div class="perfil justify-center">
+      <div class="flex justify-center min-[550px]:mt-[2vw] min-[550px]:w-[15vw] min-[550px]:h-[15vw] max-[550px]:h-[60vw] max-[550px]:mt-[4vw] ">
+        <img src="./assets/images/person1.png" alt="person1" class="cursor-pointer">
+      </div>
+      <div class="min-[550px]:mb-[15vw]">
+        <div class="min-[550px]:text-[1.5vw] min-[550px]:mt-[1vw] max-[550px]:text-[5.8vw] font-semibold font-['Inter']">Tatiana Esmeralda</div>
+        <div class="flex items-center">
+          <div class="flex estrelas1">
+            <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
+            <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="1" alt="">
+          </div>
+          <div class="flex estrelas2">
+            <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
+            <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="2" alt="">
+          </div>
+          <div class="flex estrelas3">
+            <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
+            <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="3" alt="">
+          </div>
+          <div class="flex estrelas4">
+            <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
+            <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="4" alt="">
+          </div>
+          <div class="flex estrelas5">
+            <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
+            <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="5" alt="">
+          </div>
+          <div class="text-blue-300 min-[550px]:text-[1.1vw] max-[550px]:text-[5.5vw]">(15)</div>
+        </div>
+        <div class="flex mt-[4vw]">
+          <img src="./assets/images/calendário icon.png" alt="" class="min-[550px]:h-[1.7vw] max-[550px]:h-[6.5vw]">
+          <div class="flex items-center text-neutral-950 min-[550px]:text-[1vw] font-['Inter']">
+            14/05/97
           </div>
         </div>
-        <hr id="barra" class="w-full h-3">
-
-        <div class="w-full mb-10">
-          <p class="mx-5">Lorem ipsum dolor, sit amet consectetur 
-            adipisicing elit. Quis ex sint velit labore nisi 
-            ducimus, ea, exercitationem autem quo, nam quia repellendus placeat 
-            fugit eos facere debitis veniam dignissimos earum!
-            Lorem ipsum dolor, sit amet consectetur 
-            adipisicing elit. Quis ex sint velit labore nisi 
-            ducimus, ea, exercitationem autem quo, nam quia repellendus placeat 
-            fugit eos l
-            us, ea, exercitationem autem quo, nam quia repellendus placeat 
-            fugit eos l
-          </p>
-          <div id="div-baixo" class="w-full h-10">
-            <button id="btn-subscribe" class="px-3 py-1 rounded-2xl float-right mt-1 mr-5 mb-2">Inscrever-se</button>
-            <button id="btn-non-subscribe" class="px-3 py-1 rounded-2xl float-right mt-1 mr-5 mb-2"><em>Inscrito</em></button>
+        <div class="mt-[0.5vw] flex ">
+          <img src="./assets/images/localizacaoicon.png" alt="" class="min-[550px]:h-[1.7vw] max-[550px]:h-[6.5vw]">
+          <div class="flex justify-center align-middle items-center min-[550px]:text-[1vw] font-['Inter']">
+            Blumenau, Santa Catarina
           </div>
         </div>
-    </div>  -->
+      </div>
 
+
+    </div>
+    <div>
+      <div class="interesses max-[550px]:justify-center">
+        <div class="flex min-[550px]:justify-between max-[550px]:justify-center text-[#687C57] min-[550px]:text-[1.8vw] font-semibold font-['Inter'] p-[2vw]">
+          Interesses e aptidões
+        </div>
+        <div>
+          <ul class="grid min-[550px]:grid-cols-3 max-[550px]:grid-cols-2 min-[550px]:gap-[1.2vw] min-[550px]:ml-[4vw] min-[550px]:mr-[5vw]">
+            <li class="btn-interesses flex justify-center">Meio Ambiente</li>
+            <li class="btn-interesses flex justify-center">Meio Ambiente</li>
+            <li class="btn-interesses flex justify-center">Meio Ambiente</li>
+            <li class="btn-interesses flex justify-center">Meio Ambiente</li>
+            <li class="btn-interesses flex justify-center">Meio Ambiente</li>
+          </ul>
+        </div>
+      </div>
+      <div class="conquistas ">
+        <div class="flex max-[550px]:justify-center min-[550px]:justify-between text-[#687C57] min-[550px]:text-[1.8vw] font-semibold font-['Inter'] p-[2vw]">
+          Conquistas
+
+        </div>
+        <div>
+          <div class="grid min-[550px]:grid-cols-8 max-[550px]:grid-cols-3 gap-[1.2vw] ml-[3vw] mr-[2vw]">
+            <img class="btn-conquistas flex justify-center" src="./assets/images/conquista1.png" alt="Conquista">
+            <img class="btn-conquistas flex justify-center" src="./assets/images/conquista2.png" alt="Conquista">
+            <img class="btn-conquistas flex justify-center" src="./assets/images/conquista3.png" alt="Conquista">
+          </div>
+          <div class="flex justify-center mt-[2.5vw]">
+            <button type="button" id="btn-visualizar-conquistas">
+              <div class="font-['Inter'] min-[550px]:text-[1vw]">
+                Visualizar as próximas conquistas
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
   <footer>
     <div class="w-full h-[500px] flex flex-col ml-16 lg:flex-row lg:items-center lg:justify-stretch">
       <div id="footer-left"
@@ -211,9 +257,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="paginaAnuncio.js"></script>
 </body>
 
 </html>

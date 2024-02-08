@@ -65,10 +65,14 @@
                             <input type="text" id="Voluntario-nome" placeholder="Nome" class="pl-2 py-1" />
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
-                            <input type="text" id="Voluntario-estado" placeholder="Estado" class="pl-2 py-1" />
+                            <select id="Voluntario-state" name="voluntario-state" class="pl-2 py-1" onfocusout="loadCity()">
+                                <option disabled selected>Estado</option>
+                            </select>
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
-                            <input type="text" id="Voluntario-city" placeholder="Cidade" class="pl-2 py-1" />
+                            <select id="Voluntario-city" name="voluntario-city" class="pl-2 py-1">
+                                <option disabled selected>Cidade</option>
+                            </select>
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
                             <input type="email" id="Voluntario-email" placeholder="E-mail" class="pl-2 py-1" />
@@ -129,6 +133,7 @@
         </div>
       </footer>
       <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      <script src="./utils/utils.js"></script>
       <script src="LoginCadastro.js"></script>
 </body>
 
