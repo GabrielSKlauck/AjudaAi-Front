@@ -1,6 +1,31 @@
 const login = async (email, password) => {
-  const loginUrl = apiUrl + "/user/login";
-  const payload = {
+  let verifica = document.getElementById('ong-checkbox');
+  
+  if(verifica.checked){
+    
+    const loginUrl = apiUrl + "/ngo/login";
+    const payload = {
+    email: email,
+    password: password
+    };
+
+  try {
+    const request = await axios.post(loginUrl, payload);
+
+    if (request.status != 200) return false;
+
+    localStorage.setItem("token", request.data.token);
+    localStorage.setItem("user", JSON.stringify(request.data.user));
+
+    return true;
+    } catch (error) {
+    return false;
+    }
+    
+
+  }else{
+    const loginUrl = apiUrl + "/user/login";
+    const payload = {
     email: email,
     password: password
   };
@@ -17,6 +42,8 @@ const login = async (email, password) => {
   } catch (error) {
     return false;
   }
+  }
+  
 };
 
 $(() => {
