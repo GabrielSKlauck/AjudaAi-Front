@@ -1,18 +1,8 @@
-$(() => {
-    let selecionado = 0;
-  
-    $(".estrelaa-avaliacao").click((e) => {
-      selecionado = $(e.currentTarget).data('number');
-      $(".estrelaa-avaliacao").each((i, el) => {      
-        if ($(el).data('number') <= selecionado) {
-          $(el).addClass('selected');
-        } else {
-          $(el).removeClass('selected');
-        }
-      })
-  
-    })
-})
+let profileMenu = document.getElementById("profile-menu");
+
+function toggleProfileMenu() {
+    profileMenu.classList.toggle("open-profile-menu");
+}
 
 let profileImg = document.getElementById("profile-img");
 let inputFile = document.getElementById("input-file");
