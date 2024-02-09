@@ -27,13 +27,54 @@ $(() => {
       datatype: "json",
     });
 
+    //Faz requisição para carregar as conquistas concluidas
     $.ajax({
       type: "GET",
       url: `https://localhost:7070/AchievementsUser/ConquistasCompletas/${id}`,
       success: function(data){
         data.forEach(linha => {
-          const conquistas = `<img id="${linha.id}" class="btn-conquistas flex justify-center" src="./assets/images/conquista2.png" alt="Conquista">`;
+          const conquistas = `<img id="${linha.id}" class="btn-conquistas open-modal flex justify-center" src="./assets/images/conquista2.png" alt="Conquista">`;
           $(`#conquistas-completas`).append($(conquistas));        
+        });        
+      }, 
+      header: {},
+      contentType: "application/json",
+      datatype: "json",
+    });
+
+    //Faz requisição para pegar as conquistas nao concluidas
+    $.ajax({
+      type: "GET",
+      url: `https://localhost:7070/AchievementsUser/ConquistasIncompletas/${id}`,
+      success: function(data){
+        var primeiro = 0
+        data.forEach(linha => {
+          
+          console.log(linha);
+          if(primeiro == 0){
+            const incompletas =`<div class="flex flex-row mt-10">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/kindnessconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>${linha.description}</h1>
+            </div>
+          </div>`;
+          $(`#conquistas-incompletas`).append($(incompletas)); 
+          primeiro = 1;
+          }else{
+            const incompletas = `<div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/volunteeringconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>${linha.description}.</h1>
+            </div>
+          </div>`;
+          $(`#conquistas-incompletas`).append($(incompletas)); 
+          }
+          
+                 
         });        
       }, 
       header: {},
