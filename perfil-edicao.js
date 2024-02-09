@@ -17,16 +17,50 @@ $(() => {
   
     })
 
+    //Faz requisição para o banco do tipo GET para pegar o usuario com o id especificado
     $.ajax({
       type: "GET",
-      url: "https://localhost:7070/Ads",
-      success: mostraAds,
+      url: `https://localhost:7070/user/GetById/${id}`,
+      success: carregaPerfil, //Se tiver sucesso na requisição ira a chamar a função
       header: {},
       contentType: "application/json",
       datatype: "json",
     });
 
 })
+
+function carregaPerfil(obj){
+  document.getElementById('nome-voluntario').innerHTML = obj.name;
+  cityName(obj.cityId); //Chama funcao contendo ajax 
+  stateName(obj.cityStateId);
+}
+
+function cityName(id){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/City/GetByCityId/${id}`,
+    success: function(data){
+      document.getElementById('cidade-estado').innerHTML = data.name + ", ";
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
+
+function stateName(id){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/State/${id}`,
+    success: function (data){
+        var contatena = document.getElementById('cidade-estado').textContent;
+        document.getElementById('cidade-estado').innerHTML = contatena + data.name;    
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
 
 let profileImg = document.getElementById("profile-img");
 let inputFile = document.getElementById("input-file");
