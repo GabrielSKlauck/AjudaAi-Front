@@ -27,6 +27,20 @@ $(() => {
       datatype: "json",
     });
 
+    $.ajax({
+      type: "GET",
+      url: `https://localhost:7070/AchievementsUser/ConquistasCompletas/${id}`,
+      success: function(data){
+        data.forEach(linha => {
+          const conquistas = `<img id="${linha.id}" class="btn-conquistas flex justify-center" src="./assets/images/conquista2.png" alt="Conquista">`;
+          $(`#conquistas-completas`).append($(conquistas));        
+        });        
+      }, 
+      header: {},
+      contentType: "application/json",
+      datatype: "json",
+    });
+
 })
 
 function carregaPerfil(obj){
