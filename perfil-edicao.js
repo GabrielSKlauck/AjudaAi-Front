@@ -1,3 +1,7 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const id = urlParams.get('id');
+
 $(() => {
     let selecionado = 0;
   
@@ -12,6 +16,16 @@ $(() => {
       })
   
     })
+
+    $.ajax({
+      type: "GET",
+      url: "https://localhost:7070/Ads",
+      success: mostraAds,
+      header: {},
+      contentType: "application/json",
+      datatype: "json",
+    });
+
 })
 
 let profileImg = document.getElementById("profile-img");

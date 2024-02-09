@@ -78,14 +78,41 @@ $(() => {
         alert("O usuario não esta cadastrado!");
         return;
       }
-      if(document.getElementById('ong-checkbox').checked){
-        redirect("perfil-edicao-ong.html");
-      }else{
-        redirect("perfil-edicao.html");
-      }
+      carregaObjeto(inputs.email[0].value);
       
     });
 
     $("#btn-sign-in").text("Carregando");
   });
 });
+
+function carregaObjeto(email){
+  if(document.getElementById('ong-checkbox').checked){
+    $.ajax({
+      type: "GET",
+      url: `https://localhost:7070/ngo/GetByEmail/${email}`,
+      success: carregaPaginaOng,
+      header: {},
+      contentType: "application/json",
+      datatype: "json",
+    });
+  }else{
+    $.ajax({
+      type: "GET",
+      url: `https://localhost:7070/user/GetByEmail/${email}`,
+      success: carregaPaginaVoluntario,
+      header: {},
+      contentType: "application/json",
+      datatype: "json",
+    });
+  }
+  
+}
+
+function carregaPaginaVoluntario(item){
+  window.location.href = `perfil-edicao.html?id=${item.id}`;
+}
+
+function carregaPaginaOng(item){
+  window.location.href = `perfil-edicao-ong.html?id=${item.id}`;
+}
