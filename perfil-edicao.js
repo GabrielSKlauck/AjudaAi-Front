@@ -83,7 +83,49 @@ $(() => {
       datatype: "json",
     });
 
+    $.ajax({
+      type: "GET",
+      url: "https://localhost:7070/State",
+      success: loadStates,
+      header: {},
+      contentType: "application/json",
+      dataType: "json",
+  });
+
 })
+
+function loadStates(item){
+  item.forEach(linha => {    
+      const stateOption = `
+          <option value="${linha.id}">${linha.name}</option>`;
+      $(`#volunteer-state`).append($(stateOption));
+  });
+}
+
+function loadCity(){
+  event.preventDefault();
+  var id = document.getElementById('volunteer-state').value;
+  $.ajax({
+      type: "GET",
+      url: `https://localhost:7070/City/${id}`,
+      success: loadCityHtml,
+      header: {},
+      contentType: "application/json",
+      datatype: "json",
+  });
+}
+
+function loadCityHtml(item){
+  var limpa = document.getElementById("volunteer-city");
+  limpa.innerText = "";
+  item.forEach(linha => {
+      
+      const cityOption = `
+          <option value="${linha.id}">${linha.name}</option>
+      `;
+      $(`#volunteer-city`).append($(cityOption));
+  });
+}
 
 function carregaPerfil(obj){
   document.getElementById('nome-voluntario').innerHTML = obj.name;
@@ -94,10 +136,8 @@ function carregaPerfil(obj){
   document.getElementById('volunteer-first-name').placeholder = name[0];
   
   let lastName = "";
-  for(i = 1; i < name.lenght; i++){
-    console.log(name[i]);
-    lastName = lastName + name[i];
-    console.log(lastName);
+  for(var i = 1; i < name.length; i++){    
+    lastName += name[i] + " ";
   }
   document.getElementById('volunteer-last-name').placeholder = lastName;
 }
@@ -192,9 +232,9 @@ lastName.addEventListener("blur", () => {
   checkInputLastName();
 })
 
-state.addEventListener("blur", () => {
-  checkInputState();
-})
+// state.addEventListener("blur", () => {
+//   checkInputState();
+// })
 
 function checkInputFirstName() {
   const volunteerFirstNameValue = firstName.value;
