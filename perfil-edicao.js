@@ -48,9 +48,10 @@ $(() => {
       url: `https://localhost:7070/AchievementsUser/ConquistasIncompletas/${id}`,
       success: function(data){
         var primeiro = 0
+        //Para cada elemento retornado sera feito um HTML para o elemento
+        //Usando seus valores vindos do banco
         data.forEach(linha => {
           
-          console.log(linha);
           if(primeiro == 0){
             const incompletas =`<div class="flex flex-row mt-10">
             <div class="uncollected-achievement-icon-box flex items-center justify-center">
@@ -88,6 +89,17 @@ function carregaPerfil(obj){
   document.getElementById('nome-voluntario').innerHTML = obj.name;
   cityName(obj.cityId); //Chama funcao contendo ajax 
   stateName(obj.cityStateId);
+
+  var name = obj.name.split(' ');
+  document.getElementById('volunteer-first-name').placeholder = name[0];
+  
+  let lastName = "";
+  for(i = 1; i < name.lenght; i++){
+    console.log(name[i]);
+    lastName = lastName + name[i];
+    console.log(lastName);
+  }
+  document.getElementById('volunteer-last-name').placeholder = lastName;
 }
 
 function cityName(id){
