@@ -51,11 +51,11 @@ $(() => {
         //Para cada elemento retornado sera feito um HTML para o elemento
         //Usando seus valores vindos do banco
         data.forEach(linha => {
-          
+          console.log(linha.image)
           if(primeiro == 0){
             const incompletas =`<div class="flex flex-row mt-10">
             <div class="uncollected-achievement-icon-box flex items-center justify-center">
-              <img class="achievement-icons unachieved-icons" src="assets/images/kindnessconquista.png" />
+              <img class="achievement-icons unachieved-icons" src="${linha.image}" />
             </div>
             <div class="uncollected-achievement-description-box flex items-center">
               <h1>${linha.description}</h1>
@@ -66,7 +66,7 @@ $(() => {
           }else{
             const incompletas = `<div class="flex flex-row mt-3">
             <div class="uncollected-achievement-icon-box flex items-center justify-center">
-              <img class="achievement-icons unachieved-icons" src="assets/images/volunteeringconquista.png" />
+              <img class="achievement-icons unachieved-icons" src="${linha.image}" />
             </div>
             <div class="uncollected-achievement-description-box flex items-center">
               <h1>${linha.description}.</h1>
