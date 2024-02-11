@@ -83,6 +83,7 @@ $(() => {
       datatype: "json",
     });
 
+    //Requisição para pegar todos os estados do banco
     $.ajax({
       type: "GET",
       url: "https://localhost:7070/State",
@@ -90,7 +91,7 @@ $(() => {
       header: {},
       contentType: "application/json",
       dataType: "json",
-  });
+    });
 
 })
 
@@ -140,6 +141,7 @@ function carregaPerfil(obj){
     lastName += name[i] + " ";
   }
   document.getElementById('volunteer-last-name').placeholder = lastName;
+  document.getElementById('volunteer-email').placeholder = obj.email;
 }
 
 function cityName(id){
@@ -148,6 +150,8 @@ function cityName(id){
     url: `https://localhost:7070/City/GetByCityId/${id}`,
     success: function(data){
       document.getElementById('cidade-estado').innerHTML = data.name + ", ";
+      document.getElementById('default-city').innerHTML = data.name;
+      document.getElementById('default-city').value = data.id;
     }, 
     header: {},
     contentType: "application/json",
@@ -161,7 +165,9 @@ function stateName(id){
     url: `https://localhost:7070/State/${id}`,
     success: function (data){
         var contatena = document.getElementById('cidade-estado').textContent;
-        document.getElementById('cidade-estado').innerHTML = contatena + data.name;    
+        document.getElementById('cidade-estado').innerHTML = contatena + data.name;
+        document.getElementById('default-state').value = data.id    
+        document.getElementById('default-state').innerHTML = data.name;
     }, 
     header: {},
     contentType: "application/json",
@@ -189,25 +195,43 @@ $(() => {
     const values = {
       firstName: $("#volunteer-first-name")[0].value,
       lastName: $("#volunteer-last-name")[0].value,
-      birthdate: $("#birthdate")[0].value,
+      email: $("#volunteer-email")[0].value,
+      //birthdate: $("#birthdate")[0].value,
       city: $("#volunteer-city")[0].value,
       state: $("#volunteer-state")[0].value
     }
-
     if(!values.firstName) {
-      return;
+      values.firstName = document.getElementById('volunteer-first-name').placeholder;
     }
 
     if(!values.lastName) {
-      return;
+      values.lastName = document.getElementById('volunteer-last-name').placeholder;
     }
 
-    if(!values.state) {
-      return;
+    if(!values.email){
+      values.email = document.getElementById('volunteer-email').placeholder
+    }
+    
+    const objetoEnvio ={
+      id: id,
+      name: values.firstName + " " + values.lastName.substring(0, values.lastName.length),
+      email: values.email,
+      cityId: values.city,
+      cityStateId: values.state
     }
 
-    console.log(values);
-    alert("Informações atualizadas com sucesso!");
+    $.ajax({
+      type: "PUT",
+      url: "https://localhost:7070/user/AtualizarConta",
+      data: JSON.stringify(objetoEnvio),
+      statusCode:{
+        200: function(){
+            window.alert("Conta atualizada");
+        },
+      },
+      contentType: "application/json",
+      dataType: "json",
+    });
   })
 })
 
@@ -224,9 +248,9 @@ form.addEventListener("submit", (event) => {
   checkForm();
 })
 
-firstName.addEventListener("blur", () => {
-  checkInputFirstName();
-})
+// firstName.addEventListener("blur", () => {
+//   checkInputFirstName();
+// })
 
 lastName.addEventListener("blur", () => {
   checkInputLastName();
@@ -236,16 +260,16 @@ lastName.addEventListener("blur", () => {
 //   checkInputState();
 // })
 
-function checkInputFirstName() {
-  const volunteerFirstNameValue = firstName.value;
+// function checkInputFirstName() {
+//   const volunteerFirstNameValue = firstName.value;
 
-  if(volunteerFirstNameValue === "") {
-    invalidInput(firstName, "Informe seu primeiro nome.");
-  } else {
-    const formItem = firstName.parentElement;
-    formItem.className = "form-input-box mt-4";
-  }
-}
+//   if(volunteerFirstNameValue === "") {
+//     invalidInput(firstName, "Informe seu primeiro nome.");
+//   } else {
+//     const formItem = firstName.parentElement;
+//     formItem.className = "form-input-box mt-4";
+//   }
+// }
 
 function checkInputLastName() {
   const volunteerLastNameValue = lastName.value;
@@ -270,9 +294,9 @@ function checkInputState() {
 }
 
 function checkForm() {
-  checkInputFirstName();
-  checkInputLastName();
-  checkInputState();
+  //checkInputFirstName();
+  //checkInputLastName();
+  //checkInputState();
 }
 
 function invalidInput(input, message) {
