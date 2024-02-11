@@ -33,7 +33,7 @@ $(() => {
       url: `https://localhost:7070/AchievementsUser/ConquistasCompletas/${id}`,
       success: function(data){
         data.forEach(linha => {
-          const conquistas = `<img id="${linha.id}" class="btn-conquistas open-modal flex justify-center" src="./assets/images/conquista2.png" alt="Conquista">`;
+          const conquistas = `<img id="${linha.id}" class="btn-conquistas open-modal flex justify-center" src="${linha.image}" alt="Conquista">`;
           $(`#conquistas-completas`).append($(conquistas));        
         });        
       }, 
