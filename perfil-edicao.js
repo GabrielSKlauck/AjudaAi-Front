@@ -33,7 +33,8 @@ $(() => {
       url: `https://localhost:7070/AchievementsUser/ConquistasCompletas/${id}`,
       success: function(data){
         data.forEach(linha => {
-          const conquistas = `<img id="${linha.id}" class="btn-conquistas open-modal flex justify-center" src="${linha.image}" alt="Conquista">`;
+          const conquistas = `<img id="${linha.id}" class="btn-conquistas open-modal flex justify-center"
+                               src="${linha.image}" alt="Conquista" onclick="openConquestModal(${linha.id})">`;
           $(`#conquistas-completas`).append($(conquistas));        
         });        
       }, 
@@ -94,6 +95,43 @@ $(() => {
     });
 
 })
+
+function openConquestModal(achieId){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/AchievementsUser/ConquistaUser/${id}/${achieId}`,
+    success: function(data){
+      loadAchievementInfo(achieId);
+      refactorDate(data.completionDate);
+      
+      $(`#modal-achievement`).addClass("modal-active");
+    },
+    header: {},
+    contentType: "application/json",
+    dataType: "json",
+  });
+}
+
+function refactorDate(date){
+  let correctDate = new Date(date);
+  date =  correctDate.toLocaleDateString();    
+  let achievementDate = document.getElementById('achievement-date-conclusion').innerHTML = "Alcançada em: " + date;
+}
+
+function loadAchievementInfo(achieId){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/Achievements/${achieId}`,
+    success: function(data){
+      let achievementImage = document.getElementById('achievement-icon-conclusion');
+      achievementImage.setAttribute('src', `${data.image}`);
+      let achievementDescription = document.getElementById('achievement-description').innerHTML = data.description;
+    },
+    header: {},
+    contentType: "application/json",
+    dataType: "json",
+  });
+}
 
 function loadStates(item){
   item.forEach(linha => {    
