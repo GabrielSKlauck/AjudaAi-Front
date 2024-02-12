@@ -51,7 +51,7 @@ $(() => {
         //Para cada elemento retornado sera feito um HTML para o elemento
         //Usando seus valores vindos do banco
         data.forEach(linha => {
-          console.log(linha.image)
+        
           if(primeiro == 0){
             const incompletas =`<div class="flex flex-row mt-10">
             <div class="uncollected-achievement-icon-box flex items-center justify-center">
@@ -132,7 +132,7 @@ function carregaPerfil(obj){
   document.getElementById('nome-voluntario').innerHTML = obj.name;
   cityName(obj.cityId); //Chama funcao contendo ajax 
   stateName(obj.cityStateId);
-
+  //console.log(obj);
   var name = obj.name.split(' ');
   document.getElementById('volunteer-first-name').placeholder = name[0];
   
@@ -140,8 +140,39 @@ function carregaPerfil(obj){
   for(var i = 1; i < name.length; i++){    
     lastName += name[i] + " ";
   }
+  loadProfileImage();
   document.getElementById('volunteer-last-name').placeholder = lastName;
   document.getElementById('volunteer-email').placeholder = obj.email;
+}
+
+function loadProfileImage(){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/user/GetImageById/${id}`,
+    success: function(data){ 
+      if(data.length == 0){
+        let profileImg = document.getElementById("profile-img");
+        let profileImgLoad = document.getElementById("img-profile-load");
+      
+        if(profileImgLoad) {
+          profileImgLoad.src = "assets/images/person1.png";
+        }
+      
+        if(profileImg) {
+          profileImg.src = "assets/images/personimg.png";
+        } 
+      }else{
+        var img = document.querySelector("#profile-img");
+        img.setAttribute('src', `${data}`);
+        img = document.querySelector("#img-profile-load");
+        img.setAttribute('src', `${data}`);
+      }    
+      
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
 }
 
 function cityName(id){
@@ -180,14 +211,50 @@ let inputFile = document.getElementById("input-file");
 
 inputFile.onchange = function() {
     profileImg.src = URL.createObjectURL(inputFile.files[0]);
+    const file = inputFile.files[0]; 
+    const reader = new FileReader();    
+    reader.onload = function(event) {
+        const base64 = event.target.result;  
+       
+        var img = document.querySelector("#profile-img");
+        img.setAttribute('src', `${base64}`);
+        var img = document.querySelector("#img-profile-load");
+        img.setAttribute('src', `${base64}`);
+        sendImageProfileDatabase(base64);
+    };
+    reader.readAsDataURL(file);
+    
+}
+
+function sendImageProfileDatabase(base64){
+  const data = {
+    id: id,
+    profileImage: base64
+  }
+  $.ajax({
+    type: "PUT",
+    url: `https://localhost:7070/user/UpdateProfileImage`,
+    data: JSON.stringify(data),
+    dataType: "json",
+    contentType: "application/json",
+  }); 
+
 }
 
 function setDefaultPic() {
+  sendImageProfileDatabase("");
   let profileImg = document.getElementById("profile-img");
+  let profileImgLoad = document.getElementById("img-profile-load");
+
+  if(profileImgLoad) {
+    profileImgLoad.src = "assets/images/person1.png";
+  }
 
   if(profileImg) {
     profileImg.src = "assets/images/personimg.png";
   }
+
+  
 }
 
 $(() => {
