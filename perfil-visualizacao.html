@@ -110,13 +110,35 @@
     </nav>
     </div>
   </header>
+  <div class="modal" id="modal-achievement">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="collected-achievements-modal-body">
+        <div class="flex justify-end">
+          <img id="x-modal" class="close-modal" src="assets/images/x-icon.png"/>
+        </div>
+        <div class="flex items-center justify-center">
+          <img id="achievement-icon-conclusion" class="achievement-icon-close-up" />
+        </div>
+        <div class="flex flex-col items-center justify-center mt-8">
+          <h1 id="achievement-description" class="achievement-text-h1"></h1>
+          <h2 id="achievement-date-conclusion" class="achievement-text-h2 mt-2"></h2>
+        </div>
+        <div class="flex mt-10 mb-10 mx-80">
+          <button type="button" class="btn flex items-center justify-center space-x-4">
+            <img id="share-icon" src="assets/images/share-icon.png" />
+            <span id="share-achievement-text">Compartilhar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="min-[550px]:flex min-[550px]:justify-center">
     <div class="perfil justify-center">
       <div class="flex justify-center min-[550px]:mt-[2vw] min-[550px]:w-[15vw] min-[550px]:h-[15vw] max-[550px]:h-[60vw] max-[550px]:mt-[4vw] ">
-        <img src="./assets/images/person1.png" alt="person1" class="cursor-pointer">
+        <img src="./assets/images/person1.png" alt="person1" id="img-profile-load">
       </div>
       <div class="min-[550px]:mb-[15vw]">
-        <div class="min-[550px]:text-[1.5vw] min-[550px]:mt-[1vw] max-[550px]:text-[5.8vw] font-semibold font-['Inter']">Tatiana Esmeralda</div>
+        <div class="min-[550px]:text-[1.5vw] min-[550px]:mt-[1vw] max-[550px]:text-[5.8vw] font-semibold font-['Inter']" id="nome-voluntario"></div>
         <div class="flex items-center">
           <div class="flex estrelas1">
             <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
@@ -148,9 +170,7 @@
         </div>
         <div class="mt-[0.5vw] flex ">
           <img src="./assets/images/localizacaoicon.png" alt="" class="min-[550px]:h-[1.7vw] max-[550px]:h-[6.5vw]">
-          <div class="flex justify-center align-middle items-center min-[550px]:text-[1vw] font-['Inter']">
-            Blumenau, Santa Catarina
-          </div>
+          <div class="flex justify-center align-middle items-center min-[550px]:text-[1vw] font-['Inter']" id="cidade-estado"></div>
         </div>
       </div>
 
@@ -162,12 +182,9 @@
           Interesses e aptidões
         </div>
         <div>
-          <ul class="grid min-[550px]:grid-cols-3 max-[550px]:grid-cols-2 min-[550px]:gap-[1.2vw] min-[550px]:ml-[4vw] min-[550px]:mr-[5vw]">
-            <li class="btn-interesses flex justify-center">Meio Ambiente</li>
-            <li class="btn-interesses flex justify-center">Meio Ambiente</li>
-            <li class="btn-interesses flex justify-center">Meio Ambiente</li>
-            <li class="btn-interesses flex justify-center">Meio Ambiente</li>
-            <li class="btn-interesses flex justify-center">Meio Ambiente</li>
+          <ul class="grid min-[550px]:grid-cols-3 max-[550px]:grid-cols-2 min-[550px]:gap-[1.2vw] min-[550px]:ml-[4vw] min-[550px]:mr-[5vw]" id="interest-list">
+            <!-- <li class="btn-interesses flex justify-center">Meio Ambiente</li>
+            <li class="btn-interesses flex justify-center">Meio Ambiente</li> -->
           </ul>
         </div>
       </div>
@@ -177,10 +194,10 @@
 
         </div>
         <div>
-          <div class="grid min-[550px]:grid-cols-8 max-[550px]:grid-cols-3 gap-[1.2vw] ml-[3vw] mr-[2vw]">
-            <img class="btn-conquistas flex justify-center" src="./assets/images/conquista1.png" alt="Conquista">
+          <div class="grid min-[550px]:grid-cols-8 max-[550px]:grid-cols-3 gap-[1.2vw] ml-[3vw] mr-[2vw]" id="conquistas-completas">
+            <!-- <img class="btn-conquistas flex justify-center" src="./assets/images/conquista1.png" alt="Conquista">
             <img class="btn-conquistas flex justify-center" src="./assets/images/conquista2.png" alt="Conquista">
-            <img class="btn-conquistas flex justify-center" src="./assets/images/conquista3.png" alt="Conquista">
+            <img class="btn-conquistas flex justify-center" src="./assets/images/conquista3.png" alt="Conquista"> -->
           </div>
           <div class="flex justify-center mt-[2.5vw]">
             <button type="button" id="btn-visualizar-conquistas">
@@ -257,6 +274,8 @@
       </div>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="perfil-visualizacao.js"></script>
 </body>
 
 </html>
