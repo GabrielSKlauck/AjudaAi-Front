@@ -141,8 +141,29 @@ function carregaPerfil(obj){
     lastName += name[i] + " ";
   }
   loadProfileImage();
+  loadProfileInterest();
   document.getElementById('volunteer-last-name').placeholder = lastName;
   document.getElementById('volunteer-email').placeholder = obj.email;
+}
+
+function loadProfileInterest(){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/userInterest/${id}`,
+    success: function(data){ 
+      if(data.length != 0){
+        data.forEach(item =>{
+          const interest = `<li class="btn-interesses flex justify-center" id="${item.id}">${item.name}</li>`;
+          $(`#interest-list`).append($(interest));
+          const interestEdit = `<li id="${item.id}">${item.name}</li>`;
+          $(`#interests-ul`).append($(interestEdit));
+        })       
+      }       
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
 }
 
 function loadProfileImage(){
