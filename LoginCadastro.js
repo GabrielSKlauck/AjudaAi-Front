@@ -23,6 +23,7 @@ $(() => {
           name: $("#Voluntario-nome")[0].value,        
           email: $("#Voluntario-email")[0].value,
           password: $("#Voluntario-senha")[0].value,
+          profileImage: "",
           role: "voluntario",
           cityId: idCity,
           cityStateId: idState
