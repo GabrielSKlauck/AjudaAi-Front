@@ -1,7 +1,6 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-//const id = urlParams.get('id');
-const id = 8;
+const id = urlParams.get('id');
 
 $(() => {
     //Faz requisição para o banco do tipo GET para pegar o usuario com o id especificado
