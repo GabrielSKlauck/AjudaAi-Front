@@ -35,6 +35,7 @@ $(() => {
             telephone: $("#ngo-phone")[0].value,
             email: $("#ngo-email")[0].value,
             password: $("#ngo-password")[0].value,
+            profileImage: "",
             role: "admin",   
             causesId: idCause,
             cityId: idCity,
