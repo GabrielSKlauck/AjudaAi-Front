@@ -16,6 +16,7 @@ const login = async (email, password) => {
 
     localStorage.setItem("token", request.data.token);
     localStorage.setItem("user", JSON.stringify(request.data.user));
+    
 
     return true;
     } catch (error) {
@@ -36,8 +37,7 @@ const login = async (email, password) => {
     if (request.status != 200) return false;
 
     localStorage.setItem("token", request.data.token);
-    localStorage.setItem("user", JSON.stringify(request.data.user));
-
+    localStorage.setItem("user", JSON.stringify(request.data.user)); 
     return true;
   } catch (error) {
     return false;

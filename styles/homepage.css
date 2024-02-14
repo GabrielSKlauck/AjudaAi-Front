@@ -123,6 +123,16 @@ header {
     box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
 }
 
+.logout{
+    padding: 2px 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    border: 1px solid #687C57;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+}
+
 #lettering1 {
     font-family: "KaiseiDecol", serif;
     color: #2F2E41;
