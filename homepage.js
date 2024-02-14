@@ -22,4 +22,26 @@ $(() => {
         $("#training-icon-ngo").css('z-index', 0);
         $("#medal-icon-volunteer").css('z-index', 1);
     });
+ 
+    try{
+        const user = JSON.parse(localStorage.getItem("user"));
+        const id = user.id;
+
+        if(id != null){
+            document.getElementById('btn-login').style.display = 'none';
+            document.getElementById('btn-logout').style.display = 'block';
+
+            document.getElementById('btn-login-small').style.display = 'none';
+            document.getElementById('btn-logout-small').style.display = 'block';
+
+            document.getElementById('sign-up').style.display = 'none';
+            document.getElementById('profile-page').style.display = 'block';
+            document.getElementById('profile-page-small').style.display = 'block';
+        }
+    }catch{}
+    
 })
+
+function logout(){
+    localStorage.clear();
+}

@@ -113,7 +113,30 @@ header {
     border-radius: 10px;
 }
 
+#profile-page{
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+#profile-page:hover{
+    padding: 2px 7px;
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
+}
+
 .login {
+    padding: 2px 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    border: 1px solid #687C57;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+}
+
+.logout{
     padding: 2px 25px;
     font-family: "Inter", sans-serif;
     font-size: 20px;
