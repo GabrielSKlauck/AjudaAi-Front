@@ -1,9 +1,10 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('id');
+let id = urlParams.get('id');
 
 $(() => {
     let selecionado = 0;
+    id = JSON.parse(localStorage.getItem("user")).id;
   
     $(".estrelaa-avaliacao").click((e) => {
       selecionado = $(e.currentTarget).data('number');
