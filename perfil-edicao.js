@@ -295,6 +295,10 @@ function sendImageProfileDatabase(base64){
     type: "PUT",
     url: `https://localhost:7070/user/UpdateProfileImage`,
     data: JSON.stringify(data),
+    headers: {
+      "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+    },
+    crossDomain: true,
     dataType: "json",
     contentType: "application/json",
   }); 
@@ -355,6 +359,9 @@ $(() => {
         200: function(){
             window.alert("Conta atualizada");
         },
+      },
+      headers: {
+        "Authorization": `Bearer ${localStorage.getItem(`token`)}`
       },
       contentType: "application/json",
       dataType: "json",
