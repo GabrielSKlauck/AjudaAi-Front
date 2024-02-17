@@ -41,7 +41,7 @@ $(() => {
       document.getElementById('ngo-description').innerHTML = data.description;
       loadLocation(data.cityId, data.cityStateId);
       loadCause(data.causesId);
-
+      loadAds();
     },
     header: {},
     contentType: "application/json",
@@ -134,6 +134,12 @@ $("#btn-create-ads").click(() => {
       header:{
         "Authorization": `Bearer ${localStorage.getItem(`token`)}`
       },
+      statusCode:{
+        200: function(){
+          let tag = document.getElementById('modal-anunciar');
+          tag.remove('modal-anunciar');
+        },
+      },
       contentType: "application/json",
       dataType: "json",
      });
@@ -207,4 +213,44 @@ function loadCause(causeId) {
     contentType: "application/json",
     datatype: "json",
   });
+}
+
+function loadAds(){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/ads/NgoId/${id}`,
+    success: function (data) {
+      data.forEach(linha => {
+        const ads = `
+        <h2 class="anuncio ">
+        <span class="fundo-anuncio">
+          <h3 class="grid min-[777px]:ml-[0.7vw] min-[777px]:mt-[0.5vw] min-[777px]:mr-[0.7vw] ">
+            <span class="text-[1.1vw] font-semibold trabalho-voluntario-titulo">${linha.title}</span>
+            <span class="text-[0.78vw] italic">${document.getElementById('ngo-location').innerHTML}</span>
+            <span class="text-[0.78vw] italic">Expira dia: ${refactorDate(linha.expires)}</span>
+          </h3>
+        </span>
+        <span
+          class="flex min-[777px]:ml-[0.5vw] min-[777px]:mt-[0.1vw] min-[777px]:mr-[0.5vw] font-['Inter'] italic text-[0.60vw] leading-[1vw] descricao-escrita">
+          ${linha.description}
+        </span>
+        <span class="fundo-anuncio2">
+          <button class="botao-anuncio font-['Inter']" onclick="encerrarAds(${linha.id})">
+            Encerrar
+          </button>
+        </span>
+      </h2>
+        `;
+        $('#ads-area').append(ads);        
+      });  
+    },
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
+function refactorDate(date){
+  let correctDate = new Date(date);
+  date =  correctDate.toLocaleDateString();    
+  return date;
 }
