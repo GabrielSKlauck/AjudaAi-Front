@@ -330,7 +330,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     border: 1px solid #F1F1F4;
 }
 
-.modal-avaliar {
+#modal-avaliar {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -407,7 +407,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     transform: scale(0.98);
 }
 
-.modal-avaliar {
+.modal {
     display: none;
 }
 
@@ -475,6 +475,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     height: auto;
     border-radius: 1vw;
     box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
+    height: auto;
 }
 
 .anuncio {
@@ -528,6 +529,21 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 }
 
+.descricao-escrita {
+
+    background-color: #FFF;
+    height: 7.2vw !important;
+}
+.trabalho-voluntario-titulo {
+
+    background-color: #fff;
+    height: 3.3vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+}
+
 .botao-anuncio {
     background-color: #8FC5E7;
     color: #fff;
@@ -559,7 +575,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 /* MODAL DA CRIAÇÃO DE ANUNCIOS */
 
-.modal-anunciar {
+#modal-anunciar {
 
         position: fixed;
         top: 0;
@@ -571,11 +587,9 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     
     }
 
-.modal-anunciar {
-    display: nosne;
-}
 
-#personal-info-modal-body {
+
+#criador-oportunidades {
     max-width: 650px;
     width: 100%;
     height: auto;
@@ -585,7 +599,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     border: 1px solid #F1F1F4;
 }
 
-#personal-info-modal-title,
+#titulo-criador-oportunidades,
 #interests-modal-title {
     color: #081509;
     font-family: "Inter", sans-serif;
@@ -595,7 +609,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     margin-left: 35px;
 }
 
-#personal-info-modal-subtitle {
+#subtitulo-criador-oportunidades {
     color: rgba(8, 21, 9, 0.75);
     font-family: "Inter", sans-serif;
     font-size: 12px;
@@ -603,7 +617,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 }
 
 
-.form-input-box input {
+.caixa-entrada input {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     border-radius: 5px;
@@ -614,20 +628,20 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     transition: 0.2s;
 }
 
-.form-input-box input:focus {
+.caixa-entrada input:focus {
     border-left: 5px solid #687C57;
     outline: 2px solid #687C57;
     box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
 }
 
-.form-input-box label {
+.caixa-entrada label {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 18px;
 
 }
 
-.form-input-box textarea {
+.caixa-entrada textarea {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     border-radius: 5px;
@@ -638,13 +652,13 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     transition: 0.2s;
 }
 
-.form-input-box textarea:focus {
+.caixa-entrada textarea:focus {
     border-left: 5px solid #687C57;
     outline: 2px solid #687C57;
     box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
 }
 
-#caixa-descricao textarea{
+.caixa-descricao textarea{
 
     height: 10vw !important;
     text-align:start !important;
@@ -660,4 +674,34 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     color: #6A8C4E;
     font-weight: 600;
 
+}
+
+
+/* MENSAGEM DE INVALIDO */ 
+
+
+.caixa-entrada a {
+    font-family: "Inter", sans-serif;
+    visibility: hidden;
+}
+
+.caixa-entrada.invalid textarea {
+    border-left: 5px solid rgb(233, 23, 23) !important;
+    outline: 2px solid rgb(233, 23, 23) !important;
+    box-shadow: 0 0 0 4px rgba(255, 8, 0, 0.4) !important;
+}
+
+.caixa-entrada.invalid input {
+    border-left: 5px solid rgb(233, 23, 23) !important;
+    outline: 2px solid rgb(233, 23, 23) !important;
+    box-shadow: 0 0 0 4px rgba(255, 8, 0, 0.4) !important;
+}
+
+.caixa-entrada.invalid a {
+    color: rgb(233, 23, 23) !important;
+    visibility: visible !important;
+}
+
+.modal-active {
+    display: block !important
 }

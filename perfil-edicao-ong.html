@@ -124,7 +124,7 @@
           </div>
           <div class="flex min-[777px]:mr-[2vw]">
             <img src="./assets/images/lápis icon.png" alt=""
-              class="cursor-pointer max-[777px]:pl-[8vw] min-[777px]:h-[2vw] max-[777px]:h-[7vw] ">
+              class="cursor-pointer max-[777px]:pl-[8vw] min-[777px]:h-[2vw] max-[777px]:h-[7vw]">
           </div>
         </div>
         <div class="flex items-center">
@@ -179,35 +179,47 @@
     </div>
     <div class="conteudo flex justify-center">
       <div class="active fundo-conteudo">
-        <h2 class="anuncio">
-          <div class="active fundo-anuncio">
+        <h2 class="anuncio ">
+          <span class="fundo-anuncio">
             <h3 class="grid min-[777px]:ml-[0.7vw] min-[777px]:mt-[0.5vw] min-[777px]:mr-[0.7vw] ">
-              <span class="text-[1.1vw] font-semibold ">Trabalho voluntário com cuidado de animais</span>
+              <span class="text-[1.1vw] font-semibold trabalho-voluntario-titulo">Trabalho voluntário em resgate de peixes</span>
               <span class="text-[0.78vw] italic">Blumenau, Santa Catarina</span>
               <span class="text-[0.78vw] italic">Expira dia: 20/05/2024</span>
             </h3>
-          </div>
-          <div
-            class="active min-[777px]:ml-[0.5vw] min-[777px]:mt-[0.5vw] min-[777px]:mr-[0.5vw] font-['Inter'] italic text-[0.75vw]">
+          </span>
+          <span
+            class="flex min-[777px]:ml-[0.5vw] min-[777px]:mt-[0.1vw] min-[777px]:mr-[0.5vw] font-['Inter'] italic text-[0.60vw] leading-[1vw] descricao-escrita">
             Descrição sobre anuncio lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore
             ipsum lore lore ipsum lore ipsum lore ipsum lore
-            ipsum lore ipsum lore ipsum lore ipsum lore ipsum
-          </div>
-          <div class="active fundo-anuncio2">
+            ipsum lore ipsum lore ipsum lore ipsum lore ipsum asdsadsadsa sadsadsadsadsas
+        </span>
+          <span class="fundo-anuncio2">
             <button class="botao-anuncio font-['Inter'] ">
               Encerrar
             </button>
-          </div>
+          </span>
         </h2>
         <h2 class="anuncio" id="adicionar-anuncio">
-          <span>+</span>
+          <span class="open-modal">+</span>
+        </h2>
+        <h2 class="anuncio" id="adicionar-anuncio">
+          <span class="open-modal">+</span>
         </h2>
       </div>
-      <div class="fundo-conteudo">
-        <h2 class="galeria"></h2>
+      <div class="fundo-conteudo grid grid-cols-3">
+        <h2 class="galeria">
+
+        </h2>
+
+        <span class="flex absolute min-[777px]:ml-[87vw] min-[777px]:mt-[1vw] ">
+          <img src="./assets/images/lápis icon.png" alt=""
+            class="cursor-pointer min-[777px]:h-[2vw] max-[777px]:h-[7vw]">
+        </span>
       </div>
       <div class="fundo-conteudo">
-        <h2 class="sobre-nos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quasi saepe, qui
+        <h2 class="sobre-nos">
+          <span class="texto-sobre">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quasi saepe, qui
           asperiores totam esse sint minus. Hic, nostrum quas illum nulla voluptatem incidunt ut aperiam tenetur labore
           molestiae neque?
           Nisi sit voluptates eligendi quis quas quam ab nam ipsum ratione quod natus alias aperiam a aliquid dolorum
@@ -233,7 +245,86 @@
           quaerat voluptatibus quidem?
           Laudantium ex ipsum, est sed quo nulla autem consectetur corporis atque quam aperiam deserunt asperiores
           dolores et, ipsam cupiditate laborum laboriosam, quisquam officia placeat facere ut? Nobis dolorem autem nisi!
+        </span>
+          <span class="flex min-[777px]:ml-[83.5vw] ">
+            <img src="./assets/images/lápis icon.png" alt=""
+              class="cursor-pointer min-[777px]:h-[2vw] max-[777px]:h-[7vw] flex">
+          </span>
         </h2>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal-anunciar">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="criador-oportunidades">
+        <div class="flex justify-between">
+          <h1 id="titulo-criador-oportunidades">Criando oportunidade</h1>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="mt-10">
+          <span id="subtitulo-criador-oportunidades">Todos os campos são obrigatórios</span>
+        </div>
+        <div>
+          <form id="info-criador-oportunidades" class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
+            <div class="caixa-entrada mt-4">
+              <label for="titulo">Título do anúncio </label>
+              <input type="text" id="titulo" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
+            </div>
+            <div class="caixa-entrada mt-1">
+              <label for="data-expiracao">Data de expiração</label>
+              <input type="date" id="data-expiracao" class="px-2 py-1.5 mt-2" />
+              <a>Error message</a>
+            </div>
+            <div class="caixa-entrada mt-6 caixa-descricao" >
+              <label for="descricao" >Descrição</label>
+              <textarea id="descricao" cols="30" rows="10" class="pl-2 py-1.5 mt-2"></textarea>
+              <a>Error message</a>
+            </div>
+            <div class="mt-8 mb-6 mx-28">
+              <button type="submit" class="btn">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal-avaliar">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="avaliation" class="justify-center">
+        <div class="min-[777px]:text-[3vw] max-[777px]:text-[7vw] mt-[4vw] font-semibold justify-center flex">
+          Avalie o voluntário
+        </div>
+        <div class="flex justify-center ">
+          <div class="flex estrela-avaliacao1">
+            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="1"
+              alt="">
+          </div>
+          <div class="flex estrela-avaliacao2">
+            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="2"
+              alt="">
+          </div>
+          <div class="flex estrela-avaliacao3">
+            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="3"
+              alt="">
+          </div>
+          <div class="flex estrela-avaliacao4">
+            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="4"
+              alt="">
+          </div>
+          <div class="flex estrela-avaliacao5">
+            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="5"
+              alt="">
+          </div>
+        </div>
+        <div class="flex justify-center mt-[3vw]">
+          <button type="button" class="btn">Enviar Avaliação</button>
+        </div>
       </div>
     </div>
   </div>
@@ -296,80 +387,6 @@
               </g>
             </svg>
             <h2 id="contact-info" class="pl-2.5 pt-2.5">contato@ajudaai.com.br</h2>
-          </div>
-        </div>
-      </div>
-      <div class="modal-avaliar">
-        <div class="w-screen h-screen flex items-center justify-center">
-          <div id="avaliation" class="justify-center">
-            <div class="min-[777px]:text-[3vw] max-[777px]:text-[7vw] mt-[4vw] font-semibold justify-center flex">
-              Avalie a instituição
-            </div>
-            <div class="flex justify-center ">
-              <div class="flex estrela-avaliacao1">
-                <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-                <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="1"
-                  alt="">
-              </div>
-              <div class="flex estrela-avaliacao2">
-                <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-                <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="2"
-                  alt="">
-              </div>
-              <div class="flex estrela-avaliacao3">
-                <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-                <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="3"
-                  alt="">
-              </div>
-              <div class="flex estrela-avaliacao4">
-                <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-                <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="4"
-                  alt="">
-              </div>
-              <div class="flex estrela-avaliacao5">
-                <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-                <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="5"
-                  alt="">
-              </div>
-            </div>
-            <div class="flex justify-center mt-[3vw]">
-              <button type="button" class="btn">Enviar Avaliação</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-anunciar">
-        <div class="w-screen h-screen flex items-center justify-center">
-          <div id="personal-info-modal-body">
-            <div class="flex justify-between">
-              <h1 id="personal-info-modal-title">Criando oportunidade</h1>
-              <button class="close-modal">&times;</button>
-            </div>
-            <div class="mt-10">
-              <span id="personal-info-modal-subtitle">Todos os campos são obrigatórios</span>
-            </div>
-            <div>
-              <form id="personal-info-form" class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
-                <div class="form-input-box mt-4">
-                  <label for="titulo">Título do anúncio </label>
-                  <input type="text" id="titulo" class="pl-2 py-1.5 mt-2" />
-                  <a>Error message</a>
-                </div>
-                <div class="form-input-box mt-1">
-                  <label for="data-expiracao">Data de expiração</label>
-                  <input type="date" id="data-expiracao" class="px-2 py-1.5 mt-2" />
-                  <a>Error message</a>
-                </div>
-                <div class="form-input-box mt-6" id="caixa-descricao">
-                  <label for="descricao" >Descrição</label>
-                  <textarea name="" id="" cols="30" rows="10" id="descricao" class="pl-2 py-1.5 mt-2"> </textarea>
-                  <a>Error message</a>
-                </div>
-                <div class="mt-8 mb-6 mx-28">
-                  <button type="submit" class="btn">Salvar</button>
-                </div>
-              </form>
-            </div>
           </div>
         </div>
       </div>
