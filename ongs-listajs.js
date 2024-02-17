@@ -47,4 +47,4 @@ function mostraOng(item) {
 
 function abrirPagina(id){
     window.location.href = `paginaOng.html?id=${id}`;
-  }
+}

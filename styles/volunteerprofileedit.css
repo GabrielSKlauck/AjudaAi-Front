@@ -8,31 +8,8 @@
     src: url("../assets/fonts/static/Inter-Regular.ttf")
 }
 
-@font-face {
-    font-family: "KaiseiDecol";
-    src: url("../assets/fonts/KaiseiDecol-Medium.ttf")
-}
-
-@font-face {
-    font-family: "FugazOne";
-    src: url("../assets/fonts/FugazOne-Regular.ttf")
-}
-
-@font-face {
-    font-family: "Jomhuria";
-    src: url("../assets/fonts/Jomhuria-Regular.ttf")
-}
-
-* {
-    scroll-behavior: smooth;
-}
-
-body {
-    overflow-x: hidden;
-}
-
 header {
-    background-color: #E6EBEE;
+    background-color: #EEEEEE;
 }
 
 #logo {
@@ -59,13 +36,13 @@ header {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
+    transition: 0.3s;
 }
 
 .header-menu-items a:hover,
 .dropdown:hover .dropbtn {
-    background-color: #8FC5E7;
+    background-color: rgba(208, 218, 199, 0.80);
     border-radius: 10px;
-    color: #FFF
 }
 
 .dropdown .dropbtn {
@@ -73,6 +50,7 @@ header {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
+    transition: 0.3s;
 }
 
 .header-menu-dropdown-list,
@@ -87,7 +65,8 @@ header {
 }
 
 .header-menu-dropdown-list a,
-.menu-mobile-dropdown-list a {
+.menu-mobile-dropdown-list a,
+.profile-dropdown-list a {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 18px;
@@ -97,8 +76,9 @@ header {
 }
 
 .header-menu-dropdown-list a:hover,
-.menu-mobile-dropdown-list a:hover {
-    background-color: #8FC5E7;
+.menu-mobile-dropdown-list a:hover,
+.profile-dropdown-list a:hover {
+    background-color: rgba(208, 218, 199, 0.80);
     border-radius: 0px;
     padding: 10px;
 }
@@ -108,28 +88,26 @@ header {
     display: block;
 }
 
-#sign-up {
-    padding: 2px 7px;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    color: #081509;
+#header-profile-picture {
+    border-radius: 50%;
+    border: 2px solid #687C57;
 }
 
-#sign-up:hover {
-    padding: 2px 7px;
-    background-color: #8FC5E7;
-    border-radius: 10px;
-    color: #FFF
+.profile-dropdown {
+    position: absolute;
+    top: 9%;
+    right: 4.5%;
+    background-color: #FFF;
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 0px #ADADAD;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
 }
 
-.login {
-    padding: 2px 25px;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    color: #081509;
-    border: 1px solid #8FC5E7;
-    border-radius: 1vw;
-    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #8FC5E7;
+.profile-dropdown.open-profile-menu {
+    max-height: 400px;
 }
 
 .modal {
@@ -488,386 +466,4 @@ header {
     border-radius: 15px;
     border: 1px solid #687C57;
     box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
-}
-
-body {
-    background-color: #F9F9F9;
-}
-
-
-footer {
-    margin-top: 20px;
-    background-color: #E6EBEE;
-}
-
-#footer-menu-list li {
-    color: #5f7051;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-}
-
-#footer-menu-list li:hover {
-    color: #3F4D33;
-}
-
-#contact-title {
-    color: #3F4C33;
-    font-family: "Hanuman", serif;
-    font-size: 32px;
-}
-
-#contact-info {
-    color: #4F5F42;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-}
-
-/* PARTE ESTRELAS*/
-.estrela {
-    width: 1.5vw;
-    height: 1.5vw;
-}
-
-.estrelaa {
-
-    opacity: 0;
-    position: absolute;
-    pointer-events: none;
-}
-
-/* BOTAO DE EDITAR */
-
-#btn-editar-perfil {
-
-    padding: 0.5vw;
-    width: 100%;
-    border-radius: 1vw;
-    border: 0.1vw solid #687C57;
-    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #687C57;
-
-}
-
-/* Responsividade para telas menores que 550px */
-
-@media (max-width: 550px) {
-    .perfil {
-        width: 95vw !important;
-        height: 120vw !important;
-        border-radius: 10vw !important;
-        margin-left: 2vw !important;
-    }
-
-    .estrela {
-        width: 6.5vw;
-        height: 6.5vw;
-
-    }
-
-    #btn-editar-perfil {
-
-        border-radius: 5vw;
-    }
-
-    .interesses {
-        width: 95vw !important;
-        border-radius: 10vw !important;
-        font-size: 5vw !important;
-
-    }
-
-    .btn-interesses {
-
-        height: 10vw !important;
-        width: 35vw !important;
-        border-radius: 20vw !important;
-        border: 0.3vw solid #60B4E9 !important;
-        box-shadow: 0.2vw 0.2vw 0.2vw 0.2vw #60B4E9 !important;
-        font-size: 4vw !important;
-        margin-top: 5vw;
-        margin-left: 5vw;
-
-    }
-
-    .conquistas {
-
-        width: 95vw !important;
-        height: auto !important;
-        border-radius: 10vw !important;
-        font-size: 5vw !important;
-        padding-bottom: 10vw;
-
-    }
-
-    .btn-conquistas {
-        height: 15vw !important;
-        margin-left: 8vw !important;
-        margin-top: 3vw !important;
-        
-
-
-    }
-
-    #btn-visualizar-conquistas {
-
-        width: 70vw !important;
-        border-radius: 8vw !important;
-        margin-top: 8vw;
-        border: 0.3vw solid #687C57;
-        box-shadow: 0.3vw 0.3vw 0.3vw 0.3vw #687C57;
-    
-    }
-    
-
-}
-
-/*  805px
-    607px
-    412px */
-
-
-/* FAZ COM QUE A LISTA DE ONGS NAO DIMINUA MAIS DO QUE 780PX SE O TAMANHO DE TELA MAXIMO 
-CHEGAR EM 1558PX */
-@media (max-width: 1627px) {
-
-    .caixa-dir,
-    .caixa-esq {
-        width: 780px !important;
-    }
-
-}
-
-@media(max-width: 805px) {
-
-    .caixa-dir img,
-    .caixa-esq img {
-        display: none;
-    }
-
-    .caixa-dir,
-    .caixa-esq {
-        width: 92vw !important;
-    }
-
-}
-
-@media(max-width: 535px) {
-
-    .caixa-dir,
-    .caixa-esq {
-        height: 300px !important;
-    }
-}
-
-@media(max-width: 585px) {
-
-    .caixa-dir,
-    .caixa-esq {
-        height: 320px !important;
-    }
-}
-
-@media(max-width: 570px) {
-
-    /* media query para dropdown do login e cadastro*/
-    .menu-list-itens-login {
-        right: 1px !important;
-    }
-}
-
-@media(max-width: 458px) {
-
-    .caixa-dir,
-    .caixa-esq {
-        height: 373px !important;
-    }
-}
-
-@media(max-width: 413px) {
-
-    .caixa-dir,
-    .caixa-esq {
-        height: 370px !important;
-    }
-}
-
-@media(max-width: 400px) {
-
-    .caixa-dir,
-    .caixa-esq {
-        height: 418px !important;
-    }
-}
-
-/* ALINHA ITENS DE MENU PARA O MEIO SE PASSAR DE 766PX, A TRANSFORMAÇAO ENTRE OS ITENS DE MENU EM
-ICONES É FEITA NO HTML PELO USANDO TAILWIND */
-@media (max-width: 766px) {
-    .btn-menu-list {
-        justify-content: center;
-    }
-}
-
-.perfil {
-    display: grid;
-    justify-items: center;
-    margin-left: 1vw;
-    margin-top: 3vw;
-    width: 20vw;
-    background-color: #fff;
-    height: 40vw;
-    border-radius: 1vw;
-    box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
-
-}
-
-/* INTERESSES E APTIDOES */
-
-.interesses {
-    margin-left: 2vw;
-    margin-top: 3vw;
-    width: 70vw;
-    background-color: #fff;
-    height: auto;
-    border-radius: 1vw;
-    box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
-    padding-bottom: 5vw;
-
-}
-
-.btn-interesses {
-
-    height: 2.5vw;
-    width: 14vw;
-    border-radius: 20vw;
-    border: 0.1vw solid #60B4E9;
-    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #60B4E9;
-    font-family: Inter;
-    font-size: 1.2vw;
-    align-items: center;
-}
-
-
-.conquistas {
-
-    margin-left: 2vw;
-    margin-top: 2.5vw;
-    margin-bottom: 3vw;
-    width: 70vw;
-    background-color: #fff;
-    height: 23vw;
-    border-radius: 1vw;
-    box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
-    
-
-}
-
-/* BOTAO DE VISUALIZAR CONQUISTAS */
-
-
-.btn-conquistas {
-    height: 4.5vw;
-}
-
-#btn-visualizar-conquistas {
-    padding: 0.6vw;
-    width: 20vw;
-    border-radius: 1vw;
-    border: 0.1vw solid #687C57;
-    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #687C57;
-
-}
-/* PARTE AVALIAÇÃO DE ONG */
-#avaliation {
-    width: 53vw;
-    height: 27vw;
-    margin-bottom: 185px;
-    border-radius: 25px;
-    background-color: #FFF;
-    border: 1px solid #F1F1F4;
-}
-
-.modal-avaliar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.30);
-
-}
-
-/* PARTE ESTRELAS AVALIAÇÃO*/
-.estrela-avaliacao {
-    margin-top: 2vw;
-    width: 6vw;
-    height: 6vw;
-    cursor: pointer;
-}
-
-.estrelaa-avaliacao {
-    
-    opacity: 0;
-    position: absolute;
-    pointer-events: none;
-}
-.estrela-avaliacao1:hover>.estrelaa-avaliacao,
-.selected {
-  opacity: 1 !important;
-  pointer-events: all !important;
-
-}
-
-.estrela-avaliacao2:hover>.estrelaa-avaliacao {
-  opacity: 1;
-  pointer-events: all;
-
-}
-
-.estrela-avaliacao3:hover>.estrelaa-avaliacao {
-  opacity: 1;
-  pointer-events: all;
-
-}
-
-.estrela-avaliacao4:hover>.estrelaa-avaliacao {
-  opacity: 1;
-  pointer-events: all;
-
-}
-
-.estrela-avaliacao5:hover>.estrelaa-avaliacao {
-  opacity: 1;
-  pointer-events: all;
-
-}
-
-.modal-avaliar {
-    display: none;
-}
-
-@media (max-width: 766px) {
-    #avaliation {
-        width: 90vw;
-        height: 50vw;
-        border-radius: 6vw;
-        border: 0.2vw solid #F1F1F4;
-    }
-
-    .estrela-avaliacao {
-
-        width: 12vw;
-        height: 12vw;
-    }
-
-    .btn {
-        margin-top: 2vw;
-        color: #081509;
-        font-family: "Inter", sans-serif;
-        font-size: 4vw;
-        padding: 1vw;
-        width: 35vw;
-        border-radius: 3vw;
-        border: 0.1px solid #687C57;
-
-    }
 }

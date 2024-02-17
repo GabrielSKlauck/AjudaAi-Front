@@ -125,22 +125,59 @@ header {
     box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
 }
 body {
-    background-color: #bbd0ea;
+    background-color: #ffffff;
 }
 
 #div-pag{
-    background-color: #F5D2A2;
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius:  24px;
+    border: 3px solid #F1F1F4; 
+}
+
+#div-topo{
+    background-color: #EFEFEF;
+    border-radius: 20px 20px 0px 0px;
+    min-height: 7rem;
+    height: auto;
+}
+
+.div-header{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 20px;
+    display: flex;
+}   
+
+#barra{
+    background-color: #60B4E9;
+}
+
+#div-baixo{
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 20px 20px;
+    background-color: #EFEFEF;
 }
 
 #btn-subscribe{
-    background-color: #A1ADB5;
+    font-family: "Inter" sans-serif;
+    background-color: #8FC5E7;
+    color: white;
+    font-weight: 700;
+}
+
+#btn-non-subscribe{
+    font-family: "Inter" sans-serif;
+    background-color: #8FC5E7;
+    color: #595959;
+    font-weight: 500;
+    display: none;
 }
 
 #title-ngo{
     font-family: 'Inter';
 }
-
-
 
 footer {
     margin-top: 20px;

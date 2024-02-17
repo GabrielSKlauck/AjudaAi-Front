@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de Senha</title>
+    <link rel="stylesheet" href="./styles/resetCss.css" />
+    <link rel="stylesheet" href="styles/recuperacaoSenha.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: "#da373d",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body>
+    <div class="container mx-auto mt-4 h-[44rem]">
+        <div id="email-send-box" class="w-[42rem] h-[19rem] mx-auto rounded-xl bg-white">
+            <a href="homepage.html">
+                <div class="header-logo flex justify-center pt-8 lg:pt-14">
+                    <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53"
+                        fill="none">
+                        <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424"
+                            stroke-width="0.285" />
+                        <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z"
+                            fill="#D9D9D9" />
+                        <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+                        <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z"
+                            fill="#D9D9D9" />
+                        <path
+                            d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+                            stroke="#324424" stroke-width="0.285" />
+                        <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57"
+                            stroke="#324424" stroke-width="0.285" />
+                        <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7"
+                            stroke="#324424" stroke-width="0.285" />
+                        <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7"
+                            stroke="#324424" stroke-width="0.285" />
+                    </svg>
+                    <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span
+                            class="brand-r">Aí</span></h1>
+                </div>
+            </a>
+            
+            <div class="w-full ">
+                <p class="text-center text-2xl">Digite um email para recuperação de senha</p>
+                <p class="text-center font-semibold"><em>O email deve pertencer a uma conta cadastrada</em></p>
+            </div>
+
+            <div class="items-center justify-center flex mt-4">               
+                    <input type="text" id="Recuperacao-email" placeholder="Digite seu email..." class="pl-2 py-1 valido" />                                         
+            </div>
+            <div class="justify-center hidden" id="invalid-email">
+                <p class="text-xs mt-1"><em>Email invalido ou incorreto</em></p>
+            </div>
+
+            <div class="items-center justify-center flex mt-3">
+                <button id="btn-enviar-token" class="p-3 rounded-3xl" onclick="enviarToken()">Enviar token</button>
+            </div>
+        </div>
+
+        <div id="token-validate-box" class="w-[40rem] h-[18rem] mx-auto rounded-xl bg-white hidden">
+            <a href="homepage.html">
+                <div class="header-logo flex justify-center pt-8 lg:pt-14">
+                    <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53"
+                        fill="none">
+                        <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424"
+                            stroke-width="0.285" />
+                        <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z"
+                            fill="#D9D9D9" />
+                        <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+                        <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z"
+                            fill="#D9D9D9" />
+                        <path
+                            d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+                            stroke="#324424" stroke-width="0.285" />
+                        <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57"
+                            stroke="#324424" stroke-width="0.285" />
+                        <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7"
+                            stroke="#324424" stroke-width="0.285" />
+                        <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7"
+                            stroke="#324424" stroke-width="0.285" />
+                    </svg>
+                    <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span
+                            class="brand-r">Aí</span></h1>
+                </div>
+            </a>
+            
+            <div class="block">
+                <p class="text-xl ml-10">Um email contendo um token de verificação foi enviado para: <em class="font-semibold" id="add-email"></em></p>
+                <label class="ml-10 mt-2 mr-2" for="validate-token">Insira o token</label> <input class="mt-2" type="text" id="validate-token" placeholder="Digite o token">
+                <p class="ml-10 text-xs hidden" id="invalid-token"><em>Token invalido ou incorreto</em></p>
+                <button class="block ml-10 mt-5 p-3" id="btn-verificar-token" onclick="verificarToken()">Verificar</button>             
+            </div>
+        </div>
+
+        <div id="nova-senha-box" class="w-[25rem] h-[18rem] mx-auto rounded-xl bg-white hidden">
+            <a href="homepage.html">
+                <div class="header-logo flex justify-center pt-8 lg:pt-14">
+                    <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53"
+                        fill="none">
+                        <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424"
+                            stroke-width="0.285" />
+                        <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z"
+                            fill="#D9D9D9" />
+                        <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+                        <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z"
+                            fill="#D9D9D9" />
+                        <path
+                            d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+                            stroke="#324424" stroke-width="0.285" />
+                        <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57"
+                            stroke="#324424" stroke-width="0.285" />
+                        <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7"
+                            stroke="#324424" stroke-width="0.285" />
+                        <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7"
+                            stroke="#324424" stroke-width="0.285" />
+                    </svg>
+                    <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span
+                            class="brand-r">Aí</span></h1>
+                </div>
+            </a>
+            
+            <p class="text-center">Digite a nova senha para a sua conta</p>
+            <label class="ml-10 mt-3" for="senha">Digite a nova senha:</label> <input required id="senha" type="password" class="mt-3 ml-1"> <br>
+            <label class="ml-10 mt-1 inline-block" for="senha-repetida">Repita a senha:</label><input required id="senha-repetida" type="password" class="inline-block mt-1 ml-2">
+            <p class="ml-10 text-xs hidden" id="invalid-password"><em>Senhas não são iguais</em></p>
+            <button class="block ml-10 mt-5 p-3" id="btn-mudar-senha" onclick="mudarSenha()">Alterar senha</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer w-full h-[350px] lg:h-[218px] flex flex-col pl-16 lg:flex-row lg:items-center lg:justify-center">
+          <div id="footer-left" class="pt-4 lg:pt-10 mb-6 lg:mb-8 lg:mt-6 lg:pt-2 lg:pr-[100px] lg:pb-2 lg:border-r lg:border-solid lg:border-r-[#3F4C33]">
+            <div class="flex">
+              <ul id="footer-menu-list" class="leading-relaxed lg:leading-10">
+                <li>
+                  <a href="homepage.html#about-us">Quem Somos</a>
+                </li>
+                <li>
+                  <a href="homepage.html#about-platform">Conheça a plataforma</a>
+                </li>
+                <li>
+                  <a href="ongs-lista.html">ONGs</a>
+                </li>
+                <li>
+                  <a href="anuncios-lista.html">Oportunidades</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="footer-right" class="w-fit pt-6 lg:pt-10 lg:mb-32 lg:mt-5 lg:ml-20 border-t border-solid border-t-[#3F4C33] lg:border-none">
+            <div>
+              <h1 id="contact-title" class="pb-[10px] lg:ml-[5px]">Contato</h1>
+              <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
+                  width="40px" height="40px">
+                  <g fill="#4f5f42" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.12,5.12)">
+                      <path
+                        d="M14,4c-5.51133,0 -10,4.48867 -10,10v22c0,5.51133 4.48867,10 10,10h22c5.51133,0 10,-4.48867 10,-10v-22c0,-5.51133 -4.48867,-10 -10,-10zM14,6h22c4.43067,0 8,3.56933 8,8v22c0,4.43067 -3.56933,8 -8,8h-22c-4.43067,0 -8,-3.56933 -8,-8v-22c0,-4.43067 3.56933,-8 8,-8zM13,15c-1.64497,0 -3,1.35503 -3,3v14c0,1.64497 1.35503,3 3,3h24c1.64497,0 3,-1.35503 3,-3v-14c0,-1.64497 -1.35503,-3 -3,-3zM13.41406,17h23.16992l-8.90625,8.89258c-1.49279,1.49041 -3.8809,1.49024 -5.37305,-0.00195zM38,18.41211v13.17578l-6.59766,-6.58789zM12,18.41406l6.58594,6.58594l-6.58594,6.58594zM29.98828,26.41211l6.59766,6.58789h-23.17188l6.58594,-6.58594l0.89063,0.89063c2.25585,2.25585 5.94201,2.25751 8.19922,0.00391z" />
+                    </g>
+                  </g>
+                </svg>
+                <h2 id="contact-info" class="pl-2.5 pt-1">contato@ajudaai.com.br</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+</body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>   
+    <script type="text/javascript" src="./recuperacaoSenha.js"></script>
+</html>

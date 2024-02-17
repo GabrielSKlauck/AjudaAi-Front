@@ -62,15 +62,13 @@
                             <input type="text" id="ngo-name" placeholder="Nome da ONG" class="pl-2 py-1" />
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
-                            <select id="ngo-state" name="ngo-state" class="pl-2 py-1">
-                                <option value="">Estado</option>
-                                <option value="estado">SelecionarEstado</option>
+                            <select id="ngo-state" name="ngo-state" class="pl-2 py-1" onfocusout="loadCity()">
+                                <option disabled selected>Estado</option>
                             </select>
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
                             <select id="ngo-city" name="ngo-city" class="pl-2 py-1">
-                                <option value="">Cidade</option>
-                                <option value="cidade">SelecionarCidade</option>
+                                <option disabled selected>Cidade</option>
                             </select>
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
@@ -84,8 +82,7 @@
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
                             <select id="ngo-causes" name="ngo-causes" class="pl-2 py-1">
-                                <option value="">Área de atuação</option>
-                                <option value="atuacao">SelecionarAtuação</option>
+                                <option disabled selected>Causas</option>
                             </select>
                         </div>
                         <div class="form-input-box mt-4 lg:mt-3.5">
