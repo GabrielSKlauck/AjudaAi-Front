@@ -255,11 +255,12 @@ function stateName(id){
     type: "GET",
     url: `https://localhost:7070/State/${id}`,
     success: function (data){
+      console.log("Estado" + data.name);
         var contatena = document.getElementById('cidade-estado').textContent;
         document.getElementById('cidade-estado').innerHTML = contatena + data.name;
+        document.getElementById('default-state').innerHTML = data.name;    
         document.getElementById('default-state').value = data.id    
-        document.getElementById('default-state').innerHTML = data.name;
-    }, 
+    },  
     header: {},
     contentType: "application/json",
     datatype: "json",
@@ -297,8 +298,9 @@ function sendImageProfileDatabase(base64){
     data: JSON.stringify(data),
     headers: {
       "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+      "Access-Control-Allow-Origin": "*"
     },
-    crossDomain: true,
+    crossDomain: false,
     dataType: "json",
     contentType: "application/json",
   }); 
