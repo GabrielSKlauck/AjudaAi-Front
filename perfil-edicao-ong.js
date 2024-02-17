@@ -1,3 +1,6 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const id = urlParams.get('id');
 $(() => {
   let selecionado = 0;
 
@@ -123,7 +126,66 @@ $(() => {
       modals[index].classList.toggle('modal-active');
     }
     trigger.addEventListener("click", toggleModal);
-    closeButtons[index].addEventListener("click", toggleModal);
+    //closeButtons[index].addEventListener("click", toggleModal);
   }
 
+
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/ngo/${id}`,
+    success: function(data){
+      document.getElementById('ngo-name').innerHTML = data.ngoName;
+      document.getElementById('ngo-description').innerHTML = data.description;
+      loadLocation(data.cityId, data.cityStateId); 
+      loadCause(data.causesId);   
+
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
 })
+
+let ngoLocation;
+
+function loadLocation(cityId, stateId){
+  
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/City/GetByCityId/${cityId}`,
+    success: function(data){
+      ngoLocation = data.name + ", ";
+      console.log(ngoLocation);
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/State/${stateId}`,
+    success: function(data){
+      ngoLocation = ngoLocation + data.name;
+      document.getElementById('ngo-location').innerHTML = ngoLocation;
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+
+  
+}
+
+function loadCause(causeId){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/Causes/GetById/${causeId}`,
+    success: function(data){
+        document.getElementById('ngo-causes').innerHTML = data.name;
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
