@@ -26,8 +26,20 @@ $(() => {
     try{
         const user = JSON.parse(localStorage.getItem("user"));
         const id = user.id;
-
+        const isNgo = localStorage.getItem('ong');
         if(id != null){
+            
+            if(isNgo == true){
+                let link = document.getElementById('profile-page');
+                link.setAttribute("href","perfil-edicao-ong.html");
+                let linkSmall = document.getElementById('small-profile-page');
+                linkSmall.setAttribute("href","perfil-edicao-ong.html");
+            }else{
+                let link = document.getElementById('profile-page');
+                link.href = "perfil-edicao.html";
+                let linkSmall = document.getElementById('small-profile-page');
+                linkSmall.href = "perfil-edicao.html";
+            }
             document.getElementById('btn-login').style.display = 'none';
             document.getElementById('btn-logout').style.display = 'block';
 

@@ -1,6 +1,4 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('id');
+const id = JSON.parse(localStorage.getItem("user")).id
 $(() => {
   let selecionado = 0;
 
