@@ -33,130 +33,149 @@ $(() => {
     })
   })
 
-
-
-  const form = document.getElementById("criador-oportunidades");
-  const titulo = document.getElementById("titulo");
-  const dataExpiracao = document.getElementById("data-expiracao");
-  const descricao = document.getElementById("descricao");
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    checkForm();
-  })
-
-  titulo.addEventListener("blur", () => {
-    checkInputFirstName();
-  })
-
-  dataExpiracao.addEventListener("blur", () => {
-    checkInputLastName();
-  })
-
-  descricao.addEventListener("blur", () => {
-    checkInputState();
-  })
-
-  function checkInputFirstName() {
-    const tituloValue = titulo.value;
-
-    if (!tituloValue) {
-      invalidInput(titulo, "Informe o título.");
-    } else {
-      const formItem = titulo.parentElement;
-      formItem.className = "caixa-entrada";
-    }
-  }
-
-  function checkInputLastName() {
-    const dataExpiracaoValue = dataExpiracao.value;
-
-    if (!dataExpiracaoValue ) {
-      invalidInput(dataExpiracao, "Informe a data de expiração.");
-    } else {
-      const formItem = dataExpiracao.parentElement;
-      formItem.className = "caixa-entrada";
-    }
-  }
-
-  function checkInputState() {
-    const descricaoValue = descricao.value;
-
-    if (!descricaoValue) {
-      invalidInput(descricao, "Informe uma descrição para a oportunidade.");
-    } else {
-      const formItem = descricao.parentElement;
-      formItem.className = "caixa-entrada";
-    }
-  }
-
-  function checkForm() {
-    checkInputFirstName();
-    checkInputLastName();
-    checkInputState();
-
-    const formItems = form.querySelectorAll(".caixa-entrada");
-    const isValid = [...formItems].every((item) => {
-      return item.className === "caixa-entrada";
-    });
-
-    if (isValid) {
-      alert("Informações atualizadas com sucesso!");
-    }
-  }
-
-  function invalidInput(banana, message) {
-    const formItem = banana.parentElement;
-    const textMessage = formItem.querySelector("a");
-
-    textMessage.innerText = message;
-
-    formItem.className = "caixa-entrada invalid"
-  }
-
-
-  const openModals = document.getElementsByClassName('open-modal');
-  const modalArray = Array.from(openModals).entries();
-  const modals = document.getElementsByClassName('modal');
-  const closeButtons = document.getElementsByClassName('close-modal');
-
-  for (let [index, trigger] of modalArray) {
-    const toggleModal = () => {
-      modals[index].classList.toggle('modal-active');
-    }
-    trigger.addEventListener("click", toggleModal);
-    //closeButtons[index].addEventListener("click", toggleModal);
-  }
-
-
   $.ajax({
     type: "GET",
     url: `https://localhost:7070/ngo/${id}`,
-    success: function(data){
+    success: function (data) {
       document.getElementById('ngo-name').innerHTML = data.ngoName;
       document.getElementById('ngo-description').innerHTML = data.description;
-      loadLocation(data.cityId, data.cityStateId); 
-      loadCause(data.causesId);   
+      loadLocation(data.cityId, data.cityStateId);
+      loadCause(data.causesId);
 
-    }, 
+    },
     header: {},
     contentType: "application/json",
     datatype: "json",
   });
 })
 
+const form = document.getElementById("criador-oportunidades");
+const titulo = document.getElementById("titulo");
+const dataExpiracao = document.getElementById("data-expiracao");
+const descricao = document.getElementById("descricao");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  checkForm();
+})
+
+titulo.addEventListener("blur", () => {
+  checkInputFirstName();
+})
+
+dataExpiracao.addEventListener("blur", () => {
+  checkInputLastName();
+})
+
+descricao.addEventListener("blur", () => {
+  checkInputState();
+})
+
+function checkInputFirstName() {
+  const tituloValue = titulo.value;
+
+  if (!tituloValue) {
+    invalidInput(titulo, "Informe o título.");
+  } else {
+    const formItem = titulo.parentElement;
+    formItem.className = "caixa-entrada";
+  }
+}
+
+function checkInputLastName() {
+  const dataExpiracaoValue = dataExpiracao.value;
+
+  if (!dataExpiracaoValue) {
+    invalidInput(dataExpiracao, "Informe a data de expiração.");
+  } else {
+    const formItem = dataExpiracao.parentElement;
+    formItem.className = "caixa-entrada";
+  }
+}
+
+function checkInputState() {
+  const descricaoValue = descricao.value;
+
+  if (!descricaoValue) {
+    invalidInput(descricao, "Informe uma descrição para a oportunidade.");
+  } else {
+    const formItem = descricao.parentElement;
+    formItem.className = "caixa-entrada";
+  }
+}
+
+function checkForm() {
+  checkInputFirstName();
+  checkInputLastName();
+  checkInputState();
+
+  const formItems = form.querySelectorAll(".caixa-entrada");
+  const isValid = [...formItems].every((item) => {
+    return item.className === "caixa-entrada";
+  });
+  return isValid;
+};
+
+$("#btn-create-ads").click(() => {
+  if (checkForm()) {
+  
+    const values = {
+      title: document.getElementById('titulo').value,
+      description: document.getElementById('descricao').value,
+      expires: document.getElementById('data-expiracao').value,
+      ngo_Id: JSON.parse(localStorage.getItem("user")).id
+    }
+    
+    $.ajax({
+      type: "POST",
+      url: "https://localhost:7070/ads",
+      data: JSON.stringify(values),
+      header:{
+        "Authorization": `Bearer ${localStorage.getItem(`token`)}`
+      },
+      contentType: "application/json",
+      dataType: "json",
+     });
+  }
+});
+
+function invalidInput(banana, message) {
+  const formItem = banana.parentElement;
+  const textMessage = formItem.querySelector("a");
+
+  textMessage.innerText = message;
+
+  formItem.className = "caixa-entrada invalid"
+}
+
+
+const openModals = document.getElementsByClassName('open-modal');
+const modalArray = Array.from(openModals).entries();
+const modals = document.getElementsByClassName('modal');
+const closeButtons = document.getElementsByClassName('close-modal');
+
+for (let [index, trigger] of modalArray) {
+  const toggleModal = () => {
+    modals[index].classList.toggle('modal-active');
+  }
+  trigger.addEventListener("click", toggleModal);
+  //closeButtons[index].addEventListener("click", toggleModal);
+}
+
+
+
+
 let ngoLocation;
 
-function loadLocation(cityId, stateId){
-  
+function loadLocation(cityId, stateId) {
+
   $.ajax({
     type: "GET",
     url: `https://localhost:7070/City/GetByCityId/${cityId}`,
-    success: function(data){
+    success: function (data) {
       ngoLocation = data.name + ", ";
-      console.log(ngoLocation);
-    }, 
+    },
     header: {},
     contentType: "application/json",
     datatype: "json",
@@ -165,25 +184,25 @@ function loadLocation(cityId, stateId){
   $.ajax({
     type: "GET",
     url: `https://localhost:7070/State/${stateId}`,
-    success: function(data){
+    success: function (data) {
       ngoLocation = ngoLocation + data.name;
       document.getElementById('ngo-location').innerHTML = ngoLocation;
-    }, 
+    },
     header: {},
     contentType: "application/json",
     datatype: "json",
   });
 
-  
+
 }
 
-function loadCause(causeId){
+function loadCause(causeId) {
   $.ajax({
     type: "GET",
     url: `https://localhost:7070/Causes/GetById/${causeId}`,
-    success: function(data){
-        document.getElementById('ngo-causes').innerHTML = data.name;
-    }, 
+    success: function (data) {
+      document.getElementById('ngo-causes').innerHTML = data.name;
+    },
     header: {},
     contentType: "application/json",
     datatype: "json",
