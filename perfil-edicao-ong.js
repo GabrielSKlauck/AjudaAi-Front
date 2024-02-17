@@ -254,3 +254,13 @@ function refactorDate(date){
   date =  correctDate.toLocaleDateString();    
   return date;
 }
+
+function encerrarAds(adsId){
+  $.ajax({
+    type: "POST",
+    url: `https://localhost:7070/ads/Finalizar/${adsId}`,
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
