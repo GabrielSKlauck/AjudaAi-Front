@@ -97,6 +97,23 @@ $(() => {
 
 })
 
+function shareConquest(){
+  const userAchie = {
+    achievementsId: 8,
+    userId: id,
+    completionDate: "2024-02-18T18:00:01.618Z"
+  }
+  console.log(userAchie);
+  $.ajax({
+    type: "POST",
+    url: `https://localhost:7070/AchievementsUser`,
+    data: JSON.stringify(userAchie),
+    header: {},
+    contentType: "application/json",
+    dataType: "json",
+  });
+}
+
 function openConquestModal(achieId){
   $.ajax({
     type: "GET",
