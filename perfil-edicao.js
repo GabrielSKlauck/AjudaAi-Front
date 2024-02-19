@@ -255,7 +255,6 @@ function stateName(id){
     type: "GET",
     url: `https://localhost:7070/State/${id}`,
     success: function (data){
-      console.log("Estado" + data.name);
         var contatena = document.getElementById('cidade-estado').textContent;
         document.getElementById('cidade-estado').innerHTML = contatena + data.name;
         document.getElementById('default-state').innerHTML = data.name;    
