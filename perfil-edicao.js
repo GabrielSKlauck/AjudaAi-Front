@@ -306,9 +306,9 @@ function stateName(id){
     success: function (data){
         var contatena = document.getElementById('cidade-estado').textContent;
         document.getElementById('cidade-estado').innerHTML = contatena + data.name;
+        document.getElementById('default-state').innerHTML = data.name;    
         document.getElementById('default-state').value = data.id    
-        document.getElementById('default-state').innerHTML = data.name;
-    }, 
+    },  
     header: {},
     contentType: "application/json",
     datatype: "json",
@@ -344,6 +344,11 @@ function sendImageProfileDatabase(base64){
     type: "PUT",
     url: `https://localhost:7070/user/UpdateProfileImage`,
     data: JSON.stringify(data),
+    headers: {
+      "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+      "Access-Control-Allow-Origin": "*"
+    },
+    crossDomain: false,
     dataType: "json",
     contentType: "application/json",
   }); 
@@ -404,6 +409,9 @@ $(() => {
         200: function(){
             window.alert("Conta atualizada");
         },
+      },
+      headers: {
+        "Authorization": `Bearer ${localStorage.getItem(`token`)}`
       },
       contentType: "application/json",
       dataType: "json",
