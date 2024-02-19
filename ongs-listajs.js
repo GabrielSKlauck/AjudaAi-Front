@@ -9,23 +9,21 @@ window.onload = function() {
         datatype: "json",
     });
     
-    try{
+    try{   
         const user = JSON.parse(localStorage.getItem("user"));
         const id = user.id;
         const isNgo = localStorage.getItem("ong");
-        
-        
         if(id != null){
             
-            if(isNgo == 'true'){
+            if(isNgo == "true"){
                 let link = document.getElementById('profile-page');
                 link.setAttribute("href","perfil-edicao-ong.html");
-                let linkSmall = document.getElementById('small-profile-page');
+                let linkSmall = document.getElementById('profile-page-small');
                 linkSmall.setAttribute("href","perfil-edicao-ong.html");
             }else{            
                 let link = document.getElementById('profile-page');
                 link.setAttribute("href","perfil-edicao.html");
-                let linkSmall = document.getElementById('small-profile-page');
+                let linkSmall = document.getElementById('profile-page-small');
                 linkSmall.setAttribute("href","perfil-edicao.html");
             }
             document.getElementById('btn-login').style.display = 'none';
