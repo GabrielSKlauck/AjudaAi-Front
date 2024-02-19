@@ -30,12 +30,12 @@ window.onload = function() {
             if(isNgo == "true"){
                 let link = document.getElementById('profile-page');
                 link.setAttribute("href","perfil-edicao-ong.html");
-                let linkSmall = document.getElementById('profile-page-small');
+                let linkSmall = document.getElementById('link-small');
                 linkSmall.setAttribute("href","perfil-edicao-ong.html");
             }else{            
                 let link = document.getElementById('profile-page');
                 link.setAttribute("href","perfil-edicao.html");
-                let linkSmall = document.getElementById('profile-page-small');
+                let linkSmall = document.getElementById('link-small');
                 linkSmall.setAttribute("href","perfil-edicao.html");
             }
             document.getElementById('btn-login').style.display = 'none';
