@@ -112,6 +112,9 @@ function inscricao(){
                 type: "POST",
                 url: "https://localhost:7070/UserAds",
                 data: JSON.stringify(infoUserAds),
+                headers:{
+                    Authorization: `Bearer ${localStorage.getItem(`token`)}`,
+                },
                 contentType: "application/json",
                 success: disableBtnInsc(),
                 dataType: "json",
@@ -139,6 +142,9 @@ function verificarInscricao(){
             type: "POST",
             url: "https://localhost:7070/UserAds/userIdAdsId",
             data: JSON.stringify(infoUserAds),
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem(`token`)}`,
+            },
             contentType: "application/json",
             success: validaGet,
             dataType: "json",
