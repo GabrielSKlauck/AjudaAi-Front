@@ -21,7 +21,34 @@ window.onload = function() {
      });
     });
 
-    
+    try{   
+        const user = JSON.parse(localStorage.getItem("user"));
+        const id = user.id;
+        const isNgo = localStorage.getItem("ong");
+        if(id != null){
+            
+            if(isNgo == "true"){
+                let link = document.getElementById('profile-page');
+                link.setAttribute("href","perfil-edicao-ong.html");
+                let linkSmall = document.getElementById('link-small');
+                linkSmall.setAttribute("href","perfil-edicao-ong.html");
+            }else{            
+                let link = document.getElementById('profile-page');
+                link.setAttribute("href","perfil-edicao.html");
+                let linkSmall = document.getElementById('link-small');
+                linkSmall.setAttribute("href","perfil-edicao.html");
+            }
+            document.getElementById('btn-login').style.display = 'none';
+            document.getElementById('btn-logout').style.display = 'block';
+
+            document.getElementById('btn-login-small').style.display = 'none';
+            document.getElementById('btn-logout-small').style.display = 'block';
+
+            document.getElementById('sign-up').style.display = 'none';
+            document.getElementById('profile-page').style.display = 'block';
+            document.getElementById('profile-page-small').style.display = 'block';
+        }
+    }catch{}
 };
 
 function carregaPagina(){   
@@ -31,7 +58,7 @@ function carregaPagina(){
           <div id="div-header" class="ml-5">
             <p class="text-2xl mb-2">${title}</p>
             <p class="font-semibold">Ong responsavel: ${nameOng}</p>
-            <p><em>Expira em: ${expira}</em></p>
+            <p><em>Expira em: ${refactorDate(expira)}</em></p>
           </div>
         </div>
         <hr id="barra" class="w-full h-3">
@@ -70,49 +97,70 @@ function request(method, url, headers, successCallback) {
 }
 
 function inscricao(){
-    if (localStorage.getItem("user")) {
-        var item = JSON.parse(localStorage.getItem("user"));
-        var userId = parseInt(item.id);
-        console.log("logado");
-        const infoUserAds = {
-            userId: userId,
-            adsId: parseInt(id)
+    const isNgo = localStorage.getItem('ong');
+    if(isNgo != 'true'){
+        if (localStorage.getItem("user")) {
+            var item = JSON.parse(localStorage.getItem("user"));
+            var userId = parseInt(item.id);
+            console.log("logado");
+            const infoUserAds = {
+                userId: userId,
+                adsId: parseInt(id)
+            }
+            
+            $.ajax({
+                type: "POST",
+                url: "https://localhost:7070/UserAds",
+                data: JSON.stringify(infoUserAds),
+                headers:{
+                    Authorization: `Bearer ${localStorage.getItem(`token`)}`,
+                },
+                contentType: "application/json",
+                success: disableBtnInsc(),
+                dataType: "json",
+            });
+        }else{
+            alert("Por favor logue primeiro antes de se inscrever");
+            window.location.href = "login.html";
         }
-        
-        $.ajax({
-            type: "POST",
-            url: "https://localhost:7070/UserAds",
-            data: JSON.stringify(infoUserAds),
-            contentType: "application/json",
-            success: disableBtnInsc(),
-            dataType: "json",
-        });
-    }else{
-        alert("Por favor logue primeiro antes de se inscrever");
-        window.location.href = "login.html";
-    }
+    }  
 }
 
 function verificarInscricao(){
-    var item = JSON.parse(localStorage.getItem("user"));
-    var userId = parseInt(item.id);
-
-    const infoUserAds = {
-    userId: userId,
-    adsId: parseInt(id)
-    }
+    const isNgo = localStorage.getItem('ong');
+    if(isNgo != 'true'){
+        var item = JSON.parse(localStorage.getItem("user"));
+        var userId = parseInt(item.id);
     
-    var estaInscrito = false;
-    $.ajax({
-        type: "POST",
-        url: "https://localhost:7070/UserAds/userIdAdsId",
-        data: JSON.stringify(infoUserAds),
-        contentType: "application/json",
-        success: validaGet,
-        dataType: "json",
-    });
-    return estaInscrito;
+        const infoUserAds = {
+        userId: userId,
+        adsId: parseInt(id)
+        }
+        
+        var estaInscrito = false;
+        $.ajax({
+            type: "POST",
+            url: "https://localhost:7070/UserAds/userIdAdsId",
+            data: JSON.stringify(infoUserAds),
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem(`token`)}`,
+            },
+            contentType: "application/json",
+            success: validaGet,
+            dataType: "json",
+        });
+        return estaInscrito;
+    }else{
+        let btn = document.getElementById('btn-subscribe');
+        btn.style.display = 'none';
+    }
 }
+
+function refactorDate(date){
+    let correctDate = new Date(date);
+    date =  correctDate.toLocaleDateString();    
+    return date;
+  }
 
 function validaGet(item){
     if(item.length != 0){
@@ -123,4 +171,8 @@ function validaGet(item){
 function disableBtnInsc(){
     $('#btn-subscribe').css({display: 'none'});
     $('#btn-non-subscribe').css({display: 'block'});
+}
+
+function logout(){
+    localStorage.clear();
 }
