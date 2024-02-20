@@ -98,14 +98,25 @@
                 <a href="#footer-right">Contato</a>
               </li>
               <li>
-                <a href="login.html">Entrar</a>
+                <a href="Sou.html">Criar Conta</a>
+              </li>
+              <li id="btn-login-small">
+                <a href="login.html" >Entrar</a>
+              </li>
+              <li id="profile-page-small" class="hidden">
+                <a href="" id="small-profile-page">Perfil</a>
+              </li>
+              <li class="hidden" id="btn-logout-small">
+                <a href="homepage.html" onclick="logout()">Sair</a>
               </li>
             </ul>
           </div>
         </div>
         <div class="flex header-menu-login space-x-2 hidden lg:flex">
-          <a href="Sou.html" id="sign-up">Criar Conta</a>
-          <a href="login.html" class="login">Entrar</a>
+          <a href="Sou.html" id="sign-up" >Criar Conta</a>
+          <a href="" id="profile-page" class="hidden">Meu perfil</a>
+          <a href="login.html" id="btn-login" class="login" >Entrar</a>
+          <a href="homepage.html" id="btn-logout" class="logout hidden" onclick="logout()">Sair</a>
         </div>
       </div>
     </nav>

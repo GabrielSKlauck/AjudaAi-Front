@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AjudaAí - Voluntariado</title>
+  <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico.png" />
+  <link rel="stylesheet" href="./styles/resetCss.css" />
+  <link rel="stylesheet" href="./styles/volunteerprofileedit.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: "#da373d",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body>
+  <header id="header-hp">
+    <a href="homepage.html">
+      <div class="w-full h-1/6 flex items-center justify-between">
+        <div class="header-logo flex p-6 lg:p-8 ml-1 lg:ml-10">
+          <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
+            <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
+            <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
+            <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+            <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z" fill="#D9D9D9" />
+            <path
+              d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+              stroke="#324424" stroke-width="0.285" />
+            <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57" stroke="#324424"
+              stroke-width="0.285" />
+            <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+              stroke-width="0.285" />
+            <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+              stroke-width="0.285" />
+          </svg>
+          <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
+        </div>
+    </a>
+    <nav class="flex items-center justify-between">
+      <div class="container mx-auto mt-2">
+        <div class="flex header-menu-items space-x-6 hidden lg:flex">
+          <a href="#about-us">Quem Somos</a>
+          <div class="dropdown">
+            <a class="dropbtn flex">Voluntariado
+              <svg class="mt-2 ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 23 14"
+                fill="none">
+                <path d="M2 2.12964L11.3094 12.1904L20.6187 2.12964" stroke="#687C57" stroke-opacity="0.8"
+                  stroke-width="3.375" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <ul class="header-menu-dropdown-list">
+              <li>
+                <a href="#about-platform">Conheça a Plataforma</a>
+              </li>
+              <li>
+                <a href="ongs-lista.html">ONGs</a>
+              </li>
+              <li>
+                <a href="anuncios-lista.html">Oportunidades</a>
+              </li>
+            </ul>
+          </div>
+          <a href="#footer-right">Contato</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="flex items-center justify-between">
+      <div class="container mx-auto mt-2 mr-5">
+        <div class="header-menu-mobile lg:hidden">
+          <a class="dropbtn-mobile">
+            <img id="menu-icon" class="w-[30px] h-[30px] opacity-80 mb-[10px]" src="./assets/images/menu-mobile.png"
+              alt="Ícone do menu." />
+          </a>
+          <div class="dropdown-menu-mobile">
+            <ul class="menu-mobile-dropdown-list right-2 top-[60px]">
+              <li>
+                <a href="#about-us">Quem somos</a>
+              </li>
+              <li>
+                <a href="#about-platform">Conheça a plataforma</a>
+              </li>
+              <li>
+                <a href="ongs-lista.html">ONGs</a>
+              </li>
+              <li>
+                <a href="anuncios-lista.html">Oportunidades</a>
+              </li>
+              <li>
+                <a href="#footer-right">Contato</a>
+              </li>
+              <li>
+                <a href="#">Meu perfil</a>
+              </li>
+              <li>
+                <a href="#">Desconectar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex hidden lg:flex">
+          <img id="header-profile-picture" class="w-[45px] h-[45px] mr-16" onclick="toggleProfileMenu()"
+            src="assets/images/userprofile.png" alt="Perfil do usuário." />
+          <div id="profile-menu" class="profile-dropdown">
+            <ul class="profile-dropdown-list flex flex-col">
+              <li>
+                <a href="#">Meu perfil</a>
+              </li>
+              <li>
+                <a href="#">Desconectar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    </div>
+  </header>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="profile-pic-modal-body">
+        <div class="flex justify-end">
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div>
+          <img id="profile-img" class="mx-auto mt-6" src="assets/images/personimg.png" alt="Foto de perfil." />
+        </div>
+        <div class="flex justify-between">
+          <button>
+            <label for="input-file" id="add-img-btn" class="btn items-center justify-center space-x-4">
+              <img id="camera-icon" src="assets/images/camera-icon.png" />
+              <span id="add-img-text">Adicionar foto</span>
+            </label>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
+          </button>
+          <button id="delete-img-btn" onclick="setDefaultPic()"
+            class="btn items-center justify-center space-x-4 mr-[50px]">
+            <img id="trashcan-icon" src="assets/images/trashbin-icon.png" />
+            <span id="delete-img-text">Excluir</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="personal-info-modal-body">
+        <div class="flex justify-between">
+          <h1 id="personal-info-modal-title">Editar informações do perfil</h1>
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div class="mt-10">
+          <span id="personal-info-modal-subtitle">*Indica campo obrigatório</span>
+        </div>
+        <div>
+          <form id="personal-info-form" class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
+            <div class="form-input-box mt-4">
+              <label for="volunteer-first-name">Primeiro nome*</label>
+              <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
+            </div>
+            <div class="form-input-box mt-1">
+              <label for="volunteer-last-name">Sobrenome*</label>
+              <input type="text" id="volunteer-last-name" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
+            </div>
+            <div class="form-input-box mt-1">
+              <label for="birthdate">Data de nascimento</label>
+              <input type="date" id="birthdate" class="px-2 py-1.5 mt-2" />
+            </div>
+            <div class="form-input-box mt-6">
+              <label for="volunteer-city">Cidade</label>
+              <input type="text" id="volunteer-city" class="pl-2 py-1.5 mt-2" />
+            </div>
+            <div class="form-input-box mt-6">
+              <label for="volunteer-state">Estado*</label>
+              <input type="text" id="volunteer-state" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
+            </div>
+            <div class="mt-8 mb-6 mx-28">
+              <button type="submit" id="save-personal-info-btn" class="btn">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="interests-modal-body">
+        <div class="flex justify-between">
+          <h1 id="interests-modal-title">Interesses e aptidões</h1>
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div class="flex items-center justify-center">
+          <div id="interests-modal-box">
+            <div id="interests-boxes">
+              <ul id="interests-ul">
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="interest-input-box" class="flex justify-center">
+          <input type="text" id="interests-input" placeholder="+" />
+        </div>
+        <div class="mt-10 mb-10 mx-96">
+          <button type="button" class="btn">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="collected-achievements-modal-body">
+        <div class="flex justify-end">
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div class="flex items-center justify-center">
+          <img class="achievement-icon-close-up" src="./assets/images/workingconquista.png" />
+        </div>
+        <div class="flex flex-col items-center justify-center mt-8">
+          <h1 class="achievement-text-h1">Cadastre-se como voluntário na AjudaAí.</h1>
+          <h2 class="achievement-text-h2 mt-2">Alcançada em 29 de fevereiro de 2024.</h2>
+        </div>
+        <div class="flex mt-10 mb-10 mx-80">
+          <button type="button" class="btn flex items-center justify-center space-x-4">
+            <img id="share-icon" src="assets/images/share-icon.png" />
+            <span id="share-achievement-text">Compartilhar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="uncollected-achievements-modal-body">
+        <div class="flex justify-between">
+          <h1 id="uncollected-achievements-modal-title">Conquistas não alcançadas</h1>
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div class="pl-[35px]">
+          <div class="flex flex-row mt-10">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/kindnessconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Voluntarie-se em 2 projetos.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/volunteeringconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Voluntarie-se em 3 projetos.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/teamconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Voluntarie-se em 5 projetos.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/self-esteemconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Voluntarie-se em 10 projetos.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/rewardconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Avalie uma ONG.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/directconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Compartilhe uma conquista.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/dogconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto da causa animal.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/salveconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto da causa ambiental.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/arteconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de arte e cultura.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/humanidadeconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de cidadania.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/cuidadoconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de assistência social.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/diversidadeconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto em defesa das minorias.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/mulherconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto em defesa das mulheres.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/cofrinhoconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de desenvolvimento econômico.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/direitoconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de direitos humanos.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/estudarconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de educação.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/techconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de infraestrutura e tecnologia.</h1>
+            </div>
+          </div>
+          <div class="flex flex-row mt-3">
+            <div class="uncollected-achievement-icon-box flex items-center justify-center">
+              <img class="achievement-icons unachieved-icons" src="assets/images/saudeconquista.png" />
+            </div>
+            <div class="uncollected-achievement-description-box flex items-center">
+              <h1>Participe de um projeto de saúde.</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex">
+    <div>
+      <img class="test-img-modal open-modal w-[300px] h-[300px]" src="assets/images/personimg.png" />
+    </div>
+  </div>
+  <div class="flex">
+    <div class="flex justify-center mt-[2.5vw]">
+      <button type="button" id="btn-editar-perfil" class="open-modal">
+        <div class="font-['Inter'] text-xl">
+          Editar perfil
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="flex">
+    <div>
+      <img class="test-pencil-icon open-modal w-[40px] h-[40px]" src="assets/images/pencil-icon.png" />
+    </div>
+  </div>
+  <div class="flex">
+    <div>
+      <img class="achievement-test-icon open-modal w-[96px] h-[96px]" src="assets/images/workingconquista.png" />
+    </div>
+  </div>
+  <div class="flex">
+    <div class="flex justify-center mt-[2.5vw]">
+      <button type="button" id="btn-view-achievements" class="open-modal">
+        <div class="font-['Inter'] text-[1vw]">
+          Visualizar as próximas conquistas
+        </div>
+      </button>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="volunteerprofileedit.js"></script>
+</body>
+
+</html>
