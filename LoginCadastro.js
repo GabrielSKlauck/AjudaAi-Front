@@ -9,7 +9,7 @@ $(() => {
     });
 
     if (localStorage.getItem("user")) {
-        redirect("homepage.html");
+        
         return;
     }
 
@@ -23,13 +23,13 @@ $(() => {
           name: $("#Voluntario-nome")[0].value,        
           email: $("#Voluntario-email")[0].value,
           password: $("#Voluntario-senha")[0].value,
+          birthdate: document.getElementById('Voluntario-nascimento').value,
           profileImage: "",
           role: "voluntario",
           cityId: idCity,
-          cityStateId: idState
-          
-          
+          cityStateId: idState         
         }
+        console.log(values);
         if (!values.name) {
             alert("nome não informado!");
             $("#Voluntario-nome").addClass("invalid");
@@ -50,6 +50,26 @@ $(() => {
         }
         $("#Voluntario-city").removeClass("invalid");
 
+
+        if(!values.birthdate){
+            alert("Data de nascimento não informado!");
+            $("#Voluntario-nascimento").addClass("invalid");
+            return;  
+        }else{
+            let data = values.birthdate;
+            var hoje = new Date();
+            var nasc  = new Date(data);
+            var idade = hoje.getFullYear() - nasc.getFullYear();
+            var m = hoje.getMonth() - nasc.getMonth();
+            if (m < 0 || (m === 0 && hoje.getDate() < nasc.getDate())) idade--;   
+            if(idade < 18){
+                alert("Idade invalida ou menor que 18 anos");
+                $("#Voluntario-nascimento").addClass("invalid");
+                return;
+            }
+        }
+        $("#Voluntario-nascimento").removeClass("invalid");
+
         if (!values.email) {
             alert("Email não informado!");
             $("#Voluntario-email").addClass("invalid");
@@ -64,7 +84,7 @@ $(() => {
         }
         $("#Voluntario-senha").removeClass("invalid");
 
-        console.log(values);
+        
         sendDataBase(values);
         
     });
@@ -72,13 +92,21 @@ $(() => {
 })
 
 function sendDataBase(values){
-    $.ajax({
-        type: "POST",
-        url: apiUrl + "/User",
-        data: JSON.stringify(values),
-        contentType: "application/json",
-        dataType: "json",
-    });
+    if(values != null){
+        $.ajax({
+            type: "POST",
+            url: apiUrl + "/User",
+            data: JSON.stringify(values),
+            statusCode: {
+                200: function(){
+                    window.location.href = "perfil-edicao.html";
+                }
+            },
+            contentType: "application/json",
+            dataType: "json",
+        });
+    }
+   
 }
 
 function loadStates(item){
