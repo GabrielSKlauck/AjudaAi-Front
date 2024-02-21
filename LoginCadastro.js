@@ -15,7 +15,7 @@ $(() => {
 
 })
 
-function testePost() {
+function Post() {
     var tag = document.getElementById("Voluntario-city");
     var idCity = tag.options[tag.selectedIndex].value;
     tag = document.getElementById("Voluntario-state");
@@ -85,9 +85,9 @@ function testePost() {
     }
     $("#Voluntario-senha").removeClass("invalid");
 
-    values.birthdate;
-    console.log(values);
     sendDataBase(values);
+    login(values);
+
 }
 
 function sendDataBase(values) {
@@ -108,8 +108,29 @@ function sendDataBase(values) {
 
 }
 
+function login(user){  
+    const valores ={
+        email: user.email,
+        password: user.password
+    };
+    $.ajax({
+        type: "POST",
+        url: "https://localhost:7070/user/login",
+        data: JSON.stringify(valores),
+        success: (result) => {
+           localStorage.clear();
+           localStorage.setItem(`token`, result.token); 
+           localStorage.setItem(`user`, JSON.stringify(result.user)); 
+           localStorage.setItem(`ong`, false);
+           location.href = "perfil-edicao.html"; 
+        },
+        contentType: "application/json",
+        dataType: "json",
+    });
+}
+
 function loadStates(item) {
-    console.log(item);
+    
     item.forEach(linha => {
 
         const stateOption = `
