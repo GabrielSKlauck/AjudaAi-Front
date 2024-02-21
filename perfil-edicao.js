@@ -321,16 +321,23 @@ let inputFile = document.getElementById("input-file");
 
 inputFile.onchange = function() {
     profileImg.src = URL.createObjectURL(inputFile.files[0]);
+    let imgSize = inputFile.files[0].size;
+    console.log(imgSize);
     const file = inputFile.files[0]; 
     const reader = new FileReader();    
     reader.onload = function(event) {
         const base64 = event.target.result;  
-       
-        var img = document.querySelector("#profile-img");
-        img.setAttribute('src', `${base64}`);
-        var img = document.querySelector("#img-profile-load");
-        img.setAttribute('src', `${base64}`);
-        sendImageProfileDatabase(base64);
+        
+        if(imgSize > 125000){
+          alert("Tamanho de imagem ultrapassa limite");
+          return;
+        }else{
+          var img = document.querySelector("#profile-img");
+          img.setAttribute('src', `${base64}`);
+          var img = document.querySelector("#img-profile-load");
+          img.setAttribute('src', `${base64}`);
+          sendImageProfileDatabase(base64);
+        }     
     };
     reader.readAsDataURL(file);
     
