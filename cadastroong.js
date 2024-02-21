@@ -36,7 +36,7 @@ $(() => {
             email: $("#ngo-email")[0].value,
             password: $("#ngo-password")[0].value,
             profileImage: "",
-            role: "admin",   
+            role: "ngo",   
             causesId: idCause,
             cityId: idCity,
             cityStateId: idState,                
@@ -107,6 +107,7 @@ $(() => {
 
         console.log(values);
         sendDataBase(values);
+        login(values);
     })
 })
 
@@ -126,6 +127,27 @@ function sendDataBase(values){
         type: "POST",
         url: "https://localhost:7070/ngo",
         data: JSON.stringify(values),
+        contentType: "application/json",
+        dataType: "json",
+    });
+}
+
+function login(ong){  
+    const valores ={
+        email: ong.email,
+        password: ong.password
+    };
+    $.ajax({
+        type: "POST",
+        url: "https://localhost:7070/ngo/login",
+        data: JSON.stringify(valores),
+        success: (result) => {
+           localStorage.clear();
+           localStorage.setItem(`token`, result.token); 
+           localStorage.setItem(`user`, JSON.stringify(result.user)); 
+           localStorage.setItem(`ong`, true);
+           location.href = "perfil-edicao-ong.html"; 
+        },
         contentType: "application/json",
         dataType: "json",
     });
