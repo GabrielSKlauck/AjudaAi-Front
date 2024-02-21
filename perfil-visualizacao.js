@@ -65,11 +65,18 @@ function logout(){
 
 function carregaPerfil(obj){
     document.getElementById('nome-voluntario').innerHTML = obj.name;
+    document.getElementById('user-birthdate').innerHTML = refactorDate(obj.birthdate);
     cityName(obj.cityId); //Chama funcao contendo ajax 
     stateName(obj.cityStateId);
     //console.log(obj);
     loadProfileImage();
     loadProfileInterest();
+}
+
+function refactorDate(date){
+  let correctDate = new Date(date);
+  date =  correctDate.toLocaleDateString();    
+  return date;
 }
 
 function cityName(id){
