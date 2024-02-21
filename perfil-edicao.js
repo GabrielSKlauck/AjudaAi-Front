@@ -152,7 +152,7 @@ function openConquestModal(achieId){
     url: `https://localhost:7070/AchievementsUser/ConquistaUser/${id}/${achieId}`,
     success: function(data){
       loadAchievementInfo(achieId);
-      refactorDate(data.completionDate);
+      document.getElementById('achievement-date-conclusion').innerHTML = "Alcançada em: " + refactorDate(data.completionDate);
       
       $(`#modal-achievement`).addClass("modal-active");
     },
@@ -165,7 +165,7 @@ function openConquestModal(achieId){
 function refactorDate(date){
   let correctDate = new Date(date);
   date =  correctDate.toLocaleDateString();    
-  let achievementDate = document.getElementById('achievement-date-conclusion').innerHTML = "Alcançada em: " + date;
+  return date;
 }
 
 function loadAchievementInfo(achieId){
@@ -218,6 +218,7 @@ function loadCityHtml(item){
 
 function carregaPerfil(obj){
   document.getElementById('nome-voluntario').innerHTML = obj.name;
+  document.getElementById('user-birthdate').innerHTML = refactorDate(obj.birthdate);
   cityName(obj.cityId); //Chama funcao contendo ajax 
   stateName(obj.cityStateId);
   //console.log(obj);
