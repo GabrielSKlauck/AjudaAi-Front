@@ -1,218 +1,361 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/paginaOng.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: '#da373d',
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/resetCss.css">
+  <link rel="stylesheet" href="styles/perfil-ong.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
           }
         }
       }
-    </script>
-    <title>Ong</title>
+    }
+  </script>
+  <title>PERFIL ONG</title>
 </head>
+
 <body>
-    <header id="header-hp">
-        <a href="homepage.html">
-          <div class="w-full h-1/6 flex items-center justify-between">
-            <div class="header-logo flex p-6 lg:p-8 ml-1 lg:ml-10">
-              <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
-                <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
-                <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
-                <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
-                <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z" fill="#D9D9D9" />
-                <path
-                  d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
-                  stroke="#324424" stroke-width="0.285" />
-                <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57" stroke="#324424"
-                  stroke-width="0.285" />
-                <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
-                  stroke-width="0.285" />
-                <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
-                  stroke-width="0.285" />
-              </svg>
-              <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
-            </div>
-        </a>
-        <nav class="flex items-center justify-between">
-          <div class="container mx-auto mt-2">
-            <div class="flex header-menu-items space-x-6 hidden lg:flex">
-              <a href="homepage.html#about-us">Quem Somos</a>
-              <div class="dropdown">
-                <a class="dropbtn flex">Voluntariado
-                  <svg class="mt-2 ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 23 14"
-                    fill="none">
-                    <path d="M2 2.12964L11.3094 12.1904L20.6187 2.12964" stroke="#687C57" stroke-opacity="0.8"
-                      stroke-width="3.375" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
-                <ul class="header-menu-dropdown-list">
-                  <li>
-                    <a href="homepage.html#about-platform">Conheça a Plataforma</a>
-                  </li>
-                  <li>
-                    <a href="ongs-lista.html">ONGs</a>
-                  </li>
-                  <li>
-                    <a href="anuncios-lista.html">Oportunidades</a>
-                  </li>
-                </ul>
-              </div>
-              <a href="#footer-right">Contato</a>
-            </div>
-          </div>
-        </nav>
-        <nav class="flex items-center justify-between">
-          <div class="container mx-auto mt-2 mr-5">
-            <div class="header-menu-mobile lg:hidden">
-              <a class="dropbtn-mobile">
-                <img id="icone-menu" class="w-[30px] h-[30px] opacity-80 mb-[10px]" src="./assets/images/menu-mobile.png"
-                  alt="Ícone do menu." />
-              </a>
-              <div class="dropdown-menu-mobile">
-                <ul class="menu-mobile-dropdown-list right-2 top-[60px]">
-                  <li>
-                    <a href="homepage.html#about-us">Quem somos</a>
-                  </li>
-                  <li>
-                    <a href="homepage.html#about-platform">Conheça a plataforma</a>
-                  </li>
-                  <li>
-                    <a href="ongs-lista.html">ONGs</a>
-                  </li>
-                  <li>
-                    <a href="anuncios-lista.html">Oportunidades</a>
-                  </li>
-                  <li>
-                    <a href="#footer-right">Contato</a>
-                  </li>
-                  <li>
-                    <a href="Sou.html">Criar Conta</a>
-                  </li>
-                  <li>
-                    <a href="login.html">Entrar</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="flex header-menu-login space-x-2 hidden lg:flex">
-              <a href="Sou.html" id="sign-up">Criar Conta</a>
-              <a href="login.html" class="login">Entrar</a>
-            </div>
-          </div>
-        </nav>
+  <header id="header-hp">
+    <a href="homepage.html">
+      <div class="w-full h-1/6 flex items-center justify-between">
+        <div class="header-logo flex p-6 lg:p-8 ml-1 lg:ml-10">
+          <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
+            <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
+            <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
+            <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+            <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z" fill="#D9D9D9" />
+            <path
+              d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+              stroke="#324424" stroke-width="0.285" />
+            <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57" stroke="#324424"
+              stroke-width="0.285" />
+            <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+              stroke-width="0.285" />
+            <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+              stroke-width="0.285" />
+          </svg>
+          <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
         </div>
-      </header>
-
-
-      <div class="div-externa flex flex-col items-center w-full justify-between">
-
-          <div class="div-interna mt-20 w-[70rem] h-auto ">
-            <div class=" h-80 w-full flex">
-                <img id="img-logo-ong" src="assets/images/ong-exemplo.jpg" alt="" class="rounded-full mt-6 ml-10">
-                <div class="mt-20 ml-5 ">
-                  <p id="title-ong" class="text-3xl mb-3">Titulo ong</p>                 
-                  <p id="description-ong">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iure soluta numquam
-                    recusandae nesciunt reprehenderit in aperiam quo porro? Magni odio cumque alias
-                    assumenda porro fuga! Doloremque minus aliquam similique! Lorem ipsum dolor sit amet 
-                    consectetur adipisicing elit. Soluta, nesciunt. Rerum ab repellendus consequatur perferendis quae sapiente! 
-                    Quae a deleniti sequi odio inventore sunt, nisi officia quos enim facere neque?
-                  </p>
-                </div>
-            </div>
-            <p id="oport" class="text-3xl p-3 text-center mb-3">Oportunidades da ong</p>
-            <div class="ongs-ads-list container grid grid-cols-1 mx-4 sm:mx-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 h-auto">
-              
-              <!-- <div class="cards card flex flex-col items-center h-96" onclick="abrirPagina()">
-                <img src="assets/images/logo anuncio.jpg" alt="" class="h-40 w-60">
-                <h1 class="text-xl mt-4 mb-4">Nome ong</h1>
-                <p class="text-center">
-                  Descricao da vaga: sit amet, consectetur adipisicing elit.
-                  Ipsa, repellat. Excepturi praesentium,
-                  esse quidem quam unde eveniet repellendus ipsum possimus incidunt
-                </p>
-              </div> -->
-
-            </div>
+    </a>
+    <nav class="flex items-center justify-between">
+      <div class="container mx-auto mt-2">
+        <div class="flex header-menu-items space-x-6 hidden lg:flex">
+          <a href="homepage.html#about-us">Quem Somos</a>
+          <div class="dropdown">
+            <a class="dropbtn flex">Voluntariado
+              <svg class="mt-2 ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 23 14"
+                fill="none">
+                <path d="M2 2.12964L11.3094 12.1904L20.6187 2.12964" stroke="#687C57" stroke-opacity="0.8"
+                  stroke-width="3.375" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <ul class="header-menu-dropdown-list">
+              <li>
+                <a href="homepage.html#about-platform">Conheça a Plataforma</a>
+              </li>
+              <li>
+                <a href="ongs-lista.html">ONGs</a>
+              </li>
+              <li>
+                <a href="anuncios-lista.html">Oportunidades</a>
+              </li>
+            </ul>
           </div>
+          <a href="#footer-right">Contato</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="flex items-center justify-between">
+      <div class="container mx-auto mt-2 mr-5">
+        <div class="header-menu-mobile lg:hidden">
+          <a class="dropbtn-mobile">
+            <img id="icone-menu" class="w-[30px] h-[30px] opacity-80 mb-[10px]" src="./assets/images/menu-mobile.png"
+              alt="Ícone do menu." />
+          </a>
+          <div class="dropdown-menu-mobile">
+            <ul class="menu-mobile-dropdown-list right-2 top-[60px]">
+              <li>
+                <a href="homepage.html#about-us">Quem somos</a>
+              </li>
+              <li>
+                <a href="homepage.html#about-platform">Conheça a plataforma</a>
+              </li>
+              <li>
+                <a href="ongs-lista.html">ONGs</a>
+              </li>
+              <li>
+                <a href="anuncios-lista.html">Oportunidades</a>
+              </li>
+              <li>
+                <a href="#footer-right">Contato</a>
+              </li>
+              <li>
+                <a href="login.html">Entrar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex header-menu-login space-x-2 hidden lg:flex">
+          <a href="Sou.html" id="sign-up">Criar Conta</a>
+          <a href="login.html" class="login">Entrar</a>
+        </div>
+      </div>
+    </nav>
+    </div>
+  </header>
+  <div class="min-[777px]:flex min-[777px]:justify-center">
+    <div class="perfil">
+      <div class="min-[777px]:mb-[2vw] ">
+        <img src="./assets/images/person1.png" alt="person1"
+          class="cursor-pointer min-[777px]:mt-[2vw] min-[777px]:w-[16vw] min-[777px]:h-[14vw] min-[777px]:ml-[1.5vw] max-[777px]:h-[60vw] max-[777px]:w-[60vw] max-[777px]:mt-[4vw]">
+      </div>
+      <div class="min-[777px]:ml-[2.5vw]">
+        <div
+          class="flex justify-between min-[777px]:text-[1.5vw] max-[777px]:text-[5.8vw] font-semibold font-['Inter'] min-[777px]:mt-[1.8vw] ">
+          <div class="" id="ngo-name">
+            Nome da Ong
+          </div>
+
+        </div>
+        <div class="flex items-center">
+          <div class="flex estrelas1">
+            <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
+            <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="1" alt="">
+          </div>
+          <div class="flex estrelas2">
+            <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
+            <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="2" alt="">
+          </div>
+          <div class="flex estrelas3">
+            <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
+            <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="3" alt="">
+          </div>
+          <div class="flex estrelas4">
+            <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
+            <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="4" alt="">
+          </div>
+          <div class="flex estrelas5">
+            <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
+            <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="5" alt="">
+          </div>
+          <div class="text-blue-300 min-[777px]:text-[1.1vw] max-[777px]:text-[5.5vw]">(15)</div>
+        </div>
+        <div class="mt-[0.5vw] flex">
+          <img src="./assets/images/localizacaoicon.png" alt="" class="min-[777px]:h-[1.7vw] max-[777px]:h-[6.5vw]">
+          <div class="flex justify-center align-middle items-center min-[777px]:text-[1vw] font-['Inter'] pl-[0.2vw]" id="ngo-location">
+           
+          </div>
+        </div>
+        <div class="min-[777px]:mr-[2vw] min-[777px]:mt-[0.5vw] text-[1vw] ">
+          Descrição breve sobre a ong lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore
+          ipsum lore
+          lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum.
+        </div>
+        <div class="min-[777px]:mt-[0.5vw]">
+          <ul class="flex min-[777px]:gap-[1.2vw] min-[777px]:mr-[5vw] min-[777px]:mt-[2vw]" >
+            <li class="btn-interesses flex justify-center" id="ngo-causes"></li>
+            <!-- <li class="btn-interesses flex justify-center">Meio Ambiente</li>
+            <li class="btn-interesses flex justify-center">Meio Ambiente</li>  -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="abas">
+    <div class="flex caixa">
+      <h1 class="active">Oportunidades</h1>
+      <h1>Galeria</h1>
+      <h1>Sobre nós</h1>
+    </div>
+    <div class="conteudo flex justify-center">
+      <div class="active fundo-conteudo" id="ads-area">
+        <!-- <h2 class="anuncio ">
+          <span class="fundo-anuncio">
+            <h3 class="grid min-[777px]:ml-[0.7vw] min-[777px]:mt-[0.5vw] min-[777px]:mr-[0.7vw] ">
+              <span class="text-[1.1vw] font-semibold trabalho-voluntario-titulo">Trabalho voluntário em resgate de peixes</span>
+              <span class="text-[0.78vw] italic">Blumenau, Santa Catarina</span>
+              <span class="text-[0.78vw] italic">Expira dia: 20/05/2024</span>
+            </h3>
+          </span>
+          <span
+            class="flex min-[777px]:ml-[0.5vw] min-[777px]:mt-[0.1vw] min-[777px]:mr-[0.5vw] font-['Inter'] italic text-[0.60vw] leading-[1vw] descricao-escrita">
+            Descrição sobre anuncio lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore
+            ipsum lore lore ipsum lore ipsum lore ipsum lore
+            ipsum lore ipsum lore ipsum lore ipsum lore ipsum asdsadsadsa sadsadsadsadsas
+          </span>
+          <span class="fundo-anuncio2">
+            <button class="botao-anuncio font-['Inter']" onclick="encerrarAds()">
+              Encerrar
+            </button>
+          </span>
+        </h2> -->
+  
+      </div>
+      <div class="fundo-conteudo grid grid-cols-3">
+        <h2 class="galeria">
+
+        </h2>
+
 
       </div>
+      <div class="fundo-conteudo">
+        <h2 class="sobre-nos">
+          <span class="texto-sobre" id="ngo-description">
+          
+        </span>
 
-      <footer>
-        <div class="w-full h-[500px] flex flex-col ml-16 lg:flex-row lg:items-center lg:justify-stretch">
-          <div id="footer-left"
-            class="pt-10 mb-8 lg:ml-[250px] lg:pt-10 lg:pr-[200px] lg:pb-5 lg:border-r lg:border-solid lg:border-r-[#3F4C33]">
-            <a href="#header-hp">
-              <div id="footer-logo" class="flex mb-6">
-                <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
-                  <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
-                  <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
-                  <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
-                  <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z" fill="#D9D9D9" />
-                  <path
-                    d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
-                    stroke="#324424" stroke-width="0.285" />
-                  <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57" stroke="#324424"
-                    stroke-width="0.285" />
-                  <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
-                    stroke-width="0.285" />
-                  <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
-                    stroke-width="0.285" />
-                </svg>
-                <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
-              </div>
-            </a>
-            <div class="flex">
-              <ul id="footer-menu-list" class="leading-10">
-                <li>
-                  <a href="homepage.html#about-us">Quem Somos</a>
-                </li>
-                <li>
-                  <a href="homepage.html#about-platform">Conheça a plataforma</a>
-                </li>
-                <li>
-                  <a href="ongs-lista.html">ONGs</a>
-                </li>
-                <li>
-                  <a href="anuncios-lista.html">Oportunidades</a>
-                </li>
-              </ul>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal-anunciar">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="criador-oportunidades">
+        <div class="flex justify-between">
+          <h1 id="titulo-criador-oportunidades">Criando oportunidade</h1>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="mt-10">
+          <span id="subtitulo-criador-oportunidades">Todos os campos são obrigatórios</span>
+        </div>
+        <div>
+          <form id="info-criador-oportunidades" class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
+            <div class="caixa-entrada mt-4">
+              <label for="titulo">Título do anúncio </label>
+              <input type="text" id="titulo" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
             </div>
+            <div class="caixa-entrada mt-1">
+              <label for="data-expiracao">Data de expiração</label>
+              <input type="date" id="data-expiracao" class="px-2 py-1.5 mt-2" />
+              <a>Error message</a>
+            </div>
+            <div class="caixa-entrada mt-6 caixa-descricao" >
+              <label for="descricao" >Descrição</label>
+              <textarea id="descricao" cols="30" rows="10" class="pl-2 py-1.5 mt-2"></textarea>
+              <a>Error message</a>
+            </div>
+            <div class="mt-8 mb-6 mx-28">
+              <button type="submit" class="btn" id="btn-create-ads">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal-avaliar">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="avaliation" class="justify-center">
+        <div class="min-[777px]:text-[3vw] max-[777px]:text-[7vw] mt-[4vw] font-semibold justify-center flex">
+          Avalie o voluntário
+        </div>
+        <div class="flex justify-center ">
+          <div class="flex estrela-avaliacao1">
+            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="1"
+              alt="">
           </div>
-          <div id="footer-right"
-            class="w-fit pt-10 lg:mb-40 lg:ml-20 border-t border-solid border-t-[#3F4C33] lg:border-none">
-            <div>
-              <h1 id="contact-title" class="pb-[15px] lg:ml-[5px]">Contato</h1>
-              <div class="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
-                  width="50px" height="50px">
-                  <g fill="#4f5f42" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                    style="mix-blend-mode: normal">
-                    <g transform="scale(5.12,5.12)">
-                      <path
-                        d="M14,4c-5.51133,0 -10,4.48867 -10,10v22c0,5.51133 4.48867,10 10,10h22c5.51133,0 10,-4.48867 10,-10v-22c0,-5.51133 -4.48867,-10 -10,-10zM14,6h22c4.43067,0 8,3.56933 8,8v22c0,4.43067 -3.56933,8 -8,8h-22c-4.43067,0 -8,-3.56933 -8,-8v-22c0,-4.43067 3.56933,-8 8,-8zM13,15c-1.64497,0 -3,1.35503 -3,3v14c0,1.64497 1.35503,3 3,3h24c1.64497,0 3,-1.35503 3,-3v-14c0,-1.64497 -1.35503,-3 -3,-3zM13.41406,17h23.16992l-8.90625,8.89258c-1.49279,1.49041 -3.8809,1.49024 -5.37305,-0.00195zM38,18.41211v13.17578l-6.59766,-6.58789zM12,18.41406l6.58594,6.58594l-6.58594,6.58594zM29.98828,26.41211l6.59766,6.58789h-23.17188l6.58594,-6.58594l0.89063,0.89063c2.25585,2.25585 5.94201,2.25751 8.19922,0.00391z" />
-                    </g>
-                  </g>
-                </svg>
-                <h2 id="contact-info" class="pl-2.5 pt-2.5">contato@ajudaai.com.br</h2>
-              </div>
-            </div>
+          <div class="flex estrela-avaliacao2">
+            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="2"
+              alt="">
+          </div>
+          <div class="flex estrela-avaliacao3">
+            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="3"
+              alt="">
+          </div>
+          <div class="flex estrela-avaliacao4">
+            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="4"
+              alt="">
+          </div>
+          <div class="flex estrela-avaliacao5">
+            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
+            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="5"
+              alt="">
           </div>
         </div>
-      </footer>
-    
-      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-      <script src="paginaOng.js"></script>
+        <div class="flex justify-center mt-[3vw]">
+          <button type="button" class="btn">Enviar Avaliação</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="w-full h-[500px] flex flex-col ml-16 lg:flex-row lg:items-center lg:justify-stretch">
+      <div id="footer-left"
+        class="pt-10 mb-8 lg:ml-[250px] lg:pt-10 lg:pr-[200px] lg:pb-5 lg:border-r lg:border-solid lg:border-r-[#3F4C33]">
+        <a href="#header-hp">
+          <div id="footer-logo" class="flex mb-6">
+            <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
+              <path d="M1 11.45L16.2 1V20.475L1 31.4V11.45Z" fill="#687C57" stroke="#324424" stroke-width="0.285" />
+              <path d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325L31.4002 31.4Z" fill="#D9D9D9" />
+              <path d="M1 31.4L16.2 20.475L31.4002 31.4L16.2002 42.325L1 31.4Z" fill="#D9D9D9" />
+              <path d="M16.2002 42.325L31.4002 31.4L46.6003 42.325L31.4002 52.775L16.2002 42.325Z" fill="#D9D9D9" />
+              <path
+                d="M31.4002 31.4L46.6002 20.475L61.8002 31.4L46.6003 42.325M31.4002 31.4L46.6003 42.325M31.4002 31.4L16.2 20.475L1 31.4L16.2002 42.325M31.4002 31.4L16.2002 42.325M46.6003 42.325L31.4002 52.775L16.2002 42.325"
+                stroke="#324424" stroke-width="0.285" />
+              <path d="M31.3999 11.45L46.5999 1V20.475L31.3999 31.4V11.45Z" fill="#687C57" stroke="#324424"
+                stroke-width="0.285" />
+              <path d="M31.3999 11.45L16.1999 1V20.475L31.3999 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+                stroke-width="0.285" />
+              <path d="M61.7998 11.45L46.5998 1V20.475L61.7998 31.4V11.45Z" fill="#8FC5E7" stroke="#324424"
+                stroke-width="0.285" />
+            </svg>
+            <h1 class="brand-name text-4xl mt-1"><span class="brand-l">Ajuda</span><span class="brand-r">Aí</span></h1>
+          </div>
+        </a>
+        <div class="flex">
+          <ul id="footer-menu-list" class="leading-10">
+            <li>
+              <a href="homepage.html#about-us">Quem Somos</a>
+            </li>
+            <li>
+              <a href="homepage.html#about-platform">Conheça a plataforma</a>
+            </li>
+            <li>
+              <a href="ongs-lista.html">ONGs</a>
+            </li>
+            <li>
+              <a href="anuncios-lista.html">Oportunidades</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="footer-right"
+        class="w-fit pt-10 lg:mb-40 lg:ml-20 border-t border-solid border-t-[#3F4C33] lg:border-none">
+        <div>
+          <h1 id="contact-title" class="pb-[15px] lg:ml-[5px]">Contato</h1>
+          <div class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
+              width="50px" height="50px">
+              <g fill="#4f5f42" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                style="mix-blend-mode: normal">
+                <g transform="scale(5.12,5.12)">
+                  <path
+                    d="M14,4c-5.51133,0 -10,4.48867 -10,10v22c0,5.51133 4.48867,10 10,10h22c5.51133,0 10,-4.48867 10,-10v-22c0,-5.51133 -4.48867,-10 -10,-10zM14,6h22c4.43067,0 8,3.56933 8,8v22c0,4.43067 -3.56933,8 -8,8h-22c-4.43067,0 -8,-3.56933 -8,-8v-22c0,-4.43067 3.56933,-8 8,-8zM13,15c-1.64497,0 -3,1.35503 -3,3v14c0,1.64497 1.35503,3 3,3h24c1.64497,0 3,-1.35503 3,-3v-14c0,-1.64497 -1.35503,-3 -3,-3zM13.41406,17h23.16992l-8.90625,8.89258c-1.49279,1.49041 -3.8809,1.49024 -5.37305,-0.00195zM38,18.41211v13.17578l-6.59766,-6.58789zM12,18.41406l6.58594,6.58594l-6.58594,6.58594zM29.98828,26.41211l6.59766,6.58789h-23.17188l6.58594,-6.58594l0.89063,0.89063c2.25585,2.25585 5.94201,2.25751 8.19922,0.00391z" />
+                </g>
+              </g>
+            </svg>
+            <h2 id="contact-info" class="pl-2.5 pt-2.5">contato@ajudaai.com.br</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="paginaOng.js"></script>
 </body>
+
 </html>

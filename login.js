@@ -77,7 +77,7 @@ $(() => {
         $("#btn-sign-in").text("Enviar");
 
       if (!success) {
-        alert("O usuario não esta cadastrado!");
+        alert("O usuário não está cadastrado!");
         return;
       }
       carregaObjeto(inputs.email[0].value);
