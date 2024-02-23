@@ -219,9 +219,9 @@ function loadCityHtml(item){
 function carregaPerfil(obj){
   document.getElementById('nome-voluntario').innerHTML = obj.name;
   document.getElementById('user-birthdate').innerHTML = refactorDate(obj.birthdate);
+  loadCityState(obj.cityId)
   cityName(obj.cityId); //Chama funcao contendo ajax 
   stateName(obj.cityStateId);
-  //console.log(obj);
   var name = obj.name.split(' ');
   document.getElementById('volunteer-first-name').placeholder = name[0];
   
@@ -233,6 +233,19 @@ function carregaPerfil(obj){
   loadProfileInterest();
   document.getElementById('volunteer-last-name').placeholder = lastName;
   document.getElementById('volunteer-email').placeholder = obj.email;
+}
+
+function loadCityState(id){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/City/GetLocalization/${id}`,
+    success: function(data){   
+      document.getElementById('cidade-estado').innerHTML = data;     
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  }); 
 }
 
 function loadProfileInterest(){
@@ -290,7 +303,6 @@ function cityName(id){
     type: "GET",
     url: `https://localhost:7070/City/GetByCityId/${id}`,
     success: function(data){
-      document.getElementById('cidade-estado').innerHTML = data.name + ", ";
       document.getElementById('default-city').innerHTML = data.name;
       document.getElementById('default-city').value = data.id;
     }, 
@@ -305,9 +317,7 @@ function stateName(id){
     type: "GET",
     url: `https://localhost:7070/State/${id}`,
     success: function (data){
-        var contatena = document.getElementById('cidade-estado').textContent;
-        document.getElementById('cidade-estado').innerHTML = contatena + data.name;
-        document.getElementById('default-state').innerHTML = data.name;    
+        document.getElementById('default-state').innerText = data.name;    
         document.getElementById('default-state').value = data.id    
     },  
     header: {},
