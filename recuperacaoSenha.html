@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="container mx-auto mt-4 h-[44rem]">
-        <div id="email-send-box" class="w-[42rem] h-[19rem] mx-auto rounded-xl bg-white">
+        <div id="email-send-box" class="w-[42rem] h-[21rem] mx-auto rounded-xl bg-white">
             <a href="homepage.html">
                 <div class="header-logo flex justify-center pt-8 lg:pt-14">
                     <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53"
@@ -55,8 +55,13 @@
             </div>
 
             <div class="items-center justify-center flex mt-4">               
-                    <input type="text" id="Recuperacao-email" placeholder="Digite seu email..." class="pl-2 py-1 valido" />                                         
+                    <input type="text" id="Recuperacao-email" placeholder="Digite seu email..." class="pl-2 py-1 valido" /> 
+                                                           
             </div>
+            <div class="inline-block items-center justify-center flex mt-2">
+                <input type="checkbox" name="ong-checkbox" id="ong-checkbox">
+                <label for="ong-checkbox">Sou uma ONG</label>
+            </div> 
             <div class="justify-center hidden" id="invalid-email">
                 <p class="text-xs mt-1"><em>Email invalido ou incorreto</em></p>
             </div>

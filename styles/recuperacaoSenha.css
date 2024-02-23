@@ -134,7 +134,7 @@ footer {
 @media(max-width: 382px){
     #email-send-box{
         width: 15rem !important;
-        height: 20rem !important;
+        height: 22rem !important;
     }
 }
 /*RESPONSIVIDADE CARD DE TOKEN*/

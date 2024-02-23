@@ -1,31 +1,50 @@
 var email;
-
+let ong = document.getElementById('ong-checkbox')
 function enviarToken(){ 
     email = document.getElementById("Recuperacao-email").value;
     const expressaoRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
 
     if(!(email == "") && expressaoRegular.test(email)){
-        $.ajax({
-            type: "POST",
-            url: `https://localhost:7070/user/SendTokenToEmail/${email}`,
-            data: String,
-            contentType: "application/json",  
-            
-            statusCode: {
-                200: function() {
-                  enableTokenPage(email);
-                },
-                401: function(){
-                    emailIncorreto();
-                }
-              },               
-                              
-            dataType: "string",
-        });
+        if(ong.checked){
+            $.ajax({
+                type: "POST",
+                url: `https://localhost:7070/ngo/SendTokenToEmail/${email}`,
+                data: String,
+                contentType: "application/json",  
+                
+                statusCode: {
+                    200: function() {
+                        enableTokenPage(email);
+                    },
+                    401: function(){
+                        emailIncorreto();
+                    }
+                  },               
+                                  
+                dataType: "string",
+            });  
+        }else{
+            $.ajax({
+                type: "POST",
+                url: `https://localhost:7070/user/SendTokenToEmail/${email}`,
+                data: String,
+                contentType: "application/json",                
+                statusCode: {
+                    200: function() {
+                        enableTokenPage(email);
+                    },
+                    401: function(){
+                        emailIncorreto();
+                    }
+                  },               
+                                  
+                dataType: "string",
+            });
+        }   
     }else{
         emailIncorreto();
-    }
-    
+    }   
 }
 
 function emailIncorreto(){
@@ -43,22 +62,39 @@ function enableTokenPage(email){
 function verificarToken(){
     var token = document.getElementById("validate-token").value;
     console.log(token);
-    $.ajax({
-        type: "POST",
-        url: `https://localhost:7070/user/SendToken/${token}`,       
-        contentType: "application/json",
-        statusCode:{
-            200: function(){
-                enableChangePassword();
+    if(ong.checked){
+        $.ajax({
+            type: "POST",
+            url: `https://localhost:7070/ngo/SendToken/${token}`,       
+            contentType: "application/json",
+            statusCode:{
+                200: function(){
+                    enableChangePassword();
+                },
+                400: function(){
+                    tokenIncorreto();
+                }
             },
-            400: function(){
-                tokenIncorreto();
-            }
-        },
-        
-        dataType: "string",
-        
-    });
+            
+            dataType: "string",
+            
+        });
+    }else{
+        $.ajax({
+            type: "POST",
+            url: `https://localhost:7070/user/SendToken/${token}`,       
+            contentType: "application/json",
+            statusCode:{
+                200: function(){
+                    enableChangePassword();
+                },
+                400: function(){
+                    tokenIncorreto();
+                }
+            },          
+            dataType: "string",       
+        });
+    }   
 }
 
 function tokenIncorreto(){  
@@ -75,14 +111,23 @@ function mudarSenha(){
     var senhaRep = document.getElementById("senha-repetida").value;
 
     if(senha == senhaRep && senha != "" && senhaRep != ""){
-
-        $.ajax({
-            type: "POST",
-            url: `https://localhost:7070/user/ChangePassword/${senha}`,
-            contentType: "application/json",
-            success: voltaLogin(),
-            dataType: "string",
-        });
+        if(ong.checked){
+            $.ajax({
+                type: "POST",
+                url: `https://localhost:7070/ngo/ChangePassword/${senha}`,
+                contentType: "application/json",
+                success: voltaLogin(),
+                dataType: "string",
+            });
+        }else{
+            $.ajax({
+                type: "POST",
+                url: `https://localhost:7070/user/ChangePassword/${senha}`,
+                contentType: "application/json",
+                success: voltaLogin(),
+                dataType: "string",
+            });
+        }       
     }else{
         senhaIncorreta();
     }
