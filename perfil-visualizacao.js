@@ -1,7 +1,7 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('id');
-
+//const id = urlParams.get('id');
+const id = 7;
 $(() => {
     //Faz requisição para o banco do tipo GET para pegar o usuario com o id especificado
     $.ajax({
@@ -66,11 +66,23 @@ function logout(){
 function carregaPerfil(obj){
     document.getElementById('nome-voluntario').innerHTML = obj.name;
     document.getElementById('user-birthdate').innerHTML = refactorDate(obj.birthdate);
-    cityName(obj.cityId); //Chama funcao contendo ajax 
-    stateName(obj.cityStateId);
+    loadCityState(obj.cityId);
     //console.log(obj);
     loadProfileImage();
     loadProfileInterest();
+}
+
+function loadCityState(id){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/City/GetLocalization/${id}`,
+    success: function(data){   
+      document.getElementById('cidade-estado').innerHTML = data;     
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  }); 
 }
 
 function refactorDate(date){
