@@ -235,6 +235,56 @@ function carregaPerfil(obj){
   document.getElementById('volunteer-email').placeholder = obj.email;
 }
 
+function saveInterest(){
+    let interesse = document.getElementById('interests-input').value;
+    if(interesse != ""){
+      const values ={
+        name: interesse,
+        userId: id
+      }
+      
+      $.ajax({
+        type: "POST",
+        url: `https://localhost:7070/userInterest`,
+        data: JSON.stringify(values),
+        statusCode:{
+            200: function(){
+              const interest = `<li class="btn-interesses flex justify-center" id="${"lista" + values.id}">${values.name}</li>`;
+              $(`#interest-list`).append($(interest));
+              const interestEdit = `<li id="${"listaEdit" + values.id}" onclick="deleteInterest(${values.id})">${values.name}</li>`;
+              $(`#interests-ul`).append($(interestEdit));
+              document.getElementById('interests-input').value = ""; 
+            },
+        },
+        headers: {
+          "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+          "Access-Control-Allow-Origin": "*"
+        },
+        contentType: "application/json",
+        datatype: "json",
+      }); 
+    }
+}
+
+function deleteInterest(id){
+  $.ajax({
+    type: "DELETE",
+    url: `https://localhost:7070/userInterest/${id}`,
+    success: function(){   
+      var tag = document.getElementById('lista' + id)
+      tag.parentElement.removeChild(tag)
+      tag = document.getElementById('listaEdit' + id);
+      tag.parentElement.removeChild(tag);
+    }, 
+    headers: {
+        "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+        "Access-Control-Allow-Origin": "*"
+    },
+    contentType: "application/json",
+    datatype: "json",
+  });  
+}
+
 function loadCityState(id){
   $.ajax({
     type: "GET",
@@ -255,9 +305,9 @@ function loadProfileInterest(){
     success: function(data){ 
       if(data.length != 0){
         data.forEach(item =>{
-          const interest = `<li class="btn-interesses flex justify-center" id="${item.id}">${item.name}</li>`;
+          const interest = `<li class="btn-interesses flex justify-center" id="${"lista" + item.id}">${item.name}</li>`;
           $(`#interest-list`).append($(interest));
-          const interestEdit = `<li id="${item.id}">${item.name}</li>`;
+          const interestEdit = `<li id="${"listaEdit" + item.id}" onclick="deleteInterest(${item.id})">${item.name}</li>`;
           $(`#interests-ul`).append($(interestEdit));
         })       
       }       
