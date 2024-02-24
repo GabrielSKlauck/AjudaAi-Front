@@ -256,7 +256,10 @@ function saveInterest(){
               document.getElementById('interests-input').value = ""; 
             },
         },
-        header: {},
+        headers: {
+          "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+          "Access-Control-Allow-Origin": "*"
+        },
         contentType: "application/json",
         datatype: "json",
       }); 
@@ -273,7 +276,10 @@ function deleteInterest(id){
       tag = document.getElementById('listaEdit' + id);
       tag.parentElement.removeChild(tag);
     }, 
-    header: {},
+    headers: {
+        "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+        "Access-Control-Allow-Origin": "*"
+    },
     contentType: "application/json",
     datatype: "json",
   });  
