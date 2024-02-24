@@ -34,7 +34,7 @@ $(() => {
       url: `https://localhost:7070/AchievementsUser/ConquistasCompletas/${id}`,
       success: function(data){
         data.forEach(linha => {
-          const conquistas = `<img id="${linha.id}" class="btn-conquistas open-modal flex justify-center"
+          const conquistas = `<img id="${linha.id}" class="btn-conquistas  flex justify-center cursor-pointer"
                                src="${linha.image}" alt="Conquista" onclick="openConquestModal(${linha.id})">`;
           $(`#conquistas-completas`).append($(conquistas));        
         });        
@@ -555,4 +555,18 @@ for (let [index, trigger] of modalArray) {
   }
   trigger.addEventListener("click", toggleModal);
   closeButtons[index].addEventListener("click", toggleModal);
+}
+
+function openIncompletos(){
+    const tag = document.getElementById('modal-conquistas-incompletas');
+    const tagFundo = document.getElementById('modal-achievement');
+    tag.classList.add('modal-active');
+    tagFundo.classList.remove('modal-active');
+}
+
+function closeIncompletas(){
+    const tag = document.getElementById('modal-conquistas-incompletas');
+    const tagFundo = document.getElementById('modal-achievement');
+    tag.classList.remove('modal-active');
+    tagFundo.classList.remove('modal-active');
 }

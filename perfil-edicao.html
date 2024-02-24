@@ -233,7 +233,7 @@
         </div>
         <div class="flex flex-col items-center justify-center mt-8">
           <h1 id="achievement-description" class="achievement-text-h1"></h1>
-          <h2 id="achievement-date-conclusion" class="achievement-text-h2 mt-2">Alcançada em 29 de fevereiro de 2024.</h2>
+          <h2 id="achievement-date-conclusion" class="achievement-text-h2 mt-2"></h2>
         </div>
         <div class="flex mt-10 mb-10 mx-80">
           <button type="button" class="btn flex items-center justify-center space-x-4">
@@ -244,12 +244,12 @@
       </div>
     </div>
   </div>
-  <div class="modal">
+  <div class="modal" id="modal-conquistas-incompletas">
     <div class="w-screen h-screen flex items-center justify-center">
       <div id="uncollected-achievements-modal-body">
         <div class="flex justify-between">
           <h1 id="uncollected-achievements-modal-title">Conquistas não alcançadas</h1>
-          <img class="close-modal" src="assets/images/x-icon.png" />
+          <img class="w-[20px] h-[20px] mt-[25px] mr-[35px] cursor-pointer" src="assets/images/x-icon.png" onclick="closeIncompletas()"/>
         </div>
         <div class="pl-[35px]" id="conquistas-incompletas">
           <!-- inicio -->
@@ -364,7 +364,7 @@
             <img class="btn-conquistas flex justify-center" src="./assets/images/conquista3.png" alt="Conquista"> -->
           </div>
           <div class="flex justify-center mt-[4vw]">
-            <button type="button" id="btn-visualizar-conquistas" class="open-modal">
+            <button type="button" id="btn-visualizar-conquistas" class="open-modal" onclick="openIncompletos()">
               <div class="font-['Inter'] min-[550px]:text-[1vw]">
                 Visualizar as próximas conquistas
               </div>
