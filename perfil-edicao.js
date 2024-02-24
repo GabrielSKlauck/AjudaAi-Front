@@ -264,7 +264,6 @@ function saveInterest(){
 }
 
 function deleteInterest(id){
-  console.log(id);
   $.ajax({
     type: "DELETE",
     url: `https://localhost:7070/userInterest/${id}`,
