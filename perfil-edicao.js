@@ -556,3 +556,13 @@ for (let [index, trigger] of modalArray) {
   trigger.addEventListener("click", toggleModal);
   closeButtons[index].addEventListener("click", toggleModal);
 }
+
+function openIncompletos(){
+    const tag = document.getElementById('modal-conquistas-incompletas');
+    tag.classList.add('modal-active');
+}
+
+function closeIncompletas(){
+    const tag = document.getElementById('modal-conquistas-incompletas');
+    tag.classList.remove('modal-active');
+}
