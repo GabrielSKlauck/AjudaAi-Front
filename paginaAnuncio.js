@@ -113,7 +113,8 @@ function inscricao(){
                 url: "https://localhost:7070/UserAds",
                 data: JSON.stringify(infoUserAds),
                 headers:{
-                    Authorization: `Bearer ${localStorage.getItem(`token`)}`,
+                    "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+                    "Access-Control-Allow-Origin": "*"
                 },
                 contentType: "application/json",
                 success: disableBtnInsc(),
