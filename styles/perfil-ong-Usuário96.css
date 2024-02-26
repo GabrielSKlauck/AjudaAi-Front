@@ -122,37 +122,14 @@ header {
     color: #FFF
 }
 
-#profile-page{
-    padding: 2px 7px;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    color: #081509;
-}
-
-#profile-page:hover{
-    padding: 2px 7px;
-    background-color: rgba(208, 218, 199, 0.80);
-    border-radius: 10px;
-}
-
 .login {
     padding: 2px 25px;
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
-    border: 1px solid #687C57;
-    border-radius: 10px;
-    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
-}
-
-.logout{
-    padding: 2px 25px;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    color: #081509;
-    border: 1px solid #687C57;
-    border-radius: 10px;
-    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+    border: 1px solid #8FC5E7;
+    border-radius: 1vw;
+    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #8FC5E7;
 }
 
 body {
@@ -311,8 +288,6 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     .btn-menu-list {
         justify-content: center;
     }
-
-
 }
 
 .perfil {
@@ -330,33 +305,16 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 .btn-interesses {
 
-    height: 2.5vw;
-    width: 14vw;
+    height: 8vw;
+    width: 40vw;
     border-radius: 20vw;
     border: 0.1vw solid #60B4E9;
     box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #60B4E9;
     font-family: Inter;
-    font-size: 1.2vw;
-    align-items: center;
+    font-size: 5vw;
+    margin-bottom: 4vw;
+    margin-top: 2vw;
 
-}
-
-@media (max-width: 777px) {
-
-    .btn-interesses {
-
-        height: 10vw;
-        width: 45vw;
-        border-radius: 20vw;
-        border: 0.1vw solid #60B4E9;
-        box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #60B4E9;
-        font-size: 4.2vw;
-        justify-content: center;
-        justify-items: center;
-    
-    }
-    
-    
 }
 
 
@@ -456,9 +414,6 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 }
 
 @media (max-width: 766px) {
-
-
-
     #avaliation {
         width: 90vw;
         height: 50vw;
@@ -502,8 +457,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 }
 
 .conteudo .active {
-    display: grid;
-    
+    display: flex;
 }
 
 .caixa .active {
@@ -521,20 +475,17 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 
 .fundo-conteudo {
-    grid-template-columns: repeat(5, 18vw);
     margin-bottom: 1vw;
     width: 90vw;
     background-color: #e6ebee;
     height: auto;
     border-radius: 1vw;
     box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
-    
-    
+    height: auto;
 }
 
 .anuncio {
 
-    grid-template-columns: repeat(5, 18vw);
     margin-bottom: 1.2vw;
     margin-top: 1.2vw;
     margin-left: 2vw;
@@ -575,7 +526,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 .fundo-anuncio2 {
     width: 14vw;
     background-color: #F5F5F5;
-    height: 2vw;
+    height: 2.32vw;
     border-bottom-left-radius: 1vw;
     border-bottom-right-radius: 1vw;
     display: flex;
@@ -587,18 +538,13 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 .descricao-escrita {
 
+    background-color: #FFF;
     height: 7.2vw !important;
-    margin-left: 0.5vw;
-    margin-top: 0.4vw;
-    margin-right: 0.5vw;
-    display: block;
-    word-wrap: break-word;
-    font-size: 0.7vw;
 }
 
 .trabalho-voluntario-titulo {
 
-    
+    background-color: #fff;
     height: 3.3vw;
     align-items: center;
     justify-content: center;
@@ -635,12 +581,6 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 }
 
-.texto-sobre {
-    
-    word-wrap: break-word;
-
-}
-
 /* RESPONSIVIDADE CAIXAS OPORTUNIDADE GALERIA E SOBRE  */
 
 
@@ -652,52 +592,25 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
     .anuncio {
 
-        margin-bottom: 3vw;
+        margin-bottom: 1.2vw;
         margin-top: 2vw;
-        margin-left: 5vw;
-        width: 80vw;
+        margin-left: 2vw;
+        width: 42vw;
         background-color: #ffffff;
-        height: 80vw;
+        height: 50vw;
         border-radius: 4vw;
         box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
-
     }
 
     
     .fundo-anuncio {
         
-        width: 80vw;
-        background-color: #F5F5F5;
-        height: 25vw;
-        border-top-left-radius: 4vw !important;
-        border-top-right-radius: 4vw !important;
-        box-shadow: 0.0vw 0.7vw 0.0vw 0px #8FC5E7;
-    }
-
-    .fundo-anuncio2 {
-        width: 80vw;
-        background-color: #F5F5F5;
-        height: 14vw;
-        border-bottom-left-radius: 4vw;
-        border-bottom-right-radius: 4vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 31.5vw;
-    
-    }
-
-    .botao-anuncio {
-        background-color: #8FC5E7;
-        color: #fff;
-        height: 9vw;
         width: 42vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15vw;
-        font-size: 7vw;
-    
+        background-color: #F5F5F5;
+        height: 20vw;
+        border-top-left-radius: 50vw !important;
+        border-top-right-radius: 50vw !important;
+        box-shadow: 0.0vw 0.2vw 0.0vw 0px #8FC5E7;
     }
 
     .trabalho-voluntario-titulo {
@@ -710,50 +623,6 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
         
         font-size: 4vw !important;
         line-height: 4vw !important;
-    }
-
-    .conteudo .active {
-        display: grid;
-        grid-template-columns: repeat(1, 80vw);
-
-    }
-
-    #adicionar-anuncio {
-
-        display: flex;
-        align-items: center !important;
-        justify-content: center !important;
-        font-size: 12vw;
-        color: #60B4E9;
-        width: 80vw;
-        height: 20vw;
-    }
-    #adicionar-anuncio span {
-
-        margin-bottom: 2vw;
-
-
-    }
-
-    .fundo-conteudo {
-        margin-bottom: 4vw;
-        margin-top: 2vw;
-        border-radius: 5vw;
-        box-shadow: 0.4vw 0.4vw 0.8vw 0px rgba(0, 0, 0, 0.25);
-        
-        
-    }
-
-    .galeria {
-        display: flex;
-        margin-bottom: 2vw;
-        margin-top: 6vw;
-        margin-left: 5vw;
-        width: 80vw;
-        background-color: #ffffff;
-        height: 70vw;
-        border-radius: 4vw;
-        box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
     }
 }
 
