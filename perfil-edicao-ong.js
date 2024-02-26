@@ -1,5 +1,41 @@
 const id = JSON.parse(localStorage.getItem("user")).id
 $(() => {
+
+  try{   
+    const user = JSON.parse(localStorage.getItem("user"));
+    const id = user.id;
+    const isNgo = localStorage.getItem("ong");
+
+    console.log(isNgo);
+    
+    if(id != null){
+        
+        if(isNgo == 'true'){
+            let link = document.getElementById('profile-page');
+            link.setAttribute("href","perfil-edicao-ong.html");
+            let linkSmall = document.getElementById('small-profile-page');
+
+            linkSmall.setAttribute("href","perfil-edicao-ong.html");
+        }else{            
+            let link = document.getElementById('profile-page');
+            link.setAttribute("href","perfil-edicao.html");
+
+            let linkSmall = document.getElementById('small-profile-page');
+
+            linkSmall.setAttribute("href","perfil-edicao.html");
+        }
+        document.getElementById('btn-login').style.display = 'none';
+        document.getElementById('btn-logout').style.display = 'block';
+
+        document.getElementById('btn-login-small').style.display = 'none';
+        document.getElementById('btn-logout-small').style.display = 'block';
+
+        document.getElementById('sign-up').style.display = 'none';
+        document.getElementById('profile-page').style.display = 'block';
+        document.getElementById('profile-page-small').style.display = 'block';
+    }
+}catch{}
+
   let selecionado = 0;
 
   $(".estrelaa-avaliacao").click((e) => {
@@ -69,6 +105,11 @@ dataExpiracao.addEventListener("blur", () => {
 descricao.addEventListener("blur", () => {
   checkInputState();
 })
+
+function logout(){
+  localStorage.clear();
+}
+
 
 function checkInputFirstName() {
   const tituloValue = titulo.value;
