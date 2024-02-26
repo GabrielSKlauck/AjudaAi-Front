@@ -220,16 +220,16 @@ function loadAds(){
     success: function (data) {
       data.forEach(linha => {
         const ads = `
-        <h2 class="anuncio ">
-        <span class="fundo-anuncio">
-          <h3 class="grid min-[777px]:ml-[0.7vw] min-[777px]:mt-[0.5vw] min-[777px]:mr-[0.7vw] ">
-            <span class="text-[1.1vw] font-semibold trabalho-voluntario-titulo">${linha.title}</span>
-            <span class="text-[0.78vw] italic">${document.getElementById('ngo-location').innerHTML}</span>
-            <span class="text-[0.78vw] italic">Expira dia: ${refactorDate(linha.expires)}</span>
+        <h2 class="anuncio">
+        <span class="fundo-anuncio min-[777px]:flex max-[776px]:grid ">
+          <h3 class="grid min-[777px]:ml-[0.7vw] min-[777px]:mt-[0.5vw] min-[777px]:mr-[0.7vw] max-[776px]:mt-[3vw]">
+            <span class="min-[777px]:text-[1.1vw] max-[776px]:text-[5vw] font-semibold trabalho-voluntario-titulo">${linha.title}</span>
+            <span class="max-[776px]:ml-[3vw] min-[777px]:text-[0.78vw] max-[776px]:text-[4vw] italic">${document.getElementById('ngo-location').innerHTML}</span>
+            <span class="max-[776px]:ml-[3vw] min-[777px]:text-[0.78vw] max-[776px]:text-[4vw] italic">Expira dia: ${refactorDate(linha.expires)}</span>
           </h3>
         </span>
         <span
-          class="flex min-[777px]:ml-[0.5vw] min-[777px]:mt-[0.1vw] min-[777px]:mr-[0.5vw] font-['Inter'] italic text-[0.60vw] leading-[1vw] descricao-escrita">
+          class="max-[776px]:ml-[3vw] max-[776px]:mt-[2vw] font-['Inter'] italic  leading-[1vw] descricao-escrita">
           ${linha.description}
         </span>
         <span class="fundo-anuncio2">
