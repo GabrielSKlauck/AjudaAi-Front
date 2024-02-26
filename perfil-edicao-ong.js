@@ -261,4 +261,5 @@ function encerrarAds(adsId){
     contentType: "application/json",
     datatype: "json",
   });
+
 }
