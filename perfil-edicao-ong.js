@@ -208,30 +208,13 @@ for (let [index, trigger] of modalArray) {
   //closeButtons[index].addEventListener("click", toggleModal);
 }
 
-
-
-
-let ngoLocation;
-
-function loadLocation(cityId, stateId) {
+function loadLocation(cityId) {
 
   $.ajax({
     type: "GET",
-    url: `https://localhost:7070/City/GetByCityId/${cityId}`,
-    success: function (data) {
-      ngoLocation = data.name + ", ";
-    },
-    header: {},
-    contentType: "application/json",
-    datatype: "json",
-  });
-
-  $.ajax({
-    type: "GET",
-    url: `https://localhost:7070/State/${stateId}`,
-    success: function (data) {
-      ngoLocation = ngoLocation + data.name;
-      document.getElementById('ngo-location').innerHTML = ngoLocation;
+    url: `https://localhost:7070/City/GetLocalization/${cityId}`,
+    success: function (data) {    
+      document.getElementById('ngo-location').innerHTML = data;
     },
     header: {},
     contentType: "application/json",
