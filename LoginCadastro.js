@@ -30,7 +30,7 @@ function Post() {
         cityId: idCity,
         cityStateId: idState
     }
-    console.log(values);
+    
     if (!values.name) {
         alert("nome não informado!");
         $("#Voluntario-nome").addClass("invalid");
@@ -86,7 +86,7 @@ function Post() {
     $("#Voluntario-senha").removeClass("invalid");
 
     sendDataBase(values);
-    login(values);
+    
 
 }
 
@@ -98,7 +98,7 @@ function sendDataBase(values) {
             data: JSON.stringify(values),
             statusCode: {
                 200: function () {
-                    //window.location.href = "perfil-edicao.html";
+                    login(values);
                 }
             },
             contentType: "application/json",

@@ -41,7 +41,7 @@ $(() => {
             cityId: idCity,
             cityStateId: idState,                
         }
-        console.log(values);
+        
 
         if (!values.ngoName) {
             alert("Favor informar o nome da ONG!");
@@ -105,14 +105,13 @@ $(() => {
         }
         $("#ngo-password").removeClass("invalid");
 
-        console.log(values);
+        
         sendDataBase(values);
-        login(values);
     })
 })
 
 function loadStates(item){
-    console.log(item);
+    
     item.forEach(linha => {
         
         const stateOption = `
@@ -127,6 +126,11 @@ function sendDataBase(values){
         type: "POST",
         url: "https://localhost:7070/ngo",
         data: JSON.stringify(values),
+        statusCode: {
+            200: function () {
+                login(values);
+            }
+        },
         contentType: "application/json",
         dataType: "json",
     });

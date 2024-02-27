@@ -5,8 +5,6 @@ $(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     const id = user.id;
     const isNgo = localStorage.getItem("ong");
-
-    console.log(isNgo);
     
     if(id != null){
         
