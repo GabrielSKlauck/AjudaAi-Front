@@ -114,7 +114,7 @@
     <div class="perfil">
       <div class="min-[777px]:mb-[2vw] ">
         <img src="./assets/images/person1.png" alt="person1"
-          class="cursor-pointer min-[777px]:mt-[2vw] min-[777px]:w-[16vw] min-[777px]:h-[14vw] min-[777px]:ml-[1.5vw] max-[777px]:h-[60vw] max-[777px]:w-[60vw] max-[777px]:mt-[4vw]">
+          class="open-modal cursor-pointer min-[777px]:mt-[2vw] min-[777px]:w-[16vw] min-[777px]:h-[14vw] min-[777px]:ml-[1.5vw] max-[777px]:h-[60vw] max-[777px]:w-[60vw] max-[777px]:mt-[4vw]">
       </div>
       <div class="min-[777px]:ml-[2.5vw]">
         <div
@@ -124,7 +124,7 @@
           </div>
           <div class="flex min-[777px]:mr-[2vw]">
             <img src="./assets/images/lápis icon.png" alt=""
-              class="cursor-pointer max-[777px]:pl-[8vw] min-[777px]:h-[2vw] max-[777px]:h-[7vw]">
+              class="open-modal cursor-pointer max-[777px]:pl-[8vw] min-[777px]:h-[2vw] max-[777px]:h-[7vw]">
           </div>
         </div>
         <div class="flex items-center max-[776px]:ml-[2vw]">
@@ -234,6 +234,77 @@
         </span>
 
         </h2>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal-foto">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="profile-pic-modal-body">
+        <div class="flex justify-end">
+          <img class="close-modal" src="assets/images/x-icon.png"/>
+        </div>
+        <div>
+          <img id="profile-img" class="mx-auto mt-6" src="assets/images/personimg.png" alt="Foto de perfil." />
+        </div>
+        <div class="flex justify-between">
+          <button>
+            <label for="input-file" id="add-img-btn" class="btn items-center justify-center space-x-4">
+              <img id="camera-icon" src="assets/images/camera-icon.png" />
+              <span id="add-img-text">Adicionar foto</span>
+            </label>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
+          </button>
+          <button id="delete-img-btn" onclick="setDefaultPic()"
+            class="btn items-center justify-center space-x-4 mr-[50px]">
+            <img id="trashcan-icon" src="assets/images/trashbin-icon.png" />
+            <span id="delete-img-text">Excluir</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="personal-info-modal-body">
+        <div class="flex justify-between">
+          <h1 id="personal-info-modal-title">Editar informações do perfil</h1>
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+
+        <div >
+          <form id="personal-info-form" class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
+            <div class="form-input-box mt-4">
+              <label for="volunteer-first-name">Nome da ONG</label>
+              <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
+              <a>Error message</a>
+            </div>
+            <div class="caixa-entrada mt-6 caixa-descricao" >
+              <label for="descricao-perfil" >Descrição</label>
+              <textarea id="descricao-perfil" cols="30" rows="10" class="pl-2 py-1.5 mt-2"></textarea>
+              <a>Error message</a>
+            </div>
+            <!-- <div class="form-input-box mt-1">
+              <label for="birthdate">Data de nascimento</label>
+              <input type="date" id="birthdate" class="px-2 py-1.5 mt-2" />
+            </div>            -->
+            <div class="form-input-box mt-6">
+              <label for="volunteer-state">Estado*</label>
+              <select id="volunteer-state" name="volunteer-state" class="pl-2 py-1.5 mt-2" onfocusout="loadCity()">
+                <option disabled selected id="default-state">Estado</option>
+              </select>
+              <a>Error message</a>
+            </div>
+            <div class="form-input-box mt-6">
+              <label for="volunteer-city">Cidade*</label>
+              <select id="volunteer-city" name="volunteer-city" class="pl-2 py-1.5 mt-2">
+                <option disabled selected id="default-city">Cidade</option>
+              </select>
+            </div>
+            <div class="mt-8 mb-6 mx-28">
+              <button type="submit" id="save-personal-info-btn" class="btn">Salvar</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

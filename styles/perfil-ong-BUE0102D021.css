@@ -429,16 +429,8 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 }
 
 .modal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.30);
     display: none;
 }
-
 
 @media (max-width: 766px) {
 
@@ -875,126 +867,5 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 }
 
 .modal-active {
-    display: block
-}
-
-/* modal foto */
-
-
-.close-modal {
-    width: 20px;
-    height: 20px;
-    margin-top: 25px;
-    margin-right: 35px;
-    cursor: pointer;
-}
-
-#profile-pic-modal-body {
-    width: 1143px;
-    height: 700px;
-    margin-bottom: 2vw;
-    border-radius: 25px;
-    background-color: #FFF;
-    border: 1px solid #F1F1F4;
-}
-
-#profile-img {
-    width: 450px;
-    height: 442px;
-    border-radius: 50%;
-    border: 10px solid #687C57;
-}
-
-#add-img-btn,
-#delete-img-btn {
-    display: flex;
-    width: 331px;
-    height: 67px;
-    border-radius: 15px;
-    border: 1px solid #687C57;
-    background-color: #FFF;
-    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
-    margin-top: 70px;
-    margin-left: 50px;
-    cursor: pointer;
-}
-
-#input-file {
-    display: none;
-}
-
-#add-img-text,
-#delete-img-text,
-#share-achievement-text {
-    color: #081509;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-}
-
-#camera-icon,
-#trashcan-icon,
-#share-icon {
-    width: 50px;
-    height: 50px;
-}
-
-.test-img-modal {
-    width: 450px;
-    height: 442px;
-    border-radius: 50%;
-    border: 10px solid #687C57;
-}
-
-
-/* MODAL EDITAR PERFIL */
-
-
-#personal-info-modal-body {
-    max-width: 650px;
-    width: 100%;
-    height: auto;
-    padding-bottom: 30px;
-    border-radius: 25px;
-    background-color: #FFF;
-    border: 1px solid #F1F1F4;
-}
-
-#personal-info-modal-title,
-#interests-modal-title {
-    color: #081509;
-    font-family: "Inter", sans-serif;
-    font-size: 26px;
-    font-weight: 600;
-    margin-top: 15px;
-    margin-left: 35px;
-}
-
-
-.form-input-box input {
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    border-radius: 5px;
-    border-left: 5px solid #8FC5E7;
-    background: #F6F6F6;
-    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
-    width: 100%;
-    transition: 0.2s;
-}
-
-.form-input-box input:focus {
-    border-left: 5px solid #687C57;
-    outline: 2px solid #687C57;
-    box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
-}
-
-.form-input-box label {
-    color: #081509;
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-}
-
-.form-input-box a {
-    font-family: "Inter", sans-serif;
-    visibility: hidden;
+    display: block !important
 }

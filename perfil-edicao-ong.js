@@ -164,7 +164,7 @@ for (let [index, trigger] of modalArray) {
     modals[index].classList.toggle('modal-active');
   }
   trigger.addEventListener("click", toggleModal);
-  //closeButtons[index].addEventListener("click", toggleModal);
+  closeButtons[index].addEventListener("click", toggleModal);
 }
 
 
