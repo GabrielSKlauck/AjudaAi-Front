@@ -323,7 +323,8 @@ function loadProfileImage(){
     type: "GET",
     url: `https://localhost:7070/user/GetImageById/${id}`,
     success: function(data){ 
-      if(data.length == 0){
+      
+      if(data == null){
         let profileImg = document.getElementById("profile-img");
         let profileImgLoad = document.getElementById("img-profile-load");
       
