@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/resetCss.css">
-  <link rel="stylesheet" href="styles/anuncio-listaSyle.css">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>AjudaAí - Lista Anuncios</title>
+  <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico.png" />
+  <link rel="stylesheet" href="./styles/anuncio-listaSyle.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+
   <script>
     tailwind.config = {
       theme: {
+        fontFamily: {
+          'inter': ['Inter', 'sans-serif'],
+        },
         extend: {
           colors: {
-            clifford: '#da373d',
-          }
-        }
-      }
-    }
+            aigreen: "#6A8C4E",
+            aiblue: "#8FC5E7"
+          },
+        },
+      },
+    };
   </script>
-  <title>Oportunidades</title>
 </head>
-
 <body>
   <header id="header-hp">
     <a href="homepage.html">
@@ -47,7 +56,7 @@
     <nav class="flex items-center justify-between">
       <div class="container mx-auto mt-2">
         <div class="flex header-menu-items space-x-6 hidden lg:flex">
-          <a href="homepage.html#about-us">Quem Somos</a>
+          <a href="#about-us">Quem Somos</a>
           <div class="dropdown">
             <a class="dropbtn flex">Voluntariado
               <svg class="mt-2 ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 23 14"
@@ -58,7 +67,7 @@
             </a>
             <ul class="header-menu-dropdown-list">
               <li>
-                <a href="homepage.html#about-platform">Conheça a Plataforma</a>
+                <a href="#about-platform">Conheça a Plataforma</a>
               </li>
               <li>
                 <a href="ongs-lista.html">ONGs</a>
@@ -82,10 +91,10 @@
           <div class="dropdown-menu-mobile">
             <ul class="menu-mobile-dropdown-list right-2 top-[60px]">
               <li>
-                <a href="homepage.html#about-us">Quem somos</a>
+                <a href="#about-us">Quem somos</a>
               </li>
               <li>
-                <a href="homepage.html#about-platform">Conheça a plataforma</a>
+                <a href="#about-platform">Conheça a plataforma</a>
               </li>
               <li>
                 <a href="ongs-lista.html">ONGs</a>
@@ -103,7 +112,7 @@
                 <a href="login.html" >Entrar</a>
               </li>
               <li id="profile-page-small" class="hidden">
-                <a href="perfil-edicao.html">Perfil</a>
+                <a href="" id="link-small">Perfil</a>
               </li>
               <li class="hidden" id="btn-logout-small">
                 <a href="homepage.html" onclick="logout()">Sair</a>
@@ -113,7 +122,7 @@
         </div>
         <div class="flex header-menu-login space-x-2 hidden lg:flex">
           <a href="Sou.html" id="sign-up" >Criar Conta</a>
-          <a href="perfil-edicao.html" id="profile-page" class="hidden">Meu perfil</a>
+          <a href="" id="profile-page" class="hidden">Meu perfil</a>
           <a href="login.html" id="btn-login" class="login" >Entrar</a>
           <a href="homepage.html" id="btn-logout" class="logout hidden" onclick="logout()">Sair</a>
         </div>
@@ -122,39 +131,59 @@
     </div>
   </header>
 
-  <div class="container mx-auto mt-4">
+  <main class="flex flex-col justify-start items-center h-screen w-screen">
+    <!-- Announces Container -->
+    <div class="flex flex-col justify-center items-center h-5/6 w-5/6 mt-8 shadow-xl rounded-xl gap-5">
+      <!-- Title -->
+      <h1 class="text-xl text-aigreen font-inter font-bold">Lista de Anúncios</h1>
 
-    <form action="">
-      <label for="causes-menu">Filtar por causa: </label>
-      <select name="Causas" id="causes-menu" class="w-48">
-        <option value="0" >TODOS</option>       
-      </select>
-      <input type="submit" value="Filtrar" onclick="carregarId()">
-    </form>
-
-    <p id="aviso-sem-anuncios" class="text-4xl hidden">SEM ELEMENTOS CORRESPONDENTES</p>
-    <div id="container-interno" class="container-interno grid grid-cols-1 mx-4 sm:mx-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3">
+      <!-- Divider -->
+      <div class="h-[1px] rounded-xl bg-black w-5/6 opacity-40"></div>
       
-      <!-- <div class="cards card border-2 p-2 flex flex-col items-center h-96" onclick="abrirPagina()">
-        <img src="assets/images/logo anuncio.jpg" alt="" class="h-40 w-60">
-        <h1 class="text-xl mt-4 mb-4">Nome ong</h1>
-        <p class="text-center">
-          Descricao da vaga: sit amet, consectetur adipisicing elit.
-          Ipsa, repellat. Excepturi praesentium,
-          esse quidem quam unde eveniet repellendus ipsum possimus incidunt
-          tenetur expedita culpa accusamus, non molestiae qui, laudantium repudiandae.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Modi laborum quam explicabo molestiae blanditiis.
-        </p>
-      </div>  -->
-    </div>
-  </div>
+      <!-- Filters Area -->
+      <div class="flex flex-row w-full h-auto justify-center items-center gap-10 px-12">
+      
+        <!-- Title Filter -->
+        <div class="flex flex-row w-5/6 justify-center items-center gap-3">
+          <input id="title-filter" type="text" name="title-filter" placeholder="Digite para pesquisar" class="w-full bg-transparent text-black border-1 border-zinc-400 rounded-md" />          
+        </div>
 
+        <!-- Filter Button -->
+        <div id="filter-button" class="rounded-md p-2 bg-aiblue cursor-pointer px-20">
+          <p class="font-inter font-regular text-white drop-shadow-sm" id="filter-label">Filtrar</p>
+        </div>
+      </div>
+
+      <!-- Announces Carousel Area -->
+      <div class="flex flex-col w-full h-full justify-center items-center">
+        <div id="default-carousel" class="relative w-full" data-carousel="static">
+          <!-- Slider controls -->
+          <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                  <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                  </svg>
+                  <span class="sr-only">Previous</span>
+              </span>
+          </button>
+          <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                  <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                  </svg>
+                  <span class="sr-only">Next</span>
+              </span>
+          </button>
+
+          <!-- Carousel wrapper -->
+          <div announces-wrapper class="relative h-56 overflow-hidden rounded-lg md:h-96 w-5/6 m-auto"></div>
+      </div>
+    </div>
+  </main>
 
   <footer>
-    <div class="w-full h-[500px] flex flex-col ml-16 lg:flex-row lg:items-center lg:justify-stretch">
-      <div id="footer-left"
-        class="pt-10 mb-8 lg:ml-[250px] lg:pt-10 lg:pr-[200px] lg:pb-5 lg:border-r lg:border-solid lg:border-r-[#3F4C33]">
+    <div class="w-full h-[500px] flex flex-col pl-16 xl:flex-row xl:items-center xl:justify-stretch">
+      <div id="footer-left" class="pt-10 mb-8 xl:ml-[250px] xl:pt-10 xl:pr-[200px] xl:pb-5 xl:border-r xl:border-solid xl:border-r-[#3F4C33]">
         <a href="#header-hp">
           <div id="footer-logo" class="flex mb-6">
             <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="63" height="53" viewBox="0 0 63 53" fill="none">
@@ -178,10 +207,10 @@
         <div class="flex">
           <ul id="footer-menu-list" class="leading-10">
             <li>
-              <a href="homepage.html#about-us">Quem Somos</a>
+              <a href="#about-us">Quem Somos</a>
             </li>
             <li>
-              <a href="homepage.html#about-platform">Conheça a plataforma</a>
+              <a href="#about-platform">Conheça a plataforma</a>
             </li>
             <li>
               <a href="ongs-lista.html">ONGs</a>
@@ -192,10 +221,9 @@
           </ul>
         </div>
       </div>
-      <div id="footer-right"
-        class="w-fit pt-10 lg:mb-40 lg:ml-20 border-t border-solid border-t-[#3F4C33] lg:border-none">
+      <div id="footer-right" class="w-fit pt-10 xl:mb-40 xl:ml-20 border-t border-solid border-t-[#3F4C33] xl:border-none">
         <div>
-          <h1 id="contact-title" class="pb-[15px] lg:ml-[5px]">Contato</h1>
+          <h1 id="contact-title" class="pb-[15px] xl:ml-[5px]">Contato</h1>
           <div class="flex">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
               width="50px" height="50px">
@@ -215,9 +243,10 @@
       </div>
     </div>
   </footer>
-
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="addAnuncio.js"></script>
+  <script src="homepage.js"></script>
+  <script src="anuncios-lista.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 
 </html>

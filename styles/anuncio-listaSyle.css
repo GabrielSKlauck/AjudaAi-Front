@@ -27,9 +27,6 @@
     scroll-behavior: smooth;
 }
 
-body{
-    overflow-x: hidden;
-}
 
 header {
     background-color: #EEEEEE;
@@ -148,6 +145,29 @@ header {
     box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
 }
 
+.divider {
+    width: 100%;  
+    margin-top: 0.5rem; 
+    margin-bottom: 0.5rem;  
+    border-bottom: 1px solid #687C57;  
+    display: flex;
+    justify-content: center;  
+  }
+  
+#buttonFilter {
+    background-color: #8FC5E7;
+    padding: 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#inputText{
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 .menu li {
     display: inline;
 }
@@ -155,45 +175,6 @@ header {
 .menu-logar li {
     display: inline;
 }
-
-body {
-    background-color: #7AADEA;
-}
-
-form{
-    font-family: 'Inter';
-    background-color: #ADADAD;
-    width: 28rem;
-    padding: 10px;
-    border-radius: 20px;
-}
-
-#causes-menu{
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-}
-
-option{
-    border: none;
-    background-color: #ADADAD;
-}
-
-.cards {
-    margin-top: 50px;
-    border-radius: 20px;
-    background-color: rgb(19, 168, 234);
-    cursor: pointer;
-}
-
-.cards h1{
-    font-family: 'Jomhuria';
-    font-size: xx-large;
-}
-
-.cards p{
-    font-family: 'Inter';
-}
-
 
 footer {
     margin-top: 20px;
@@ -224,69 +205,3 @@ footer {
 
 /* ALINHA ITENS DE MENU PARA O MEIO SE PASSAR DE 766PX, A TRANSFORMAÇAO ENTRE OS ITENS DE MENU EM
 ICONES É FEITA NO HTML PELO USANDO TAILWIND */
-@media (max-width: 766px){
-    .btn-menu-list{
-        justify-content: center;
-    }
-}
-
-/* MEDIA QUERYS RELACIONADOS COM OS ANUNCIOS */
-@media(max-width: 1533px){
-    .cards{
-        height: 430px !important;
-    }
-}
-
-
-
-@media(max-width: 1280px){
-    .cards{
-        height: 480px !important;
-    }
-}
-@media (max-width: 1024px) {
-
-    .cards {
-        height: 568px !important;
-    }
-    
-}
-
-@media (max-width: 768px) {
-
-    .cards {
-        height: 504px !important;
-    }
-    
-}
-
-@media (max-width: 640px) {
-
-    .cards {
-        height: 400px !important;
-    }
-    
-}
-
-@media (max-width: 452px) {
-
-    .cards {
-        height: 420px !important;
-    }
-    
-}
-
-@media (max-width: 413px) {
-
-
-    #form-add, #btn-open-add{
-        left: 1rem !important;
-    }
-    
-}
-
-@media(max-width: 390px) {
-    .cards{
-        height: 478px !important;
-    }
-}
