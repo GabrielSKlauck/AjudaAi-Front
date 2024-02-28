@@ -376,13 +376,10 @@ header {
     cursor: pointer;
 }
 
-#interest-input-box {
-    width: 100%;
-}
 
 #interest-input-box input {
     height: 2.5vw;
-    width: 14vw;
+    width: 2vw;
     border-radius: 25px;
     border: 1px solid #60B4E9;
     background-color: #F9F9F9;
