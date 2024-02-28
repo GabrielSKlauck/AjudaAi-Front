@@ -855,7 +855,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 .caixa-descricao textarea {
 
-    height: 10vw !important;
+    height: 5vw !important;
     text-align: start !important;
 }
 
@@ -977,7 +977,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     max-width: 30vw;
     width: 90vw;
     height: 50vw;
-    padding-bottom: 2vw;
+    padding-bottom: 1vw;
     border-radius: 2vw;
     background-color: #FFF;
     border: 1px solid #F1F1F4;
@@ -1028,7 +1028,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 #interests-modal-box {
     width: 35vw;
-    height: 10vw;
+    height: 7vw;
     border-radius: 0.3vw;
     margin-top: 2vw;
     background-color: #F9F9F9;
@@ -1097,7 +1097,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     font-family: "Inter", sans-serif;
     font-size: 24px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1vw;
 }
 
 #interests-boxes input:focus {
@@ -1107,4 +1107,18 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 #interests-boxes input:active,
 #interests-boxes li:active {
     transform: scale(0.98);
+}
+
+
+/* editar galeria */
+
+.fundo-editar-galeria {
+    margin-left: 2vw;
+    width: 70vw;
+    background-color: #e6ebee;
+    height: auto;
+    border-radius: 1vw;
+    box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
+    
+    
 }

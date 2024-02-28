@@ -222,7 +222,7 @@
         <span
           class="flex absolute min-[777px]:ml-[87.7vw] min-[777px]:mt-[0.5vw] max-[777px]:ml-[83.5vw] max-[777px]:mt-[1.4vw]">
           <img src="./assets/images/lápis icon.png" alt=""
-            class="cursor-pointer min-[777px]:h-[2vw] max-[777px]:h-[4.6vw]">
+            class="open-modal cursor-pointer min-[777px]:h-[2vw] max-[777px]:h-[4.6vw]">
         </span>
       </div>
       <div class="fundo-conteudo grid-cols-1">
@@ -263,7 +263,7 @@
     </div>
   </div>
   <div class="modal">
-    <div class="w-screen h-screen flex items-center justify-center">
+    <div class="h-full flex items-center justify-center">
       <div id="personal-info-modal-body">
         <div class="flex justify-between">
           <h1 id="personal-info-modal-title">Editar informações do perfil</h1>
@@ -277,9 +277,9 @@
               <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
               <a>Error message</a>
             </div>
-            <div class="caixa-entrada mt-2 caixa-descricao">
+            <div class="caixa-entrada caixa-descricao">
               <label for="descricao-perfil">Descrição</label>
-              <textarea id="descricao-perfil" cols="30" rows="10" class="pl-2 py-1.5 mt-2"></textarea>
+              <textarea id="descricao-perfil" cols="1" rows="1" class="pl-2 py-1.5 mt-2"></textarea>
               <a>Error message</a>
             </div>
             <!-- <div class="form-input-box mt-1">
@@ -293,7 +293,7 @@
               </select>
               <a>Error message</a>
             </div>
-            <div class="form-input-box">
+            <div class="form-input-box mt-1">
               <label for="volunteer-city">Cidade</label>
               <select id="volunteer-city" name="volunteer-city" class="pl-2 py-1.5 ">
                 <option disabled selected id="default-city">Cidade</option>
@@ -311,7 +311,7 @@
             <div id="interest-input-box" class="flex justify-center">
               <input type="text" id="interests-input" placeholder="+" />
             </div>
-            <div class="mt-4 mb-6 mx-[5vw]">
+            <div class="mt-4 mx-[5vw]">
               <button type="submit" id="save-personal-info-btn" class="btn">Salvar</button>
             </div>
           </form>
@@ -320,7 +320,7 @@
     </div>
   </div>
   <div class="modal" id="modal-anunciar">
-    <div class="w-screen h-screen flex items-center justify-center">
+    <div class="w-[screen] h-screen flex items-center justify-center">
       <div id="criador-oportunidades">
         <div class="flex justify-between">
           <h1 id="titulo-criador-oportunidades">Criando oportunidade</h1>
@@ -350,6 +350,43 @@
               <button type="submit" class="btn" id="btn-create-ads">Salvar</button>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal-galeria">
+    <div class="w-screen h-screen flex items-center justify-center">
+      <div id="profile-pic-modal-body">
+        <div class="flex justify-end">
+          <img class="close-modal" src="assets/images/x-icon.png" />
+        </div>
+        <div class="fundo-editar-galeria grid min-[777px]:grid-cols-3 max-[777px]:grid-cols-1">
+        <h2 class="galeria">
+        </h2>
+        <h2 class="galeria">
+        </h2>
+        <h2 class="galeria">
+        </h2>
+        <h2 class="galeria">
+        </h2>
+        <h2 class="galeria">
+        </h2>
+        <h2 class="galeria">
+        </h2>
+      </div>
+        <div class="flex justify-between">
+          <button>
+            <label for="input-file" id="add-img-btn" class="btn items-center justify-center space-x-4">
+              <img id="camera-icon" src="assets/images/camera-icon.png" />
+              <span id="add-img-text">Adicionar foto</span>
+            </label>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
+          </button>
+          <button id="delete-img-btn" onclick="setDefaultPic()"
+            class="btn items-center justify-center space-x-4 mr-[50px]">
+            <img id="trashcan-icon" src="assets/images/trashbin-icon.png" />
+            <span id="delete-img-text">Excluir</span>
+          </button>
         </div>
       </div>
     </div>
