@@ -53,8 +53,8 @@ function logout(){
 
 function carregarId(){
   event.preventDefault();
-  var id = document.getElementById('causes-menu').value;
-  filtraAds(id);
+  var id = document.getElementById('causes-menu').value; 
+  filtraAds(id);  
 }
 
 function filtraAds(id){
@@ -118,6 +118,8 @@ function mostraAds(item){
     tag.style.display = 'block';
 
   }else{
+    var limpo = document.getElementById("container-interno");
+    limpo.innerText = "";
     var tag = document.getElementById("aviso-sem-anuncios");
     tag.style.display = 'none';
     item.forEach(linha => {
