@@ -32,7 +32,7 @@ $(() => {
         document.getElementById('profile-page').style.display = 'block';
         document.getElementById('profile-page-small').style.display = 'block';
     }
-}catch{}
+  }catch{}
 
   let selecionado = 0;
 
@@ -74,12 +74,85 @@ $(() => {
       loadLocation(data.cityId, data.cityStateId);
       loadCause(data.causesId);
       loadAds();
+      cityName(data.cityId);
+      stateName(data.cityStateId);
     },
     header: {},
     contentType: "application/json",
     datatype: "json",
   });
+
+  $.ajax({
+    type: "GET",
+    url: "https://localhost:7070/State",
+    success: loadStates,
+    header: {},
+    contentType: "application/json",
+    dataType: "json",
+  });
+
 })
+
+function loadStates(item){
+  item.forEach(linha => {    
+      const stateOption = `
+          <option value="${linha.id}">${linha.name}</option>`;
+      $(`#volunteer-state`).append($(stateOption));
+  });
+}
+
+function loadCity(){
+  event.preventDefault();
+  var id = document.getElementById('volunteer-state').value;
+  $.ajax({
+      type: "GET",
+      url: `https://localhost:7070/City/${id}`,
+      success: loadCityHtml,
+      header: {},
+      contentType: "application/json",
+      datatype: "json",
+  });
+}
+
+function loadCityHtml(item){
+  var limpa = document.getElementById("volunteer-city");
+  limpa.innerText = "";
+  item.forEach(linha => {
+      
+      const cityOption = `
+          <option value="${linha.id}">${linha.name}</option>
+      `;
+      $(`#volunteer-city`).append($(cityOption));
+  });
+}
+
+function cityName(id){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/City/GetByCityId/${id}`,
+    success: function(data){
+      document.getElementById('default-city').innerHTML = data.name;
+      document.getElementById('default-city').value = data.id;
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
+
+function stateName(id){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/State/${id}`,
+    success: function (data){
+        document.getElementById('default-state').innerText = data.name;    
+        document.getElementById('default-state').value = data.id    
+    },  
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
 
 const form = document.getElementById("criador-oportunidades");
 const titulo = document.getElementById("titulo");
@@ -235,6 +308,10 @@ function loadCause(causeId) {
   });
 }
 
+function updateProfile(){
+
+}
+
 function loadAds(){
   $.ajax({
     type: "GET",
@@ -283,5 +360,4 @@ function encerrarAds(adsId){
     contentType: "application/json",
     datatype: "json",
   });
-
 }

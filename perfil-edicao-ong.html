@@ -289,14 +289,14 @@
             <div class="form-input-box mt-1">
               <label for="volunteer-state">Estado</label>
               <select id="volunteer-state" name="volunteer-state" class="pl-2 py-1.5" onfocusout="loadCity()">
-                <option disabled selected id="default-state">Estado</option>
+                <option  id="default-state"></option>
               </select>
               <a>Error message</a>
             </div>
             <div class="form-input-box mt-1">
               <label for="volunteer-city">Cidade</label>
               <select id="volunteer-city" name="volunteer-city" class="pl-2 py-1.5 ">
-                <option disabled selected id="default-city">Cidade</option>
+                <option  id="default-city"></option>
               </select>
             </div>
             <span class="text-[1.3vw] mt-[1vw]">Causas</span>
@@ -312,7 +312,7 @@
               <input type="text" id="interests-input" placeholder="+" />
             </div>
             <div class="mt-4 mx-[5vw]">
-              <button type="submit" id="save-personal-info-btn" class="btn">Salvar</button>
+              <button type="submit" id="save-personal-info-btn" class="btn" onclick="updateProfile()">Salvar</button>
             </div>
           </form>
         </div>
