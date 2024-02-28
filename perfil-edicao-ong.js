@@ -179,7 +179,23 @@ function loadDefaultCause(causeId){
   });
 }
 
-
+function loadAllCauses(){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/Causes`,
+    success: function (data) {
+      data.forEach(linha =>{
+          const causas = `
+              <option value="${linha.id}">${linha.name}</option>
+          `;
+          $(`#volunteer-cause`).append($(causas));
+      });       
+    },
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
 
 const form = document.getElementById("criador-oportunidades");
 const titulo = document.getElementById("titulo");
