@@ -299,17 +299,12 @@
                 <option  id="default-city"></option>
               </select>
             </div>
-            <span class="text-[1.3vw] mt-[1vw]">Causas</span>
-            <div class="flex items-center justify-center">
-              <div id="interests-modal-box">
-                <div id="interests-boxes">
-                  <ul id="interests-ul">
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div id="interest-input-box" class="flex justify-center">
-              <input type="text" id="interests-input" placeholder="+" />
+            <div class="form-input-box mt-1">
+              <label for="volunteer-cause">Causas</label>
+              <select id="volunteer-cause" name="volunteer-cause" class="pl-2 py-1.5">
+                <option  id="default-cause"></option>
+              </select>
+              <a>Error message</a>
             </div>
             <div class="mt-4 mx-[5vw]">
               <button type="submit" id="save-personal-info-btn" class="btn" onclick="updateProfile()">Salvar</button>

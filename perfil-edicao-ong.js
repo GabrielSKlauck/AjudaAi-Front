@@ -73,7 +73,8 @@ $(() => {
       document.getElementById('ngo-description').innerHTML = data.description;
       loadLocation(data.cityId, data.cityStateId);
       loadCause(data.causesId);
-      loadAds();
+      loadAds(data);
+      loadDefaultInfo(data);
       cityName(data.cityId);
       stateName(data.cityStateId);
     },
@@ -153,6 +154,32 @@ function stateName(id){
     datatype: "json",
   });
 }
+
+function loadDefaultInfo(data){
+    let ngoName = document.getElementById('volunteer-first-name');
+    ngoName.placeholder = data.ngoName;
+    let description = document.getElementById('descricao-perfil');
+    description.placeholder = data.description;
+    loadDefaultCause(data.causesId);
+    loadAllCauses();
+}
+
+function loadDefaultCause(causeId){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/Causes/GetById/${causeId}`,
+    success: function (data) {
+      document.getElementById('default-cause').innerHTML = data.name;
+      document.getElementById('default-cause').value = data.id;
+        
+    },
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
+
+
 
 const form = document.getElementById("criador-oportunidades");
 const titulo = document.getElementById("titulo");
