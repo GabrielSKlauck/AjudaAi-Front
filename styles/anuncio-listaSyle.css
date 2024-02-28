@@ -227,6 +227,21 @@ option{
 #barra{
     background-color: #8FC5E7;
 }
+
+#expiration-date {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #081509;
+}
+
+#oportunity-description {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #081509;
+    word-wrap: break-word;
+    overflow-y: scroll;
+}
+
 footer {
     margin-top: 20px;
     background-color: #E0E8D9;
