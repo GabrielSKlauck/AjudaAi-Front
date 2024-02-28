@@ -157,31 +157,48 @@ header {
 }
 
 body {
-    background-color: #7AADEA;
+    background-color: #F9F9F9;
 }
 
 form{
     font-family: 'Inter';
-    background-color: #ADADAD;
-    width: 28rem;
+    color: #687C57;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+    width: 30rem;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
+}
+
+#aviso-sem-anuncios {
+    font-family: 'Inter';
+    color: #60B4E9;
+}
+
+#filter-btn {
+    border: 1px solid #687C57;
+    border-radius: 10px;
+    padding: 2px 25px;
+    margin-left: 26px;
+    cursor: pointer;
 }
 
 #causes-menu{
     background-color: rgba(255, 255, 255, 0);
     border: none;
+    cursor: pointer;
 }
 
 option{
     border: none;
-    background-color: #ADADAD;
+    background-color: #FFF;
 }
 
 .cards {
     margin-top: 50px;
     border-radius: 20px;
-    background-color: rgb(19, 168, 234);
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
     cursor: pointer;
 }
 
@@ -194,7 +211,22 @@ option{
     font-family: 'Inter';
 }
 
+#div-topo{
+    background-color: #EFEFEF;
+    border-radius: 20px 20px 0px 0px;
+    min-height: 7rem;
+    height: auto;
+}
 
+.div-header{
+    margin-top: 15px;
+    margin-left: 20px;
+    display: flex;
+}   
+
+#barra{
+    background-color: #8FC5E7;
+}
 footer {
     margin-top: 20px;
     background-color: #E0E8D9;

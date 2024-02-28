@@ -127,12 +127,12 @@
     <form action="">
       <label for="causes-menu">Filtar por causa: </label>
       <select name="Causas" id="causes-menu" class="w-48">
-        <option value="0" >TODOS</option>       
+        <option value="0" >Todos</option>       
       </select>
-      <input type="submit" value="Filtrar" onclick="carregarId()">
+      <input id="filter-btn" type="submit" value="Filtrar" onclick="carregarId()">
     </form>
 
-    <p id="aviso-sem-anuncios" class="text-4xl hidden">SEM ELEMENTOS CORRESPONDENTES</p>
+    <p id="aviso-sem-anuncios" class="mt-28 mb-52 text-4xl hidden">Nenhuma oportunidade dessa causa disponível no momento.</p>
     <div id="container-interno" class="container-interno grid grid-cols-1 mx-4 sm:mx-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3">
       
       <!-- <div class="cards card border-2 p-2 flex flex-col items-center h-96" onclick="abrirPagina()">
