@@ -98,13 +98,13 @@ function loadStates(item){
   item.forEach(linha => {    
       const stateOption = `
           <option value="${linha.id}">${linha.name}</option>`;
-      $(`#volunteer-state`).append($(stateOption));
+      $(`#ong-state`).append($(stateOption));
   });
 }
 
 function loadCity(){
   event.preventDefault();
-  var id = document.getElementById('volunteer-state').value;
+  var id = document.getElementById('ong-state').value;
   $.ajax({
       type: "GET",
       url: `https://localhost:7070/City/${id}`,
@@ -116,14 +116,14 @@ function loadCity(){
 }
 
 function loadCityHtml(item){
-  var limpa = document.getElementById("volunteer-city");
+  var limpa = document.getElementById("ong-city");
   limpa.innerText = "";
   item.forEach(linha => {
       
       const cityOption = `
           <option value="${linha.id}">${linha.name}</option>
       `;
-      $(`#volunteer-city`).append($(cityOption));
+      $(`#ong-city`).append($(cityOption));
   });
 }
 
@@ -156,7 +156,7 @@ function stateName(id){
 }
 
 function loadDefaultInfo(data){
-    let ngoName = document.getElementById('volunteer-first-name');
+    let ngoName = document.getElementById('ong-name');
     ngoName.placeholder = data.ngoName;
     let description = document.getElementById('descricao-perfil');
     description.placeholder = data.description;
@@ -188,7 +188,7 @@ function loadAllCauses(){
           const causas = `
               <option value="${linha.id}">${linha.name}</option>
           `;
-          $(`#volunteer-cause`).append($(causas));
+          $(`#ong-cause`).append($(causas));
       });       
     },
     header: {},
@@ -352,7 +352,35 @@ function loadCause(causeId) {
 }
 
 function updateProfile(){
+  event.preventDefault();
+  const valores = {
+    id: id,
+    ngoName: "",
+    description: "",
+    causesId: $("#ong-cause")[0].value,
+    cityId: $("#ong-city")[0].value,
+    cityStateId: $("#ong-state")[0].value,
+  }
+    let name = document.getElementById('ong-name').value;
+    if(name.trim() === ''){
+      name = document.getElementById('ong-name').placeholder;
+    }
+    valores.ngoName = name;
 
+    let descricao = document.getElementById('descricao-perfil').value;
+    if(descricao.trim() === ''){
+      descricao = document.getElementById('descricao-perfil').placeholder;
+    }
+    valores.description = descricao; 
+
+    $.ajax({
+      type: "GET",
+      url: `https://localhost:7070/ads/NgoId/${id}`,
+      data: valores,
+      header: {},
+      contentType: "application/json",
+      datatype: "json",
+    });
 }
 
 function loadAds(){
