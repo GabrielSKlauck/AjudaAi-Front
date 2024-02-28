@@ -1,7 +1,7 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('id');
-
+//const id = urlParams.get('id');
+const id = 7;
 $(() => {
     //Faz requisição para o banco do tipo GET para pegar o usuario com o id especificado
     $.ajax({
@@ -29,15 +29,66 @@ $(() => {
       datatype: "json",
     });
 
+    try{   
+      const user = JSON.parse(localStorage.getItem("user"));
+      const id = user.id;
+      const isNgo = localStorage.getItem("ong");
+      if(id != null){
+          
+          if(isNgo == "true"){
+              let link = document.getElementById('profile-page');
+              link.setAttribute("href","perfil-edicao-ong.html");
+              let linkSmall = document.getElementById('profile-page-small');
+              linkSmall.setAttribute("href","perfil-edicao-ong.html");
+          }else{            
+              let link = document.getElementById('profile-page');
+              link.setAttribute("href","perfil-edicao.html");
+              let linkSmall = document.getElementById('profile-page-small');
+              linkSmall.setAttribute("href","perfil-edicao.html");
+          }
+          document.getElementById('btn-login').style.display = 'none';
+          document.getElementById('btn-logout').style.display = 'block';
+
+          document.getElementById('btn-login-small').style.display = 'none';
+          document.getElementById('btn-logout-small').style.display = 'block';
+
+          document.getElementById('sign-up').style.display = 'none';
+          document.getElementById('profile-page').style.display = 'block';
+          document.getElementById('profile-page-small').style.display = 'block';
+      }
+  }catch{}
 })
+
+function logout(){
+  localStorage.clear();
+}
 
 function carregaPerfil(obj){
     document.getElementById('nome-voluntario').innerHTML = obj.name;
-    cityName(obj.cityId); //Chama funcao contendo ajax 
-    stateName(obj.cityStateId);
+    document.getElementById('user-birthdate').innerHTML = refactorDate(obj.birthdate);
+    loadCityState(obj.cityId);
     //console.log(obj);
     loadProfileImage();
     loadProfileInterest();
+}
+
+function loadCityState(id){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/City/GetLocalization/${id}`,
+    success: function(data){   
+      document.getElementById('cidade-estado').innerHTML = data;     
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  }); 
+}
+
+function refactorDate(date){
+  let correctDate = new Date(date);
+  date =  correctDate.toLocaleDateString();    
+  return date;
 }
 
 function cityName(id){

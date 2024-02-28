@@ -34,7 +34,7 @@ $(() => {
       url: `https://localhost:7070/AchievementsUser/ConquistasCompletas/${id}`,
       success: function(data){
         data.forEach(linha => {
-          const conquistas = `<img id="${linha.id}" class="btn-conquistas open-modal flex justify-center"
+          const conquistas = `<img id="${linha.id}" class="btn-conquistas  flex justify-center cursor-pointer"
                                src="${linha.image}" alt="Conquista" onclick="openConquestModal(${linha.id})">`;
           $(`#conquistas-completas`).append($(conquistas));        
         });        
@@ -95,7 +95,56 @@ $(() => {
       dataType: "json",
     });
 
+    try{   
+      const user = JSON.parse(localStorage.getItem("user"));
+      const id = user.id;
+      const isNgo = localStorage.getItem("ong");
+      if(id != null){
+          
+          if(isNgo == "true"){
+              let link = document.getElementById('profile-page');
+              link.setAttribute("href","perfil-edicao-ong.html");
+              let linkSmall = document.getElementById('profile-page-small');
+              linkSmall.setAttribute("href","perfil-edicao-ong.html");
+          }else{            
+              let link = document.getElementById('profile-page');
+              link.setAttribute("href","perfil-edicao.html");
+              let linkSmall = document.getElementById('profile-page-small');
+              linkSmall.setAttribute("href","perfil-edicao.html");
+          }
+          document.getElementById('btn-login').style.display = 'none';
+          document.getElementById('btn-logout').style.display = 'block';
+
+          document.getElementById('btn-login-small').style.display = 'none';
+          document.getElementById('btn-logout-small').style.display = 'block';
+
+          document.getElementById('sign-up').style.display = 'none';
+          document.getElementById('profile-page').style.display = 'block';
+          document.getElementById('profile-page-small').style.display = 'block';
+      }
+  }catch{}
 })
+
+function logout(){
+  localStorage.clear();
+}
+
+function shareConquest(){
+  const userAchie = {
+    achievementsId: 8,
+    userId: id,
+    completionDate: "2024-02-18T18:00:01.618Z"
+  }
+  console.log(userAchie);
+  $.ajax({
+    type: "POST",
+    url: `https://localhost:7070/AchievementsUser`,
+    data: JSON.stringify(userAchie),
+    header: {},
+    contentType: "application/json",
+    dataType: "json",
+  });
+}
 
 function openConquestModal(achieId){
   $.ajax({
@@ -103,7 +152,7 @@ function openConquestModal(achieId){
     url: `https://localhost:7070/AchievementsUser/ConquistaUser/${id}/${achieId}`,
     success: function(data){
       loadAchievementInfo(achieId);
-      refactorDate(data.completionDate);
+      document.getElementById('achievement-date-conclusion').innerHTML = "Alcançada em: " + refactorDate(data.completionDate);
       
       $(`#modal-achievement`).addClass("modal-active");
     },
@@ -116,7 +165,7 @@ function openConquestModal(achieId){
 function refactorDate(date){
   let correctDate = new Date(date);
   date =  correctDate.toLocaleDateString();    
-  let achievementDate = document.getElementById('achievement-date-conclusion').innerHTML = "Alcançada em: " + date;
+  return date;
 }
 
 function loadAchievementInfo(achieId){
@@ -169,9 +218,10 @@ function loadCityHtml(item){
 
 function carregaPerfil(obj){
   document.getElementById('nome-voluntario').innerHTML = obj.name;
+  document.getElementById('user-birthdate').innerHTML = refactorDate(obj.birthdate);
+  loadCityState(obj.cityId)
   cityName(obj.cityId); //Chama funcao contendo ajax 
   stateName(obj.cityStateId);
-  //console.log(obj);
   var name = obj.name.split(' ');
   document.getElementById('volunteer-first-name').placeholder = name[0];
   
@@ -185,6 +235,69 @@ function carregaPerfil(obj){
   document.getElementById('volunteer-email').placeholder = obj.email;
 }
 
+function saveInterest(){
+    let interesse = document.getElementById('interests-input').value;
+    if(interesse != ""){
+      const values ={
+        name: interesse,
+        userId: id
+      }
+      
+      $.ajax({
+        type: "POST",
+        url: `https://localhost:7070/userInterest`,
+        data: JSON.stringify(values),
+        statusCode:{
+            200: function(){
+              const interest = `<li class="btn-interesses flex justify-center" id="${"lista" + values.id}">${values.name}</li>`;
+              $(`#interest-list`).append($(interest));
+              const interestEdit = `<li id="${"listaEdit" + values.id}" onclick="deleteInterest(${values.id})">${values.name}</li>`;
+              $(`#interests-ul`).append($(interestEdit));
+              document.getElementById('interests-input').value = ""; 
+            },
+        },
+        headers: {
+          "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+          "Access-Control-Allow-Origin": "*"
+        },
+        contentType: "application/json",
+        datatype: "json",
+      }); 
+    }
+}
+
+function deleteInterest(id){
+  $.ajax({
+    type: "DELETE",
+    url: `https://localhost:7070/userInterest/${id}`,
+    success: function(){   
+      var tag = document.getElementById('lista' + id)
+      tag.parentElement.removeChild(tag)
+      tag = document.getElementById('listaEdit' + id);
+      tag.parentElement.removeChild(tag);
+    }, 
+    headers: {
+        "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+        "Access-Control-Allow-Origin": "*"
+    },
+    contentType: "application/json",
+    datatype: "json",
+  });  
+}
+
+function loadCityState(id){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/City/GetLocalization/${id}`,
+    success: function(data){   
+      document.getElementById('cidade-estado').innerHTML = data;     
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  }); 
+}
+
 function loadProfileInterest(){
   $.ajax({
     type: "GET",
@@ -192,9 +305,9 @@ function loadProfileInterest(){
     success: function(data){ 
       if(data.length != 0){
         data.forEach(item =>{
-          const interest = `<li class="btn-interesses flex justify-center" id="${item.id}">${item.name}</li>`;
+          const interest = `<li class="btn-interesses flex justify-center" id="${"lista" + item.id}">${item.name}</li>`;
           $(`#interest-list`).append($(interest));
-          const interestEdit = `<li id="${item.id}">${item.name}</li>`;
+          const interestEdit = `<li id="${"listaEdit" + item.id}" onclick="deleteInterest(${item.id})">${item.name}</li>`;
           $(`#interests-ul`).append($(interestEdit));
         })       
       }       
@@ -210,7 +323,8 @@ function loadProfileImage(){
     type: "GET",
     url: `https://localhost:7070/user/GetImageById/${id}`,
     success: function(data){ 
-      if(data.length == 0){
+      
+      if(data == null){
         let profileImg = document.getElementById("profile-img");
         let profileImgLoad = document.getElementById("img-profile-load");
       
@@ -240,7 +354,6 @@ function cityName(id){
     type: "GET",
     url: `https://localhost:7070/City/GetByCityId/${id}`,
     success: function(data){
-      document.getElementById('cidade-estado').innerHTML = data.name + ", ";
       document.getElementById('default-city').innerHTML = data.name;
       document.getElementById('default-city').value = data.id;
     }, 
@@ -255,11 +368,9 @@ function stateName(id){
     type: "GET",
     url: `https://localhost:7070/State/${id}`,
     success: function (data){
-        var contatena = document.getElementById('cidade-estado').textContent;
-        document.getElementById('cidade-estado').innerHTML = contatena + data.name;
+        document.getElementById('default-state').innerText = data.name;    
         document.getElementById('default-state').value = data.id    
-        document.getElementById('default-state').innerHTML = data.name;
-    }, 
+    },  
     header: {},
     contentType: "application/json",
     datatype: "json",
@@ -271,16 +382,23 @@ let inputFile = document.getElementById("input-file");
 
 inputFile.onchange = function() {
     profileImg.src = URL.createObjectURL(inputFile.files[0]);
+    let imgSize = inputFile.files[0].size;
+    console.log(imgSize);
     const file = inputFile.files[0]; 
     const reader = new FileReader();    
     reader.onload = function(event) {
         const base64 = event.target.result;  
-       
-        var img = document.querySelector("#profile-img");
-        img.setAttribute('src', `${base64}`);
-        var img = document.querySelector("#img-profile-load");
-        img.setAttribute('src', `${base64}`);
-        sendImageProfileDatabase(base64);
+        
+        if(imgSize > 125000){
+          alert("Tamanho de imagem ultrapassa limite");
+          return;
+        }else{
+          var img = document.querySelector("#profile-img");
+          img.setAttribute('src', `${base64}`);
+          var img = document.querySelector("#img-profile-load");
+          img.setAttribute('src', `${base64}`);
+          sendImageProfileDatabase(base64);
+        }     
     };
     reader.readAsDataURL(file);
     
@@ -295,6 +413,11 @@ function sendImageProfileDatabase(base64){
     type: "PUT",
     url: `https://localhost:7070/user/UpdateProfileImage`,
     data: JSON.stringify(data),
+    headers: {
+      "Authorization": `Bearer ${localStorage.getItem(`token`)}`,
+      "Access-Control-Allow-Origin": "*"
+    },
+    crossDomain: false,
     dataType: "json",
     contentType: "application/json",
   }); 
@@ -355,6 +478,9 @@ $(() => {
         200: function(){
             window.alert("Conta atualizada");
         },
+      },
+      headers: {
+        "Authorization": `Bearer ${localStorage.getItem(`token`)}`
       },
       contentType: "application/json",
       dataType: "json",
@@ -480,4 +606,18 @@ for (let [index, trigger] of modalArray) {
   }
   trigger.addEventListener("click", toggleModal);
   closeButtons[index].addEventListener("click", toggleModal);
+}
+
+function openIncompletos(){
+    const tag = document.getElementById('modal-conquistas-incompletas');
+    const tagFundo = document.getElementById('modal-achievement');
+    tag.classList.add('modal-active');
+    tagFundo.classList.remove('modal-active');
+}
+
+function closeIncompletas(){
+    const tag = document.getElementById('modal-conquistas-incompletas');
+    const tagFundo = document.getElementById('modal-achievement');
+    tag.classList.remove('modal-active');
+    tagFundo.classList.remove('modal-active');
 }

@@ -14,6 +14,7 @@ const login = async (email, password) => {
 
     if (request.status != 200) return false;
 
+    localStorage.clear();
     localStorage.setItem("token", request.data.token);
     localStorage.setItem("user", JSON.stringify(request.data.user));
     localStorage.setItem("ong", true);
@@ -37,6 +38,7 @@ const login = async (email, password) => {
 
     if (request.status != 200) return false;
 
+    localStorage.clear();
     localStorage.setItem("token", request.data.token);
     localStorage.setItem("user", JSON.stringify(request.data.user)); 
     localStorage.setItem("ong", false);

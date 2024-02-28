@@ -96,15 +96,26 @@
               <li>
                 <a href="#footer-right">Contato</a>
               </li>
-              <li>
+              <li id="btn-sign-up-small">
+                <a href="Sou.html">Criar Conta</a>
+              </li>
+              <li id="btn-login-small">
                 <a href="login.html">Entrar</a>
+              </li>
+              <li id="profile-page-small" class="hidden">
+                <a href="" id="small-profile-page">Perfil</a>
+              </li>
+              <li class="hidden" id="btn-logout-small">
+                <a href="homepage.html" onclick="logout()">Sair</a>
               </li>
             </ul>
           </div>
         </div>
         <div class="flex header-menu-login space-x-2 hidden lg:flex">
           <a href="Sou.html" id="sign-up">Criar Conta</a>
-          <a href="login.html" class="login">Entrar</a>
+          <a href="" id="profile-page" class="hidden">Meu perfil</a>
+          <a href="login.html" id="btn-login" class="login">Entrar</a>
+          <a href="homepage.html" id="btn-logout" class="logout hidden" onclick="logout()">Sair</a>
         </div>
       </div>
     </nav>
@@ -114,7 +125,7 @@
     <div class="perfil">
       <div class="min-[777px]:mb-[2vw] ">
         <img src="./assets/images/person1.png" alt="person1"
-          class="open-modal cursor-pointer min-[777px]:mt-[2vw] min-[777px]:w-[16vw] min-[777px]:h-[14vw] min-[777px]:ml-[1.5vw] max-[777px]:h-[60vw] max-[777px]:w-[60vw] max-[777px]:mt-[4vw]">
+          class="open-modal cursor-pointer min-[777px]:mt-[2vw] min-[777px]:w-[14vw] min-[777px]:h-[14vw] min-[777px]:ml-[1.5vw] max-[777px]:h-[60vw] max-[777px]:w-[60vw] max-[777px]:mt-[4vw]">
       </div>
       <div class="min-[777px]:ml-[2.5vw]">
         <div
@@ -122,9 +133,9 @@
           <div class="" id="ngo-name">
             Nome da Ong
           </div>
-          <div class="flex min-[777px]:mr-[2vw]">
+          <div class="flex ">
             <img src="./assets/images/lápis icon.png" alt=""
-              class="open-modal cursor-pointer max-[777px]:pl-[8vw] min-[777px]:h-[2vw] max-[777px]:h-[7vw]">
+              class="open-modal cursor-pointer max-[777px]:pl-[8vw] min-[777px]:h-[2vw] min-[777px]:ml-[58vw] max-[777px]:h-[7vw]">
           </div>
         </div>
         <div class="flex items-center max-[776px]:ml-[2vw]">
@@ -152,18 +163,17 @@
         </div>
         <div class="mt-[0.5vw] flex max-[776px]:ml-[2vw]">
           <img src="./assets/images/localizacaoicon.png" alt="" class="min-[777px]:h-[1.7vw] max-[777px]:h-[8vw]">
-          <div class="flex justify-center align-middle items-center min-[777px]:text-[1vw] max-[776px]:text-[5vw] font-['Inter'] pl-[0.2vw]" id="ngo-location">
-           
+          <div
+            class="flex justify-center align-middle items-center min-[777px]:text-[1vw] max-[776px]:text-[5vw] font-['Inter'] pl-[0.2vw]"
+            id="ngo-location">
+
           </div>
         </div>
-        <div class="min-[777px]:mr-[2vw] min-[777px]:mt-[0.5vw] text-[1vw] max-[776px]:text-[5vw] max-[776px]:ml-[3vw] max-[776px]:mr-[2vw]">
-          Descrição breve sobre a ong lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore
-          ipsum lore
-          lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum.
-        </div>
+
         <div class="min-[777px]:mt-[0.5vw] max-[776px]:ml-[4vw] max-[776px]:mr-[4vw] max-[776px]:items-center">
-          <ul class="min-[776px]:grid min-[776px]:grid-cols-4 min-[777px]:gap-[1.2vw] min-[777px]:mr-[5vw] min-[777px]:mt-[2vw] " >
-            <li class="btn-interesses flex justify-center max-[776px]:mb-[5vw]" id="ngo-causes"></li>
+          <ul
+            class="min-[776px]:grid min-[776px]:grid-cols-4 min-[777px]:gap-[1.2vw] min-[777px]:mr-[5vw] min-[777px]:mt-[2vw] ">
+            <li class="btn-interesses flex justify-center max-[776px]:mb-[5vw] min-[776px]:mb-[1vw]" id="ngo-causes"></li>
             <!-- <li class="btn-interesses flex justify-center">Meio Ambiente</li>
             <li class="btn-interesses flex justify-center">Meio Ambiente</li> -->
           </ul>
@@ -179,7 +189,7 @@
     </div>
     <div class="conteudo flex justify-center ">
       <div class="active fundo-conteudo  " id="ads-area">
-         <!-- <h2 class="anuncio">
+        <!-- <h2 class="anuncio">
           <span class="fundo-anuncio flex max-[776px]:grid-cols-1 ">
              <h3 class="grid max-[776px]:grid-cols-1 min-[777px]:ml-[0.7vw] min-[777px]:mt-[0.5vw] min-[777px]:mr-[0.7vw] max-[776px]:mt-[4vw] max-[776px]:ml-[3vw] max-[776px]:mt-[3vw]" >
               <span class="min-[777px]:text-[1.1vw] max-[776px]:text-[3vw] font-semibold trabalho-voluntario-titulo">Trabalho voluntário em resgate de peixes</span>
@@ -199,7 +209,7 @@
             </button>
           </span>
         </h2>   -->
-  
+
         <h2 class="anuncio" id="adicionar-anuncio">
           <span class="open-modal">+</span>
         </h2>
@@ -208,30 +218,19 @@
         <h2 class="galeria">
 
         </h2>
-        <h2 class="galeria">
 
-        </h2>
-        <h2 class="galeria">
-
-        </h2>
-        <h2 class="galeria">
-
-        </h2>
-
-        <span class="flex absolute min-[777px]:ml-[87.7vw] min-[777px]:mt-[0.5vw] max-[777px]:ml-[83.5vw] max-[777px]:mt-[1.4vw]">
+        <span
+          class="flex absolute min-[777px]:ml-[87.7vw] min-[777px]:mt-[0.5vw] max-[777px]:ml-[83.5vw] max-[777px]:mt-[1.4vw]">
           <img src="./assets/images/lápis icon.png" alt=""
             class="cursor-pointer min-[777px]:h-[2vw] max-[777px]:h-[4.6vw]">
         </span>
       </div>
       <div class="fundo-conteudo grid-cols-1">
-        <span class="absolute min-[777px]:ml-[87.5vw] min-[777px]:mt-[0.5vw] max-[777px]:ml-[83.5vw] max-[777px]:mt-[1.4vw]">
-          <img src="./assets/images/lápis icon.png" alt=""
-            class="cursor-pointer min-[777px]:h-[2vw] max-[777px]:h-[4.6vw] flex">
-        </span>
+
         <h2 class="sobre-nos">
           <span class="texto-sobre max-[777px]:ml-[4vw]" id="ngo-description">
-          
-        </span>
+
+          </span>
 
         </h2>
       </div>
@@ -241,7 +240,7 @@
     <div class="w-screen h-screen flex items-center justify-center">
       <div id="profile-pic-modal-body">
         <div class="flex justify-end">
-          <img class="close-modal" src="assets/images/x-icon.png"/>
+          <img class="close-modal" src="assets/images/x-icon.png" />
         </div>
         <div>
           <img id="profile-img" class="mx-auto mt-6" src="assets/images/personimg.png" alt="Foto de perfil." />
@@ -271,15 +270,15 @@
           <img class="close-modal" src="assets/images/x-icon.png" />
         </div>
 
-        <div >
-          <form id="personal-info-form" class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
+        <div>
+          <form id="personal-info-form" class="flex flex-col justify-center h-auto ">
             <div class="form-input-box mt-4">
               <label for="volunteer-first-name">Nome da ONG</label>
               <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
               <a>Error message</a>
             </div>
-            <div class="caixa-entrada mt-6 caixa-descricao" >
-              <label for="descricao-perfil" >Descrição</label>
+            <div class="caixa-entrada mt-2 caixa-descricao">
+              <label for="descricao-perfil">Descrição</label>
               <textarea id="descricao-perfil" cols="30" rows="10" class="pl-2 py-1.5 mt-2"></textarea>
               <a>Error message</a>
             </div>
@@ -287,20 +286,32 @@
               <label for="birthdate">Data de nascimento</label>
               <input type="date" id="birthdate" class="px-2 py-1.5 mt-2" />
             </div>            -->
-            <div class="form-input-box mt-6">
-              <label for="volunteer-state">Estado*</label>
-              <select id="volunteer-state" name="volunteer-state" class="pl-2 py-1.5 mt-2" onfocusout="loadCity()">
+            <div class="form-input-box mt-1">
+              <label for="volunteer-state">Estado</label>
+              <select id="volunteer-state" name="volunteer-state" class="pl-2 py-1.5" onfocusout="loadCity()">
                 <option disabled selected id="default-state">Estado</option>
               </select>
               <a>Error message</a>
             </div>
-            <div class="form-input-box mt-6">
-              <label for="volunteer-city">Cidade*</label>
-              <select id="volunteer-city" name="volunteer-city" class="pl-2 py-1.5 mt-2">
+            <div class="form-input-box">
+              <label for="volunteer-city">Cidade</label>
+              <select id="volunteer-city" name="volunteer-city" class="pl-2 py-1.5 ">
                 <option disabled selected id="default-city">Cidade</option>
               </select>
             </div>
-            <div class="mt-8 mb-6 mx-28">
+            <span class="text-[1.3vw] mt-[1vw]">Causas</span>
+            <div class="flex items-center justify-center">
+              <div id="interests-modal-box">
+                <div id="interests-boxes">
+                  <ul id="interests-ul">
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="interest-input-box" class="flex justify-center">
+              <input type="text" id="interests-input" placeholder="+" />
+            </div>
+            <div class="mt-4 mb-6 mx-[5vw]">
               <button type="submit" id="save-personal-info-btn" class="btn">Salvar</button>
             </div>
           </form>
@@ -330,8 +341,8 @@
               <input type="date" id="data-expiracao" class="px-2 py-1.5 mt-2" />
               <a>Error message</a>
             </div>
-            <div class="caixa-entrada mt-6 caixa-descricao" >
-              <label for="descricao" >Descrição</label>
+            <div class="caixa-entrada mt-6 caixa-descricao">
+              <label for="descricao">Descrição</label>
               <textarea id="descricao" cols="30" rows="10" class="pl-2 py-1.5 mt-2"></textarea>
               <a>Error message</a>
             </div>

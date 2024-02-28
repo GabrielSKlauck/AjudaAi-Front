@@ -122,14 +122,37 @@ header {
     color: #FFF
 }
 
+#profile-page{
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+#profile-page:hover{
+    padding: 2px 7px;
+    background-color: rgba(208, 218, 199, 0.80);
+    border-radius: 10px;
+}
+
 .login {
     padding: 2px 25px;
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
-    border: 1px solid #8FC5E7;
-    border-radius: 1vw;
-    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #8FC5E7;
+    border: 1px solid #687C57;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+}
+
+.logout{
+    padding: 2px 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    border: 1px solid #687C57;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
 }
 
 body {
@@ -951,13 +974,15 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 
 #personal-info-modal-body {
-    max-width: 650px;
-    width: 100%;
-    height: auto;
-    padding-bottom: 30px;
-    border-radius: 25px;
+    max-width: 30vw;
+    width: 90vw;
+    height: 50vw;
+    padding-bottom: 2vw;
+    border-radius: 2vw;
     background-color: #FFF;
     border: 1px solid #F1F1F4;
+    padding-right: 2vw;
+    padding-left: 2vw;
 }
 
 #personal-info-modal-title,
@@ -966,8 +991,8 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     font-family: "Inter", sans-serif;
     font-size: 26px;
     font-weight: 600;
-    margin-top: 15px;
-    margin-left: 35px;
+    margin-top: 0.5vw;
+    
 }
 
 
@@ -997,4 +1022,89 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 .form-input-box a {
     font-family: "Inter", sans-serif;
     visibility: hidden;
+}
+
+/* INTERESSES */
+
+#interests-modal-box {
+    width: 35vw;
+    height: 10vw;
+    border-radius: 0.3vw;
+    margin-top: 2vw;
+    background-color: #F9F9F9;
+    box-shadow: 0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.25) inset;
+    overflow: auto;
+}
+
+#interests-boxes ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2vw;
+
+}
+
+#interests-boxes li {
+    height: 2.5vw;
+    width: 14vw;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #60B4E9;
+    background-color: #F9F9F9;
+    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#interests-boxes li span {
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+}
+
+#interests-boxes button {
+    display: none;
+    text-align: center;
+    justify-content: center;
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 36px;
+}
+
+#interests-boxes li:hover button {
+    display: block;
+}
+
+#interests-boxes li:hover span {
+    display: none;
+    cursor: pointer;
+}
+
+#interest-input-box {
+    width: 100%;
+}
+
+#interest-input-box input {
+    height: 2.5vw;
+    width: 14vw;
+    border-radius: 2vw;
+    border: 1px solid #60B4E9;
+    background-color: #F9F9F9;
+    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
+    cursor: pointer;
+    color: #081509;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#interests-boxes input:focus {
+    outline: 1px solid #60B4E9;
+}
+
+#interests-boxes input:active,
+#interests-boxes li:active {
+    transform: scale(0.98);
 }
