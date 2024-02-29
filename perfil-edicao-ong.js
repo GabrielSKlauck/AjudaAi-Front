@@ -374,9 +374,9 @@ function updateProfile(){
     valores.description = descricao; 
 
     $.ajax({
-      type: "GET",
-      url: `https://localhost:7070/ads/NgoId/${id}`,
-      data: valores,
+      type: "PUT",
+      url: `https://localhost:7070/ngo/AtualizarPerfil`,
+      data: JSON.stringify(valores),
       header: {},
       contentType: "application/json",
       datatype: "json",
