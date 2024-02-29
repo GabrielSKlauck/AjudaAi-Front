@@ -72,7 +72,7 @@ $(() => {
       document.getElementById('ngo-name').innerHTML = data.ngoName;
       document.getElementById('ngo-description').innerHTML = data.description;
       //Verifica se a imagem do banco esta vazia, se sim coloca a imagem padrao
-      if(data.profileImage.trim() === ''){
+      if(data.profileImage == null){
         document.getElementById('img-profile-load').src = './assets/images/person1.png';
         document.getElementById('profile-img').src =  'assets/images/personimg.png';
       }else{
