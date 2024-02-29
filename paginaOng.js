@@ -128,6 +128,10 @@ $(() => {
     success: function (data) {
       document.getElementById('ngo-name').innerHTML = data.ngoName;
       document.getElementById('ngo-description').innerHTML = data.description;
+      if(data.profileImage != null){
+        document.getElementById('profile-pic').src = data.profileImage;
+      }
+      
       loadLocation(data.cityId);
       loadCause(data.causesId);
       loadOngPictures();
