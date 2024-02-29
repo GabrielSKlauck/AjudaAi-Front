@@ -188,7 +188,7 @@ function loadAds(){
     success: function (data) {
       data.forEach(linha => {
         const ads = `
-        <h2 class="anuncio">
+        <h2 class="anuncio cursor-pointer" onclick="candidatar(${linha.id})" >
         <span class="fundo-anuncio min-[777px]:flex max-[776px]:grid ">
           <h3 class="grid min-[777px]:ml-[0.7vw] min-[777px]:mt-[0.5vw] min-[777px]:mr-[0.7vw] max-[776px]:mt-[3vw]">
             <span class="min-[777px]:text-[1.1vw] max-[776px]:text-[5vw] font-semibold trabalho-voluntario-titulo">${linha.title}</span>
@@ -199,11 +199,6 @@ function loadAds(){
         <span
           class="max-[776px]:ml-[3vw] max-[776px]:mt-[2vw] font-['Inter'] italic  leading-[1vw] descricao-escrita">
           ${linha.description}
-        </span>
-        <span class="fundo-anuncio2">
-          <button class="botao-anuncio font-['Inter']" onclick="encerrarAds(${linha.id})">
-            Encerrar
-          </button>
         </span>
       </h2>
         `;
