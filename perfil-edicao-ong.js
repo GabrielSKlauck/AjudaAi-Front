@@ -390,9 +390,47 @@ inputFile.onchange = function() {
           sendImageProfileDatabase(base64);
         }     
     };
-    reader.readAsDataURL(file);
-    
+    reader.readAsDataURL(file);    
 }
+
+
+let inputFilePic = document.getElementById("input-file-pic");
+
+inputFilePic.onchange = function() {
+    //profileImg.src = URL.createObjectURL(inputFilePic.files[0]);
+    let imgSize = inputFilePic.files[0].size;
+    console.log(imgSize);
+    const file = inputFilePic.files[0]; 
+    const reader = new FileReader();    
+    reader.onload = function(event) {
+        const base64 = event.target.result;  
+        
+        if(imgSize > 125000){
+          alert("Tamanho de imagem ultrapassa limite");
+          return;
+        }else{
+          sendPictureDatabase(base64);
+          document.getElementById('modal-galeria').remove('modal-active');
+        }     
+    };
+    reader.readAsDataURL(file);    
+}
+
+function sendPictureDatabase(base64){
+  const data = { 
+    image: base64,
+    ngoId: id
+  }
+  $.ajax({
+    type: "POST",
+    url: `https://localhost:7070/NgoImages`,
+    data: JSON.stringify(data),
+    dataType: "json",
+    contentType: "application/json",
+  }); 
+}
+
+
 
 function sendImageProfileDatabase(base64){
   const data = {
