@@ -32,7 +32,7 @@ $(() => {
         document.getElementById('profile-page').style.display = 'block';
         document.getElementById('profile-page-small').style.display = 'block';
     }
-}catch{}
+  }catch{}
 
   let selecionado = 0;
 
@@ -73,13 +73,129 @@ $(() => {
       document.getElementById('ngo-description').innerHTML = data.description;
       loadLocation(data.cityId, data.cityStateId);
       loadCause(data.causesId);
-      loadAds();
+      loadAds(data);
+      loadDefaultInfo(data);
+      cityName(data.cityId);
+      stateName(data.cityStateId);
     },
     header: {},
     contentType: "application/json",
     datatype: "json",
   });
+
+  $.ajax({
+    type: "GET",
+    url: "https://localhost:7070/State",
+    success: loadStates,
+    header: {},
+    contentType: "application/json",
+    dataType: "json",
+  });
+
 })
+
+function loadStates(item){
+  item.forEach(linha => {    
+      const stateOption = `
+          <option value="${linha.id}">${linha.name}</option>`;
+      $(`#ong-state`).append($(stateOption));
+  });
+}
+
+function loadCity(){
+  event.preventDefault();
+  var id = document.getElementById('ong-state').value;
+  $.ajax({
+      type: "GET",
+      url: `https://localhost:7070/City/${id}`,
+      success: loadCityHtml,
+      header: {},
+      contentType: "application/json",
+      datatype: "json",
+  });
+}
+
+function loadCityHtml(item){
+  var limpa = document.getElementById("ong-city");
+  limpa.innerText = "";
+  item.forEach(linha => {
+      
+      const cityOption = `
+          <option value="${linha.id}">${linha.name}</option>
+      `;
+      $(`#ong-city`).append($(cityOption));
+  });
+}
+
+function cityName(id){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/City/GetByCityId/${id}`,
+    success: function(data){
+      document.getElementById('default-city').innerHTML = data.name;
+      document.getElementById('default-city').value = data.id;
+    }, 
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
+
+function stateName(id){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/State/${id}`,
+    success: function (data){
+        document.getElementById('default-state').innerText = data.name;    
+        document.getElementById('default-state').value = data.id    
+    },  
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
+
+function loadDefaultInfo(data){
+    let ngoName = document.getElementById('ong-name');
+    ngoName.placeholder = data.ngoName;
+    let description = document.getElementById('descricao-perfil');
+    description.placeholder = data.description;
+    loadDefaultCause(data.causesId);
+    loadAllCauses();
+}
+
+function loadDefaultCause(causeId){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/Causes/GetById/${causeId}`,
+    success: function (data) {
+      document.getElementById('default-cause').innerHTML = data.name;
+      document.getElementById('default-cause').value = data.id;
+        
+    },
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
+
+function loadAllCauses(){
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/Causes`,
+    success: function (data) {
+      data.forEach(linha =>{
+          const causas = `
+              <option value="${linha.id}">${linha.name}</option>
+          `;
+          $(`#ong-cause`).append($(causas));
+      });       
+    },
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+  });
+}
 
 const form = document.getElementById("criador-oportunidades");
 const titulo = document.getElementById("titulo");
@@ -235,6 +351,37 @@ function loadCause(causeId) {
   });
 }
 
+function updateProfile(){
+  const valores = {
+    id: id,
+    ngoName: "",
+    description: "",
+    causesId: $("#ong-cause")[0].value,
+    cityId: $("#ong-city")[0].value,
+    cityStateId: $("#ong-state")[0].value,
+  }
+    let name = document.getElementById('ong-name').value;
+    if(name.trim() === ''){
+      name = document.getElementById('ong-name').placeholder;
+    }
+    valores.ngoName = name;
+
+    let descricao = document.getElementById('descricao-perfil').value;
+    if(descricao.trim() === ''){
+      descricao = document.getElementById('descricao-perfil').placeholder;
+    }
+    valores.description = descricao; 
+
+    $.ajax({
+      type: "PUT",
+      url: `https://localhost:7070/ngo/AtualizarPerfil`,
+      data: JSON.stringify(valores),
+      header: {},
+      contentType: "application/json",
+      datatype: "json",
+    });
+}
+
 function loadAds(){
   $.ajax({
     type: "GET",
@@ -283,5 +430,4 @@ function encerrarAds(adsId){
     contentType: "application/json",
     datatype: "json",
   });
-
 }

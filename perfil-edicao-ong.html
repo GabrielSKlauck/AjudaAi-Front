@@ -273,8 +273,8 @@
         <div>
           <form id="personal-info-form" class="flex flex-col justify-center h-auto ">
             <div class="form-input-box mt-4">
-              <label for="volunteer-first-name">Nome da ONG</label>
-              <input type="text" id="volunteer-first-name" class="pl-2 py-1.5 mt-2" />
+              <label for="ong-name">Nome da ONG</label>
+              <input type="text" id="ong-name" class="pl-2 py-1.5 mt-2" />
               <a>Error message</a>
             </div>
             <div class="caixa-entrada caixa-descricao">
@@ -287,32 +287,27 @@
               <input type="date" id="birthdate" class="px-2 py-1.5 mt-2" />
             </div>            -->
             <div class="form-input-box mt-1">
-              <label for="volunteer-state">Estado</label>
-              <select id="volunteer-state" name="volunteer-state" class="pl-2 py-1.5" onfocusout="loadCity()">
-                <option disabled selected id="default-state">Estado</option>
+              <label for="ong-state">Estado</label>
+              <select id="ong-state" name="ong-state" class="pl-2 py-1.5" onfocusout="loadCity()">
+                <option  id="default-state"></option>
               </select>
               <a>Error message</a>
             </div>
             <div class="form-input-box mt-1">
-              <label for="volunteer-city">Cidade</label>
-              <select id="volunteer-city" name="volunteer-city" class="pl-2 py-1.5 ">
-                <option disabled selected id="default-city">Cidade</option>
+              <label for="ong-city">Cidade</label>
+              <select id="ong-city" name="ong-city" class="pl-2 py-1.5 ">
+                <option  id="default-city"></option>
               </select>
             </div>
-            <span class="text-[1.3vw] mt-[1vw]">Causas</span>
-            <div class="flex items-center justify-center">
-              <div id="interests-modal-box">
-                <div id="interests-boxes">
-                  <ul id="interests-ul">
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div id="interest-input-box" class="flex justify-center">
-              <input type="text" id="interests-input" placeholder="+" />
+            <div class="form-input-box mt-1">
+              <label for="ong-cause">Causas</label>
+              <select id="ong-cause" name="ong-cause" class="pl-2 py-1.5">
+                <option  id="default-cause"></option>
+              </select>
+              <a>Error message</a>
             </div>
             <div class="mt-4 mx-[5vw]">
-              <button type="submit" id="save-personal-info-btn" class="btn">Salvar</button>
+              <button type="submit" id="save-personal-info-btn" class="btn" onclick="updateProfile()">Salvar</button>
             </div>
           </form>
         </div>
