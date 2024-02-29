@@ -85,6 +85,7 @@ $(() => {
       loadCause(data.causesId);
       loadAds(data);
       loadDefaultInfo(data);
+      loadOngPictures();
       cityName(data.cityId);
       stateName(data.cityStateId);
     },
@@ -103,6 +104,26 @@ $(() => {
   });
 
 })
+
+function loadOngPictures(){
+  console.log(id);
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/NgoImages/${id}`,
+    success: function(data){
+      if(data != null){
+        data.forEach(linha => {
+      
+          const pics = 
+          `<img src="${linha.image}" alt="" class="pictures-ongs mt-7 pl-3">`;
+          $(`#pictures-list`).append($(pics));
+        });
+      }       
+    },
+    contentType: "application/json",
+    dataType: "json",
+  });
+}
 
 function loadStates(item){
   item.forEach(linha => {    
