@@ -334,8 +334,61 @@ function loadLocation(cityId) {
     contentType: "application/json",
     datatype: "json",
   });
+}
 
+let profileImg = document.getElementById("profile-img");
+let inputFile = document.getElementById("input-file");
 
+inputFile.onchange = function() {
+    profileImg.src = URL.createObjectURL(inputFile.files[0]);
+    let imgSize = inputFile.files[0].size;
+    console.log(imgSize);
+    const file = inputFile.files[0]; 
+    const reader = new FileReader();    
+    reader.onload = function(event) {
+        const base64 = event.target.result;  
+        
+        if(imgSize > 125000){
+          alert("Tamanho de imagem ultrapassa limite");
+          return;
+        }else{
+          var img = document.querySelector("#profile-img");
+          img.setAttribute('src', `${base64}`);
+          var img = document.querySelector("#img-profile-load");
+          img.setAttribute('src', `${base64}`);
+          sendImageProfileDatabase(base64);
+        }     
+    };
+    reader.readAsDataURL(file);
+    
+}
+
+function sendImageProfileDatabase(base64){
+  const data = {
+    id: id,
+    profileImage: base64
+  }
+  $.ajax({
+    type: "PUT",
+    url: `https://localhost:7070/ngo/Atualizarlogo`,
+    data: JSON.stringify(data),
+    dataType: "json",
+    contentType: "application/json",
+  }); 
+}
+
+function setDefaultPic() {
+  sendImageProfileDatabase("");
+  let profileImg = document.getElementById("profile-img");
+  let profileImgLoad = document.getElementById("img-profile-load");
+
+  if(profileImgLoad) {
+    profileImgLoad.src = "assets/images/person1.png";
+  }
+
+  if(profileImg) {
+    profileImg.src = "assets/images/personimg.png";
+  }
 }
 
 function loadCause(causeId) {
