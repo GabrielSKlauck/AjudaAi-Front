@@ -97,13 +97,21 @@ function mostraAdsEspec(item){
     item.forEach(linha => {
         
       const cardAds = `
-      <div id = "${linha.id}" class="cards card border-2 p-2 flex flex-col items-center h-96" onclick="abrirPagina(${linha.id})">
-      <img src="assets/images/logo anuncio.jpg" alt="" class="h-40 w-60">
-      <h1 class="text-xl mt-4 mb-4">${linha.title}</h1>
-      <p class="text-center">
+      <div id = "${linha.id}" class="cards card border-2 flex flex-col h-96" onclick="abrirPagina(${linha.id})">
+        <div id="div-topo" class="w-full">
+          <div id="div-header" class="ml-5">
+            <h1 class="text-xl mt-4 mb-4">${linha.title}</h1>
+            <div class="flex flex-col"
+              <span>Ong: ${linha.ngoName}</span>
+              <span id="expiration-date" class="text-xs mt-2 mb-4"><em>Expira em: ${refactorDate(linha.expires)}</em></span>
+            </div>
+          </div>
+        </div>
+        <hr id="barra" class="w-full h-3">
+        <p id="oportunity-description" class="text-left p-3">
           ${linha.description}
-      </p>
-    </div>
+        </p>
+        </div>
       
      `;
       
@@ -125,18 +133,32 @@ function mostraAds(item){
     item.forEach(linha => {
         
       const cardAds = `
-      <div id = "${linha.id}" class="cards card border-2 p-2 flex flex-col items-center h-96" onclick="abrirPagina(${linha.id})">
-      <img src="assets/images/logo anuncio.jpg" alt="" class="h-40 w-60">
-      <h1 class="text-xl mt-4 mb-4">${linha.title}</h1>
-      <p class="text-center">
+      <div id = "${linha.id}" class="cards card border-2 flex flex-col h-96" onclick="abrirPagina(${linha.id})">
+        <div id="div-topo" class="w-full">
+          <div id="div-header" class="ml-5">
+            <h1 class="text-xl mt-4 mb-4">${linha.title}</h1>
+            <div class="flex flex-col"
+              <span>Ong: ${linha.ngoName}</span>
+              <span id="expiration-date" class="text-xs mt-2 mb-4"><em>Expira em: ${refactorDate(linha.expires)}</em></span>
+            </div>
+          </div>
+        </div>
+        <hr id="barra" class="w-full h-3">
+        <p id="oportunity-description" class="text-left p-3">
           ${linha.description}
-      </p>
-    </div>
+        </p>
+        </div>
       
      `;
       $(`.container-interno`).append($(cardAds));
     });
   }    
+}
+
+function refactorDate(date){
+  let correctDate = new Date(date);
+  date =  correctDate.toLocaleDateString();    
+  return date;
 }
 
 function loadCauses(item){

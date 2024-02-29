@@ -32,7 +32,7 @@ body{
 }
 
 header {
-    background-color: #EEEEEE;
+    background-color: #E6EBEE;
 }
 
 #logo {
@@ -59,10 +59,12 @@ header {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
+    transition: 0.3s;
 }
 
 .header-menu-items a:hover, .dropdown:hover .dropbtn {
-    background-color: rgba(208, 218, 199, 0.80);
+    color: #FFF;
+    background-color: #8FC5E7;
     border-radius: 10px;
 }
 
@@ -71,6 +73,7 @@ header {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
+    transition: 0.3s;
 }
 
 .header-menu-dropdown-list, .menu-mobile-dropdown-list {
@@ -93,7 +96,8 @@ header {
 }
 
 .header-menu-dropdown-list a:hover, .menu-mobile-dropdown-list a:hover {
-    background-color: rgba(208, 218, 199, 0.80);
+    background-color: #8FC5E7;
+    color: #FFF;
     border-radius: 0px;
     padding: 10px;
 }
@@ -111,7 +115,8 @@ header {
 
 #sign-up:hover {
     padding: 2px 7px;
-    background-color: rgba(208, 218, 199, 0.80);
+    background-color: #8FC5E7;
+    color: #FFF;
     border-radius: 10px;
 }
 
@@ -124,7 +129,8 @@ header {
 
 #profile-page:hover{
     padding: 2px 7px;
-    background-color: rgba(208, 218, 199, 0.80);
+    background-color: #8FC5E7;
+    color: #FFF;
     border-radius: 10px;
 }
 
@@ -133,9 +139,9 @@ header {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
-    border: 1px solid #687C57;
+    border: 1px solid #8FC5E7;
     border-radius: 10px;
-    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+    box-shadow: 0.5px 0.5px 2px 0.5px #8FC5E7;
 }
 
 .logout{
@@ -143,9 +149,58 @@ header {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
-    border: 1px solid #687C57;
+    border: 1px solid #8FC5E7;
     border-radius: 10px;
-    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
+    box-shadow: 0.5px 0.5px 2px 0.5px #8FC5E7;
+}
+
+.criarbtn {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+.criardown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.criardown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+ border-radius: 5px;
+}
+
+.criardown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+}
+
+#VoluntarioButton:hover {
+    background-color: #8FC5E7;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
+
+#OngButton:hover {
+    background-color: #6A8C4E;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
+
+.criardown:hover .criardown-content {
+  display: block;
 }
 
 .menu li {
@@ -157,31 +212,48 @@ header {
 }
 
 body {
-    background-color: #7AADEA;
+    background-color: #F9F9F9;
 }
 
 form{
     font-family: 'Inter';
-    background-color: #ADADAD;
-    width: 28rem;
+    color: #687C57;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+    width: 30rem;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
+}
+
+#aviso-sem-anuncios {
+    font-family: 'Inter';
+    color: #60B4E9;
+}
+
+#filter-btn {
+    border: 1px solid #687C57;
+    border-radius: 10px;
+    padding: 2px 25px;
+    margin-left: 26px;
+    cursor: pointer;
 }
 
 #causes-menu{
     background-color: rgba(255, 255, 255, 0);
     border: none;
+    cursor: pointer;
 }
 
 option{
     border: none;
-    background-color: #ADADAD;
+    background-color: #FFF;
 }
 
 .cards {
     margin-top: 50px;
     border-radius: 20px;
-    background-color: rgb(19, 168, 234);
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
     cursor: pointer;
 }
 
@@ -194,10 +266,39 @@ option{
     font-family: 'Inter';
 }
 
+#div-topo{
+    background-color: #EFEFEF;
+    border-radius: 20px 20px 0px 0px;
+    min-height: 7rem;
+    height: auto;
+}
+
+.div-header{
+    margin-top: 15px;
+    margin-left: 20px;
+    display: flex;
+}   
+
+#barra{
+    background-color: #8FC5E7;
+}
+
+#expiration-date {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #081509;
+}
+
+#oportunity-description {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #081509;
+    word-wrap: break-word;
+    overflow-y: auto;
+}
 
 footer {
-    margin-top: 20px;
-    background-color: #E0E8D9;
+    background-color: #E6EBEE;
 }
 
 #footer-menu-list li {

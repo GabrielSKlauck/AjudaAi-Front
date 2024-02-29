@@ -59,13 +59,13 @@ header {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
+    transition: 0.3s;
 }
 
-.header-menu-items a:hover,
-.dropdown:hover .dropbtn {
+.header-menu-items a:hover, .dropdown:hover .dropbtn {
+    color: #FFF;
     background-color: #8FC5E7;
     border-radius: 10px;
-    color: #FFF
 }
 
 .dropdown .dropbtn {
@@ -73,10 +73,10 @@ header {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     color: #081509;
+    transition: 0.3s;
 }
 
-.header-menu-dropdown-list,
-.menu-mobile-dropdown-list {
+.header-menu-dropdown-list, .menu-mobile-dropdown-list {
     display: none;
     position: absolute;
     background-color: #FFF;
@@ -86,8 +86,7 @@ header {
     z-index: 1;
 }
 
-.header-menu-dropdown-list a,
-.menu-mobile-dropdown-list a {
+.header-menu-dropdown-list a, .menu-mobile-dropdown-list a {
     color: #081509;
     font-family: "Inter", sans-serif;
     font-size: 18px;
@@ -96,16 +95,15 @@ header {
     text-align: left;
 }
 
-.header-menu-dropdown-list a:hover,
-.menu-mobile-dropdown-list a:hover {
+.header-menu-dropdown-list a:hover, .menu-mobile-dropdown-list a:hover {
     background-color: #8FC5E7;
+    color: #FFF;
     border-radius: 0px;
     padding: 10px;
 }
 
-.dropdown:hover .header-menu-dropdown-list,
-.header-menu-mobile:hover .menu-mobile-dropdown-list {
-    display: block;
+.dropdown:hover .header-menu-dropdown-list, .header-menu-mobile:hover .menu-mobile-dropdown-list {
+    display:block;
 }
 
 #sign-up {
@@ -118,8 +116,22 @@ header {
 #sign-up:hover {
     padding: 2px 7px;
     background-color: #8FC5E7;
+    color: #FFF;
     border-radius: 10px;
-    color: #FFF
+}
+
+#profile-page{
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+#profile-page:hover{
+    padding: 2px 7px;
+    background-color: #8FC5E7;
+    color: #FFF;
+    border-radius: 10px;
 }
 
 .login {
@@ -128,8 +140,71 @@ header {
     font-size: 20px;
     color: #081509;
     border: 1px solid #8FC5E7;
-    border-radius: 1vw;
-    box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #8FC5E7;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 2px 0.5px #8FC5E7;
+}
+
+.logout{
+    padding: 2px 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+    border: 1px solid #8FC5E7;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 2px 0.5px #8FC5E7;
+}
+
+.criarbtn {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+
+.criardown {
+  position: relative;
+  display: inline-block;
+
+}
+
+
+.criardown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+ border-radius: 5px;
+}
+
+
+.criardown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+}
+
+
+#VoluntarioButton:hover {
+    background-color: #8FC5E7;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
+
+#OngButton:hover {
+    background-color: #6A8C4E;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
+
+.criardown:hover .criardown-content {
+  display: block;
 }
 
 .modal {
@@ -250,7 +325,24 @@ header {
     transition: 0.2s;
 }
 
+.form-input-box select {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    border-left: 5px solid #8FC5E7;
+    background: #F6F6F6;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    transition: 0.2s;
+}
+
 .form-input-box input:focus {
+    border-left: 5px solid #687C57;
+    outline: 2px solid #687C57;
+    box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
+}
+
+.form-input-box select:focus {
     border-left: 5px solid #687C57;
     outline: 2px solid #687C57;
     box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
@@ -268,6 +360,12 @@ header {
 }
 
 .form-input-box.invalid input {
+    border-left: 5px solid rgb(233, 23, 23) !important;
+    outline: 2px solid rgb(233, 23, 23) !important;
+    box-shadow: 0 0 0 4px rgba(255, 8, 0, 0.4) !important;
+}
+
+.form-input-box.invalid select {
     border-left: 5px solid rgb(233, 23, 23) !important;
     outline: 2px solid rgb(233, 23, 23) !important;
     box-shadow: 0 0 0 4px rgba(255, 8, 0, 0.4) !important;
@@ -493,7 +591,6 @@ body {
 
 
 footer {
-    margin-top: 20px;
     background-color: #E6EBEE;
 }
 

@@ -362,8 +362,6 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
     .btn-menu-list {
         justify-content: center;
     }
-
-
 }
 
 .perfil {
@@ -381,33 +379,16 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 .btn-interesses {
 
-    height: 2.5vw;
-    width: 14vw;
+    height: 8vw;
+    width: 40vw;
     border-radius: 20vw;
     border: 0.1vw solid #60B4E9;
     box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #60B4E9;
     font-family: Inter;
-    font-size: 1.2vw;
-    align-items: center;
+    font-size: 5vw;
+    margin-bottom: 4vw;
+    margin-top: 2vw;
 
-}
-
-@media (max-width: 777px) {
-
-    .btn-interesses {
-
-        height: 10vw;
-        width: 45vw;
-        border-radius: 20vw;
-        border: 0.1vw solid #60B4E9;
-        box-shadow: 0.01vw 0.01vw 0.1vw 0.01vw #60B4E9;
-        font-size: 4.2vw;
-        justify-content: center;
-        justify-items: center;
-    
-    }
-    
-    
 }
 
 
@@ -503,21 +484,10 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 }
 
 .modal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.30);
     display: none;
 }
 
-
 @media (max-width: 766px) {
-
-
-
     #avaliation {
         width: 90vw;
         height: 50vw;
@@ -561,8 +531,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 }
 
 .conteudo .active {
-    display: grid;
-    
+    display: flex;
 }
 
 .caixa .active {
@@ -580,20 +549,17 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 
 .fundo-conteudo {
-    grid-template-columns: repeat(5, 18vw);
     margin-bottom: 1vw;
     width: 90vw;
     background-color: #e6ebee;
     height: auto;
     border-radius: 1vw;
     box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
-    
-    
+    height: auto;
 }
 
 .anuncio {
 
-    grid-template-columns: repeat(5, 18vw);
     margin-bottom: 1.2vw;
     margin-top: 1.2vw;
     margin-left: 2vw;
@@ -634,7 +600,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 .fundo-anuncio2 {
     width: 14vw;
     background-color: #F5F5F5;
-    height: 2vw;
+    height: 2.32vw;
     border-bottom-left-radius: 1vw;
     border-bottom-right-radius: 1vw;
     display: flex;
@@ -646,18 +612,13 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 .descricao-escrita {
 
+    background-color: #FFF;
     height: 7.2vw !important;
-    margin-left: 0.5vw;
-    margin-top: 0.4vw;
-    margin-right: 0.5vw;
-    display: block;
-    word-wrap: break-word;
-    font-size: 0.7vw;
 }
 
 .trabalho-voluntario-titulo {
 
-    
+    background-color: #fff;
     height: 3.3vw;
     align-items: center;
     justify-content: center;
@@ -694,12 +655,6 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 }
 
-.texto-sobre {
-    
-    word-wrap: break-word;
-
-}
-
 /* RESPONSIVIDADE CAIXAS OPORTUNIDADE GALERIA E SOBRE  */
 
 
@@ -711,52 +666,25 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
     .anuncio {
 
-        margin-bottom: 3vw;
+        margin-bottom: 1.2vw;
         margin-top: 2vw;
-        margin-left: 5vw;
-        width: 80vw;
+        margin-left: 2vw;
+        width: 42vw;
         background-color: #ffffff;
-        height: 80vw;
+        height: 50vw;
         border-radius: 4vw;
         box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
-
     }
 
     
     .fundo-anuncio {
         
-        width: 80vw;
-        background-color: #F5F5F5;
-        height: 25vw;
-        border-top-left-radius: 4vw !important;
-        border-top-right-radius: 4vw !important;
-        box-shadow: 0.0vw 0.7vw 0.0vw 0px #8FC5E7;
-    }
-
-    .fundo-anuncio2 {
-        width: 80vw;
-        background-color: #F5F5F5;
-        height: 14vw;
-        border-bottom-left-radius: 4vw;
-        border-bottom-right-radius: 4vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 31.5vw;
-    
-    }
-
-    .botao-anuncio {
-        background-color: #8FC5E7;
-        color: #fff;
-        height: 9vw;
         width: 42vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15vw;
-        font-size: 7vw;
-    
+        background-color: #F5F5F5;
+        height: 20vw;
+        border-top-left-radius: 50vw !important;
+        border-top-right-radius: 50vw !important;
+        box-shadow: 0.0vw 0.2vw 0.0vw 0px #8FC5E7;
     }
 
     .trabalho-voluntario-titulo {
@@ -769,50 +697,6 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
         
         font-size: 4vw !important;
         line-height: 4vw !important;
-    }
-
-    .conteudo .active {
-        display: grid;
-        grid-template-columns: repeat(1, 80vw);
-
-    }
-
-    #adicionar-anuncio {
-
-        display: flex;
-        align-items: center !important;
-        justify-content: center !important;
-        font-size: 12vw;
-        color: #60B4E9;
-        width: 80vw;
-        height: 20vw;
-    }
-    #adicionar-anuncio span {
-
-        margin-bottom: 2vw;
-
-
-    }
-
-    .fundo-conteudo {
-        margin-bottom: 4vw;
-        margin-top: 2vw;
-        border-radius: 5vw;
-        box-shadow: 0.4vw 0.4vw 0.8vw 0px rgba(0, 0, 0, 0.25);
-        
-        
-    }
-
-    .galeria {
-        display: flex;
-        margin-bottom: 2vw;
-        margin-top: 6vw;
-        margin-left: 5vw;
-        width: 80vw;
-        background-color: #ffffff;
-        height: 70vw;
-        border-radius: 4vw;
-        box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
     }
 }
 
@@ -906,7 +790,7 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 
 .caixa-descricao textarea {
 
-    height: 5vw !important;
+    height: 10vw !important;
     text-align: start !important;
 }
 
@@ -949,227 +833,5 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 }
 
 .modal-active {
-    display: block
-}
-
-/* modal foto */
-
-
-.close-modal {
-    width: 20px;
-    height: 20px;
-    margin-top: 25px;
-    margin-right: 35px;
-    cursor: pointer;
-}
-
-#profile-pic-modal-body {
-    width: 1143px;
-    height: 700px;
-    margin-bottom: 2vw;
-    border-radius: 25px;
-    background-color: #FFF;
-    border: 1px solid #F1F1F4;
-}
-
-#profile-img {
-    width: 450px;
-    height: 442px;
-    border-radius: 50%;
-    border: 10px solid #687C57;
-}
-
-#add-img-btn,
-#delete-img-btn {
-    display: flex;
-    width: 331px;
-    height: 67px;
-    border-radius: 15px;
-    border: 1px solid #687C57;
-    background-color: #FFF;
-    box-shadow: 0.5px 0.5px 2px 0.5px #687C57;
-    margin-top: 70px;
-    margin-left: 50px;
-    cursor: pointer;
-}
-
-#input-file {
-    display: none;
-}
-
-#add-img-text,
-#delete-img-text,
-#share-achievement-text {
-    color: #081509;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-}
-
-#camera-icon,
-#trashcan-icon,
-#share-icon {
-    width: 50px;
-    height: 50px;
-}
-
-.test-img-modal {
-    width: 450px;
-    height: 442px;
-    border-radius: 50%;
-    border: 10px solid #687C57;
-}
-
-
-/* MODAL EDITAR PERFIL */
-
-
-#personal-info-modal-body {
-    max-width: 30vw;
-    width: 90vw;
-    height: 50vw;
-    padding-bottom: 1vw;
-    border-radius: 2vw;
-    background-color: #FFF;
-    border: 1px solid #F1F1F4;
-    padding-right: 2vw;
-    padding-left: 2vw;
-}
-
-#personal-info-modal-title,
-#interests-modal-title {
-    color: #081509;
-    font-family: "Inter", sans-serif;
-    font-size: 26px;
-    font-weight: 600;
-    margin-top: 0.5vw;
-    
-}
-
-
-.form-input-box input {
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    border-radius: 5px;
-    border-left: 5px solid #8FC5E7;
-    background: #F6F6F6;
-    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
-    width: 100%;
-    transition: 0.2s;
-}
-
-.form-input-box input:focus {
-    border-left: 5px solid #687C57;
-    outline: 2px solid #687C57;
-    box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
-}
-
-.form-input-box label {
-    color: #081509;
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-}
-
-.form-input-box a {
-    font-family: "Inter", sans-serif;
-    visibility: hidden;
-}
-
-/* INTERESSES */
-
-#interests-modal-box {
-    width: 35vw;
-    height: 7vw;
-    border-radius: 0.3vw;
-    margin-top: 2vw;
-    background-color: #F9F9F9;
-    box-shadow: 0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.25) inset;
-    overflow: auto;
-}
-
-#interests-boxes ul {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.2vw;
-
-}
-
-#interests-boxes li {
-    height: 2.5vw;
-    width: 14vw;
-    align-items: center;
-    border-radius: 25px;
-    border: 1px solid #60B4E9;
-    background-color: #F9F9F9;
-    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-}
-
-#interests-boxes li span {
-    color: #081509;
-    font-family: "Inter", sans-serif;
-    font-size: 24px;
-}
-
-#interests-boxes button {
-    display: none;
-    text-align: center;
-    justify-content: center;
-    color: #081509;
-    font-family: "Inter", sans-serif;
-    font-size: 36px;
-}
-
-#interests-boxes li:hover button {
-    display: block;
-}
-
-#interests-boxes li:hover span {
-    display: none;
-    cursor: pointer;
-}
-
-#interest-input-box {
-    width: 100%;
-}
-
-#interest-input-box input {
-    height: 2.5vw;
-    width: 14vw;
-    border-radius: 2vw;
-    border: 1px solid #60B4E9;
-    background-color: #F9F9F9;
-    box-shadow: 0.5px 0.5px 2px 0.5px #60B4E9;
-    cursor: pointer;
-    color: #081509;
-    font-family: "Inter", sans-serif;
-    font-size: 24px;
-    text-align: center;
-    margin-top: 1vw;
-}
-
-#interests-boxes input:focus {
-    outline: 1px solid #60B4E9;
-}
-
-#interests-boxes input:active,
-#interests-boxes li:active {
-    transform: scale(0.98);
-}
-
-
-/* editar galeria */
-
-.fundo-editar-galeria {
-    margin-left: 2vw;
-    width: 70vw;
-    background-color: #e6ebee;
-    height: auto;
-    border-radius: 1vw;
-    box-shadow: 0.1vw 0.1vw 0.3vw 0px rgba(0, 0, 0, 0.25);
-    
-    
+    display: block !important
 }

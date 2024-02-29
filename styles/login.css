@@ -107,26 +107,26 @@ input:focus {
 }
  
 footer {
-  background-color: #E0E8D9;
+  background-color: #E6EBEE;
 }
- 
+
 #footer-menu-list li {
   color: #5f7051;
   font-family: "Inter", sans-serif;
   font-size: 20px;
   transition: 0.2s;
 }
- 
+
 #footer-menu-list li:hover {
   color: #3F4D33;
 }
- 
+
 #contact-title {
   color: #3F4C33;
   font-family: "Hanuman", serif;
   font-size: 26px;
 }
- 
+
 #contact-info {
   color: #4F5F42;
   font-family: "Inter", sans-serif;
@@ -142,6 +142,6 @@ footer {
   bottom: 0;
   width: 100%;
   height: 2.5rem; 
-  background-color: #E0E8D9;
+  background-color: #E6EBEE;
   margin-top: 10px;
 }

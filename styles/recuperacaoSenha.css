@@ -99,14 +99,14 @@ body{
 }
 
 footer {
-    /* margin-top: 20px; */
-    background-color: #E0E8D9;
+    background-color: #E6EBEE;
 }
 
 #footer-menu-list li {
     color: #5f7051;
     font-family: "Inter", sans-serif;
     font-size: 20px;
+    transition: 0.2s;
 }
 
 #footer-menu-list li:hover {
@@ -116,7 +116,7 @@ footer {
 #contact-title {
     color: #3F4C33;
     font-family: "Hanuman", serif;
-    font-size: 32px;
+    font-size: 26px;
 }
 
 #contact-info {
@@ -124,6 +124,7 @@ footer {
     font-family: "Inter", sans-serif;
     font-size: 20px;
 }
+
 /*RESPONSIVIDADE CARD DE EMAIL*/
 @media(max-width: 730px){
     #email-send-box{
