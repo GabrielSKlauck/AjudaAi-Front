@@ -71,6 +71,16 @@ $(() => {
     success: function (data) {
       document.getElementById('ngo-name').innerHTML = data.ngoName;
       document.getElementById('ngo-description').innerHTML = data.description;
+      //Verifica se a imagem do banco esta vazia, se sim coloca a imagem padrao
+      if(data.profileImage.trim() === ''){
+        document.getElementById('img-profile-load').src = './assets/images/person1.png';
+        document.getElementById('profile-img').src =  'assets/images/personimg.png';
+      }else{
+        document.getElementById('img-profile-load').src = data.profileImage;
+        document.getElementById('profile-img').src = data.profileImage;
+      }
+      
+
       loadLocation(data.cityId, data.cityStateId);
       loadCause(data.causesId);
       loadAds(data);
