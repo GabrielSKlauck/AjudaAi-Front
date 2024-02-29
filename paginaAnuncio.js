@@ -53,7 +53,7 @@ window.onload = function() {
 
 function carregaPagina(){   
         const pagina = `
-        <div id="div-pag" class="h-auto w-[43rem] mt-10 relative block">
+        <div id="div-pag" class="h-auto w-[43rem] mt-10 mb-20 relative block">
         <div id="div-topo" class="w-full">
           <div id="div-header" class="ml-5">
             <p class="text-2xl mb-2">${title}</p>

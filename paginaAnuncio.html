@@ -53,7 +53,7 @@
             <a class="dropbtn flex">Voluntariado
               <svg class="mt-2 ml-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 23 14"
                 fill="none">
-                <path d="M2 2.12964L11.3094 12.1904L20.6187 2.12964" stroke="#687C57" stroke-opacity="0.8"
+                <path d="M2 2.12964L11.3094 12.1904L20.6187 2.12964" stroke="#60B4E9" stroke-opacity="0.8"
                   stroke-width="3.375" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </a>
@@ -101,10 +101,10 @@
                 <a href="Sou.html">Criar Conta</a>
               </li>
               <li id="btn-login-small">
-                <a href="login.html" >Entrar</a>
+                <a href="login.html">Entrar</a>
               </li>
               <li id="profile-page-small" class="hidden">
-                <a href="" id="link-small">Perfil</a>
+                <a href="" id="small-profile-page">Perfil</a>
               </li>
               <li class="hidden" id="btn-logout-small">
                 <a href="homepage.html" onclick="logout()">Sair</a>
@@ -113,9 +113,14 @@
           </div>
         </div>
         <div class="flex header-menu-login space-x-2 hidden lg:flex">
-          <a href="Sou.html" id="sign-up" >Criar Conta</a>
+            <div class="criardown">
+              <button class="criarbtn" id="sign-up">Criar Conta</button></a>
+              <div class="criardown-content">
+                <a id="VoluntarioButton" href="loginCadastro.html">Voluntario</img></a>
+                <a id="OngButton" href="cadastroong.html">ONG</img></a>
+              </div>
           <a href="" id="profile-page" class="hidden">Meu perfil</a>
-          <a href="login.html" id="btn-login" class="login" >Entrar</a>
+          <a href="login.html" id="btn-login" class="login">Entrar</a>
           <a href="homepage.html" id="btn-logout" class="logout hidden" onclick="logout()">Sair</a>
         </div>
       </div>
