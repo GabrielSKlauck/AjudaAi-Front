@@ -85,6 +85,7 @@ $(() => {
       loadCause(data.causesId);
       loadAds(data);
       loadDefaultInfo(data);
+      loadOngPictures();
       cityName(data.cityId);
       stateName(data.cityStateId);
     },
@@ -104,6 +105,44 @@ $(() => {
 
 })
 
+function loadOngPictures(){
+  console.log(id);
+  $.ajax({
+    type: "GET",
+    url: `https://localhost:7070/NgoImages/${id}`,
+    success: function(data){
+      if(data != null){
+        data.forEach(linha => {
+      
+          const pics = 
+          `<img id="${'picture' + linha.id}" src="${linha.image}" alt="" class="pictures-ongs mt-7 pl-3 cursor-pointer" onclick="removePicture(${linha.id})" >`;
+          $(`#pictures-list`).append($(pics));
+        });
+      }       
+    },
+    contentType: "application/json",
+    dataType: "json",
+  });
+}
+
+function removePicture(id){
+  
+  $.ajax({
+    type: "DELETE",
+    url: `https://localhost:7070/NgoImages/${id}`,
+    success: function()  {
+      let tag = document.getElementById('pictures-list');
+      let pictureRemoveTag = document.getElementById('picture'+id);
+      tag.removeChild(pictureRemoveTag);
+    },
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+});
+
+  
+}
+ 
 function loadStates(item){
   item.forEach(linha => {    
       const stateOption = `
@@ -369,9 +408,47 @@ inputFile.onchange = function() {
           sendImageProfileDatabase(base64);
         }     
     };
-    reader.readAsDataURL(file);
-    
+    reader.readAsDataURL(file);    
 }
+
+
+let inputFilePic = document.getElementById("input-file-pic");
+
+inputFilePic.onchange = function() {
+    //profileImg.src = URL.createObjectURL(inputFilePic.files[0]);
+    let imgSize = inputFilePic.files[0].size;
+    console.log(imgSize);
+    const file = inputFilePic.files[0]; 
+    const reader = new FileReader();    
+    reader.onload = function(event) {
+        const base64 = event.target.result;  
+        
+        if(imgSize > 125000){
+          alert("Tamanho de imagem ultrapassa limite");
+          return;
+        }else{
+          sendPictureDatabase(base64);
+          document.getElementById('modal-galeria').remove('modal-active');
+        }     
+    };
+    reader.readAsDataURL(file);    
+}
+
+function sendPictureDatabase(base64){
+  const data = { 
+    image: base64,
+    ngoId: id
+  }
+  $.ajax({
+    type: "POST",
+    url: `https://localhost:7070/NgoImages`,
+    data: JSON.stringify(data),
+    dataType: "json",
+    contentType: "application/json",
+  }); 
+}
+
+
 
 function sendImageProfileDatabase(base64){
   const data = {

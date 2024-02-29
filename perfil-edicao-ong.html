@@ -222,17 +222,16 @@
           <span class="open-modal">+</span>
         </h2>
       </div>
-      <div class="fundo-conteudo grid min-[777px]:grid-cols-4 max-[777px]:grid-cols-1">
-        <h2 class="galeria">
+      <div class="fundo-conteudo grid min-[777px]:grid-cols-3 max-[777px]:grid-cols-1" id="pictures-list">
+        <!-- <img src="assets/images/foto-perfil.jpg" alt="" class="pictures-ongs mt-7 pl-3">         -->
 
-        </h2>
-
-        <span
+        
+      </div>
+      <span
           class="flex absolute min-[777px]:ml-[87.7vw] min-[777px]:mt-[0.5vw] max-[777px]:ml-[83.5vw] max-[777px]:mt-[1.4vw]">
           <img src="./assets/images/lápis icon.png" alt=""
             class="open-modal cursor-pointer min-[777px]:h-[2vw] max-[777px]:h-[4.6vw]">
         </span>
-      </div>
       <div class="fundo-conteudo grid-cols-1">
 
         <h2 class="sobre-nos">
@@ -244,6 +243,7 @@
       </div>
     </div>
   </div>
+  <!-- foto perfil imagem perfil -->
   <div class="modal" id="modal-foto">
     <div class="w-screen h-screen flex items-center justify-center">
       <div id="profile-pic-modal-body">
@@ -357,39 +357,23 @@
       </div>
     </div>
   </div>
+  <!-- Escolha de fotos -->
   <div class="modal" id="modal-galeria">
     <div class="w-screen h-screen flex items-center justify-center">
-      <div id="profile-pic-modal-body">
+      <div id="profile-pictures-modal-body">
         <div class="flex justify-end">
-          <img class="close-modal" src="assets/images/x-icon.png" />
+          <img class="close-modal" src="assets/images/x-icon.png">
         </div>
-        <div class="fundo-editar-galeria grid min-[777px]:grid-cols-3 max-[777px]:grid-cols-1">
-        <h2 class="galeria">
-        </h2>
-        <h2 class="galeria">
-        </h2>
-        <h2 class="galeria">
-        </h2>
-        <h2 class="galeria">
-        </h2>
-        <h2 class="galeria">
-        </h2>
-        <h2 class="galeria">
-        </h2>
-      </div>
+        
         <div class="flex justify-between">
           <button>
-            <label for="input-file" id="add-img-btn" class="btn items-center justify-center space-x-4">
-              <img id="camera-icon" src="assets/images/camera-icon.png" />
-              <span id="add-img-text">Adicionar foto</span>
+            <label for="input-file-pic" id="add-img-btn" class="btn items-center justify-center space-x-4">
+              <img id="camera-icon" src="assets/images/camera-icon.png">
+              <span id="add-img-text" >Adicionar foto</span>
             </label>
-            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" />
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file-pic">
           </button>
-          <button id="delete-img-btn" onclick="setDefaultPic()"
-            class="btn items-center justify-center space-x-4 mr-[50px]">
-            <img id="trashcan-icon" src="assets/images/trashbin-icon.png" />
-            <span id="delete-img-text">Excluir</span>
-          </button>
+          
         </div>
       </div>
     </div>
