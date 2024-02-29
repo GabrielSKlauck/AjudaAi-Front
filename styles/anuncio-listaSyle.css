@@ -239,7 +239,7 @@ option{
     font-size: 16px;
     color: #081509;
     word-wrap: break-word;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 footer {

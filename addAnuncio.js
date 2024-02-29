@@ -102,7 +102,7 @@ function mostraAdsEspec(item){
           <div id="div-header" class="ml-5">
             <h1 class="text-xl mt-4 mb-4">${linha.title}</h1>
             <div class="flex flex-col"
-              <span>Ong: ${linha.nameOng}</span>
+              <span>Ong: ${linha.ngoName}</span>
               <span id="expiration-date" class="text-xs mt-2 mb-4"><em>Expira em: ${refactorDate(linha.expires)}</em></span>
             </div>
           </div>
@@ -136,7 +136,7 @@ function mostraAds(item){
           <div id="div-header" class="ml-5">
             <h1 class="text-xl mt-4 mb-4">${linha.title}</h1>
             <div class="flex flex-col"
-              <span>Ong: ${linha.nameOng}</span>
+              <span>Ong: ${linha.ngoName}</span>
               <span id="expiration-date" class="text-xs mt-2 mb-4"><em>Expira em: ${refactorDate(linha.expires)}</em></span>
             </div>
           </div>

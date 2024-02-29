@@ -150,6 +150,61 @@ header {
     box-shadow: 0.5px 0.5px 2px 0.5px #8FC5E7;
 }
 
+.criarbtn {
+    padding: 2px 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #081509;
+}
+
+
+.criardown {
+  position: relative;
+  display: inline-block;
+
+}
+
+
+.criardown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+ border-radius: 5px;
+}
+
+
+.criardown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+}
+
+
+#VoluntarioButton:hover {
+    background-color: #8FC5E7;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
+
+#OngButton:hover {
+    background-color: #6A8C4E;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
+
+
+
+.criardown:hover .criardown-content {
+  display: block;
+}
+
 #lettering1 {
     font-family: "KaiseiDecol", serif;
     color: #2F2E41;
@@ -439,7 +494,7 @@ header {
 }
 
 footer {
-    background-color: #E0E8D9;
+    background-color: #E6EBEE;
 }
 
 #footer-menu-list li {

@@ -63,7 +63,7 @@ function carregaPagina(){
         </div>
         <hr id="barra" class="w-full h-3">
 
-        <div class="w-full mb-10">
+        <div class="overflow-auto w-full mb-10">
           <p class="mx-5">
             ${desc}
           </p>
