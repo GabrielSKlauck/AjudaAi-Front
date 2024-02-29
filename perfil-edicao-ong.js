@@ -115,7 +115,7 @@ function loadOngPictures(){
         data.forEach(linha => {
       
           const pics = 
-          `<img id="${'picture' + linha.id}" src="${linha.image}" alt="" class="pictures-ongs mt-7 pl-3" onclick="removePicture()">`;
+          `<img id="${'picture' + linha.id}" src="${linha.image}" alt="" class="pictures-ongs mt-7 pl-3 cursor-pointer" onclick="removePicture(${linha.id})" >`;
           $(`#pictures-list`).append($(pics));
         });
       }       
@@ -125,6 +125,24 @@ function loadOngPictures(){
   });
 }
 
+function removePicture(id){
+  
+  $.ajax({
+    type: "DELETE",
+    url: `https://localhost:7070/NgoImages/${id}`,
+    success: function()  {
+      let tag = document.getElementById('pictures-list');
+      let pictureRemoveTag = document.getElementById('picture'+id);
+      tag.removeChild(pictureRemoveTag);
+    },
+    header: {},
+    contentType: "application/json",
+    datatype: "json",
+});
+
+  
+}
+ 
 function loadStates(item){
   item.forEach(linha => {    
       const stateOption = `

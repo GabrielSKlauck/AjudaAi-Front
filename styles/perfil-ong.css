@@ -915,6 +915,15 @@ ICONES É FEITA NO HTML PELO USANDO TAILWIND */
 }
 
 #profile-pic-modal-body {
+    width: 864px;
+    height: 682px;
+    margin-bottom: 2vw;
+    border-radius: 25px;
+    background-color: #FFF;
+    border: 1px solid #F1F1F4;
+}
+
+#profile-pictures-modal-body{
     width: 437px;
     height: 256px;
     margin-bottom: 2vw;
