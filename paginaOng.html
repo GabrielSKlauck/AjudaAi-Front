@@ -131,17 +131,17 @@
     <div class="perfil">
       <div class="min-[777px]:mb-[2vw] ">
         <img src="./assets/images/person1.png" alt="person1"
-          class="cursor-pointer min-[777px]:mt-[2vw] min-[777px]:w-[16vw] min-[777px]:h-[14vw] min-[777px]:ml-[1.5vw] max-[777px]:h-[60vw] max-[777px]:w-[60vw] max-[777px]:mt-[4vw]">
+          class=" min-[777px]:mt-[2vw] min-[777px]:w-[16vw] min-[777px]:h-[14vw] min-[777px]:ml-[1.5vw] max-[777px]:h-[60vw] max-[777px]:w-[60vw] max-[777px]:mt-[4vw]">
       </div>
       <div class="min-[777px]:ml-[2.5vw]">
         <div
-          class="flex justify-between min-[777px]:text-[1.5vw] max-[777px]:text-[5.8vw] font-semibold font-['Inter'] min-[777px]:mt-[1.8vw] ">
+          class="flex justify-between min-[777px]:text-[1.5vw] max-[777px]:text-[5.8vw] font-semibold font-['Inter'] min-[777px]:mt-[1.8vw] max-[776px]:ml-[2vw] max-[776px]:mr-[2vw]">
           <div class="" id="ngo-name">
             Nome da Ong
           </div>
 
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center max-[776px]:ml-[2vw]">
           <div class="flex estrelas1">
             <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
             <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="1" alt="">
@@ -162,23 +162,22 @@
             <img src="./assets/images/bordaestrela.png" class="estrela" alt="">
             <img src="./assets/images/estrelaazul.png" class="estrela estrelaa" data-number="5" alt="">
           </div>
-          <div class="text-blue-300 min-[777px]:text-[1.1vw] max-[777px]:text-[5.5vw]">(15)</div>
+          <div class="text-blue-300 min-[777px]:text-[1.1vw] max-[777px]:text-[5.5vw]">(0)</div>
         </div>
-        <div class="mt-[0.5vw] flex">
-          <img src="./assets/images/localizacaoicon.png" alt="" class="min-[777px]:h-[1.7vw] max-[777px]:h-[6.5vw]">
-          <div class="flex justify-center align-middle items-center min-[777px]:text-[1vw] font-['Inter'] pl-[0.2vw]"
-            id="ngo-location">
+        <div class="mt-[0.5vw] flex max-[776px]:ml-[2vw]">
+          <img src="./assets/images/localizacaoicon.png" alt="" class="min-[777px]:h-[1.7vw] max-[777px]:h-[8vw]">
+          <div class="flex justify-center align-middle items-center min-[777px]:text-[1vw] max-[776px]:text-[5vw] font-['Inter'] pl-[0.2vw]" id="ngo-location">
 
           </div>
         </div>
-        <div class="min-[777px]:mr-[2vw] min-[777px]:mt-[0.5vw] text-[1vw] ">
+        <div class="min-[777px]:mr-[2vw] min-[777px]:mt-[0.5vw] text-[1vw] max-[776px]:text-[5vw] max-[776px]:ml-[3vw] max-[776px]:mr-[2vw]">
           Descrição breve sobre a ong lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore
           ipsum lore
           lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum.
         </div>
-        <div class="min-[777px]:mt-[0.5vw]">
-          <ul class="flex min-[777px]:gap-[1.2vw] min-[777px]:mr-[5vw] min-[777px]:mt-[2vw]">
-            <li class="btn-interesses flex justify-center" id="ngo-causes"></li>
+        <div class="min-[777px]:mt-[0.5vw] max-[776px]:ml-[4vw] max-[776px]:mr-[4vw] max-[776px]:items-center">
+          <ul class="min-[776px]:grid min-[776px]:grid-cols-4 min-[777px]:gap-[1.2vw] min-[777px]:mr-[5vw] min-[777px]:mt-[2vw] " >
+            <li class="btn-interesses flex justify-center max-[776px]:mb-[5vw]" id="ngo-causes"></li>
             <!-- <li class="btn-interesses flex justify-center">Meio Ambiente</li>
             <li class="btn-interesses flex justify-center">Meio Ambiente</li>  -->
           </ul>
@@ -215,88 +214,23 @@
           </span>
         </h2> -->
       </div>
-      <div class="fundo-conteudo grid grid-cols-3">
+      <div class="fundo-conteudo grid min-[777px]:grid-cols-4 max-[777px]:grid-cols-1">
         <h2 class="galeria">
         </h2>
       </div>
       <div class="fundo-conteudo">
         <h2 class="sobre-nos">
-          <span class="texto-sobre" id="ngo-description">
+          <span class="texto-sobre max-[777px]:ml-[4vw]" id="ngo-description">
           </span>
         </h2>
       </div>
     </div>
   </div>
-  <div class="modal" id="modal-anunciar">
-    <div class="w-screen h-screen flex items-center justify-center">
-      <div id="criador-oportunidades">
-        <div class="flex justify-between">
-          <h1 id="titulo-criador-oportunidades">Criando oportunidade</h1>
-          <button class="close-modal">&times;</button>
-        </div>
-        <div class="mt-10">
-          <span id="subtitulo-criador-oportunidades">Todos os campos são obrigatórios</span>
-        </div>
-        <div>
-          <form id="info-criador-oportunidades" class="flex flex-col justify-center h-auto pl-[50px] pr-[70px]">
-            <div class="caixa-entrada mt-4">
-              <label for="titulo">Título do anúncio </label>
-              <input type="text" id="titulo" class="pl-2 py-1.5 mt-2" />
-              <a>Error message</a>
-            </div>
-            <div class="caixa-entrada mt-1">
-              <label for="data-expiracao">Data de expiração</label>
-              <input type="date" id="data-expiracao" class="px-2 py-1.5 mt-2" />
-              <a>Error message</a>
-            </div>
-            <div class="caixa-entrada mt-6 caixa-descricao">
-              <label for="descricao">Descrição</label>
-              <textarea id="descricao" cols="30" rows="10" class="pl-2 py-1.5 mt-2"></textarea>
-              <a>Error message</a>
-            </div>
-            <div class="mt-8 mb-6 mx-28">
-              <button type="submit" class="btn" id="btn-create-ads">Salvar</button>
-            </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal" id="modal-avaliar">
-    <div class="w-screen h-screen flex items-center justify-center">
-      <div id="avaliation" class="justify-center">
-        <div class="min-[777px]:text-[3vw] max-[777px]:text-[7vw] mt-[4vw] font-semibold justify-center flex">
-          Avalie o voluntário
-        </div>
-        <div class="flex justify-center ">
-          <div class="flex estrela-avaliacao1">
-            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="1"
-              alt="">
-          </div>
-          <div class="flex estrela-avaliacao2">
-            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="2"
-              alt="">
-          </div>
-          <div class="flex estrela-avaliacao3">
-            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="3"
-              alt="">
-          </div>
-          <div class="flex estrela-avaliacao4">
-            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="4"
-              alt="">
-          </div>
-          <div class="flex estrela-avaliacao5">
-            <img src="./assets/images/bordaestrela.svg" class="estrela-avaliacao" alt="">
-            <img src="./assets/images/estrelaazul.svg" class="estrela-avaliacao estrelaa-avaliacao" data-number="5"
-              alt="">
-          </div>
-        </div>
-        <div class="flex justify-center mt-[3vw]">
-          <button type="button" class="btn">Enviar Avaliação</button>
         </div>
       </div>
     </div>
