@@ -115,7 +115,7 @@ function loadOngPictures(){
         data.forEach(linha => {
       
           const pics = 
-          `<img src="${linha.image}" alt="" class="pictures-ongs mt-7 pl-3">`;
+          `<img id="${'picture' + linha.id}" src="${linha.image}" alt="" class="pictures-ongs mt-7 pl-3" onclick="removePicture()">`;
           $(`#pictures-list`).append($(pics));
         });
       }       
