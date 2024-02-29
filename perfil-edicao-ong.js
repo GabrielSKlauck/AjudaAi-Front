@@ -352,7 +352,6 @@ function loadCause(causeId) {
 }
 
 function updateProfile(){
-  event.preventDefault();
   const valores = {
     id: id,
     ngoName: "",
