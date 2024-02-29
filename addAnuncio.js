@@ -95,14 +95,14 @@ function mostraAdsEspec(item){
     var tag = document.getElementById("aviso-sem-anuncios");
     tag.style.display = 'none';
     item.forEach(linha => {
-        
+      
       const cardAds = `
       <div id = "${linha.id}" class="cards card border-2 flex flex-col h-96" onclick="abrirPagina(${linha.id})">
         <div id="div-topo" class="w-full">
           <div id="div-header" class="ml-5">
             <h1 class="text-xl mt-4 mb-4">${linha.title}</h1>
             <div class="flex flex-col"
-              <span>Ong: ${linha.ngoName}</span>
+              <span>Ong: ${linha.title}</span>
               <span id="expiration-date" class="text-xs mt-2 mb-4"><em>Expira em: ${refactorDate(linha.expires)}</em></span>
             </div>
           </div>
@@ -130,15 +130,13 @@ function mostraAds(item){
     limpo.innerText = "";
     var tag = document.getElementById("aviso-sem-anuncios");
     tag.style.display = 'none';
-    item.forEach(linha => {
-        
+    item.forEach(linha => {  
       const cardAds = `
       <div id = "${linha.id}" class="cards card border-2 flex flex-col h-96" onclick="abrirPagina(${linha.id})">
         <div id="div-topo" class="w-full">
           <div id="div-header" class="ml-5">
             <h1 class="text-xl mt-4 mb-4">${linha.title}</h1>
             <div class="flex flex-col"
-              <span>Ong: ${linha.ngoName}</span>
               <span id="expiration-date" class="text-xs mt-2 mb-4"><em>Expira em: ${refactorDate(linha.expires)}</em></span>
             </div>
           </div>
@@ -172,8 +170,6 @@ function loadCauses(item){
     $(`#causes-menu`).append($(op));
 });
 }
-
-
 
 function abrirPagina(id){
   window.location.href = `paginaAnuncio.html?id=${id}`;
