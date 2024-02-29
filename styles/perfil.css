@@ -250,7 +250,24 @@ header {
     transition: 0.2s;
 }
 
+.form-input-box select {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    border-left: 5px solid #8FC5E7;
+    background: #F6F6F6;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    transition: 0.2s;
+}
+
 .form-input-box input:focus {
+    border-left: 5px solid #687C57;
+    outline: 2px solid #687C57;
+    box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
+}
+
+.form-input-box select:focus {
     border-left: 5px solid #687C57;
     outline: 2px solid #687C57;
     box-shadow: 0 0 0 4px rgba(104, 124, 87, 0.4);
@@ -268,6 +285,12 @@ header {
 }
 
 .form-input-box.invalid input {
+    border-left: 5px solid rgb(233, 23, 23) !important;
+    outline: 2px solid rgb(233, 23, 23) !important;
+    box-shadow: 0 0 0 4px rgba(255, 8, 0, 0.4) !important;
+}
+
+.form-input-box.invalid select {
     border-left: 5px solid rgb(233, 23, 23) !important;
     outline: 2px solid rgb(233, 23, 23) !important;
     box-shadow: 0 0 0 4px rgba(255, 8, 0, 0.4) !important;
