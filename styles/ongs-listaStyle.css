@@ -237,6 +237,7 @@ body {
 
 .cards-ong{
     background-color: #D9D9D9;
+    cursor: pointer;
 }
 
 .card-cause{

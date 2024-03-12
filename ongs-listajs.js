@@ -44,37 +44,22 @@ function logout(){
 }
 
 function mostraOng(item) {
-    var cont = 1;
-    console.log(item);
+    item.forEach(linha => {
+            const cardOng = `
+            <div id="${linha.id}" class="cards-ong md:mt-10 mt:ml-6 w-[20rem] h-20 rounded-3xl ml-10 mb-3" onclick="abrirPagina(${linha.id})">
+            <h1 class="text-center mt-2">${linha.ngoName}</h1> <!-- Jomhura-->
+            <div class="w-full flex justify-center mt-2 div-card-cause">
+              <h1 class="text-center card-cause">${getCauseName(linha.causesId)}</h1>
+            </div>
+            </div>
+        `;
+        $(`#container-ongs`).append($(cardOng));
+        
+    });
+}
 
-    // item.forEach(linha => {
-    //     if (cont % 2 == 0) {
-    //         const cardOng = `
-    //         <div id="${linha.id}" class="caixa-esq md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl" onclick="abrirPagina(${linha.id})">
-    //             <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-esq relative h-64 float-left">
-    //             <h1 class="text-center">${linha.ngoName}</h1> <!-- Jomhura-->
-    //             <p class="text-justify ml-3 mr-3 text-base">
-    //             ${linha.description}
-    //             </p>
-    //         </div>
-    //     `;
-    //     $(`#container-ongs`).append($(cardOng));
-    //         cont++;
-    //     }else{
-    //         const cardOng = `
-    //         <div id="${linha.id}" class="caixa-dir md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl" onclick="abrirPagina(${linha.id})">
-    //         <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-dir relative h-64 float-right">
-    //         <h1 class="text-center">${linha.ngoName}</h1> <!-- Jomhura-->
-    //         <p class="text-justify ml-3 mr-3 text-base">
-    //         ${linha.description}
-    //         </p>
-    //         </div>
-    //     `;
-    //     $(`#container-ongs`).append($(cardOng));
-    //     cont++;
-    //     }
+function getCauseName(id){
 
-    // });
 }
 
 function abrirPagina(id){
