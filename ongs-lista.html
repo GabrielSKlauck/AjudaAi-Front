@@ -130,34 +130,36 @@
   </header>
 
 
-  <div class="flex justify-center w-full">
-    <div id="container" class="mt-10 mb-24">
+  <div class="flex justify-center w-full h-auto">
+    <div id="container" class="mt-10 mb-24 h-auto">
       <p class="text-4xl w-[32rem] h-[3rem] mt-3 ml-6">ONG participantes do projeto</p>
-      <div class="inline-block w-full h-[5rem]">
+      <div class="inline-block w-full h-[5rem] mt-5">
           <input type="text" name="ong-name" id="ong-name-search" placeholder="Digite um nome" class="w-[16rem] h-[2rem] ml-6">
           <label class="ml-10" for="state-localization">Localização</label>
           <select name="" id="state-localization" class="w-[8rem]"></select>
           <label class="ml-10" for="ngo-cause">Causas</label>
           <select name="" id="ngo-cause" class="w-[8rem]"></select>
       </div>
-      <div class=" grid grid-cols-1 mx-4 sm:mx-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3">
-        <!-- <div id="modelo-esq" class="caixa-esq md:mt-10 mt:ml-6 w-2/4 h-64 rounded-3xl">
-        <img src="assets/images/ong-exemplo.jpg" alt="" class="img-anuncio-esq relative h-64 float-left">
-        <h1 class="text-center">ONG BRASIL</h1>
-        <p class="text-justify ml-3 mr-3 text-base">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Natus doloribus molestias aperiam quasi beatae dolorum
-          fugit, nisi est autem tempore consequuntur ullam numquam
-          id adipisci quia aut velit quisquam qui?
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Natus doloribus molestias aperiam quasi beatae dolorum
-          fugit, nisi est autem tempore consequuntur ullam numquam
-          id adipisci quia aut velit quisquam qui?
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Natus doloribus molestias aperiam quasi beatae dolorum
-          fugit, nisi est autem tempore consequuntur ullam numquam
-          id adipisci quia aut velit quisquam qui?
-        </p>-->
+      <hr class=" w-full">
+      <div id="container-ongs" class=" grid grid-cols-1 mx-4 sm:mx-0 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 h-auto">
+        <div id="${linha.id}" class="cards-ong md:mt-10 mt:ml-6 w-[20rem] h-20 rounded-3xl ml-10" >
+            <h1 class="text-center">Nome ong teste</h1> <!-- Jomhura-->
+            <div class="w-full flex justify-center mt-2 div-card-cause">
+              <h1 class="text-center card-cause">Causa</h1>
+            </div>
+        </div>
+        <div id="${linha.id}" class="cards-ong md:mt-10 mt:ml-6 w-[20rem] h-20 rounded-3xl ml-10" >
+          <h1 class="text-center">Nome ong teste</h1> <!-- Jomhura-->
+          <div class="w-full flex justify-center mt-2 div-card-cause">
+            <h1 class="text-center card-cause">Causa</h1>
+          </div>
+        </div>
+        <div id="${linha.id}" class="cards-ong md:mt-10 mt:ml-6 w-[20rem] h-20 rounded-3xl ml-10" >
+          <h1 class="text-center">Nome ong teste</h1> <!-- Jomhura-->
+          <div class="w-full flex justify-center mt-2 div-card-cause">
+            <h1 class="text-center card-cause">Causa</h1>
+          </div>
+        </div>
       </div>
       
     </div>

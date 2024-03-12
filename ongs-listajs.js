@@ -58,7 +58,7 @@ function mostraOng(item) {
     //             </p>
     //         </div>
     //     `;
-    //     $(`#container`).append($(cardOng));
+    //     $(`#container-ongs`).append($(cardOng));
     //         cont++;
     //     }else{
     //         const cardOng = `
@@ -70,7 +70,7 @@ function mostraOng(item) {
     //         </p>
     //         </div>
     //     `;
-    //     $(`#container`).append($(cardOng));
+    //     $(`#container-ongs`).append($(cardOng));
     //     cont++;
     //     }
 
