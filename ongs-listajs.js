@@ -9,6 +9,22 @@ window.onload = function() {
         datatype: "json",
     });
     
+    $.ajax({
+        type: "GET",
+        url: "https://localhost:7070/Causes",
+        success: function(data){
+            data.forEach(linha => {
+                const estados = `
+                    <option value="${linha.id}">${linha.name}</option>
+                `;
+                $(`#ngo-cause`).append($(estados));
+            });
+        },
+        header: {},
+        contentType: "application/json",
+        datatype: "json",
+    });
+
     try{   
         const user = JSON.parse(localStorage.getItem("user"));
         const id = user.id;
