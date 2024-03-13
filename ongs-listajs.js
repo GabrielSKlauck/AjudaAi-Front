@@ -40,15 +40,17 @@ window.onload = function() {
 };
 
 function filtrarNome(){
-    $(`#container-ongs`).innerHtml = "";
-    // $.ajax({
-    //     type: "GET",
-    //     url: "https://localhost:7070/NGO",
-    //     success: mostraOng,
-    //     header: {},
-    //     contentType: "application/json",
-    //     datatype: "json",
-    // });
+    var limpo = document.getElementById("container-ongs");
+    limpo.innerText = ""
+    var name = document.getElementById("ong-name-search").value;
+    $.ajax({
+        type: "GET",
+        url: `https://localhost:7070/ngo/GetByName/${name}`,
+        success: mostraOng,
+        header: {},
+        contentType: "application/json",
+        datatype: "json",
+    });
 }
 
 function logout(){
@@ -56,6 +58,7 @@ function logout(){
 }
 
 function mostraOng(item) {
+    
     item.forEach(linha => {
             const cardOng = `
             <div id="${linha.id}" class="cards-ong md:mt-10 mt:ml-6 w-[20rem] h-20 rounded-3xl ml-10 mb-3" onclick="abrirPagina(${linha.id})">
