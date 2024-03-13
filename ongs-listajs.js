@@ -11,19 +11,37 @@ window.onload = function() {
     
     $.ajax({
         type: "GET",
-        url: "https://localhost:7070/Causes",
+        url: "https://localhost:7070/State",
         success: function(data){
             data.forEach(linha => {
                 const estados = `
-                    <option value="${linha.id}">${linha.name}</option>
+                    <option value="${linha.id}" onfocusout="filtrarEstado(${linha.id})">${linha.name}</option>
                 `;
-                $(`#ngo-cause`).append($(estados));
+                $(`#state-localization`).append($(estados));
             });
         },
         header: {},
         contentType: "application/json",
         datatype: "json",
     });
+
+    $.ajax({
+        type: "GET",
+        url: "https://localhost:7070/Causes",
+        success: function(data){
+            data.forEach(linha => {
+                const causas = `
+                    <option value="${linha.id}">${linha.name}</option>
+                `;
+                $(`#ngo-cause`).append($(causas));
+            });
+        },
+        header: {},
+        contentType: "application/json",
+        datatype: "json",
+    });
+    
+    
 
     try{   
         const user = JSON.parse(localStorage.getItem("user"));
@@ -54,6 +72,31 @@ window.onload = function() {
         }
     }catch{}
 };
+
+function filtrarCausa(){
+    var tag = document.getElementById("ngo-cause");
+    var causeId = tag.value;
+    if(causeId == 0){
+        $.ajax({
+            type: "GET",
+            url: "https://localhost:7070/NGO",
+            success: mostraOng,
+            header: {},
+            contentType: "application/json",
+            datatype: "json",
+        });
+    }
+    var limpo = document.getElementById("container-ongs");
+    limpo.innerText = "";
+    $.ajax({
+        type: "GET",
+        url: `https://localhost:7070/ngo/CauseId/${causeId}`,
+        success: mostraOng,
+        header: {},
+        contentType: "application/json",
+        datatype: "json",
+    });
+}
 
 function filtrarNome(){
     var limpo = document.getElementById("container-ongs");
