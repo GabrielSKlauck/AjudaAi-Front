@@ -39,6 +39,18 @@ window.onload = function() {
     }catch{}
 };
 
+function filtrarNome(){
+    $(`#container-ongs`).innerHtml = "";
+    // $.ajax({
+    //     type: "GET",
+    //     url: "https://localhost:7070/NGO",
+    //     success: mostraOng,
+    //     header: {},
+    //     contentType: "application/json",
+    //     datatype: "json",
+    // });
+}
+
 function logout(){
     localStorage.clear();
 }

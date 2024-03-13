@@ -134,11 +134,12 @@
     <div id="container" class="mt-10 mb-24 h-auto">
       <p class="text-4xl w-[32rem] h-[3rem] mt-3 ml-6">ONG participantes do projeto</p>
       <div class="inline-block w-full h-[5rem] mt-5">
-          <input type="text" name="ong-name" id="ong-name-search" placeholder="Digite um nome" class="w-[16rem] h-[2rem] ml-6">
+          <input type="text" name="ong-name" id="ong-name-search" placeholder="Digite um nome" class="w-[16rem] h-[2rem] ml-6" onfocusout="filtrarNome()">
           <label class="ml-10" for="state-localization">Localização</label>
           <select name="" id="state-localization" class="w-[8rem]"></select>
           <label class="ml-10" for="ngo-cause">Causas</label>
           <select name="" id="ngo-cause" class="w-[8rem]"></select>
+          <button id="btn-filtrar" class="ml-3 p-2">Filtrar</button>
       </div>
       <hr class=" w-full">
       <div id="container-ongs" class=" grid grid-cols-1 mx-4 sm:mx-0 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 h-auto">
