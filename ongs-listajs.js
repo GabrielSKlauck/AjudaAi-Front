@@ -15,7 +15,7 @@ window.onload = function() {
         success: function(data){
             data.forEach(linha => {
                 const estados = `
-                    <option value="${linha.id}" onfocusout="filtrarEstado(${linha.id})">${linha.name}</option>
+                    <option value="${linha.id}">${linha.name}</option>
                 `;
                 $(`#state-localization`).append($(estados));
             });
@@ -73,7 +73,38 @@ window.onload = function() {
     }catch{}
 };
 
+function filtrarEstado(){
+    var limpo = document.getElementById("container-ongs");
+    limpo.innerText = "";
+    var name = document.getElementById("ong-name-search").value = "";
+    var tag = document.getElementById("state-localization");
+    var stateId = tag.value;
+    console.log(stateId);
+    if(stateId == 0){
+        $.ajax({
+            type: "GET",
+            url: "https://localhost:7070/NGO",
+            success: mostraOng,
+            header: {},
+            contentType: "application/json",
+            datatype: "json",
+        });
+    }
+    
+    $.ajax({
+        type: "GET",
+        url: `https://localhost:7070/ngo/StateId/${stateId}`,
+        success: mostraOng,
+        header: {},
+        contentType: "application/json",
+        datatype: "json",
+    });
+}
+
 function filtrarCausa(){
+    var limpo = document.getElementById("container-ongs");
+    limpo.innerText = "";
+    var name = document.getElementById("ong-name-search").value = "";
     var tag = document.getElementById("ngo-cause");
     var causeId = tag.value;
     if(causeId == 0){
@@ -86,8 +117,7 @@ function filtrarCausa(){
             datatype: "json",
         });
     }
-    var limpo = document.getElementById("container-ongs");
-    limpo.innerText = "";
+    
     $.ajax({
         type: "GET",
         url: `https://localhost:7070/ngo/CauseId/${causeId}`,
@@ -102,6 +132,16 @@ function filtrarNome(){
     var limpo = document.getElementById("container-ongs");
     limpo.innerText = ""
     var name = document.getElementById("ong-name-search").value;
+    if(name == ""){
+        $.ajax({
+            type: "GET",
+            url: "https://localhost:7070/NGO",
+            success: mostraOng,
+            header: {},
+            contentType: "application/json",
+            datatype: "json",
+        });
+    }
     $.ajax({
         type: "GET",
         url: `https://localhost:7070/ngo/GetByName/${name}`,

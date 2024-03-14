@@ -136,12 +136,12 @@
       <div class="inline-block w-full h-[5rem] mt-5">
           <input type="text" name="ong-name" id="ong-name-search" placeholder="Digite um nome" class="w-[16rem] h-[2rem] ml-6" onfocusout="filtrarNome()">
           <label class="ml-10" for="state-localization">Localização</label>
-          <select name="" id="state-localization" class="w-[8rem]">
-            
+          <select name="" id="state-localization" class="w-[8rem]" onfocusout="filtrarEstado()">
+              <option value="0">Todas as opções</option>
           </select>
           <label class="ml-10" for="ngo-cause">Causas</label>
           <select name="" id="ngo-cause" class="w-[8rem]" onfocusout="filtrarCausa()">
-              <option value="0">Todas as ongs</option>
+              <option value="0">Todas as opções</option>
           </select>
           <button id="btn-filtrar" class="ml-3 p-2">Filtrar</button>
       </div>
